@@ -1,0 +1,211 @@
+@extends('layouts.main')
+
+@section('main-section')
+<link rel="stylesheet" href="{{ asset('frontend/css/view-company-profile.css') }}?v={{ filemtime(public_path('frontend/css/myjoblist.css')) }}" />
+<section class="companyProfile">
+    <div class="container-fluid">
+        <div class="freelanceJob">
+            <div class="aboutInfo">
+                <div class="companyDetails">
+                    <div class="images">
+                        <img src="{{ $company->profile_photo ?: 'https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg' }}"
+                            onerror="this.onerror=null; this.src='https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg';"
+                            alt="Company Logo">
+                    </div>
+                    <div class="text">
+                        @if($company->employer_type == 1)
+                        <h5>{{ $company->name }}</h5>
+                        @else
+                        <h5>{{ $company->company_name }}</h5>
+                        @endif
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <path
+                                    d="M13.3376 6.66567C13.3376 9.99434 9.6449 13.461 8.4049 14.5317C8.28938 14.6185 8.14876 14.6655 8.00423 14.6655C7.8597 14.6655 7.71908 14.6185 7.60356 14.5317C6.36356 13.461 2.6709 9.99434 2.6709 6.66567C2.6709 5.25118 3.2328 3.89463 4.233 2.89443C5.23319 1.89424 6.58974 1.33234 8.00423 1.33234C9.41872 1.33234 10.7753 1.89424 11.7755 2.89443C12.7757 3.89463 13.3376 5.25118 13.3376 6.66567Z"
+                                    stroke="#6A7282" stroke-width="0.621397" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M8.00635 8.66626C9.11092 8.66626 10.0063 7.77083 10.0063 6.66626C10.0063 5.56169 9.11092 4.66626 8.00635 4.66626C6.90178 4.66626 6.00635 5.56169 6.00635 6.66626C6.00635 7.77083 6.90178 8.66626 8.00635 8.66626Z"
+                                    stroke="#6A7282" stroke-width="0.621397" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            {{ $company->state_name }}, {{ $company->country_name }}
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <path
+                                    d="M1.3335 5.99999C1.3335 4.74266 1.3335 4.11466 1.72416 3.72399C2.11483 3.33333 2.74283 3.33333 4.00016 3.33333H12.0002C13.2575 3.33333 13.8855 3.33333 14.2762 3.72399C14.6668 4.11466 14.6668 4.74266 14.6668 5.99999C14.6668 6.31399 14.6668 6.47133 14.5695 6.56933C14.4715 6.66666 14.3135 6.66666 14.0002 6.66666H2.00016C1.68616 6.66666 1.52883 6.66666 1.43083 6.56933C1.3335 6.47133 1.3335 6.31333 1.3335 5.99999ZM1.3335 12C1.3335 13.2573 1.3335 13.8853 1.72416 14.276C2.11483 14.6667 2.74283 14.6667 4.00016 14.6667H12.0002C13.2575 14.6667 13.8855 14.6667 14.2762 14.276C14.6668 13.8853 14.6668 13.2573 14.6668 12V8.66666C14.6668 8.35266 14.6668 8.19533 14.5695 8.09733C14.4715 7.99999 14.3135 7.99999 14.0002 7.99999H2.00016C1.68616 7.99999 1.52883 7.99999 1.43083 8.09733C1.3335 8.19533 1.3335 8.35333 1.3335 8.66666V12Z"
+                                    fill="#6A7282" />
+                                <path d="M4.66699 2V4M11.3337 2V4" stroke="#6A7282" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            Member since {{ \Carbon\Carbon::parse($company->created_at)->format('d M Y') }}
+                        </span>
+                        <!-- <p><span></span> Available now</p> -->
+                    </div>
+                </div>
+
+                <div class="companyContact">
+
+                    <div class="contactDtailes">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <path
+                                    d="M8.00016 14.1667C9.63566 14.1667 11.2042 13.517 12.3607 12.3605C13.5171 11.204 14.1668 9.6355 14.1668 8C14.1668 6.3645 13.5171 4.79598 12.3607 3.63951C11.2042 2.48304 9.63566 1.83334 8.00016 1.83334M14.1668 8H1.8335M8.00016 14.1667C6.36466 14.1667 4.79615 13.517 3.63967 12.3605C2.4832 11.204 1.8335 9.6355 1.8335 8C1.8335 6.3645 2.4832 4.79598 3.63967 3.63951C4.79615 2.48304 6.36466 1.83334 8.00016 1.83334M8.00016 1.83334C7.66683 1.83334 5.3335 4.594 5.3335 8C5.3335 11.406 7.66683 14.1667 8.00016 14.1667M8.00016 1.83334C8.3335 1.83334 10.6668 4.594 10.6668 8C10.6668 11.406 8.3335 14.1667 8.00016 14.1667"
+                                    stroke="#555555" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="text">
+                            <span>Company Website</span>
+                            <p>{{ $company->website }}</p>
+                        </div>
+                    </div>
+
+                    <div class="contactDtailes">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <path
+                                    d="M8.00016 14.1667C9.63566 14.1667 11.2042 13.517 12.3607 12.3605C13.5171 11.204 14.1668 9.6355 14.1668 7.99999C14.1668 6.36449 13.5171 4.79598 12.3607 3.6395C11.2042 2.48303 9.63566 1.83333 8.00016 1.83333M14.1668 7.99999H1.8335M8.00016 14.1667C6.36466 14.1667 4.79615 13.517 3.63967 12.3605C2.4832 11.204 1.8335 9.6355 1.8335 7.99999C1.8335 6.36449 2.4832 4.79598 3.63967 3.6395C4.79615 2.48303 6.36466 1.83333 8.00016 1.83333M8.00016 1.83333C7.66683 1.83333 5.3335 4.59399 5.3335 7.99999C5.3335 11.406 7.66683 14.1667 8.00016 14.1667M8.00016 1.83333C8.3335 1.83333 10.6668 4.59399 10.6668 7.99999C10.6668 11.406 8.3335 14.1667 8.00016 14.1667"
+                                    stroke="#555555" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="text">
+                            <span>Industry</span>
+                            <p>{{ $company->industry }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aboutCompany">
+                <div class="companyDesc">
+                    <h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18" fill="none">
+                            <path
+                                d="M16 12H14V14H16M16 8H14V10H16M18 16H10V14H12V12H10V10H12V8H10V6H18M8 4H6V2H8M8 8H6V6H8M8 12H6V10H8M8 16H6V14H8M4 4H2V2H4M4 8H2V6H4M4 12H2V10H4M4 16H2V14H4M10 4V0H0V18H20V4H10Z"
+                                fill="#00A148" />
+                        </svg>
+                        About Company
+                    </h4>
+                    <hr>
+                    <p>{{ $company->about }}</p>
+
+                    <h5>Skills we are Hiring for</h5>
+                    @php
+                    $allSkills = [];
+
+                    foreach ($recentJobs as $job) {
+                    if (!empty($job->skills)) {
+                    $allSkills = array_merge($allSkills, array_map('trim', explode(',', $job->skills)));
+                    }
+                    }
+
+                    $allSkills = array_unique($allSkills);
+                    sort($allSkills);
+                    @endphp
+
+                    <ul>
+                        @foreach($allSkills as $skill)
+                        <li>{{ $skill }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+
+                <div class="recentJob">
+                    <div class="titleTop">
+                        <h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2062_2719)">
+                                    <path
+                                        d="M24.0001 6.84006V5.39006C24.0001 4.80658 23.7683 4.247 23.3557 3.83442C22.9431 3.42184 22.3835 3.19006 21.8001 3.19006H19.1101L18.8401 1.55006C18.7685 1.11475 18.5438 0.719327 18.2064 0.435114C17.869 0.1509 17.4412 -0.00339545 17.0001 5.66966e-05H13.3701C12.9307 -0.00100871 12.5052 0.15437 12.1699 0.438372C11.8346 0.722374 11.6113 1.11646 11.5401 1.55006L11.2701 3.19006H8.58007C7.99659 3.19006 7.43701 3.42184 7.02443 3.83442C6.61185 4.247 6.38007 4.80658 6.38007 5.39006V6.84006H24.0001ZM13.0001 1.84006C13.0143 1.75797 13.0574 1.68367 13.1216 1.63051C13.1857 1.57735 13.2668 1.54882 13.3501 1.55006H17.0001C17.0834 1.54882 17.1644 1.57735 17.2285 1.63051C17.2927 1.68367 17.3358 1.75797 17.3501 1.84006L17.5801 3.24006H12.7801L13.0001 1.84006ZM15.9401 8.34006V9.80006C15.9401 9.99897 15.861 10.1897 15.7204 10.3304C15.5797 10.471 15.389 10.5501 15.1901 10.5501C14.9912 10.5501 14.8004 10.471 14.6597 10.3304C14.5191 10.1897 14.4401 9.99897 14.4401 9.80006V8.34006H6.38007V13.1001C6.38007 13.389 6.43697 13.675 6.54753 13.942C6.65809 14.2089 6.82014 14.4514 7.02443 14.6557C7.22872 14.86 7.47125 15.022 7.73816 15.1326C8.00508 15.2432 8.29116 15.3001 8.58007 15.3001H21.8001C22.3835 15.3001 22.9431 15.0683 23.3557 14.6557C23.7683 14.2431 24.0001 13.6835 24.0001 13.1001V8.34006H15.9401ZM17.1901 18.8901L14.1901 19.8901C14.1511 19.8879 14.1124 19.8971 14.0786 19.9167C14.0449 19.9362 14.0176 19.9652 14.0001 20.0001C13.8619 20.2998 13.6404 20.5535 13.362 20.7308C13.0836 20.9081 12.7601 21.0016 12.4301 21.0001H9.00007C8.88602 21.0001 8.77665 20.9548 8.69601 20.8741C8.61537 20.7935 8.57007 20.6841 8.57007 20.5701C8.57007 20.456 8.61537 20.3466 8.69601 20.266C8.77665 20.1854 8.88602 20.1401 9.00007 20.1401H12.4401C12.6682 20.1401 12.8869 20.0494 13.0482 19.8882C13.2095 19.7269 13.3001 19.5081 13.3001 19.2801C13.3001 19.052 13.2095 18.8332 13.0482 18.6719C12.8869 18.5107 12.6682 18.4201 12.4401 18.4201H9.44007C8.44838 17.6611 7.24765 17.2248 6.00007 17.1701H4.25007C3.71503 17.1727 3.18789 17.2993 2.71007 17.5401L0.120067 18.8301C0.0881111 18.847 0.060592 18.8712 0.0397424 18.9007C0.0188927 18.9302 0.00529997 18.9643 6.69577e-05 19.0001V23.6301C-0.000911314 23.6688 0.00884648 23.707 0.0282605 23.7406C0.0476745 23.7741 0.0759878 23.8016 0.110067 23.8201C0.143511 23.8394 0.181449 23.8495 0.220067 23.8495C0.258685 23.8495 0.296623 23.8394 0.330067 23.8201L3.09007 22.1001C3.19854 22.0302 3.32105 21.985 3.44893 21.9677C3.57682 21.9504 3.70693 21.9614 3.83007 22.0001C12.3901 24.8901 9.53007 24.9001 19.1801 20.0001C19.2468 19.9674 19.3042 19.9184 19.3469 19.8575C19.3896 19.7967 19.4162 19.726 19.4241 19.6521C19.4321 19.5782 19.4213 19.5035 19.3926 19.435C19.3639 19.3664 19.3183 19.3062 19.2601 19.2601C18.9747 19.028 18.635 18.8723 18.2729 18.8076C17.9108 18.7428 17.5382 18.7712 17.1901 18.8901Z"
+                                        fill="#00A148" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2062_2719">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Recent job posted
+                        </h4>
+                        <!-- 
+                    <a href="#" class="viewAll">
+                        View All job posts
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10"
+                            fill="none">
+                            <path d="M7.75 0.749999L11.75 4.75L7.75 8.75M11.75 4.75H0.75" stroke="#00A148"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a> -->
+                    </div>
+                    <hr>
+
+                    <div class="tabviewwrapper">
+                        @forelse($recentJobs as $job)
+                        <a href="{{ route('jobseekers.job.show', ['type' => 'native', 'id' => $job->id]) }}">
+                            <div class="single">
+                                <div class="title">
+                                    <h2>{{ $job->title }}</h2>
+                                    @php
+                                    $skills = array_filter(array_map('trim', explode(',', $job->skills)));
+                                    $visibleSkills = array_slice($skills, 0, 3);
+                                    @endphp
+                                    <ul>
+                                        @foreach($visibleSkills as $skill)
+                                        <li>{{ $skill }}</li>
+                                        @endforeach
+
+                                        @if(count($skills) > 3)
+                                        <li>+{{ count($skills) - 3 }}</li>
+                                        @endif
+                                    </ul>
+                                </div>
+                                <div class="info">
+                                    <p>Posted On</p>
+                                    <h6>{{ \Carbon\Carbon::parse($job->created_at)->format('d M Y') }}</h6>
+                                </div>
+                                <div class="info">
+                                    <p>Expected delivery</p>
+                                    <h6>{{ str_replace('_',' ', $job->duration) }}</h6>
+                                </div>
+                                <div class="info">
+                                    <p>Budget</p>
+                                    <h6>₹ {{ $job->budget_min }}</h6>
+                                </div>
+                                <div class="status">
+                                    <p>Status</p>
+                                    <span class="live">Live</span>
+                                </div>
+                            </div>
+                        </a>
+                        @empty
+                        <div class="content">
+                            <div class="images">
+                                <img src="{{ asset('frontend/images/no-recent-job.png') }}" alt="">
+                            </div>
+                            <div class="text">
+                                <h4>No Recent jobs Found</h4>
+                                <p>You haven't posted any jobs yet. Create your first job post to connect with
+                                    talented freelancers and start hiring for your project.</p>
+
+                                <a href="{{ route('employer.post.job') }}" class="postJob">Post a Job <svg xmlns="http://www.w3.org/2000/svg"
+                                        width="13" height="10" viewBox="0 0 13 10" fill="none">
+                                        <path d="M7.75 0.749999L11.75 4.75L7.75 8.75M11.75 4.75H0.75" stroke="white"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></a>
+                            </div>
+                        </div>
+                        @endforelse
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@endsection

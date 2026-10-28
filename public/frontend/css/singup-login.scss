@@ -1,0 +1,1051 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+
+// 1920
+@function converter($size) {
+    @return calc($size / 19.20) * 1vw;
+}
+
+// 1280px - 1599px
+@function dconverter($size) {
+    @return calc($size / 16) * 1vw;
+}
+
+// 990px
+@function mconverter($size) {
+    @return calc($size / 3.90) * 1vw;
+}
+
+$max-width: 990px;
+$min-desktop: 1280px;
+$max-desktop: 1600px;
+ 
+@mixin center {
+    display: flex; 
+    vertical-align: middle;
+    align-items: center;
+}
+
+@mixin justify-center {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+$interfont: 'Inter';
+$manropefont: 'Manrope';
+$contentcolor: #575757;
+$casualblack: #181818;
+$greencolor: #00A148;
+
+* {
+    body {
+    background-color: #F6F6F6;
+
+        .employeer-signup {
+            background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+            url("../images/signup-bg.png");
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size: cover;
+            height: calc(100vh - 0vw);
+            padding: converter(100) converter(0) converter(50);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @media (max-width: $max-width) {
+                height: auto;
+                padding: mconverter(70) mconverter(25) mconverter(50);
+                background-color: #FFF;
+                background-image: none;
+            }
+            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                padding: dconverter(100) dconverter(0) dconverter(50);
+            }
+
+            .signup-page {
+                display: flex;
+                margin: auto;
+                width: converter(940);
+                height: converter(636);
+
+                @media (max-width: $max-width) {
+                    flex-direction: column;
+                    width: 100%;
+                    height: auto;
+                }
+                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                    width: dconverter(940);
+                    height: dconverter(636);
+                }
+            }
+            
+            .smart-hiring {
+                width: converter(460);
+                height: converter(628);
+                border-radius: converter(0) converter(15) converter(15) converter(0);
+                overflow: hidden;
+                @media (max-width: $max-width) {
+                    display: none;
+                }
+                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                    width: dconverter(460);
+                    height: dconverter(628);
+                }
+                img { 
+                    width: 100%;
+                    height: 100%;
+                    object-fit: fill;
+                    border-radius: converter(0) converter(15) converter(15) converter(0);
+                }
+            }
+
+            .form-card {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background:#fff;
+                width: converter(480);
+                height: converter(628);
+                border-radius: converter(28) converter(0) converter(0) converter(28);
+                box-shadow: 0 converter(4) converter(23) 0 rgba(0, 0, 0, 0.10);
+                padding: converter(30);
+                border: converter(1) solid #DBDBDB;
+                @media (max-width: $max-width) {
+                    width: 100%;
+                    height: auto;
+                    border: none;
+                    border-radius: mconverter(0);
+                    box-shadow: none;
+                    padding: mconverter(0);
+                }
+
+                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                    width: dconverter(480);
+                    height: dconverter(628);
+                }
+                .title{ 
+                    color: #000;
+                    font-family: $manropefont;
+                    font-size: converter(34);
+                    margin-bottom: 0;
+                    font-weight: 700;
+                    @media (max-width: $max-width) {
+                        font-size: mconverter(24);
+                    }
+                }
+
+                .linebar {
+                    width: converter(65);
+                    height: converter(4);
+                    border-radius: converter(50);
+                    margin: converter(11) converter(0);
+                    background: linear-gradient(90deg, #16A34A 0%, #4ADE80 100%);
+                    @media (max-width: $max-width) {
+                        width: mconverter(65);
+                        height: mconverter(4);
+                        border-radius: mconverter(50);
+                        margin: mconverter(11) mconverter(0);
+                    }
+                }
+
+                p {
+                    color: #A6A09B;
+                    font-family: $interfont;
+                    font-size: converter(14);
+                    font-weight: 400;
+                    line-height: converter(16);
+                    margin-bottom: converter(0);
+                    @media (max-width: $max-width) {
+                        font-size: mconverter(14);
+                        line-height: mconverter(18);
+                    }
+                    a {
+                        color: #00A148;
+                        text-decoration: none;
+                    }
+                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                        font-size: dconverter(16);
+                        line-height: dconverter(20);
+                    }
+                }
+
+                .input-singup {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 0 converter(13);
+                    @media (max-width: $max-width) {
+                        gap: 0 mconverter(13);
+                    }
+                }
+ 
+                .field{
+                    label{
+                        display:block;
+                        color: #44403B;
+                        font-family: $manropefont;
+                        font-size: converter(14);
+                        font-weight: 600;
+                        margin: converter(15) converter(0) converter(6);
+                        margin-bottom: converter(6);
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(14);
+                            margin: mconverter(15) mconverter(0) mconverter(6);
+                        }
+                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                            font-size: dconverter(15);
+                        }
+                    }
+                    .input-wrap{
+                        position:relative;
+                        svg{
+                            position:absolute;
+                            left: converter(13);
+                            top: converter(20);
+                            // transform:translateY(-50%);
+                            width: converter(16);
+                            height: converter(16);
+                            color:#BEBEBE;
+                            pointer-events:none;
+                            @media (max-width: $max-width) {
+                                left: mconverter(13);
+                                top: mconverter(20);
+                                // transform:translateY(-50%);
+                                width: mconverter(16);
+                                height: mconverter(16);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                left: dconverter(13);
+                                top: dconverter(20);
+                                width: dconverter(16);
+                                height: dconverter(16);
+                            }
+                        }
+                        input,
+                        select {
+                            width: 100%;
+                            padding: converter(14) converter(16) converter(14) converter(35);
+                            border-radius: converter(10);
+                            border: converter(1) solid #D6D6D6;
+                            font-size: converter(14);
+                            font-family: $interfont;
+                            color: $casualblack;
+                            outline: none;
+                            font-weight: 400;
+                            @media (max-width: $max-width) {
+                                padding: mconverter(14) mconverter(16) mconverter(14) mconverter(35);
+                                border-radius: mconverter(10);
+                                border: mconverter(1) solid #D6D6D6;
+                                font-size: mconverter(14);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                padding: dconverter(14) dconverter(16) dconverter(14) dconverter(35);
+                                font-size: dconverter(16);
+                            }
+                            &::placeholder {
+                                color: #D6D3D1;
+                                font-weight: 400;
+                            }
+                            &:focus{
+                                border-color: $greencolor;
+                                box-shadow: 0 0 0 converter(3) rgba(34,197,94,0.12);
+                                @media (max-width: $max-width) {
+                                    box-shadow: 0 0 0 mconverter(3) rgba(34,197,94,0.12);
+                                }
+                            }
+                        }
+                        .error {
+                            border-color: #E53935;
+                            box-shadow: 0 converter(-3) converter(4) 0 rgba(255, 90, 90, 0.25) inset, 0 converter(3) converter(4) 0 rgba(255, 141, 141, 0.25) inset;
+                        }
+                        select{
+                            appearance:none;
+                            -webkit-appearance:none;
+                            background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238b8f98' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+                            background-repeat:no-repeat;
+                            background-position: right converter(14) center;
+                            cursor:pointer;
+                            color: $casualblack;
+                            @media (max-width: $max-width) {
+                                background-position: right mconverter(14) center; 
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                background-position: right dconverter(14) center;
+                            }
+                        }
+
+                        .toggle-pass{
+                            position:absolute;
+                            right: converter(10);
+                            top: converter(15);
+                            width: converter(30); 
+                            height: converter(30);
+                            color:#a8adb5;
+                            cursor:pointer;
+                            background:none;
+                            border:none;
+                            padding:0;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            @media (max-width: $max-width) {
+                                right: mconverter(10);
+                                top: mconverter(15);
+                                width: mconverter(30); 
+                                height: mconverter(30);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                right: dconverter(10);
+                                top: dconverter(15);
+                                width: dconverter(30); 
+                                height: dconverter(30);
+                            }
+                            svg{ 
+                                width: converter(24); 
+                                height: converter(24); 
+                                left: converter(0);
+                                top: converter(0);
+                                @media (max-width: $max-width) {
+                                    left: converter(0);
+                                    top: converter(0);
+                                    width: mconverter(24); 
+                                    height: mconverter(24); 
+                                }
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    width: dconverter(24); 
+                                    height: dconverter(24); 
+                                }
+                            }
+                        }
+
+                    }
+
+                    .error-msg{
+                        display:none;
+                        color: red;
+                        position: absolute;
+                        font-size: converter(12);
+                        top: converter(-24);
+                        right: converter(8);
+                        text-align: right;
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(12);
+                            top: mconverter(-24);
+                            right: mconverter(8);
+                        }
+                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                            font-size: dconverter(14);
+                            top: dconverter(-24);
+                            right: dconverter(8);
+                        }
+                    }
+                }
+
+                .forgotpass {
+                    text-align: right;
+                    a {
+                        color: #00A63E;
+                        font-family: $interfont;
+                        font-size: converter(14);
+                        font-weight: 600;
+                        text-decoration-line: none;
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(14);
+                        }
+                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                            font-size: dconverter(14);
+                        }
+                    }
+                }
+
+                .terms-row { 
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: converter(8);
+                    margin:converter(5) converter(0) converter(10);
+                    
+                    @media (max-width: $max-width) {
+                        line-height: normal;
+                        gap: mconverter(8);
+                        margin: mconverter(5) mconverter(0) mconverter(10);
+                    }
+
+                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                        gap: dconverter(8);
+                        margin: dconverter(5) dconverter(0) dconverter(10);
+                    }
+                    .check-box {
+                        display: flex;
+                        align-items: center;
+                        gap: converter(8);
+                        margin-top: converter(10);
+                        @media (max-width: $max-width) {
+                            gap: mconverter(8);
+                            margin-top: mconverter(5);
+                        }
+                        label {
+                            color: #79716B;
+                            font-size: converter(14);
+                            font-family: $interfont;
+                            line-height: converter(20);
+                            font-weight: 400;
+                            margin-bottom: converter(0);
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(14);
+                                line-height: mconverter(20);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                font-size: dconverter(14);
+                            }
+                            a {
+                                color: #00A148;
+                            }
+                        }
+
+                        input {
+                            appearance: none;
+                            -webkit-appearance: none;
+                            width: converter(18);
+                            height: converter(18);
+                            margin: 0;
+                            border: converter(1) solid #d9dfe3;
+                            border-radius: converter(5);
+                            background: #fff;
+                            cursor: pointer;
+                            flex-shrink: 0;
+                            @media (max-width: $max-width) {
+                                border: mconverter(1) solid #d9dfe3;
+                                border-radius: mconverter(4);
+                                width: mconverter(18);
+                                height: mconverter(18);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                border: dconverter(1) solid #d9dfe3;
+                                border-radius: dconverter(4);
+                                width: dconverter(18);
+                                height: dconverter(18);
+                            }
+                            &:checked {
+                                background: #00a148;
+                                border-color: #00a148;
+                                position: relative;
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    width: converter(5);
+                                    height: converter(10);
+                                    left: converter(6);
+                                    top: converter(2);
+                                    border: solid #fff;
+                                    border-width: 0 converter(2) converter(2) 0;
+                                    transform: rotate(45deg);
+                                    @media (max-width: $max-width) {
+                                        border-width: 0 mconverter(2) mconverter(2) 0;
+                                        width: mconverter(5);
+                                        height: mconverter(10);
+                                        left: mconverter(6);
+                                        top: mconverter(2);
+                                    }
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        border-width: 0 dconverter(2) dconverter(2) 0;
+                                        width: dconverter(5);
+                                        height: dconverter(10);
+                                        left: dconverter(6);
+                                        top: dconverter(1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                #agreeError{
+                    color: red;
+                    font-size: converter(12);
+                    text-align: center;
+                    margin-bottom: converter(10);
+                    @media (max-width: $max-width) {
+                        font-size: mconverter(12);
+                        margin-bottom: mconverter(10);
+                    }
+                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                        font-size: dconverter(14);
+                    }
+                }
+
+                .submit-btn{
+                    width:100%;
+                    border:none;
+                    background:#00A148;
+                    padding: converter(10) converter(20);
+                    border-radius: converter(50);
+                    gap: converter(5);
+                    font-size: converter(14);
+                    box-shadow: 0 converter(6) converter(10) 0 rgba(22, 163, 74, 0.20);
+                    cursor:not-allowed;
+                    color: #fff;
+                    font-family: $interfont;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @media (max-width: $max-width) {
+                        padding: mconverter(10) mconverter(20);
+                        border-radius: mconverter(50);
+                        gap: mconverter(5);
+                        font-size: mconverter(14);
+                        box-shadow: 0 mconverter(6) mconverter(10) 0 rgba(22, 163, 74, 0.20);
+                    }
+                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                        padding: dconverter(10) dconverter(20);
+                        border-radius: dconverter(50);
+                        gap: dconverter(5);
+                        font-size: dconverter(14);
+                        box-shadow: 0 dconverter(6) dconverter(10) 0 rgba(22, 163, 74, 0.20);
+                    }
+                    svg {
+                        width: converter(20);
+                        height: converter(20);
+                        @media (max-width: $max-width) {
+                            width: mconverter(20);
+                            height: mconverter(20);
+                        }
+                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                            width: dconverter(20);
+                            height: dconverter(20);
+                        }
+                    }
+                    &.enabled{
+                        color:#fff;
+                        cursor:pointer;
+                        &:hover{
+                            filter:brightness(1.03);
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .login-signup {
+            background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+            url("../images/signup-bg.png");
+            background-repeat: no-repeat;
+            background-position: left;
+            height: calc(100vh - 0vw); 
+            background-size: cover;
+            padding: converter(100) converter(0) converter(50);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @media (max-width: $max-width) {
+                height: auto;
+                padding: mconverter(70) mconverter(25) mconverter(50) ;
+                background-color: #FFF;
+                background-image: none;
+            } 
+            
+            .signup-page {
+                display: flex;
+                margin: auto;
+                width: converter(940);
+                height: converter(575);
+
+                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                    width: dconverter(940);
+                    height: dconverter(575);
+                }
+
+                @media (max-width: $max-width) {
+                    flex-direction: column;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .smart-hiring {
+                width: converter(460);
+                height: converter(575);
+                border-radius: converter(0) converter(15) converter(15) converter(0);
+                overflow: hidden;
+
+                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                    width: dconverter(460);
+                    height: dconverter(575);
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: fill;
+                    border-radius: converter(0) converter(15) converter(15) converter(0);
+                }
+                @media (max-width: $max-width) {
+                    display: none;
+                }
+                
+            }
+
+            .form-card {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background:#fff;
+                width: converter(480);
+                height: converter(575);
+                border-radius: converter(28) converter(0) converter(0) converter(28);
+                box-shadow: 0 converter(4) converter(23) 0 rgba(0, 0, 0, 0.10);
+                padding: converter(30);
+                border: converter(1) solid #DBDBDB;
+                @media (max-width: $max-width) {
+                    width: 100%;
+                    height: auto;
+                    border: none;
+                    border-radius: mconverter(0);
+                    box-shadow: none;
+                    padding: mconverter(0);
+                }
+                
+                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                    width: dconverter(480);
+                    height: dconverter(575);
+                }
+
+                .title{ 
+                    color: #000;
+                    font-family: $manropefont;
+                    font-size: converter(34);
+                    margin-bottom: 0;
+                    font-weight: 700;
+                    @media (max-width: $max-width) {
+                        font-size: mconverter(24);
+                    }
+                }
+
+                .linebar {
+                    width: converter(65);
+                    height: converter(4);
+                    border-radius: converter(50);
+                    margin: converter(11) converter(0);
+                    background: linear-gradient(90deg, #16A34A 0%, #4ADE80 100%);
+                    @media (max-width: $max-width) {
+                        width: mconverter(65);
+                        height: mconverter(4);
+                        border-radius: mconverter(50);
+                        margin: mconverter(11) mconverter(0);
+                    }
+                }
+
+                p {
+                    color: #A6A09B;
+                    font-family: $interfont;
+                    font-size: converter(14);
+                    font-weight: 400;
+                    line-height: converter(16);
+                    margin-bottom: converter(0);
+                    @media (max-width: $max-width) {
+                        font-size: mconverter(14);
+                        line-height: mconverter(18);
+                    }
+                    a {
+                        color: #00A148;
+                        text-decoration: none;
+                    }
+
+                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                        font-size: dconverter(16);
+                        line-height: dconverter(20);
+                    }
+                }
+
+                .input-singup {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 0 converter(13);
+                    @media (max-width: $max-width) {
+                        gap: 0 mconverter(13);
+                    }
+                }
+ 
+                .field{
+                    label{
+                        display:block;
+                        color: #44403B;
+                        font-family: $manropefont;
+                        font-size: converter(14);
+                        font-weight: 600;
+                        margin: converter(15) converter(0) converter(6);
+                        margin-bottom: converter(6);
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(14);
+                            margin: mconverter(15) mconverter(0) mconverter(6);
+                        }
+                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                            font-size: dconverter(15);
+                        }
+                    }
+                    .input-wrap{
+                        position:relative;
+                        svg{
+                            position:absolute;
+                            left: converter(13);
+                            top: converter(20);
+                            width: converter(16);
+                            height: converter(16);
+                            color:#BEBEBE;
+                            pointer-events:none;
+                            @media (max-width: $max-width) {
+                                left: mconverter(13);
+                                top: mconverter(20);
+                                width: mconverter(16);
+                                height: mconverter(16);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                left: dconverter(13);
+                                top: dconverter(20);
+                                width: dconverter(16);
+                                height: dconverter(16);
+                            }
+                        }
+                        input,
+                        select {
+                            width: 100%;
+                            padding: converter(14) converter(16) converter(14) converter(35);
+                            border-radius: converter(10);
+                            border: converter(1) solid #D6D6D6;
+                            font-size: converter(14);
+                            font-family: $interfont;
+                            color: $casualblack;
+                            outline: none;
+                            font-weight: 400;
+                            @media (max-width: $max-width) {
+                                padding: mconverter(14) mconverter(16) mconverter(14) mconverter(35);
+                                border-radius: mconverter(10);
+                                border: mconverter(1) solid #D6D6D6;
+                                font-size: mconverter(14);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                padding: dconverter(14) dconverter(16) dconverter(14) dconverter(35);
+                                font-size: dconverter(16);
+                            }
+                            &::placeholder {
+                                color: #D6D3D1;
+                                font-weight: 400;
+                            }
+                            &:focus{
+                                border-color: $greencolor;
+                                box-shadow: 0 0 0 converter(3) rgba(34,197,94,0.12);
+                                @media (max-width: $max-width) {
+                                    box-shadow: 0 0 0 mconverter(3) rgba(34,197,94,0.12);
+                                }
+                            }
+                        }
+                        .error {
+                            border-color: #E53935;
+                            box-shadow: 0 converter(-3) converter(4) 0 rgba(255, 90, 90, 0.25) inset, 0 converter(3) converter(4) 0 rgba(255, 141, 141, 0.25) inset;
+                        }
+                        select{
+                            appearance:none;
+                            -webkit-appearance:none;
+                            background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238b8f98' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+                            background-repeat:no-repeat;
+                            background-position: right converter(14) center;
+                            cursor:pointer;
+                            color: rgba(190, 190, 190, 1);
+                            @media (max-width: $max-width) {
+                                background-position: right mconverter(14) center; 
+                            }
+                        }
+
+                        .toggle-pass{
+                            position:absolute;
+                            right: converter(10);
+                            top: converter(15);
+                            width: converter(30); 
+                            height: converter(30);
+                            color:#a8adb5;
+                            cursor:pointer;
+                            background:none;
+                            border:none;
+                            padding:0;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            @media (max-width: $max-width) {
+                                right: mconverter(10);
+                                top: mconverter(15);
+                                width: mconverter(30); 
+                                height: mconverter(30);
+                            }
+
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                right: dconverter(10);
+                                top: dconverter(15);
+                                width: dconverter(30); 
+                                height: dconverter(30);
+                            }
+
+                            svg{ 
+                                width: converter(24); 
+                                height: converter(24); 
+                                left: converter(0);
+                                top: converter(0);
+                                @media (max-width: $max-width) {
+                                    width: mconverter(24); 
+                                    left: mconverter(0);
+                                    top: mconverter(0);
+                                    height: mconverter(24); 
+                                }
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    width: dconverter(24); 
+                                    height: dconverter(24); 
+                                }
+                            }
+                        }
+
+                    }
+
+                    .error-msg{
+                        // display:none;
+                        color: red;
+                        // position: absolute;
+                        font-size: converter(12);
+                        // top: converter(-24);
+                        // right: converter(8);
+                        text-align: right;
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(12);
+                            top: mconverter(-24);
+                            right: mconverter(8);
+                        }
+                    }
+
+                    // &.error {
+                    //     .error-msg{ 
+                    //         display:block; 
+                    //     }
+                    //     input{
+                            
+                    //         background: #fef2f2;
+                    //         &:focus{
+                    //             border-color: red;
+                    //             box-shadow: 0 0 converter(3) converter(3) rgba(239,68,68,0.05);
+                    //             @media (max-width: $max-width) {
+                    //                 box-shadow: 0 0 mconverter(3) mconverter(3) rgba(239,68,68,0.05);
+                    //             }
+                    //         }
+                    //     }
+                    // }
+                }
+
+                .forgotpass {
+                    text-align: right;
+                    a {
+                        color: #00A63E;
+                        font-family: $interfont;
+                        font-size: converter(14);
+                        font-weight: 600;
+                        text-decoration-line: none;
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(14);
+                        }
+                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                            font-size: dconverter(14);
+                        }
+                    }
+                }
+
+                .terms-row { 
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: converter(8);
+                    margin:converter(5) converter(0) converter(10);
+                    
+                    @media (max-width: $max-width) {
+                        line-height: normal;
+                        gap: mconverter(8);
+                        margin: mconverter(5) mconverter(0) mconverter(10);
+                    }
+
+                    .check-box {
+                        display: flex;
+                        align-items: center;
+                        gap: converter(8);
+                        @media (max-width: $max-width) {
+                            gap: mconverter(8);
+                        }
+                        label {
+                            color: #79716B;
+                            font-size: converter(14);
+                            font-family: $interfont;
+                            line-height: converter(20);
+                            font-weight: 400;
+                            margin-bottom: converter(0);
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(14);
+                                line-height: mconverter(20);
+                            }
+                            a {
+                                color: #00A148;
+                            }
+                        }
+
+                        input {
+                            appearance: none;
+                            -webkit-appearance: none;
+                            width: converter(18);
+                            height: converter(18);
+                            margin: 0;
+                            border: converter(1) solid #d9dfe3;
+                            border-radius: converter(5);
+                            background: #fff;
+                            cursor: pointer;
+                            flex-shrink: 0;
+                            @media (max-width: $max-width) {
+                                border: mconverter(1) solid #d9dfe3;
+                                border-radius: mconverter(4);
+                                width: mconverter(18);
+                                height: mconverter(18);
+                            }
+                            &:checked {
+                                background: #00a148;
+                                border-color: #00a148;
+                                position: relative;
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    width: converter(5);
+                                    height: converter(10);
+                                    left: converter(6);
+                                    top: converter(2);
+                                    border: solid #fff;
+                                    border-width: 0 converter(2) converter(2) 0;
+                                    transform: rotate(45deg);
+                                    @media (max-width: $max-width) {
+                                        border-width: 0 mconverter(2) mconverter(2) 0;
+                                        width: mconverter(5);
+                                        height: mconverter(10);
+                                        left: mconverter(6);
+                                        top: mconverter(2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .submit-btn{
+                    width:100%;
+                    border:none;
+                    background:#00A148;
+                    padding: converter(10) converter(20);
+                    border-radius: converter(50);
+                    gap: converter(5);
+                    font-size: converter(14);
+                    box-shadow: 0 converter(6) converter(10) 0 rgba(22, 163, 74, 0.20);
+                    cursor:not-allowed;
+                    color: #fff;
+                    font-family: $interfont;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    @media (max-width: $max-width) {
+                        padding: mconverter(10) mconverter(20);
+                        border-radius: mconverter(50);
+                        gap: mconverter(5);
+                        font-size: mconverter(14);
+                        box-shadow: 0 mconverter(6) mconverter(10) 0 rgba(22, 163, 74, 0.20);
+                    }
+
+                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                        padding: dconverter(10) dconverter(20);
+                        border-radius: dconverter(50);
+                        gap: dconverter(5);
+                        font-size: dconverter(14);
+                        box-shadow: 0 dconverter(6) dconverter(10) 0 rgba(22, 163, 74, 0.20);
+                    }
+                    svg {
+                        width: converter(20);
+                        height: converter(20);
+                        @media (max-width: $max-width) {
+                            width: mconverter(20);
+                            height: mconverter(20);
+                        }
+                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                            width: dconverter(20);
+                            height: dconverter(20);
+                        }
+                    }
+                    &.enabled{
+                        color:#fff;
+                        cursor:pointer;
+                        &:hover{
+                            filter:brightness(1.03);
+                        }
+                    }
+                }
+
+                .forgot-btn {
+                    margin-top: converter(15);
+                    @media (max-width: $max-width) {
+                        margin-top: mconverter(10);
+                    }
+                }
+            }
+
+            .login-line {
+                color: #A6A09B;
+                text-align: center;
+                font-family: $interfont;
+                font-weight: 400;
+                font-size: converter(13);
+                line-height: converter(20);
+                margin-top: converter(20);
+                @media (max-width: $max-width) {
+                    font-size: mconverter(13);
+                    line-height: mconverter(20);
+                    margin-top: mconverter(20);
+
+                }
+
+                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                    font-size: dconverter(15);
+                }
+
+                a {
+                    color: #00A63E;
+                    font-weight: 700;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: converter(5);
+                    @media (max-width: $max-width) {
+                        gap: mconverter(5);
+                    }
+                    svg {
+                        width: converter(20);
+                        height: converter(20);
+                        @media (max-width: $max-width) {
+                            width: mconverter(20);
+                            height: mconverter(20);
+                        }
+
+                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                            width: dconverter(20);
+                            height: dconverter(20);
+                        }
+
+
+                    }
+                }
+            }
+
+        }
+
+    }
+}

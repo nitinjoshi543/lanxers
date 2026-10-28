@@ -1,0 +1,2794 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+
+@function converter($size) {
+    @return calc($size / 19.20) * 1vw;
+}
+
+@function mconverter($size) {
+    @return calc($size / 3.90) * 1vw;
+}
+
+@mixin center {
+    display: flex; 
+    vertical-align: middle;
+    align-items: center;
+}
+
+@mixin justify-center {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+$interfont: 'Inter';
+$manropefont: 'Manrope';
+$contentcolor: #575757; 
+$casualblack: #181818;
+$greencolor: #00A148;
+$max-width: 900px;
+
+* {
+    body {
+        .payment-section {
+            padding: converter(50) converter(250);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F6F6F6;
+            @media (max-width: $max-width) {
+                padding: mconverter(20);
+                height: auto;
+            }
+            .pay-box {
+                @media (max-width: $max-width) {
+                    width: 100%;
+                }
+            }
+
+            .withdrawfunds{
+                background: #FFF;
+                display:flex; 
+                align-items:center; 
+                justify-content:space-between;
+                margin-bottom: converter(22); 
+                padding: converter(15) converter(30);
+                box-shadow: 0 converter(4) converter(4) 0 rgba(0, 0, 0, 0.05);
+                border-radius: converter(15);
+                .wallet-header {
+                    h2 {
+                        color: #000;
+                        font-family: $manropefont;
+                        font-size: converter(24);
+                        font-weight: 700;
+                        margin-bottom: converter(0);
+                    }
+                    p {
+                        color: #000;
+                        font-family: $interfont;
+                        font-size: converter(14);
+                        margin-bottom: converter(0);
+                    }
+                }
+                .funds-btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: converter(5);
+                    padding: converter(10);
+                    border-radius: converter(50);
+                    width: converter(170);
+                    height: converter(37);
+                    font-size: converter(14);
+                    border: none;
+                    background: $greencolor;
+                    color: #FFF;
+                    font-family: $interfont;
+                    svg {
+                        width: converter(12);
+                        height: converter(15);
+                    }
+                }
+                .addfund-btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: converter(5);
+                    padding: converter(10);
+                    border-radius: converter(50);
+                    width: converter(170);
+                    height: converter(37);
+                    font-size: converter(14);
+                    border: none;
+                    background: $greencolor;
+                    color: #FFF;
+                    font-family: $interfont;
+                    @media (max-width: $max-width) {
+                        gap: mconverter(5);
+                        padding: mconverter(10);
+                        border-radius: mconverter(50);
+                        width: mconverter(165);
+                        height: mconverter(31);
+                        font-size: mconverter(14);
+                        line-height: 0;
+                        margin-top: mconverter(5);
+                    }
+
+                    svg {
+                        width: converter(12);
+                        height: converter(15);
+                        @media (max-width: $max-width) { 
+                            width: converter(12);
+                            height: converter(15);
+                        }
+                    }
+                }
+                .kycpending-btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: converter(5);
+                    padding: converter(10);
+                    border-radius: converter(50);
+                    width: converter(170);
+                    height: converter(37);
+                    font-size: converter(14);
+                    border: none;
+                    background: #ECC800;
+                    color: #4C4C4C;
+                    font-family: $interfont;
+                    font-weight: 600;
+                    @media (max-width: $max-width) {
+                        gap: mconverter(5);
+                        padding: mconverter(10);
+                        border-radius: mconverter(50);
+                        width: mconverter(165);
+                        height: mconverter(31);
+                        font-size: mconverter(14);
+                        line-height: 0;
+                        margin-top: mconverter(5);
+                    }
+                    svg {
+                        width: converter(20);
+                        height: converter(20);
+                        @media (max-width: $max-width) {
+                            width: mconverter(20);
+                            height: mconverter(20);
+                        }
+                    }
+                }
+                @media (max-width: $max-width) { 
+                    display: none;
+                }
+            }
+
+            .walletgrid { 
+                display:grid; 
+                grid-template-columns:1.65fr 1fr; 
+                gap: converter(20); 
+                align-items:start; 
+
+                @media (max-width: $max-width) { 
+                    grid-template-columns: 1fr; 
+                    gap: mconverter(20); 
+                }
+
+                .wallet-left {
+                    .top-row { 
+                        display:grid; 
+                        grid-template-columns:1.15fr 1fr; 
+                        gap: converter(20); 
+                        margin-bottom: converter(20); 
+
+                        @media (max-width: $max-width) { 
+                            grid-template-columns: 1fr; 
+                            gap: mconverter(10); 
+                            margin-bottom: mconverter(10); 
+
+                        }
+
+                        .d-balance-card{
+                            background: linear-gradient(98deg, #124A30 -5.69%, #0D2219 98.61%);
+                            color:#fff; 
+                            position:relative; 
+                            overflow:hidden;
+                            display:flex; 
+                            flex-direction:column; 
+                            justify-content:center;
+                            justify-content: space-between;
+                            padding: converter(20) converter(25); 
+                            width: converter(460);
+                            height: converter(202);
+                            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
+                            border-radius: converter(20);
+
+                            @media (max-width: $max-width) {
+                                padding: mconverter(25) mconverter(20); 
+                                width: 100%;
+                                height: mconverter(177);
+                                border-radius: mconverter(10);
+                                justify-content: center;
+                            }
+
+                            .label-text {
+                                h2 {
+                                    color: #FFF;
+                                    font-family: $interfont;
+                                    font-size: converter(16);
+                                    font-weight: 500;
+                                    margin-bottom: converter(0);
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(16);
+                                    }
+                                    
+                                }
+
+                                p{
+                                    color: #FFF;
+                                    font-family: $interfont;
+                                    font-size: converter(14);
+                                    font-weight: 400;
+                                    margin-bottom: converter(0);
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(14);
+                                        margin-bottom: mconverter(8);
+                                    }
+                                    br {
+                                        display: none;
+                                        @media (max-width: $max-width) {
+                                            display: block;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .amount{
+                                color: #FFF;
+                                font-family: $manropefont;
+                                font-size: converter(30);
+                                font-weight: 700;
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(20);
+                                }
+                            }
+
+                            .d-illustration {
+                                position:absolute; 
+                                right:0; 
+                                top: 50%;
+                                transform: translateY(-49%); 
+                                width: converter(209);
+                                height: converter(209);
+                                opacity:.95;
+
+                                @media (max-width: $max-width) {
+                                    width: mconverter(125);
+                                    height: mconverter(125);
+                                    right: mconverter(20);
+                                }
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            .funds-btn {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: converter(5);
+                                padding: converter(10);
+                                border-radius: converter(50);
+                                width: converter(170);
+                                height: converter(37);
+                                font-size: converter(14);
+                                border: none;
+                                background: $greencolor;
+                                color: #FFF;
+                                font-family: $interfont;
+
+                                @media (max-width: $max-width) {
+                                    gap: mconverter(5);
+                                    padding: mconverter(10);
+                                    border-radius: mconverter(50);
+                                    width: mconverter(165);
+                                    height: mconverter(31);
+                                    font-size: mconverter(14);
+                                    line-height: 0;
+                                    margin-top: mconverter(5);
+                                }
+                                svg {
+                                    width: converter(15);
+                                    height: converter(18);
+                                    @media (max-width: $max-width) {
+                                        width: mconverter(15);
+                                        height: mconverter(18);
+                                    }
+                                }
+                            }
+
+                            .addfund-btn {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: converter(5);
+                                padding: converter(10); 
+                                border-radius: converter(50);
+                                width: converter(170);
+                                height: converter(37);
+                                font-size: converter(14);
+                                border: none;
+                                background: $greencolor;
+                                color: #FFF;
+                                font-family: $interfont;
+                                @media (max-width: $max-width) {
+                                    gap: mconverter(5);
+                                    padding: mconverter(10);
+                                    border-radius: mconverter(50);
+                                    width: mconverter(140);
+                                    height: mconverter(31);
+                                    font-size: mconverter(14);
+                                    line-height: 0;
+                                    margin-top: mconverter(5);
+                                }
+
+                                svg {
+                                    width: converter(12);
+                                    height: converter(15);
+                                    @media (max-width: $max-width) {
+                                        width: mconverter(15);
+                                        height: mconverter(18);
+                                    }
+                                }
+                            }
+
+                            .kycpending-btn {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: converter(5);
+                                padding: converter(10);
+                                border-radius: converter(50);
+                                width: converter(170);
+                                height: converter(37);
+                                font-size: converter(14);
+                                border: none;
+                                font-weight: 600;
+                                background: #ECC800;
+                                color: #4C4C4C;
+                                font-family: $interfont;
+                                
+
+                                @media (max-width: $max-width) {
+                                    gap: mconverter(5);
+                                    padding: mconverter(10);
+                                    border-radius: mconverter(50);
+                                    width: mconverter(165);
+                                    height: mconverter(31);
+                                    font-size: mconverter(14);
+                                    line-height: 0;
+                                }
+                                svg {
+                                    width: converter(20);
+                                    height: converter(20);
+                                    @media (max-width: $max-width) {
+                                        width: mconverter(15);
+                                        height: mconverter(15);
+                                    }
+                                }
+                            }
+                        }
+
+                        .stacked{ 
+                            display:flex; 
+                            flex-direction:column; 
+                            gap: converter(10) converter(0);
+
+                            @media (max-width: $max-width) {
+                                gap: mconverter(10) mconverter(0);
+                            }
+
+                            .d-mini-card{
+                                flex:1; 
+                                display:flex; 
+                                justify-content:space-between; 
+                                align-items:center;
+                                padding: converter(11) converter(20);
+                                width: converter(460);
+                                height: converter(96); 
+                                border-radius: converter(9);
+                                border: converter(1) solid #FDEDC5;
+                                @media (max-width: $max-width) {
+                                    padding: mconverter(10) mconverter(20);
+                                    width: 100%;
+                                    height: mconverter(88); 
+                                    border-radius: mconverter(9);
+                                    border: mconverter(1) solid #FDEDC5;
+                                }
+
+                                .label {
+                                    color: #272727;
+                                    font-family: $interfont;
+                                    font-size: converter(14);
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(14);
+                                    }
+                                }
+
+                                .amount{
+                                    color: #272727;
+                                    font-family: $manropefont;
+                                    font-size: converter(30);
+                                    font-weight: 700;
+                                    line-height: converter(35);
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(24);
+                                        line-height: mconverter(35);
+                                    }
+                                }
+                            
+                                .footnote {
+                                    color: rgba(39, 39, 39, 1);
+                                    font-family: $interfont;
+                                    font-size: converter(12);
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(12);
+                                    }
+                                }
+
+                                .icon-circle {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    aspect-ratio: 1/1;
+                                    width: converter(60);
+                                    height: converter(60);
+                                    padding: converter(11);
+                                    border-radius: converter(50);
+                                    @media (max-width: $max-width) {
+                                        width: mconverter(60);
+                                        height: mconverter(60);
+                                        padding: mconverter(11);
+                                        border-radius: mconverter(50);
+                                    }
+
+                                    svg {
+                                        width: converter(38);
+                                        height: converter(38);
+                                        @media (max-width: $max-width) {
+                                            width: mconverter(38);
+                                            height: mconverter(38);
+                                        }
+
+                                    }
+                                }
+                            }
+
+                            .hold {
+                                background: #FFFCF4;
+                            }
+                            .earn {
+                                border-style: #C0EEC0;
+                                background: #F3FFF3;
+                            }
+                        }
+                    }
+                    
+                    .wallet-summary{
+                        display: none;
+                        
+                        @media (max-width: $max-width) {
+                            display: block;
+                            background:#fff; 
+                            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
+                            padding: mconverter(20); 
+                            margin: mconverter(20) converter(0); 
+                            border-radius: mconverter(15);
+                            border: mconverter(1) solid #E8E8E8;
+                            width: 100%;
+                            height: mconverter(191);
+                        }
+                        h3 {
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(16);
+                                color: #000;
+                                font-family: $manropefont;
+                                font-weight: 600;
+                                text-align: center;
+                                margin-bottom: mconverter(10);
+                            }
+                        }
+                        
+
+                        .summary-row {
+                            @media (max-width: $max-width) {
+                                margin-bottom: mconverter(13);
+                                display: flex;
+                                align-items: center;
+                                align-self: stretch;
+                                justify-content: space-between;
+                            }
+                            span {
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(14);
+                                    color: #636363;
+                                    font-family: $interfont;
+                                }
+                            }
+                            .gren-price
+                            {
+                                color: #00A148;
+                                font-weight: 700;
+                            }
+                            .hold-price {
+                                color: #F49600;
+                                font-weight: 700;
+                            }
+                            .total-price {
+                                color: #3E3E3E;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+
+                    .wallet-tabpanel {
+                        background: #FFF;
+                        border-radius: converter(15);
+                        border: converter(1) solid #E8E8E8;
+                        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
+                        width: converter(940);
+                        height: converter(402);
+
+                        @media (max-width: $max-width) { 
+                            border-radius: mconverter(0);
+                            border: none;
+                            width: 100%;
+                            height: auto;
+                            background: transparent;
+                            border: none;
+                            box-shadow: none;
+                        }
+
+                        .tabs-wrapper{
+                           
+                            .custom-tabs{
+                                display:flex;
+                                gap: converter(40);
+                                border-bottom: converter(1) solid #E8E8E8;
+                                padding: converter(0) converter(40);
+
+                                @media (max-width: $max-width) {
+                                    gap: mconverter(30);
+                                    border-bottom: mconverter(1) solid #E8E8E8;
+                                    border-top: mconverter(1) solid #E8E8E8;
+                                    padding: mconverter(0) mconverter(23);
+                                    margin: 0 mconverter(-20);
+                                }
+
+                                .tab-btn{
+                                    background: transparent;
+                                    border: none;
+                                    color: #272727;
+                                    text-align: center;
+                                    font-family: $interfont;
+                                    font-size: converter(14);
+                                    cursor: pointer;
+                                    position: relative;
+                                    white-space: nowrap;
+                                    padding: converter(16) converter(0);
+
+                                    @media (max-width: $max-width) {
+                                        padding: mconverter(10) mconverter(0);
+                                        font-size: mconverter(14);
+                                    }
+                                    &.active{
+                                        color: #00A148;
+                                        &::after {
+                                            content:"";
+                                            position:absolute;
+                                            left:0;
+                                            bottom:-1px;
+                                            width: 100%;
+                                            height: converter(2);
+                                            background:#00A651;
+                                            @media (max-width: $max-width) {
+                                                height: mconverter(2);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .tab-content{
+                                display:none;
+                                &.active{
+                                    display:block;
+                                }
+
+                                .transaction-card{
+                                    .wallet-grid {
+                                        display:grid;
+                                        grid-template-columns: 1.8fr 1.8fr 2.2fr 2.3fr 1.5fr 1.2fr;
+                                        align-items: center;
+
+                                        @media (max-width: $max-width) {
+                                            display: flex!important; 
+                                            flex-wrap: wrap!important;
+                                        }
+                                    }
+
+                                    .referral-header{
+                                        background: #F9FAFB;
+                                        padding: converter(12) converter(40);
+                                        font-size: converter(12); 
+                                        font-family: $interfont;
+                                        font-weight: 600;
+                                        color:#4A5565;
+                                        border-bottom:converter(1) solid #E5E7EB;
+
+                                        @media (max-width: $max-width) {
+                                            display: none!important; 
+                                        }
+                                        
+                                    }
+
+                                    .referral-table { 
+                                        padding: converter(10) converter(40);
+                                        border-bottom: converter(1) solid #E5E7EB;
+
+                                        @media (max-width: $max-width) {
+                                            width: 100%;
+                                            padding: mconverter(15);
+                                            margin-top: mconverter(15);
+                                            border-radius: mconverter(10);
+                                            border: mconverter(1) solid #E5E7EB;
+                                            background: #FFF;
+                                            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.10);
+                                        }
+                                        
+                                        &:last-child {
+                                            border: none;
+                                        }
+                                        // .ref-num {
+                                        //     color: #009689!important;
+                                        // }
+                                        .date-one {
+                                            @media (max-width: $max-width) {
+                                                width: 100%;
+                                                padding-bottom: mconverter(10) !important;
+                                                border-bottom: mconverter(1) dashed #E5E7EB;
+                                                margin-bottom: mconverter(12);
+                                                order: 4;
+                                                display: flex;
+                                                align-items: center;
+                                                gap: mconverter(3);
+                                                span {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    gap: mconverter(5);
+                                                }
+                                            }
+                                            svg {
+                                                display: none;
+                                                @media (max-width: $max-width) {
+                                                    display: block;
+                                                    width: mconverter(14);
+                                                    height: mconverter(14);
+                                                }
+                                            }
+
+                                            .dot-svg {
+                                                @media (max-width: $max-width) {
+                                                    display: block;
+                                                    width: mconverter(5);
+                                                    height: mconverter(5);
+                                                }
+                                            }
+                                        }
+
+                                        .name-tst{
+                                            @media (max-width: $max-width) {
+                                                width: 50%;
+                                                order: 1;
+                                            }
+                                        }
+
+                                        .amount-tst {
+                                            @media (max-width: $max-width) {
+                                                width: 50%;
+                                                order: 2;
+                                                text-align: right;
+                                            }
+                                        }
+                                        
+                                        .project {
+                                            font-weight: 500!important;
+                                            @media (max-width: $max-width) {
+                                                order: 3;
+                                                width: 100%;
+                                                color: #848484!important;
+                                                font-size: mconverter(12)!important;
+                                            }
+                                        }
+
+                                        .payment-rece {
+                                            @media (max-width: $max-width) {
+                                                order: 5;
+                                                width: 50%;
+                                                padding-bottom: 0!important;
+                                            }
+                                        }
+                                        .status-box {
+                                             @media (max-width: $max-width) {
+                                                order: 6;
+                                                width: 50%;
+                                                text-align: right;
+                                                padding-bottom: 0!important;
+                                            }
+                                        }
+
+                                        .cell{
+                                            font-size: converter(13);
+                                            color: #364153;
+                                            font-family: $interfont;
+                                            font-weight: 400;
+                                            padding-right: converter(5);
+
+                                            @media (max-width: $max-width) {
+                                                font-size: mconverter(14);
+                                                padding-bottom: mconverter(7);
+                                            }
+
+                                            a.download-btn {
+                                                border-radius: converter(4);
+                                                background: #226E65;
+                                                padding: converter(8) converter(15) converter(8) converter(10);
+                                                font-family: $interfont;
+                                                font-size: converter(12);
+                                                font-weight: 400;
+                                                color: #fff;
+
+                                                @media (max-width: $max-width) {
+                                                    border-radius: mconverter(10);
+                                                    padding: mconverter(12) mconverter(15);
+                                                    font-size: mconverter(17);
+                                                    display: table;
+                                                    width: 100%;
+                                                    text-align: center;
+                                                }
+                                                svg{
+                                                    width: converter(18);
+                                                    height: converter(18);
+                                                    fill:#9ca3af;
+
+                                                    @media (max-width: $max-width) {
+                                                        width: mconverter(18);
+                                                        height: mconverter(18);
+                                                    }
+                                                }
+                                            }
+
+                                            .payment-type, .withdrawal {
+                                                padding: converter(5) converter(8);
+                                                border-radius: converter(7);
+                                                font-size: converter(12);
+                                                background: #E4FFD6;
+                                                color: #00A148;
+                                                @media (max-width: $max-width) {
+                                                    padding: mconverter(5) mconverter(8);
+                                                    border-radius: mconverter(7);
+                                                    font-size: mconverter(12);
+                                                }
+
+                                            }
+
+                                            .withdrawal {
+                                                background: #D6E5FF;
+                                                color: #07008D;    
+                                            }
+
+                                            .status {
+                                                padding: converter(5) converter(8);
+                                                border-radius: converter(7);
+                                                font-size: converter(12);
+                                                @media (max-width: $max-width) {
+                                                    padding: mconverter(5) mconverter(8);
+                                                    border-radius: mconverter(7);
+                                                    font-size: mconverter(12);
+                                                }
+
+                                            }
+                                            .completed {
+                                                background: #E4FFD6;
+                                                color: #00A148;    
+                                            }
+
+                                            .failed {
+                                                background: #bc050528;
+                                                color: #A10000;    
+                                            }
+                                            .pending {
+                                                background: #FFF8D6;
+                                                color: #A65600;    
+                                            }
+
+                                            .received, .deduction {
+                                                color: #00A148;
+                                                font-weight: 700;
+                                                font-size: converter(12);
+                                                @media (max-width: $max-width) {
+                                                    font-size: mconverter(12);
+                                                }
+                                            }
+                                            .deduction {
+                                                color: #A10000;
+                                            }
+
+                                        }
+                                    }   
+                                }
+
+                                .empty-state{ 
+                                    text-align:center; 
+                                    padding: converter(45) converter(0) converter(40);
+                                    width: converter(375);
+                                    display: flex;
+                                    flex-direction: column;
+                                    margin: auto;
+                                    align-items: center;
+                                    justify-content: center; 
+
+                                    @media (max-width: $max-width) {
+                                        margin-top: mconverter(10);
+                                        padding: mconverter(45) mconverter(30) mconverter(40);
+                                        width: 100%;
+                                        border-radius: mconverter(15);
+                                        border: mconverter(1) solid #E8E8E8;
+                                        background: #FFF;
+                                    }
+
+                                    .empty-illustration { 
+                                        width: converter(153);
+                                        height: converter(113);
+                                        margin-bottom: converter(20);
+                                        @media (max-width: $max-width) {
+                                            width: mconverter(153);
+                                            height: mconverter(113);
+                                            margin-bottom: mconverter(20);
+                                        }
+
+                                        
+                                        img {
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: cover;
+                                        }
+                                    }
+
+                                    h3{
+                                        color: #272727;
+                                        font-family: $manropefont;
+                                        font-size: converter(16);
+                                        font-weight: 600;
+                                        @media (max-width: $max-width) {
+                                            font-size: mconverter(16);
+                                        }
+                                    }
+
+                                    p {
+                                        color: #272727;
+                                        font-family: $interfont;
+                                        font-size: converter(14);
+                                        margin-bottom: converter(15);
+                                        @media (max-width: $max-width) {
+                                            font-size: mconverter(14);
+                                            margin-bottom: mconverter(15);
+                                        }
+                                    }
+
+                                    .emptybtn {
+                                        width: converter(157);
+                                        height: converter(35);
+                                        padding: converter(5) converter(15);
+                                        border-radius: converter(30);
+                                        font-size: converter(14);
+                                        gap: converter(2);
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        background: #00A148;
+                                        border: none;
+                                        color: #FFF;
+                                        font-family: $interfont;
+
+                                        @media (max-width: $max-width) {
+                                            width: mconverter(157);
+                                            height: mconverter(35);
+                                            padding: mconverter(5) mconverter(15);
+                                            border-radius: mconverter(30);
+                                            font-size: mconverter(14);
+                                            gap: mconverter(2);
+                                        }
+
+                                        svg {
+                                            width: converter(16);
+                                            height: converter(16);
+                                            @media (max-width: $max-width) {
+                                                width: mconverter(16);
+                                                height: mconverter(16);
+                                            }
+                                        }
+                                    }
+                                }
+
+
+                            }
+                        }                 
+                    }
+
+                    .pagination {
+                        display: flex;
+                        justify-content: center;
+                        gap: converter(5);
+                        margin-top: converter(20);
+
+                        @media (max-width: $max-width) {
+                            gap: mconverter(5);
+                            margin-top: mconverter(20);
+                        }
+
+                        a {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            text-decoration: none;
+                            color: #555;
+                            background: #fff;
+                            font-size: converter(13);
+                            width: converter(32);
+                            height: converter(32);
+                            line-height: 0;
+                            border-radius: 50%;
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(13);
+                                width: mconverter(32);
+                                height: mconverter(32);
+                            }
+                            svg {
+                                width: converter(5);
+                                height: converter(8);
+                                @media (max-width: $max-width) {
+                                    width: mconverter(5);
+                                    height: mconverter(8);
+                                }
+                                    
+                            }
+                        }
+
+                        .active {
+                            background: #00A148;
+                            color: #fff;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                
+                .wallet-right {
+                    @media (max-width: $max-width) {
+                        display: none;
+                    }
+                    .wallet-summary{
+                        background:#fff; 
+                        padding: converter(20) converter(30); 
+                        margin-bottom: converter(20); 
+                        border-radius: converter(15);
+                        border: converter(1) solid #E8E8E8;
+                        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
+                        width: converter(460);
+                        height: converter(300);
+                        // @media (max-width: $max-width) {
+                        //     display: none;
+                        // }
+                        h3 {
+                            color: #000;
+                            font-family: $manropefont;
+                            font-size: converter(16);
+                            font-weight: 600;
+                            text-align: center;
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(16);
+                            }
+                        }
+                        img {
+                            margin: 0 auto converter(10);
+                            display: table;
+                            width: converter(116);
+                            height: converter(94);
+                            @media (max-width: $max-width) {
+                                display: none;
+                            }
+                        }
+
+                        .summary-row {
+                            display: flex;
+                            align-items: center;
+                            align-self: stretch;
+                            justify-content: space-between;
+                            margin-bottom: converter(13);
+                            @media (max-width: $max-width) {
+                                margin-bottom: mconverter(13);
+                            }
+                            span {
+                                color: #636363;
+                                font-family: $interfont;
+                                font-size: converter(14);
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(14);
+                                }
+                            }
+                            .gren-price
+                            {
+                                color: #00A148;
+                                font-weight: 700;
+                            }
+                            .hold-price {
+                                color: #F49600;
+                                font-weight: 700;
+                            }
+                            .total-price {
+                                color: #3E3E3E;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+
+                    .complete-kyc {
+                        background:#fff;
+                        display: flex;
+                        flex-direction: column;
+                        padding: converter(20) converter(30); 
+                        border-radius: converter(15);
+                        border: converter(1) solid #E8E8E8;
+                        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
+                        width: converter(460);
+                        height: converter(220);
+
+                        @media (max-width: $max-width) {
+                            padding: mconverter(20); 
+                            border-radius: mconverter(15);
+                            border: mconverter(1) solid #E8E8E8;
+                            width: 100%;
+                            height: mconverter(220);
+                        }
+
+                        .kyc-card {
+                            display:flex;
+                            justify-content:space-between;
+                            align-items:center;
+                            overflow:hidden;
+                            gap: converter(20);
+                            @media (max-width: $max-width) {
+                                gap: mconverter(20);
+                            }
+
+                            .kyc-content{
+                                width: converter(200);
+                                @media (max-width: $max-width) {
+                                    width: mconverter(200);
+                                }
+                                h3 {
+                                    color: #484848;
+                                    font-family: $interfont;
+                                    font-size: converter(16);
+                                    font-weight: 500;
+                                    line-height: converter(22);
+                                    margin-bottom: converter(6);
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(16);
+                                        line-height: mconverter(22);
+                                        margin-bottom: monverter(6);
+                                    }
+                                    span {
+                                        color: #00A148;
+                                        font-weight: 600;
+                                    }
+                                }
+
+                                p {
+                                    color: #6B6B6B;
+                                    font-family: $interfont;
+                                    font-size: converter(14);
+                                    margin-bottom: converter(20);
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(14);
+                                        margin-bottom: mconverter(20);
+                                    }
+                                }
+
+                                .kyc-btn, button{
+                                    display: inline-flex;
+                                    align-items: center;
+                                    color:#fff;
+                                    background-color: #00A148;
+                                    font-family: $interfont;
+                                    text-decoration:none;
+                                    border: none;
+                                    border-radius: converter(50);
+                                    gap: converter(5);
+                                    padding: converter(5) converter(15);
+                                    font-size: converter(14);
+                                    @media (max-width: $max-width) {
+                                        border-radius: mconverter(50);
+                                        gap: mconverter(5);
+                                        padding: mconverter(5) mconverter(15);
+                                        font-size: mconverter(14);
+                                    }
+                                    svg {
+                                        width: converter(8);
+                                        height: converter(16);
+                                        aspect-ratio: 1/2;
+                                        @media (max-width: $max-width) {
+                                            width: mconverter(8);
+                                            height: mconverter(16);
+                                        }
+                                    }
+                                }
+                                
+                            }
+
+                            .kyc-image{
+                                flex:1;
+                                display:flex;
+                                justify-content:flex-end;
+                                width: converter(208);
+                                height: converter(172);
+                                @media (max-width: $max-width) {
+                                    width: mconverter(100);
+                                    height: mconverter(100);
+                                }
+                                img{
+                                    width:100%;
+                                    height: 100%;
+                                    object-fit: contain;
+                                }
+                            }
+
+                        }
+
+                        .withdraw-card{
+                            h4 {
+                                color: #000;
+                                font-family: $manropefont;
+                                font-size: converter(16);
+                                font-weight: 600;
+                                margin-bottom: converter(13);
+                                @media (max-width: $max-width) {
+                                    margin-bottom: mconverter(13);
+                                    font-size: mconverter(16);
+                                }
+                            }
+                            
+                            .bank-card{
+                                display:flex;
+                                justify-content:space-between;
+                                align-items: flex-start;
+                                margin-bottom: converter(40);
+                                @media (max-width: $max-width) {
+                                    margin-bottom: mconverter(20);
+                                }
+
+                                .bank-left{
+                                    display:flex;
+                                    align-items: center;
+                                    gap: converter(14);
+                                    @media (max-width: $max-width) {
+                                        gap: mconverter(14);
+                                    }
+
+                                    .bank-logo{
+                                        width: converter(50);
+                                        height: converter(50);
+                                        background:#F3F3F3;
+                                        border-radius: converter(7);
+                                        padding: converter(8);
+
+                                        @media (max-width: $max-width) {
+                                            width: mconverter(50);
+                                            height: mconverter(50);
+                                            border-radius: mconverter(7);
+                                            padding: mconverter(8);
+                                        }
+
+                                        img{
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: cover;
+                                        }
+                                    }
+
+
+                                    .bank-info {
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                        gap: converter(2);
+                                        @media (max-width: $max-width) {
+                                            gap: mconverter(2);
+                                        }
+                                        h3{
+                                            color: #2B2B2B;
+                                            font-family: $interfont;
+                                            font-size: converter(16);
+                                            font-weight: 600;
+                                            margin-bottom: converter(0);
+                                            @media (max-width: $max-width) {
+                                                font-size: mconverter(16);
+                                            }
+                                        }
+                                        span{
+                                            color: #303030;
+                                            font-family: $interfont;
+                                            font-size: converter(14);
+                                            font-weight: 400;
+                                            @media (max-width: $max-width) {
+                                                font-size: mconverter(14);
+                                            }
+                                        }
+                                    }
+
+                                }
+                                .primary-tag{
+                                    border-radius: converter(50);
+                                    background: #EEFFE5;
+                                    color:#39b54a;
+                                    padding: converter(5) converter(15);
+                                    font-size: converter(14);
+                                    font-family: $interfont;
+                                    font-weight:400;
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(14);
+                                        border-radius: mconverter(50);
+                                        padding: mconverter(5) mconverter(15);
+                                    }
+                                }
+                            }
+
+                            .withdraw-btn{
+                                width:100%;
+                                padding: converter(15);
+                                background:#fff;
+                                color: #000;
+                                text-align: center;
+                                font-family: $interfont;
+                                font-size: converter(14);
+                                border-radius: converter(10);
+                                border: converter(1) solid #808080;
+                                @media (max-width: $max-width) {
+                                    padding: mconverter(10);
+                                    font-size: mconverter(14);
+                                    border-radius: mconverter(10);
+                                    border: mconverter(1) solid #808080;
+                                }
+                            }
+
+                        }
+   
+                    }
+                }
+            }
+        }
+            
+        .withdraw-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            &.open { 
+                display: flex; 
+            }
+
+            .modal-sheet {
+                width: converter(460);
+                height: converter(440);
+                border-radius: converter(15);
+                background: #fff;
+                position: relative;
+                overflow: hidden;
+                animation: slideUp 0.25s ease-out;
+
+                @media (max-width: $max-width) {
+                    width: 100%;
+                    height: mconverter(470);
+                    border-radius: mconverter(15);
+                    margin: mconverter(20);
+                }
+
+                .wallet-arrow {
+                    position: absolute;
+                    right: converter(40);
+                    top: converter(40);
+                    width: converter(144);
+                    height: converter(96);
+                    transform: rotate(-3.75deg);
+                    @media (max-width: $max-width) {
+                        right: mconverter(40);
+                        top: mconverter(40);
+                        width: mconverter(174);
+                        height: mconverter(116);
+                    }
+                }
+
+                .svg-img1 {
+                    position: absolute;
+                    left: 0;
+                    top: converter(20);
+                    @media (max-width: $max-width) {
+                        top: mconverter(20);
+                    }
+                }
+
+                .svg-img2 {
+                    position: absolute;
+                    right: converter(50);
+                    top: converter(10);
+                    @media (max-width: $max-width) {
+                        top: mconverter(10);
+                        right: mconverter(50);
+                    }
+                }
+
+                .svg-img3 {
+                    position: absolute;
+                    right: converter(-60);
+                    top: converter(10);
+                    @media (max-width: $max-width) {
+                        right: mconverter(-60);
+                        top: mconverter(10);
+                    }
+                }
+
+                .modal-header {
+                    align-items: flex-start;
+                    position: relative;
+                    z-index: 9;
+                    gap: converter(12);
+                    padding: converter(20) converter(25);
+
+                    @media (max-width: $max-width) {
+                        gap: mconverter(12);
+                        padding: mconverter(20);
+                    }
+
+                    .walleticon {
+                        display: flex;
+                        width: converter(60);
+                        height: converter(60);
+                        padding: converter(10) converter(6);
+                        justify-content: center;
+                        align-items: center;
+                        aspect-ratio: 1/1;
+                        border-radius: converter(50);
+                        background: #E6F3E4;
+                        @media (max-width: $max-width) {
+                            width: mconverter(60);
+                            height: mconverter(60);
+                            padding: mconverter(10) mconverter(6);
+                            border-radius: mconverter(50);
+                        }
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .title-group { 
+                        flex: 1; 
+                    }
+
+                    h3 { 
+                        color: #000;
+                        font-family: $interfont;
+                        font-size: converter(16);
+                        font-weight: 500;
+                        margin-bottom: converter(5);
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(16);
+                            margin-bottom: mconverter(5);
+                        }
+                    }
+
+                    p { 
+                        color: #555;
+                        font-family: $interfont;
+                        line-height: converter(18);
+                        font-size: converter(14);
+                        margin-bottom: converter(0);
+                        @media (max-width: $max-width) {
+                            line-height: mconverter(18);
+                            font-size: mconverter(12);
+                            br {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .modal-close {
+                        display: flex;
+                        width: converter(30);
+                        height: converter(30);
+                        border-radius: converter(50);
+                        background: #F3F3F3;
+                        justify-content: center;
+                        align-items: center;
+                        border: none;
+                        @media (max-width: $max-width) {
+                            width: mconverter(30);
+                            height: mconverter(30);
+                            border-radius: mconverter(50);
+                        }
+                        svg {
+                            width: converter(24);
+                            height: converter(24);
+                            @media (max-width: $max-width) {
+                                width: mconverter(24);
+                                height: mconverter(24);
+                            }
+                        }
+                    }
+                }
+
+                @keyframes slideUp {
+                    from { transform: translateY(40px); opacity: 0; }
+                    to { transform: translateY(0); opacity: 1; }
+                }
+
+                .popup-middle {
+                    width: 100%;
+                    background: #FFF;
+                    overflow: hidden;
+                    box-shadow: 0 -1px 17.4px 0 rgba(0, 0, 0, 0.10);
+                    padding: converter(20);
+                    height: converter(340);
+                    border-radius: converter(20);
+                    position: relative;
+                    z-index: 9;
+
+                    @media (max-width: $max-width) {
+                        padding: mconverter(20);
+                        height: mconverter(370);
+                        border-radius: mconverter(10) mconverter(10) mconverter(20) mconverter(20);
+                    }
+                                          
+                    .balance-row {
+                        display: flex; 
+                        justify-content: space-between; 
+                        align-items: center;
+                        margin-bottom: converter(8);
+                        @media (max-width: $max-width) {
+                            margin-bottom: mconverter(8);
+                        }
+                        span {
+                            color: #6D6D6D;
+                            font-family: $interfont;
+                            font-size: converter(12);
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(12);
+                            }
+                        }
+                        .amt {
+                            color: #00A148;
+                            font-weight: 700;
+                        }
+                    }
+
+                    .amount-box {
+                        display: flex;
+                        width: 100%;
+                        padding: converter(12) converter(15);
+                        align-items: center;
+                        gap: converter(10);
+                        margin-bottom: converter(12);
+                        border-radius: converter(7);
+                        border: converter(1) solid #CEE8DA;
+                        background: #F8F8F8;
+                        @media (max-width: $max-width) {
+                            padding: mconverter(8) mconverter(15);
+                            gap: mconverter(8);
+                            margin-bottom: mconverter(12);
+                            border-radius: mconverter(7);
+                            border: mconverter(1) solid #CEE8DA;
+                        }
+
+                        .rupee { 
+                            color: #232323;
+                            font-family: $interfont;
+                            font-size: converter(30);
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(20);
+                            }
+                        }
+                                
+                        input {
+                            border: none; 
+                            background: transparent; 
+                            outline: none;
+                            color: #787878;
+                            font-family: $interfont;
+                            font-size: converter(30);
+                            width: 100%;
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(20);
+                            }
+                        }
+                    }
+
+                    .quick-amounts { 
+                        display: flex; 
+                        gap: converter(8); 
+                        margin-bottom: converter(15); 
+                        flex-wrap: wrap; 
+
+                        @media (max-width: $max-width) {
+                            gap: mconverter(8); 
+                            margin-bottom: mconverter(15); 
+                        }
+
+                        button {
+                            display: flex;
+                            border: none;
+                            justify-content: center;
+                            align-items: center;
+                            padding: converter(5) converter(20);
+                            border-radius: converter(7);
+                            background: #F8F8F8;
+                            box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15) inset;
+                            color: #00A148;
+                            font-family: $interfont;
+                            font-size: converter(16);
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(14);
+                                padding: mconverter(5) mconverter(20);
+                                border-radius: mconverter(7);
+                            }
+                        }
+                    }
+
+                    .secure-box {
+                        display: flex; 
+                        gap: converter(10);
+                        padding: converter(14);
+                        margin-bottom: converter(15);
+                        border-radius: converter(9);
+                        background: #EFF7EF;
+                        @media (max-width: $max-width) {
+                            gap: mconverter(10);
+                            padding: mconverter(10);
+                            margin-bottom: mconverter(15);
+                            border-radius: mconverter(9);
+                        }
+                        .badge {
+                            width: converter(36);
+                            height: converter(36);;
+                            padding: converter(6);
+                            border-radius: converter(50);
+                            background: #DBF1E0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            @media (max-width: $max-width) {
+                                width: mconverter(36);
+                                height: mconverter(36);;
+                                padding: mconverter(6);
+                                border-radius: mconverter(50);
+                            }
+                            svg {
+                                width: converter(24);
+                                height: converter(24);
+                                @media (max-width: $max-width) {
+                                    width: mconverter(24);
+                                    height: mconverter(24);
+                                }
+                            }
+                        }
+
+                        .text {
+                            h4 {
+                                color: #000;
+                                font-family: $interfont;
+                                font-weight: 500;
+                                font-size: converter(16);
+                                margin-bottom: converter(4);
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(16);
+                                    margin-bottom: mconverter(4);
+                                }
+                            }
+                            p { 
+                                color: #585858;
+                                font-family: $interfont;
+                                font-size: converter(14);
+                                line-height: converter(20);
+                                margin-bottom: converter(0);
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(13.5);
+                                    line-height: mconverter(20);
+                                }
+                            }
+                        }
+                    }
+
+                    .confirm-btn {
+                        width: 100%;
+                        padding: converter(10) converter(20);
+                        font-size: converter(14);
+                        border-radius: converter(50);
+                        background: #00A148;
+                        border: none;
+                        color: #fff;
+                        font-family: $interfont;
+                        font-weight: 600;
+                        cursor: pointer;
+                        @media (max-width: $max-width) {
+                            padding: mconverter(10) mconverter(20);
+                            font-size: mconverter(14);
+                            border-radius: mconverter(50);
+                        }
+                    }
+                }
+            }
+        }
+
+        .kyc-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+
+            &.open { 
+                display: flex; 
+            }
+
+            .kyc-section {
+                width: converter(730); 
+                border-radius: converter(10);
+                padding: converter(30) converter(38);
+                background-color: #fff;
+
+                @media (max-width: $max-width) {
+                    width: 100%; 
+                    border-radius: mconverter(10);
+                    padding: mconverter(20) mconverter(17);
+                    margin: mconverter(20);
+                }
+
+                .progress-wrapper {
+                    padding-bottom: converter(20);
+                    margin-bottom: converter(20);
+                    border-bottom: converter(1) solid #E5E5E5;
+                    @media (max-width: $max-width) {
+                        padding-bottom: mconverter(16);
+                        margin-bottom: mconverter(16);
+                        border-bottom: mconverter(1) solid #E5E5E5;
+                    }
+
+                    .progress-steps {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        max-width: 90%;
+                        margin: auto;
+                        .step-item {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            .circle {
+                                width: converter(36);
+                                height: converter(36);
+                                border-radius: converter(100);
+                                border: converter(1) solid #00A148;
+                                background: #fff;
+                                line-height: converter(38);
+                                color: #00A148;
+                                font-family: $interfont;
+                                font-weight: 500;
+                                font-size: converter(16);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                @media (max-width: $max-width) {
+                                    width: mconverter(24);
+                                    height: mconverter(24);
+                                    border-radius: mconverter(100);
+                                    border: mconverter(1) solid #00A148;
+                                    line-height: mconverter(38);
+                                    font-size: mconverter(14);
+                                }
+                            }
+                            &.active,
+                            &.completed {
+                                .circle {
+                                    background: #00A148;
+                                    color: #fff;
+                                }
+                            }
+                        }
+
+                        .line {
+                            width: converter(107);
+                            height: converter(6);
+                            background: #B9B9B9;
+                            border-radius: converter(5);
+                            margin: converter(0) converter(14);
+                            position: relative;
+                            overflow: hidden; 
+                            @media (max-width: $max-width) {
+                                width: mconverter(50);
+                                height: mconverter(6);
+                                border-radius: mconverter(5);
+                                margin: mconverter(0) mconverter(5);
+                            }
+                            &.completed {
+                                background: #00A148;
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    height: 100%;
+                                    width: 100%;
+                                    background: #00A148;
+                                    transition: width .3s ease;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .kycpanel {
+                    .step-panel {
+                        .kyc-header {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+                            h2 {
+                                color: #000;
+                                font-family: $manropefont;
+                                font-size: converter(24);
+                                font-weight: 700;
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(18);
+                                    font-weight: 500;
+                                    margin-bottom: mconverter(5);
+                                }
+                            }
+
+                            p {
+                                color:202020;
+                                font-family: $interfont;
+                                font-size: converter(14);
+                                font-weight: 400;
+                                line-height: converter(20);
+                                margin-bottom: converter(0);
+
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(14);
+                                    line-height: mconverter(20);
+                                    br {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    
+                        .aadhaar-verified-box {
+                            position: relative;
+                            .tick-icon {
+                                position: absolute;
+                                right: converter(24);
+                                top: converter(62);
+                                transform: translateY(-50%);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                @media (max-width: $max-width) {
+                                    right: mconverter(20);
+                                    top: mconverter(54);
+                                }
+                                svg {
+                                    width: converter(20);
+                                    height: converter(20);
+
+                                    @media (max-width: $max-width) {
+                                        width: mconverter(20);
+                                        height: mconverter(20);
+                                    }
+                                }
+                            }
+                        }
+
+                        .input-with-action {
+                            position: relative;
+
+                            .verify-btn {
+                                position: absolute;
+                                right: converter(10);
+                                top: converter(18);
+                                transform: translateY(-50%);
+                                border: none;
+                                background: transparent;
+                                color: #00A148;
+                                font-family: $interfont;
+                                font-size: converter(14);
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(14);
+                                    right: mconverter(10);
+                                    top: mconverter(18);
+                                }
+                            }
+
+                            .tick-icon {
+                                position: absolute;
+                                right: converter(10);
+                                top: converter(9);
+                                @media (max-width: $max-width) {
+                                    right: mconverter(10);
+                                    top: mconverter(9);
+                                }
+                                svg {
+                                    width: converter(20);
+                                    height: converter(20);
+                                    @media (max-width: $max-width) {
+                                        width: mconverter(20);
+                                        height: mconverter(20);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .form-grid {
+                        label {
+                            color: #404D61;
+                            font-family: $interfont;
+                            font-size: converter(16);
+                            font-weight: 400;
+                            margin-bottom: converter(5);
+                            margin-top: converter(15);
+                            @media (max-width: $max-width) {
+                                margin-bottom: mconverter(5);
+                                margin-top: mconverter(10);
+                                font-size: mconverter(16);
+                            }
+                        }
+                        input, select {
+                            width: 100%;
+                            height: converter(37);
+                            padding: converter(13);
+                            font-size: converter(14);
+                            border-radius: converter(8);
+                            border: converter(1) solid #E1E3E6;
+                            outline: none;
+                            background-color: #fff;
+                            color: #5A6474;
+                            @media (max-width: $max-width) {
+                                height: mconverter(37);
+                                padding: mconverter(13);
+                                font-size: mconverter(14);
+                                border-radius: mconverter(8);
+                                border: mconverter(1) solid #E1E3E6;
+                            }
+                        }
+                        input:-webkit-autofill,
+                        input:-webkit-autofill:hover,
+                        input:-webkit-autofill:focus,
+                        select:-webkit-autofill,
+                        select:-webkit-autofill:hover,
+                        select:-webkit-autofill:focus {
+                            -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+                            box-shadow: 0 0 0px 1000px transparent inset !important;
+                            background-color: transparent !important;
+                            -webkit-text-fill-color: inherit !important;
+                            transition: background-color 9999s ease-in-out 0s;
+                        }
+                    }
+
+                    .row-actions {
+                        margin-top: converter(20);
+                        display: flex;
+                        justify-content: space-between;
+                        gap: converter(10);
+
+                        @media (max-width: $max-width) {
+                            margin-top: mconverter(5);
+                            gap: mconverter(10);
+                        }
+
+                        .kycbtn {
+                            margin-top: converter(10);
+                            padding: converter(5) converter(18);
+                            border-radius: converter(50);
+                            font-size: converter(14);
+                            height: converter(35);
+                            gap: converter(5);
+                            font-weight: 400;
+                            width: 100%;
+                            border: none;
+                            background: #00A148;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: #fff;
+                            font-family: $interfont;
+                            @media (max-width: $max-width) {
+                                margin-top: mconverter(10);
+                                padding: mconverter(5) mconverter(18);
+                                border-radius: mconverter(50);
+                                font-size: mconverter(14);
+                                height: mconverter(35);
+                                gap: mconverter(5);
+                            }
+                            svg {
+                                width: converter(17);
+                                height: converter(17);
+                                @media (max-width: $max-width) {
+                                    width: mconverter(17);
+                                    height: mconverter(17);
+                                }
+                            }
+                        }
+
+                        .ghost {
+                            background: transparent;
+                            border: converter(1) solid #00A148;
+                            color: #00A148;
+                            @media (max-width: $max-width) {
+                                border: mconverter(1) solid #00A148;
+                            }
+                        }
+
+                        .disabled {
+                            background: #e5efec;
+                            color: #9bb3ad;
+                            cursor: not-allowed;
+                            border: converter(1) solid #09443829;
+                            @media (max-width: $max-width) {
+                                border: mconverter(1) solid #09443829;
+                            }
+                            svg path {
+                                fill: #9bb3ad;
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        }
+
+        .addfund-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+ 
+            &.open { 
+                display: flex; 
+            }
+            .fund-model{
+                position:relative;
+                display: flex;
+                width: converter(742);
+                height: converter(887);
+                padding: converter(20) converter(32);
+                flex-direction: column;
+                gap: converter(10);
+                border-radius: converter(24);
+                background: #FFF;
+                box-shadow: 0 converter(16) converter(40) 0 rgba(0, 0, 0, 0.12);
+                @media (max-width: $max-width) {
+                    width: mconverter(340);
+                    height: auto;
+                    padding: mconverter(20);
+                    gap: mconverter(9);
+                    border-radius: mconverter(10);
+                    box-shadow: 0 mconverter(16) mconverter(40) 0 rgba(0, 0, 0, 0.12);
+                }
+                .fund-close{
+                    position:absolute;
+                    top:converter(20);
+                    right:converter(20);
+                    width: converter(32);
+                    height: converter(32);
+                    border-radius: converter(50);
+                    border: converter(1) solid #E2E8F0;
+                    background:#fff;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    cursor:pointer;
+                    @media (max-width: $max-width) {
+                        top:mconverter(20);
+                        right:mconverter(20);
+                        width: mconverter(30);
+                        height: mconverter(30);
+                        border-radius: mconverter(50);
+                        border: mconverter(1) solid #E2E8F0;
+                    }
+
+                    svg {
+                        width: converter(16);
+                        height: converter(16);
+                        @media (max-width: $max-width) {
+                            width: mconverter(15);
+                            height: mconverter(15);
+                        }
+                    }
+                }
+                .fundheading {
+                    h2 {
+                        color: #181818;
+                        text-align: center;
+                        font-family: $manropefont;
+                        font-size: converter(30);
+                        margin-bottom: converter(0);
+                        font-weight: 500;
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(16);
+                        }
+                    }
+
+                    p {
+                        color: #64748B;
+                        text-align: center;
+                        font-family: $interfont;
+                        font-size: converter(14);
+                        margin-bottom: converter(0);
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(9);
+                        }
+                        br {
+                            display: none;
+                            @media (max-width: $max-width) {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+                .qr-frame{
+                    display: flex;
+                    width: converter(225);
+                    height: converter(181);
+                    padding: converter(17);
+                    margin: 0 auto converter(6);
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: converter(16);
+                    border: converter(1) solid #E2E8F0;
+                    background: #FFF;
+                    @media (max-width: $max-width) {
+                        width: mconverter(200);
+                        height: mconverter(163);
+                        padding: mconverter(14);
+                        margin: 0 auto mconverter(6);
+                        border-radius: mconverter(16);
+                        border: mconverter(1) solid #E2E8F0;
+
+                    }
+                    img {
+                        width: converter(172);
+                        height: converter(164);
+                        object-fit: cover;
+                        @media (max-width: $max-width) {
+                            width: mconverter(155);
+                            height: mconverter(148); 
+                        }
+                    }
+                }
+
+                .scan-pill{
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    background: #F4FAF6;
+                    margin:0 auto;
+                    gap:converter(5);
+                    width: converter(220);
+                    padding: converter(8) converter(16);
+                    border-radius: converter(50);
+                    border: converter(1) solid #E1F2EB;
+                    @media (max-width: $max-width) {
+                        gap:mconverter(5);
+                        width: mconverter(170);
+                        padding: mconverter(5) ;
+                        border-radius: mconverter(50);
+                        border: mconverter(1) solid #E1F2EB;
+                    }
+                    p {
+                        color: #00A148;
+                        font-weight:600;
+                        font-size: converter(12);
+                        margin-bottom: converter(0);
+                        font-family: $interfont;
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(9)
+                        }
+                    }
+                    svg { 
+                        width: converter(14); 
+                        height: converter(14); 
+                        flex-shrink:0; 
+                        @media (max-width: $max-width) {
+                            width: mconverter(12); 
+                            height: mconverter(12);
+                        }
+                    }
+                }
+
+                .funddivider{
+                    position:relative;
+                    text-align:center;
+                    margin: converter(15) 0 converter(0);
+                    border-top: converter(1) dashed #E2E8F0;
+                    @media (max-width: $max-width) {
+                        margin: mconverter(15) 0 mconverter(0);
+                        border-top: mconverter(1) dashed #E2E8F0;
+                    }
+                    span{
+                        position:absolute;
+                        top:converter(-14);
+                        left:50%;
+                        transform:translateX(-50%);
+                        border-radius: converter(50);
+                        color: #00A148;
+                        border: converter(1) solid #E1F2EB;
+                        background: #F4FAF6;
+                        font-family: $interfont;
+                        font-size: converter(11);
+                        font-weight:700;
+                        padding: converter(4) converter(12);
+                        @media (max-width: $max-width) {
+                            top:mconverter(-8.5);
+                            border: mconverter(1) solid #E1F2EB;
+                            padding: mconverter(3) mconverter(8);
+                            border-radius: mconverter(50);
+                            font-size: mconverter(8);
+                        }
+                    }
+                }
+
+                .section-heading{
+                    display:flex;
+                    align-items:center;
+                    gap: converter(8);
+                    color: #181818;
+                    font-family: $manropefont;
+                    font-size: converter(24);
+                    font-weight: 700;
+                    margin-bottom: converter(0);
+                    @media (max-width: $max-width) {
+                        font-size: mconverter(16);
+                        gap: mconverter(5);
+                    }
+                    svg {
+                        width: converter(18);
+                        height: converter(18);
+                        @media (max-width: $max-width) {
+                            width: mconverter(12);
+                            height: mconverter(12);
+                        }
+                    }
+                }
+
+                .bank-card{
+                    border-radius: converter(12);
+                    border: converter(1) solid #E2E8F0;
+                    background: #FFF;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    align-self: stretch;
+                    @media (max-width: $max-width) {
+                        border-radius: mconverter(8);
+                        border: mconverter(1) solid #E2E8F0;
+                    }
+
+                    .bank-row{
+                        display:flex;
+                        width: 100%;
+                        align-items:center;
+                        justify-content:space-between;
+                        padding: converter(10) converter(16);
+                        border-bottom: converter(1) solid #E2E8F0;
+                        @media (max-width: $max-width) {
+                            padding: mconverter(8) mconverter(10);
+                            border-bottom: mconverter(1) solid #E2E8F0;
+                        }
+                        &:last-child { 
+                            border-bottom:none; 
+                        }
+
+                        .bank-row-left{
+                            display:flex;
+                            align-items:center;
+                            gap: converter(12);
+                            @media (max-width: $max-width) {
+                                gap: mconverter(8);
+                            }
+
+                            .icon-badge{
+                                width:converter(32);
+                                height:converter(32);
+                                border-radius: converter(8);
+                                background: #F4FAF6;
+                                display:flex;
+                                align-items:center;
+                                justify-content:center;
+                                @media (max-width: $max-width) {
+                                    width: mconverter(21);
+                                    height:mconverter(21);
+                                    border-radius: mconverter(5);
+                                }
+
+                                svg{ 
+                                    width: converter(16); 
+                                    height: converter(16); 
+                                    @media (max-width: $max-width) {
+                                        width: mconverter(10); 
+                                        height: mconverter(10);
+                                    }
+                                }
+                            }
+
+                            .label{
+                                color: #64748B;
+                                font-family: $interfont;
+                                font-size: converter(14);
+                                font-weight: 400;
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(11);
+                                }
+                            }
+                        }
+
+                        .bank-row-right{
+                            display:flex;
+                            align-items:center;
+                            gap:converter(8);
+                            @media (max-width: $max-width) {
+                                gap:mconverter(5);
+                            }
+
+                            .value{
+                                overflow: hidden;
+                                color: #0F172A;
+                                text-align: right;
+                                text-overflow: ellipsis;
+                                font-family: $interfont;
+                                font-size: converter(14);
+                                font-style: normal;
+                                @media (max-width: $max-width) {
+                                    display: -webkit-box;
+                                    -webkit-box-orient: vertical;
+                                    flex: 1 0 0;
+                                    font-size: mconverter(11);
+                                    -webkit-line-clamp: 1;
+                                    overflow: hidden;
+                                    max-width: mconverter(140);
+                                }
+                            }
+
+                            .copy-btn{
+                                width: converter(26);
+                                height: converter(26);
+                                border:none;
+                                border-radius: converter(6);
+                                background: #F4FAF6;
+                                display:flex;
+                                align-items:center;
+                                justify-content:center;
+                                cursor:pointer;
+                                position:relative;
+                                flex-shrink:0;
+                                @media (max-width: $max-width) {
+                                    width: mconverter(20);
+                                    height: mconverter(20);
+                                    border-radius: mconverter(4);
+                                }
+                                svg{ 
+                                    width:converter(14); 
+                                    height:converter(14); 
+                                    @media (max-width: $max-width) {
+                                        width:mconverter(10); 
+                                        height:mconverter(10); 
+                                    }
+                                }
+                                &.copied {
+                                    svg { display:none; }
+                                    &::after{
+                                        content:"✓";
+                                        font-size: converter(12);
+                                        font-weight: 700;
+                                        color: #00A148;
+                                        @media (max-width: $max-width) {
+                                            font-size: mconverter(10);
+                                        }
+                                    }
+                                }
+
+                                // .copied-label {
+                                //     position:absolute;
+                                //     top:-30px;
+                                //     right:0;
+                                //     background:var(--green);
+                                //     color:#fff;
+                                //     font-size:11px;
+                                //     font-weight:600;
+                                //     padding:4px 9px;
+                                //     border-radius:6px;
+                                //     white-space:nowrap;
+                                //     opacity:0;
+                                //     transform:translateY(4px);
+                                //     transition:opacity .15s ease, transform .15s ease;
+                                //     pointer-events:none;
+                                //     z-index:6;
+                                //     &::after{
+                                //         content:"";
+                                //         position:absolute;
+                                //         bottom:-4px;
+                                //         right:9px;
+                                //         width:8px;height:8px;
+                                //         background:var(--green);
+                                //         transform:rotate(45deg);
+                                //         border-radius:1px;
+                                //     }
+                                //     .show{
+                                //         opacity:1;
+                                //         transform:translateY(0);
+                                //     }
+                                // }
+                            }
+                            
+                        }
+                    }
+                }
+
+                .info-note{
+                    display: flex;
+                    padding: converter(12);
+                    align-items: center;
+                    gap: converter(10);
+                    align-self: stretch;
+                    border-radius: converter(12);
+                    border: converter(1) solid #E1F2EB;
+                    background: #F4FAF6;
+
+                    @media (max-width: $max-width) {
+                        padding: mconverter(7);
+                        border-radius: mconverter(8);
+                        border: mconverter(1) solid #E1F2EB;
+                        gap: mconverter(6);
+                    }
+
+                    svg {
+                        width: converter(16);
+                        height: converter(16);
+                        @media (max-width: $max-width) {
+                            width: mconverter(16);
+                            height: mconverter(16);
+                        }
+                    }
+
+                    span {
+                        color: #64748B;
+                        font-family: $interfont;
+                        font-size: converter(14);
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(10);
+                        }
+                        b {
+                            color: #00A148;
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+                .txn-card{
+                    border-radius: converter(16);
+                    border: converter(1) solid #E2E8F0;
+                    background: #FFF;
+                    display: flex;
+                    padding: converter(10) converter(18);
+                    flex-direction: column;
+                    align-self: stretch;
+                    @media (max-width: $max-width) {
+                        border-radius: mconverter(0);
+                        border: none;
+                        background: #FFF;
+                        display: flex;
+                        padding: mconverter(0);
+                    }
+                    h2 {
+                        color: #181818;
+                        text-align: center;
+                        font-family: $manropefont;
+                        font-size: converter(20);
+                        margin-bottom: converter(0);
+                        font-weight: 700;
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(16);
+                        }
+
+                    }
+
+                    p{
+                        color: #64748B;
+                        text-align: center;
+                        font-family: $interfont;
+                        font-size: converter(14);
+                        margin-bottom: converter(10);
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(10);
+                            margin-bottom: mconverter(9);
+                        }
+                    }
+
+                    .input-wrap{
+                        position:relative;
+                        margin-bottom: converter(10);
+                        @media (max-width: $max-width) {
+                            margin-bottom: mconverter(9);
+                        }
+                        input {
+                            width: 100%;
+                            color: #94A3B8;
+                            border-radius: converter(8);
+                            padding: converter(14);
+                            height: converter(45);
+                            border: converter(1) solid #E2E8F0;
+                            font-family: $interfont;
+                            font-size: converter(14);
+                            font-weight: 400;
+                            outline:none;
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(11);
+                                border-radius: mconverter(8);
+                                padding: mconverter(14);
+                                height: mconverter(44);
+                                border: mconverter(1) solid #E2E8F0;
+                            }
+                            &::placeholder{ color:#b3b8c0; }
+                            &:focus{ border-color: none}
+                        }
+
+                        svg{
+                            position:absolute;
+                            right: converter(12);
+                            top:50%;
+                            transform:translateY(-50%);
+                            width: converter(16);
+                            height: converter(16);
+                            @media (max-width: $max-width) {
+                                width: mconverter(16);
+                                height: mconverter(16);
+                                right: mconverter(12);
+                            }
+                            cursor:pointer;
+                            &:hover + .tooltip {
+                                opacity: 1;
+                                visibility: visible;
+                                transform: translateY(0);
+                            }
+                        }
+
+                        .tooltip{
+                            display: flex;
+                            width: converter(248);
+                            padding: converter(12);
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: converter(10);
+                            position:absolute;
+                            top: converter(-72);
+                            right: converter(-6);
+                            border-radius: converter(6);
+                            background: #00A148;
+                            color:#fff;
+                            font-size: converter(12);
+                            line-height:1.5;
+                            z-index:5;
+                            opacity:0;
+                            visibility:hidden;
+                            transform:translateY(4px);
+                            transition:opacity .15s ease, transform .15s ease, visibility .15s;
+                            pointer-events:none;
+
+                            @media (max-width: $max-width) {
+                                width: mconverter(248);
+                                font-size: mconverter(12);
+                                padding: mconverter(12);
+                                top: mconverter(-72);
+                                right: mconverter(-6);
+                                border-radius: mconverter(6);
+                                gap: mconverter(10);
+
+                            }
+                            &:hover {
+                                opacity: 1;
+                                visibility: visible; 
+                                transform: translateY(0);
+                            }
+                            &::after{
+                                content:"";
+                                position:absolute;
+                                bottom: converter(-6);
+                                right: converter(17);
+                                width: converter(13);
+                                height: converter(13);
+                                background: #00A148;
+                                transform:rotate(45deg);
+                                @media (max-width: $max-width) {
+                                    bottom: mconverter(-6);
+                                    right: mconverter(17);
+                                    width: mconverter(13);
+                                    height: mconverter(13);
+                                }
+                            }
+                        }
+                    }
+
+                    .submit-btn{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        align-self: stretch;
+                        width:100%;
+                        height: converter(45);
+                        border:none;
+                        border-radius: converter(10);
+                        background: #00A148;
+                        color:#fff;
+                        font-size: converter(14);
+                        font-family: $interfont;
+                        font-weight:400;
+                        cursor:pointer;
+                        @media (max-width: $max-width) {
+                            height: mconverter(35);
+                            border-radius: mconverter(9); 
+                            font-size: mconverter(12);
+                        }
+                    }
+                }
+
+                .footer-note{
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    gap: converter(6);
+                    color: #94A3B8;
+                    font-family: $interfont;
+                    font-size: converter(12);
+                    font-weight: 400;
+                    @media (max-width: $max-width) {
+                        font-size: mconverter(10);
+                    }
+                    svg{ 
+                        width: converter(12); 
+                        height: converter(12); 
+                        @media (max-width: $max-width) {
+                            width: mconverter(8); 
+                            height: mconverter(8);
+                        }
+                    }
+                }
+        
+            }
+            
+        }
+
+        .kycpopup {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.35);
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+
+            .popup-box {
+                background: #fff;
+                padding: converter(20) converter(35);
+                width: converter(500);
+                border-radius: converter(12);
+                text-align: center;
+                @media (max-width: $max-width) {
+                    padding: mconverter(20) mconverter(35);
+                    width: 100%;
+                    border-radius: mconverter(12);
+                    margin: mconverter(20);
+                }
+                        
+                .status-icon { 
+                    margin: 0 auto converter(15) auto;
+                    svg {
+                        width: converter(65);
+                        height: converter(65);
+                        @media (max-width: $max-width) {
+                            width: mconverter(65);
+                            height: mconverter(65);
+                        }
+                    }
+                }
+
+                h2 {
+                    color: #101828;
+                    font-family: $interfont;
+                    font-size: converter(24);
+                    font-weight: 500;
+                    line-height: converter(36);
+                    margin-top: converter(8);
+                    @media (max-width: $max-width) {
+                        font-size: mconverter(24);
+                        line-height: mconverter(36);
+                        margin-top: mconverter(8);
+                    }
+                }
+
+                .popup-subtext {
+                    color: #101828;
+                    text-align: center;
+                    font-family: $interfont;
+                    font-size: converter(16);
+                    font-weight: 400;
+                    margin-bottom: converter(20);
+                    line-height: converter(22);
+                    @media (max-width: $max-width) {
+                        font-size: mconverter(14);
+                        margin-bottom: mconverter(20);
+                        line-height: mconverter(22);
+                    }
+                }
+
+                .dashboard-btn {
+                    background: #00A148;
+                    padding: converter(12) converter(24);
+                    border: none;
+                    color: #FFF;
+                    display: table;
+                    width: 80%;
+                    margin: auto;
+                    border-radius: converter(50);
+                    text-decoration: none;
+                    font-family: $interfont;
+                    font-size: converter(14);
+                    font-weight: 400;
+                    @media (max-width: $max-width) {
+                        width: 60%;
+                        padding: mconverter(10) mconverter(24);
+                        font-size: mconverter(14);
+                        border-radius: mconverter(50);
+                        font-size: mconverter(14);
+                    }
+                }
+            }
+        }
+
+        .kyc-pill {
+            display: none;
+            @media (max-width: $max-width) {
+                position: fixed;
+                border: none;
+                right: mconverter(15);
+                bottom: mconverter(80);
+                display: flex;
+                align-items: center;
+                width: max-content;
+                border-radius: mconverter(50);
+                background: #ECC800;
+                box-shadow: 0 4px 4px rgba(255, 178, 0, 0.25);
+                transition: all .3s ease;
+                z-index: 9;
+                padding: 0;
+                
+                .kyc-icon {
+                    width: mconverter(50);
+                    height: mconverter(50);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    svg {
+                        width: mconverter(20);
+                        height: mconverter(20);
+                    }
+                }
+
+                .label {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    width: mconverter(110);
+                    opacity: 1;
+                    transition: all .3s ease;
+                    font-weight: 600;
+                    text-align: left;
+                    color: #4C4C4C;
+                    font-family: $manropefont;
+                    font-size: mconverter(16);
+                }
+
+                &.sticky {
+                    .label {
+                        width: mconverter(0);
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+
+        .withdraw-pill {
+            display: none;
+            @media (max-width: $max-width) {
+                position: fixed;
+                right: mconverter(15);
+                bottom: mconverter(20);
+                border: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                width: max-content;
+                border-radius: mconverter(50);
+                background: #00A148;
+                box-shadow: 0 4px 4px 0 rgba(36, 214, 0, 0.25);
+                transition: all .3s ease;
+                z-index: 9;
+                
+                .withdraw-icon {
+                    width: mconverter(50);
+                    height: mconverter(50);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    img {
+                        width: mconverter(20);
+                        height: mconverter(20);
+                    }
+                }
+
+                .label {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    width: mconverter(160);
+                    opacity: 1;
+                    transition: all .3s ease;
+                    font-weight: 600;
+                    color: #fff;
+                    text-align: left;
+                    font-family: $manropefont;
+                    font-size: mconverter(16);
+                }
+
+                &.sticky {
+                    .label {
+                        width: mconverter(0);
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}

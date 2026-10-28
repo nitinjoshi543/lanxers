@@ -1,0 +1,595 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+body {
+  background-color: #ffffff;
+}
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 35, 29, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+  z-index: 10;
+}
+.scrim.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 31.25vw;
+  background: #f4f6f5;
+  box-shadow: 0 0.2083333333vw 0.2083333333vw 0 rgba(0, 0, 0, 0.25);
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.2, 0.7, 0.3, 1);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 990px) {
+  .drawer {
+    width: 90%;
+    box-shadow: 0 1.0256410256vw 1.0256410256vw 0 rgba(0, 0, 0, 0.25);
+  }
+}
+.drawer.open {
+  transform: translateX(0);
+}
+.drawer .drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8333333333vw 0.9375vw;
+  background: #fff;
+  border-bottom: 0.0520833333vw solid rgba(0, 0, 0, 0.0509803922);
+  flex-shrink: 0;
+}
+@media (max-width: 990px) {
+  .drawer .drawer-head {
+    padding: 4.1025641026vw 4.6153846154vw;
+    border-bottom: 0.2564102564vw solid rgba(0, 0, 0, 0.0509803922);
+  }
+}
+.drawer .drawer-head h2 {
+  color: #000;
+  font-family: Manrope;
+  font-size: 1.0416666667vw;
+  margin-bottom: 0vw;
+  font-weight: 600;
+}
+@media (max-width: 990px) {
+  .drawer .drawer-head h2 {
+    font-size: 5.1282051282vw;
+  }
+}
+.drawer .drawer-head .close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.drawer .drawer-head .close-btn svg {
+  width: 1.25vw;
+  height: 1.25vw;
+}
+@media (max-width: 990px) {
+  .drawer .drawer-head .close-btn svg {
+    width: 6.1538461538vw;
+    height: 6.1538461538vw;
+  }
+}
+.drawer .job-detail {
+  background-color: rgba(255, 255, 255, 0.5882352941);
+  flex-direction: column;
+  gap: 0.78125vw;
+  padding: 0.5208333333vw 0.5208333333vw 3.125vw 0.5208333333vw;
+  height: 100vh;
+  overflow-y: scroll;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail {
+    gap: 2.5641025641vw;
+    padding: 2.5641025641vw 2.5641025641vw 15.3846153846vw 2.5641025641vw;
+  }
+}
+.drawer .job-detail.show {
+  display: flex;
+}
+.drawer .job-detail .mobile-back {
+  display: none;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .mobile-back {
+    display: block;
+    align-items: center;
+    background: #fff;
+    width: 30.7692307692vw;
+    border: 0.2564102564vw solid #00843B;
+    border-radius: 2.0512820513vw;
+    padding: 1.7948717949vw 1.2820512821vw;
+    font-weight: 600;
+    font-size: 3.5897435897vw;
+    color: #00843B;
+  }
+}
+.drawer .job-detail .read-more-card .read-more-item {
+  display: none;
+}
+.drawer .job-detail .read-more-card.expanded .read-more-item {
+  display: revert;
+}
+.drawer .job-detail .details-card {
+  border-radius: 0.78125vw;
+  padding: 1.0416666667vw 0.9375vw;
+  border: 0.0520833333vw solid #e6e9ec;
+  background: #fff;
+  position: relative;
+  margin-bottom: 0.625vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .details-card {
+    border-radius: 3.8461538462vw;
+    padding: 2.5641025641vw;
+    border: 0.2564102564vw solid #e6e9ec;
+    margin-bottom: 2.5641025641vw;
+  }
+}
+.drawer .job-detail .details-card .section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .details-card .section-heading {
+    margin-bottom: 2.5641025641vw;
+  }
+}
+.drawer .job-detail .details-card .section-heading .read-more-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #6b7280;
+  font-family: Inter;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.625vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .details-card .section-heading .read-more-btn {
+    font-size: 3.0769230769vw;
+  }
+}
+.drawer .job-detail .details-card .section-heading .title-bar {
+  display: flex;
+  align-items: center;
+  font-family: Manrope;
+  gap: 0.5208333333vw;
+  font-weight: 700;
+  font-size: 0.8333333333vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .details-card .section-heading .title-bar {
+    gap: 2.5641025641vw;
+    font-size: 4.1025641026vw;
+  }
+}
+.drawer .job-detail .details-card .section-heading .title-bar .dot-icon {
+  width: 1.5625vw;
+  height: 1.5625vw;
+  border-radius: 2.6041666667vw;
+  background: #EEFFE5;
+  color: #00A148;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .details-card .section-heading .title-bar .dot-icon {
+    width: 7.6923076923vw;
+    height: 7.6923076923vw;
+    border-radius: 12.8205128205vw;
+  }
+}
+.drawer .job-detail .details-card .section-heading .title-bar .dot-icon svg {
+  width: 0.7291666667vw;
+  height: 0.7291666667vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .details-card .section-heading .title-bar .dot-icon svg {
+    width: 3.5897435897vw;
+    height: 3.5897435897vw;
+  }
+}
+.drawer .job-detail .details-card .section-heading .title-bar .bg-blue {
+  background-color: #bfdbfe;
+  color: #2563eb;
+}
+.drawer .job-detail .details-card .section-heading .title-bar .bg-red {
+  background-color: #fecaca;
+  color: #dc2626;
+}
+.drawer .job-detail .details-card p {
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  line-height: 1.1458333333vw;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .details-card p {
+    font-size: 3.5897435897vw;
+    line-height: 5.641025641vw;
+    margin-bottom: 1.2820512821vw;
+  }
+}
+.drawer .job-detail .details-card ul {
+  padding-left: 1.0416666667vw;
+  margin-bottom: 0;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .details-card ul {
+    padding-left: 5.1282051282vw;
+  }
+}
+.drawer .job-detail .details-card ul li {
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  line-height: 1.1458333333vw;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .details-card ul li {
+    font-size: 3.5897435897vw;
+    line-height: 5.641025641vw;
+    margin-bottom: 1.2820512821vw;
+  }
+}
+.drawer .job-detail .details-card ul li {
+  color: #181818;
+}
+.drawer .job-detail .details-card ul li:last-child {
+  margin-bottom: 0vw;
+}
+.drawer .job-detail .hero-card {
+  border: 0.1041666667vw solid #00A148;
+  padding: 0.2083333333vw;
+  border-radius: 0.78125vw;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card {
+    border: 0.5128205128vw solid #00A148;
+    padding: 1.0256410256vw;
+    border-radius: 3.8461538462vw;
+    margin-bottom: 3.0769230769vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner {
+  background: linear-gradient(135deg, #1b9849, #125e2e);
+  border-color: #00A148;
+  margin-bottom: 0;
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.625vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-top {
+    gap: 2.0512820513vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4166666667vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges {
+    gap: 1.2820512821vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges .icon-svg-btn {
+  color: #fff;
+  width: 1.3541666667vw;
+  height: 1.3541666667vw;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  border: 0.0520833333vw solid rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges .icon-svg-btn {
+    width: 6.6666666667vw;
+    height: 6.6666666667vw;
+    border: 0.2564102564vw solid rgba(255, 255, 255, 0.25);
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges .icon-svg-btn svg {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges .icon-svg-btn svg {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges .badge-soft {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-family: Inter;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
+  border: 0.0520833333vw solid rgba(255, 255, 255, 0.25);
+  font-size: 0.625vw;
+  padding: 0.2083333333vw 0.625vw;
+  border-radius: 1.0416666667vw;
+  gap: 0.3125vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges .badge-soft {
+    gap: 1.5384615385vw;
+    font-size: 3.0769230769vw;
+    padding: 1.0256410256vw 3.0769230769vw;
+    border-radius: 5.1282051282vw;
+    border: 0.2564102564vw solid rgba(255, 255, 255, 0.25);
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges .badge-selected {
+  background: #1b9849;
+  border: none;
+  font-size: 0.5208333333vw;
+  gap: 0.2083333333vw;
+  padding: 0.2083333333vw 0.4166666667vw;
+  line-height: normal;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges .badge-selected {
+    font-size: 2.5641025641vw;
+    gap: 1.0256410256vw;
+    padding: 1.0256410256vw 2.0512820513vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges .badge-selected svg {
+  width: 0.625vw;
+  height: 0.625vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges .badge-selected svg {
+    width: 3.0769230769vw;
+    height: 3.0769230769vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges .icon-copy-btn {
+  width: 1.3541666667vw;
+  height: 1.3541666667vw;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges .icon-copy-btn {
+    width: 6.6666666667vw;
+    height: 6.6666666667vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges .icon-copy-btn svg {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-top .hero-badges .icon-copy-btn svg {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-det {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5208333333vw;
+  gap: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-det {
+    padding-top: 2.5641025641vw;
+    gap: 1.2820512821vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-det .hero-title {
+  font-size: 1.25vw;
+  line-height: 1.8229166667vw;
+  margin-bottom: 0vw;
+  font-family: Manrope;
+  font-weight: 700;
+  color: #fff;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-det .hero-title {
+    font-size: 4.6153846154vw;
+    line-height: 5.641025641vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-det .hero-share {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-det .hero-share {
+    gap: 1.2820512821vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-det .hero-share .icon-round-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  border: 0.0520833333vw solid rgba(255, 255, 255, 0.16);
+  font-size: 0.625vw;
+  width: 1.5625vw;
+  height: 1.5625vw;
+  border-radius: 0.4166666667vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-det .hero-share .icon-round-btn {
+    border: 0.2564102564vw solid rgba(255, 255, 255, 0.16);
+    font-size: 3.0769230769vw;
+    width: 7.6923076923vw;
+    height: 7.6923076923vw;
+    border-radius: 2.0512820513vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-det .hero-share .icon-round-btn svg {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-det .hero-share .icon-round-btn svg {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-sub {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5208333333vw;
+  margin: 0.5208333333vw 0vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-sub {
+    gap: 2.5641025641vw;
+    margin: 2.5641025641vw 0vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-sub span {
+  display: flex;
+  align-items: center;
+  gap: 0.2083333333vw;
+  font-family: Inter;
+  color: #fff;
+  font-size: 0.625vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-sub span {
+    font-size: 3.0769230769vw;
+    gap: 1.0256410256vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .hero-sub span svg {
+  width: 0.625vw;
+  height: 0.625vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .hero-sub span svg {
+    width: 3.0769230769vw;
+    height: 3.0769230769vw;
+  }
+}
+.drawer .job-detail .hero-card .hero-card-inner .tag-agri {
+  display: inline-block;
+  font-family: Inter;
+  font-weight: 500;
+  background: #f3faf6;
+  line-height: normal;
+  border: 0.0520833333vw solid rgba(255, 255, 255, 0.16);
+  font-size: 0.625vw;
+  padding: 0.15625vw 0.5208333333vw;
+  border-radius: 0.78125vw;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .hero-card .hero-card-inner .tag-agri {
+    border: 0.2564102564vw solid rgba(255, 255, 255, 0.16);
+    font-size: 3.0769230769vw;
+    padding: 0.7692307692vw 2.5641025641vw;
+    border-radius: 3.8461538462vw;
+  }
+}
+.drawer .job-detail .quickinfo-card .qi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.78125vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .quickinfo-card .qi-grid {
+    gap: 3.8461538462vw;
+  }
+}
+.drawer .job-detail .quickinfo-card .qi-grid .qi-box {
+  background: #f9fafb;
+  border-radius: 0.7291666667vw;
+  padding: 0.7291666667vw 0.8333333333vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .quickinfo-card .qi-grid .qi-box {
+    border-radius: 2.5641025641vw;
+    padding: 2.5641025641vw;
+  }
+}
+.drawer .job-detail .quickinfo-card .qi-grid .qi-box .qi-label {
+  font-size: 0.5208333333vw;
+  letter-spacing: 0.0520833333vw;
+  margin-bottom: 0.2083333333vw;
+  color: #94a0ac;
+  font-weight: 500;
+  font-family: Inter;
+  text-transform: uppercase;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .quickinfo-card .qi-grid .qi-box .qi-label {
+    font-size: 2.5641025641vw;
+    letter-spacing: 0.2564102564vw;
+    margin-bottom: 1.0256410256vw;
+  }
+}
+.drawer .job-detail .quickinfo-card .qi-grid .qi-box .qi-value {
+  font-family: Inter;
+  font-weight: 500;
+  color: #0A0A0A;
+  font-size: 0.7291666667vw;
+}
+@media (max-width: 990px) {
+  .drawer .job-detail .quickinfo-card .qi-grid .qi-box .qi-value {
+    font-size: 3.0769230769vw;
+  }
+}
+.drawer .job-detail .content-card {
+  background: linear-gradient(135deg, #fff, #eff6ff);
+}
+.drawer .job-detail .requirements-card {
+  background: linear-gradient(135deg, #fff, #fecaca);
+}
+.drawer .job-detail .requirements-card ul li::marker {
+  color: #f87171;
+}
+.drawer .job-detail .key-respons {
+  background: linear-gradient(135deg, #fff, #f0fdf4);
+}
+.drawer .job-detail .key-respons ul li::marker {
+  color: #00A148;
+}/*# sourceMappingURL=sidebar.css.map */

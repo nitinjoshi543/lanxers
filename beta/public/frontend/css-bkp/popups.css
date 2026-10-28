@@ -1,0 +1,1285 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#proposalModal .modal-dialog {
+  max-width: 36.40625vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog {
+    max-width: 100%;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body {
+  padding: 1.3020833333vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body {
+    padding: 6.4102564103vw 3.8461538462vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .heading {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  border-bottom: 0.0520833333vw solid #afafaf;
+  padding-bottom: 1.0416666667vw;
+  margin-bottom: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .heading {
+    vertical-align: initial;
+    align-items: initial;
+    border-bottom: 0.2564102564vw solid #afafaf;
+    padding-bottom: 3.8461538462vw;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .heading .icon {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2.96875vw;
+  background: #e6ffeb;
+  width: 2.6041666667vw;
+  height: 2.6041666667vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .heading .icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .heading .icon svg {
+  width: 1.25vw;
+  height: 1.25vw;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .heading .icon svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .heading .text {
+  width: 23.4375vw;
+  padding-left: 0.625vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .heading .text {
+    padding-left: 2.5641025641vw;
+    width: 71.7948717949vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .heading .text h1 {
+  color: #000;
+  /* h4 */
+  font-family: Manrope;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  /* converter(20) */
+  margin-bottom: 0.2083333333vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .heading .text h1 {
+    font-size: 4.1025641026vw;
+    margin-bottom: 1.2820512821vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .heading .text p {
+  color: #000;
+  /* pragraph 14 */
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 16.converter(8) */
+  margin-bottom: 0;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .heading .text p {
+    font-size: 3.0769230769vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .heading button {
+  width: 1.25vw;
+  height: 1.25vw;
+  aspect-ratio: 1/1;
+  padding: 0;
+  outline: none !important;
+  border: none !important;
+  margin-left: auto;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .heading button {
+    width: 24px;
+    height: 24px;
+    aspect-ratio: 1/1;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .amount {
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .amount {
+    margin-bottom: 3.8461538462vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .amount label {
+  color: #000;
+  /* Paragraph 12 */
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 14.converter(4) */
+  margin-bottom: 0.2604166667vw;
+  display: block;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .amount label {
+    font-size: 3.0769230769vw;
+    margin-bottom: 1.2820512821vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .amount label span {
+  color: #f00;
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .amount .input {
+  padding: 0 0.5208333333vw;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid #d6d6d6;
+  background: #fff;
+  height: 2.34375vw;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .amount .input {
+    padding: 0 2.5641025641vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #d6d6d6;
+    height: 11.5384615385vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .amount .input svg {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .amount .input svg {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .amount .input input {
+  padding-left: 0.5208333333vw;
+  border: none !important;
+  outline: none !important;
+  width: calc(100% - 0.8333333333vw);
+  color: #000000;
+  /* pragraph 14 */
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 16.converter(8) */
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .amount .input input {
+    padding-left: 2.5641025641vw;
+    width: calc(100% - 4.1025641026vw);
+    font-size: 3.5897435897vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .amount .input input::-moz-placeholder {
+  font-size: 0.7291666667vw;
+  color: var(--Dissabled-text, #afafaf);
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .amount .input input::placeholder {
+  font-size: 0.7291666667vw;
+  color: var(--Dissabled-text, #afafaf);
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .amount .input input::-moz-placeholder {
+    font-size: 3.5897435897vw;
+  }
+  #proposalModal .modal-dialog .modal-content .modal-body form .amount .input input::placeholder {
+    font-size: 3.5897435897vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .descripition {
+  margin-bottom: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .descripition {
+    margin-bottom: 1.2820512821vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .descripition label {
+  color: #000;
+  /* Paragraph 12 */
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 14.converter(4) */
+  margin-bottom: 0.2604166667vw;
+  display: block;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .descripition label {
+    font-size: 3.0769230769vw;
+    margin-bottom: 1.2820512821vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .descripition label span {
+  color: #f00;
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .descripition textarea {
+  height: 10.46875vw;
+  border-radius: 0.5208333333vw;
+  outline: none !important;
+  border: 0.0520833333vw solid #d6d6d6;
+  background: #fff;
+  padding: 0.5208333333vw;
+  color: #000000;
+  /* pragraph 14 */
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 16.converter(8) */
+  width: 100%;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .descripition textarea {
+    height: 51.5384615385vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #d6d6d6;
+    padding: 2.5641025641vw;
+    font-size: 3.5897435897vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .descripition textarea::-moz-placeholder {
+  font-size: 0.7291666667vw;
+  color: var(--Dissabled-text, #afafaf);
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .descripition textarea::placeholder {
+  font-size: 0.7291666667vw;
+  color: var(--Dissabled-text, #afafaf);
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .descripition textarea::-moz-placeholder {
+    font-size: 3.0769230769vw;
+  }
+  #proposalModal .modal-dialog .modal-content .modal-body form .descripition textarea::placeholder {
+    font-size: 3.0769230769vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .descripition .infoo {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .descripition .infoo {
+    margin-bottom: 3.8461538462vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .descripition .infoo p {
+  color: var(--Dissabled-text, #afafaf);
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 14.converter(4) */
+  margin-bottom: 0;
+  width: 80%;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .descripition .infoo p {
+    font-size: 3.0769230769vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .descripition .infoo .count {
+  color: var(--text-color, #575757);
+  /* Paragraph 12 */
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 14.converter(4) */
+  margin-left: auto;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .descripition .infoo .count {
+    font-size: 2.5641025641vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection {
+  margin-bottom: 0.5729166667vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection {
+    margin-bottom: 2.8205128205vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection label {
+  color: #000;
+  /* Paragraph 12 */
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 14.converter(4) */
+  margin-bottom: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection label {
+    font-size: 3.0769230769vw;
+    line-height: 120%;
+    /* 14.mconverter(4) */
+    margin-bottom: 1.2820512821vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection label span {
+  color: var(--Secondry-color, #00a148);
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper {
+  border-radius: 0.3645833333vw;
+  border: 0.1041666667vw dashed #f0f0f0;
+  background: #f7fff8;
+  padding: 1.5625vw 0.78125vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper {
+    border-radius: 1.7948717949vw;
+    border: 0.5128205128vw dashed #f0f0f0;
+    padding: 7.6923076923vw 3.8461538462vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .content svg {
+  width: 2.1875vw;
+  height: 2.1875vw;
+  display: block;
+  margin: auto;
+  margin-bottom: 0.3645833333vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .content svg {
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1/1;
+    margin-bottom: 1.7948717949vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .content p {
+  color: var(--text-color, #575757);
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.09375vw;
+  /* 150% */
+  margin-bottom: 0.3645833333vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .content p {
+    font-size: 3.0769230769vw;
+    margin-bottom: 7px;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .content p span {
+  color: var(--Secondry-color, #00a148);
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile {
+  margin: 1.5625vw 0;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile {
+    margin: 3.8461538462vw 0;
+  }
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .row {
+    margin: -0.7692307692vw;
+  }
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .row .col-4 {
+    width: 50%;
+    padding: 0.7692307692vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single {
+  display: flex;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid #c3c3c3;
+  background: #fff;
+  padding: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single {
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #c3c3c3;
+    padding: 2.5641025641vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single .icon {
+  width: 1.5625vw;
+  height: 1.5625vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single .icon {
+    width: 5.1282051282vw;
+    height: 5.1282051282vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single .icon svg,
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single .icon img {
+  width: 100%;
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single .text {
+  width: calc(100% - 3.125vw);
+  padding-left: 0.46875vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single .text {
+    width: calc(100% - 10.2564102564vw);
+    padding-left: 2.3076923077vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single .text h2 {
+  color: var(--Heading-text, #181818);
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  /* 23.converter(8) */
+  margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single .text h2 {
+    font-size: 3.0769230769vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single .text p {
+  color: var(--text-color, #575757);
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 170%;
+  /* 20.converter(4) */
+  margin-bottom: 0;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single .text p {
+    font-size: 2.5641025641vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single a {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+  aspect-ratio: 1/1;
+  margin-left: auto;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.15625vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single a {
+    width: 16px;
+    height: 16px;
+    aspect-ratio: 1/1;
+    margin-top: 0.7692307692vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper .uploadedfile .single a svg {
+  width: 100%;
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper button {
+  width: 8.59375vw;
+  height: 2.34375vw;
+  border-radius: 2.8645833333vw;
+  border: none;
+  outline: none;
+  background: var(--Highlight, #5cffa5);
+  display: block;
+  margin: auto;
+  margin-top: 0.3645833333vw;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper button {
+    width: 42.3076923077vw;
+    height: 7.6923076923vw;
+    border-radius: 14.1025641026vw;
+    margin-top: 3.8461538462vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper button svg {
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper button svg {
+    width: 16px;
+    height: 16px;
+    aspect-ratio: 1/1;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper button span {
+  color: #5a5a5a;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .uploadwrapper button span {
+    font-size: 3.0769230769vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .info {
+  color: var(--Dissabled-text, #afafaf);
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 14.converter(4) */
+  margin-top: 0.5729166667vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .fileuploadsection .info {
+    font-size: 3.0769230769vw;
+    margin-top: 1.5384615385vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .modalfooter {
+  border-top: 0.0520833333vw solid #afafaf;
+  padding-top: 1.0416666667vw;
+  margin-top: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .modalfooter {
+    border-top: 0.2564102564vw solid #afafaf;
+    padding-top: 5.1282051282vw;
+    margin-top: 5.1282051282vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .modalfooter button {
+  width: 14.0625vw;
+  height: 2.34375vw;
+  border-radius: 2.8645833333vw;
+  background: var(--Secondry-color, #00a148);
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin-left: auto;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .modalfooter button {
+    width: 69.2307692308vw;
+    height: 11.5384615385vw;
+    border-radius: 14.1025641026vw;
+    margin-right: auto;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .modalfooter button span {
+  color: #fff;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .modalfooter button span {
+    font-size: 3.5897435897vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body form .modalfooter button svg {
+  height: 0.4166666667vw;
+  width: 0.5729166667vw;
+  margin-left: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body form .modalfooter button svg {
+    height: 2.0512820513vw;
+    width: 2.8205128205vw;
+    margin-left: 1.2820512821vw;
+  }
+}
+
+#successModal .modal-dialog {
+  max-width: 24.2708333333vw;
+}
+@media (max-width: 990px) {
+  #successModal .modal-dialog {
+    max-width: 100%;
+  }
+}
+#successModal .modal-dialog .modal-content .modal-body {
+  padding: 1.0416666667vw 3.8541666667vw;
+  padding-top: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #successModal .modal-dialog .modal-content .modal-body {
+    padding: 5.1282051282vw 8.7179487179vw;
+    padding-top: 2.5641025641vw;
+  }
+}
+#successModal .modal-dialog .modal-content .modal-body .successmodal button {
+  margin-left: auto;
+  border: none !important;
+  outline: none !important;
+  display: block;
+  margin-right: -2.6041666667vw;
+}
+@media (max-width: 990px) {
+  #successModal .modal-dialog .modal-content .modal-body .successmodal button {
+    margin-right: -5.1282051282vw;
+  }
+}
+#successModal .modal-dialog .modal-content .modal-body .successmodal button svg {
+  width: 1.5625vw;
+  height: 1.5625vw;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  #successModal .modal-dialog .modal-content .modal-body .successmodal button svg {
+    width: 7.6923076923vw;
+    height: 7.6923076923vw;
+  }
+}
+#successModal .modal-dialog .modal-content .modal-body .successmodal img {
+  width: 7.65625vw;
+  height: 5.3645833333vw;
+  aspect-ratio: 147/103;
+  display: block;
+  margin: auto;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 990px) {
+  #successModal .modal-dialog .modal-content .modal-body .successmodal img {
+    width: 37.6923076923vw;
+    height: 26.4102564103vw;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+#successModal .modal-dialog .modal-content .modal-body .successmodal h4 {
+  color: #000;
+  text-align: center;
+  /* h3 */
+  font-family: Manrope;
+  font-size: 1.25vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  /* 26.converter(4) */
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #successModal .modal-dialog .modal-content .modal-body .successmodal h4 {
+    font-size: 4.1025641026vw;
+    line-height: 110%;
+    /* 26.mconverter(4) */
+    margin-bottom: 2.5641025641vw;
+  }
+}
+#successModal .modal-dialog .modal-content .modal-body .successmodal h4 span {
+  color: var(--Secondry-color, #00a148);
+}
+#successModal .modal-dialog .modal-content .modal-body .successmodal p {
+  color: #595959;
+  text-align: center;
+  /* pragraph 14 */
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 16.converter(8) */
+}
+@media (max-width: 990px) {
+  #successModal .modal-dialog .modal-content .modal-body .successmodal p {
+    font-size: 3.5897435897vw;
+  }
+}
+
+#paymentsfailedModal .modal-dialog {
+  max-width: 31.25vw;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal {
+  width: 569px;
+  padding: 26.751px 33.439px 30.095px 33.439px;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .btn {
+  width: 26.751px;
+  height: 26.751px;
+  border-radius: 50%;
+  border-radius: 13.375px;
+  background: #F3F4F6;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-left: auto;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .btn svg {
+  width: 10.032px;
+  height: 10.032px;
+  flex-shrink: 0;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon {
+  width: 150.474px;
+  height: 100.316px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 18px;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .svg1 {
+  position: absolute;
+  right: 23.407px;
+  top: -1.672px;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .svg2 {
+  position: absolute;
+  right: 30.931px;
+  top: 8.36px;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .svg3 {
+  position: absolute;
+  left: 15.047px;
+  top: 20.063px;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .svg4 {
+  position: absolute;
+  right: 18.391px;
+  top: 13.375px;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .svg5 {
+  position: absolute;
+  left: 35.111px;
+  top: 43.471px;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .svg6 {
+  position: absolute;
+  left: 23.407px;
+  bottom: 22.571px;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .svg7 {
+  position: absolute;
+  right: 18.39px;
+  bottom: 46.813px;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .circle {
+  width: 63.533px;
+  height: 63.533px;
+  border-radius: 31.767px;
+  background: linear-gradient(180deg, #FF6B6B 0%, #E03B3B 100%);
+  box-shadow: 0 1.672px 3.344px 0 rgba(255, 255, 255, 0.25) inset, 0 6.688px 16.719px 0 rgba(255, 74, 74, 0.25);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .circle svg {
+  width: 21.735px;
+  height: 21.735px;
+  flex-shrink: 0;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .title {
+  color: var(--Heading-text, #181818);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 30.095px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  margin-bottom: 13px;
+  /* 33.104px */
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .title span {
+  color: #FF4A4A;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .divider {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 13px;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .divider span {
+  display: block;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .divider span:first-child, #paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .divider span:last-child {
+  width: 33.439px;
+  height: 0.836px;
+  background: #E5E7EB;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .divider span:nth-child(2) {
+  width: 5.016px;
+  height: 5.016px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #FF4A4A;
+  margin: 0 0.3645833333vw;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal .descripition {
+  color: #6B7280;
+  text-align: center;
+  font-family: Inter;
+  font-size: 12.191px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal a {
+  border-radius: 13.375px;
+  border: 0.836px solid #FFE3E3;
+  background: #FFF5F5;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  padding: 0.625vw;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal a .icon {
+  width: 33.439px;
+  height: 33.439px;
+  border-radius: 10.032px;
+  background: #FFEBEB;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal a .icon svg {
+  width: 16.719px;
+  height: 16.719px;
+  flex-shrink: 0;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal a .text {
+  width: 21.1458333333vw;
+  margin-left: 0.6770833333vw;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal a .text h4 {
+  color: #181818;
+  font-family: Inter;
+  font-size: 11.703px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 3px;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal a .text p {
+  color: #181818;
+  font-family: Inter;
+  font-size: 11.703px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 0;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal a .angle {
+  width: 0.78125vw;
+  margin-left: auto;
+}
+#paymentsfailedModal .modal-dialog .modal-content .modal-body .successmodal a .angle svg {
+  color: #181818;
+  font-family: Inter;
+  font-size: 11.703px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+#paymentsuccessModal .modal-dialog {
+  max-width: 31.25vw;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal {
+  width: 569px;
+  padding: 26.751px 33.439px 30.095px 33.439px;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .btn {
+  width: 26.751px;
+  height: 26.751px;
+  border-radius: 50%;
+  border-radius: 13.375px;
+  background: #F3F4F6;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-left: auto;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .btn svg {
+  width: 10.032px;
+  height: 10.032px;
+  flex-shrink: 0;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon {
+  width: 150.474px;
+  height: 100.316px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 18px;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .svg1 {
+  position: absolute;
+  right: 23.407px;
+  top: -1.672px;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .svg2 {
+  position: absolute;
+  right: 30.931px;
+  top: 8.36px;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .svg3 {
+  position: absolute;
+  left: 15.047px;
+  top: 20.063px;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .svg4 {
+  position: absolute;
+  right: 18.391px;
+  top: 13.375px;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .svg5 {
+  position: absolute;
+  left: 35.111px;
+  top: 43.471px;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .svg6 {
+  position: absolute;
+  left: 23.407px;
+  bottom: 22.571px;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .svg7 {
+  position: absolute;
+  right: 18.39px;
+  bottom: 46.813px;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .circle {
+  width: 63.533px;
+  height: 63.533px;
+  border-radius: 34.622px;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .circle .checkmark {
+  width: 63.533px;
+  height: 63.533px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #ffffff;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px #00A148;
+  animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+  position: relative;
+  margin: 0 auto;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .circle .checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #37a769;
+  fill: #00A148;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .animatedicon .circle .checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #ffffff;
+  }
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .title {
+  color: var(--Heading-text, #181818);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 30.095px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  margin-bottom: 13px;
+  /* 33.104px */
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .title span {
+  color: #00A148;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .divider {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 13px;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .divider span {
+  display: block;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .divider span:first-child, #paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .divider span:last-child {
+  width: 33.439px;
+  height: 0.836px;
+  background: #E5E7EB;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .divider span:nth-child(2) {
+  width: 5.016px;
+  height: 5.016px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #00A148;
+  margin: 0 0.3645833333vw;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal .descripition {
+  color: #6B7280;
+  text-align: center;
+  font-family: Inter;
+  font-size: 12.191px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal a {
+  border-radius: 13.375px;
+  border: 0.836px solid #E2F5F0;
+  background: #F4FBF9;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  padding: 0.625vw;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal a .icon {
+  width: 33.439px;
+  height: 33.439px;
+  border-radius: 10.032px;
+  background: #EAFDF5;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal a .icon svg {
+  width: 16.719px;
+  height: 16.719px;
+  flex-shrink: 0;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal a .text {
+  width: 21.1458333333vw;
+  margin-left: 0.6770833333vw;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal a .text h4 {
+  color: #181818;
+  font-family: Inter;
+  font-size: 11.703px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 3px;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal a .text p {
+  color: #6B7280;
+  font-family: Inter;
+  font-size: 10.032px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 0;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal a .angle {
+  width: 0.78125vw;
+  margin-left: auto;
+}
+#paymentsuccessModal .modal-dialog .modal-content .modal-body .successmodal a .angle svg {
+  color: #181818;
+  font-family: Inter;
+  font-size: 11.703px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+#proposalModal .amount .input.is-invalid,
+#proposalModal .descripition textarea.is-invalid {
+  border-color: #e53935 !important;
+}
+
+#proposalModal .field-error {
+  display: none;
+  color: #e53935;
+  font-family: Inter, sans-serif;
+  font-size: 0.625vw;
+  font-weight: 400;
+  line-height: 120%;
+  margin-top: 0.2604166667vw;
+}
+
+#proposalModal .field-error.show {
+  display: block;
+}
+
+@media (max-width: 990px) {
+  #proposalModal .field-error {
+    font-size: 2.5641025641vw;
+    margin-top: 1.2820512821vw;
+  }
+}
+#proposalModal .descripition .count.is-limit {
+  color: #e53935;
+}
+
+#proposalModal .uploadwrapper.is-dragover {
+  border-color: #00a148 !important;
+  background: #eafff0;
+}
+
+#proposalModal .uploadwrapper .uploadedfile {
+  display: none;
+}
+
+#proposalModal .uploadwrapper.has-files .uploadedfile {
+  display: block;
+}
+
+#proposalModal .uploadwrapper.has-files .content {
+  display: none;
+}
+
+#proposalModal .uploadwrapper .file-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#proposalModal .uploadwrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+#proposalModal .uploadedfile .single a.remove-file {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#proposalModal .uploadwrapper button.btn-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2604166667vw;
+  cursor: pointer;
+}
+
+@media (max-width: 990px) {
+  #proposalModal .uploadwrapper button.btn-upload {
+    gap: 1.2820512821vw;
+  }
+}
+/* Mobile bottom-sheet (toast-like slide up) */
+@media (max-width: 990px) {
+  #proposalModal {
+    padding: 0 !important;
+  }
+  #proposalModal .modal-dialog,
+  #proposalModal.fade .modal-dialog {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+    min-height: auto;
+    align-items: flex-end;
+  }
+  #proposalModal.show .modal-dialog {
+    transform: translateY(0);
+  }
+  #proposalModal .modal-content {
+    border-radius: 4.1025641026vw 4.1025641026vw 0 0;
+    max-height: 90dvh;
+    overflow: hidden;
+    border: none;
+  }
+  #proposalModal .modal-body {
+    max-height: 90dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}/*# sourceMappingURL=popups.css.map */

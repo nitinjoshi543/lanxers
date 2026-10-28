@@ -1,0 +1,725 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+$mediawidth: 990px;
+
+@function converter($size) {
+    @return calc($size / 19.20) * 1vw;
+}
+
+@function mconverter($size) {
+    @return calc($size / 3.90) * 1vw;
+}
+
+@mixin center {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+@mixin justify-center {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.myjoblist {
+    padding: converter(140) converter(0) converter(50);
+
+    @media(max-width: $mediawidth) {
+        padding: mconverter(75) mconverter(0) mconverter(100);
+    }
+
+    .container-fluid {
+        max-width: converter(1420);
+
+        @media(max-width: $mediawidth) {
+            max-width: 100%;
+        }
+
+        .heading {
+            @include center();
+            justify-content: space-between;
+            margin-bottom: converter(20);
+
+            @media(max-width: $mediawidth) {
+                margin-bottom: mconverter(16);
+            }
+
+            .title {
+                width: 70%;
+
+                h1 {
+                    color: #000;
+                    font-family: Manrope;
+                    font-size: converter(24);
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 110%;
+                    margin-bottom: converter(10);
+
+                    @media(max-width: $mediawidth) {
+                        font-size: mconverter(18);
+                        margin-bottom: mconverter(5);
+                    }
+
+                }
+
+                p {
+                    color: #505050;
+
+                    /* pragraph 14 */
+                    font-family: Inter;
+                    font-size: converter(14);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 120%;
+                    margin-bottom: 0;
+
+                    @media(max-width: $mediawidth) {
+                        font-size: mconverter(14);
+                    }
+
+                }
+            }
+
+            .postjobsection {
+                @include center();
+                justify-content: right;
+
+                .image {
+                    @media(max-width: $mediawidth) {
+                        display: none;
+                    }
+
+                }
+
+                img {
+                    width: converter(69);
+                    height: converter(53);
+                    aspect-ratio: 69/53;
+                    margin-right: converter(15);
+
+                    @media(max-width: $mediawidth) {
+                        display: none;
+                    }
+
+                }
+
+                p {
+                    color: #505050;
+
+                    /* pragraph 14 */
+                    font-family: Inter;
+                    font-size: converter(14);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 120%;
+                    margin: 0;
+                    width: converter(254);
+
+                    @media(max-width: $mediawidth) {
+                        display: none;
+                    }
+
+                }
+
+                a {
+                    @include justify-center();
+                    min-width: converter(130);
+                    height: converter(40);
+                    border-radius: converter(55);
+                    background: var(--Secondry-color, #00A148);
+                    text-decoration: none;
+                    margin-left: converter(30);
+
+                    @media(max-width: $mediawidth) {
+                        width: mconverter(111);
+                        height: mconverter(31);
+                        border-radius: mconverter(55);
+                        margin-left: mconverter(22);
+                    }
+
+                    span {
+                        color: #FFF;
+                        font-family: Inter;
+                        font-size: converter(14);
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+
+                        @media(max-width: $mediawidth) {
+                            font-size: mconverter(14);
+                        }
+
+                    }
+
+                    svg {
+                        width: converter(11);
+                        height: converter(8);
+                        margin-left: converter(5);
+
+                        @media(max-width: $mediawidth) {
+                            display: none;
+                        }
+
+                        path {}
+                    }
+                }
+            }
+        }
+
+        .myjoblisttab {
+            margin-bottom: converter(10);
+
+            @media(max-width: $mediawidth) {
+                margin-bottom: mconverter(12);
+            }
+
+            .nav-tabs {
+                border-radius: converter(10);
+                border: converter(1) solid #CCC;
+                background: #FFF;
+                justify-content: center;
+                @include center();
+
+                @media(max-width: $mediawidth) {
+                    border-radius: mconverter(7);
+                    border: mconverter(1) solid #CCC;
+                }
+
+                .nav-item {
+                    width: converter(426);
+
+                    @media(max-width: $mediawidth) {
+                        width: mconverter(114);
+                    }
+
+                    .nav-link {
+                        @include justify-center();
+                        border: none;
+                        transition: 0.5s linear;
+                        border-bottom: converter(3) solid transparent;
+
+                        @media(max-width: $mediawidth) {
+                            display: block;
+                            padding: 0;
+                            padding: mconverter(6) 0;
+                            border-bottom: mconverter(3) solid transparent;
+
+                        }
+
+                        svg {
+                            margin-right: converter(10);
+                            width: converter(20);
+                            height: converter(19);
+
+                            @media(max-width: $mediawidth) {
+                                margin-right: converter(0);
+                                width: mconverter(20);
+                                height: mconverter(19);
+                                margin: auto;
+                                display: block;
+                                margin-bottom: mconverter(8);
+                            }
+
+                        }
+
+                        span {
+                            &:first-of-type {
+                                color: #383838;
+                                font-family: Inter;
+                                font-size: converter(14);
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 120%;
+
+                                @media(max-width: $mediawidth) {
+                                    font-size: mconverter(12);
+                                    display: block;
+                                    text-align: center;
+                                }
+
+                            }
+
+                            &:last-of-type {
+                                @include justify-center();
+                                width: converter(37);
+                                height: converter(37);
+                                border-radius: 50%;
+                                overflow: hidden;
+                                border-radius: converter(41);
+                                text-align: center;
+
+                                /* Paragraph 12 */
+                                font-family: Inter;
+                                font-size: converter(12);
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 120%;
+                                margin-left: converter(15);
+                                background: #EAEAEA;
+                                color: #383838;
+
+                                @media(max-width: $mediawidth) {
+                                    display: none;
+                                }
+
+
+                            }
+                        }
+
+                        &.active {
+                            border-bottom: converter(3) solid var(--Secondry-color, #00A148);
+
+                            @media(max-width: $mediawidth) {
+
+                                border-bottom: mconverter(3) solid var(--Secondry-color, #00A148);
+                            }
+
+                            span {
+                                &:last-child {
+                                    background: #D8FFE9;
+                                    color: var(--Secondry-color, #00A148);
+
+                                    @media(max-width: $mediawidth) {}
+
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .line {
+                    width: converter(1);
+                    height: converter(34);
+                    background: #DED9D9;
+                    margin: 0 converter(10);
+
+                    @media(max-width: $mediawidth) {
+                        display: none;
+                    }
+
+                }
+            }
+        }
+
+        .myjoblisttabview {
+            .tab-content {
+                .tab-pane {
+                    .tabviewwrapper {
+                        border-radius: converter(15);
+                        border: converter(1) solid #E8E8E8;
+                        background: #FFF;
+                        box-shadow: 0 converter(4) converter(4) 0 rgba(0, 0, 0, 0.05);
+
+                        @media(max-width: $mediawidth) {
+                            border-radius: mconverter(15);
+                            border: mconverter(1) solid #E8E8E8;
+                            box-shadow: 0 mconverter(4) mconverter(4) 0 rgba(0, 0, 0, 0.05);
+                        }
+
+                        .single {
+                            padding: converter(25) converter(50);
+                            @include center();
+                            justify-content: space-between;
+                            border-bottom: converter(1) solid #E5E7EB;
+                            flex-wrap: wrap;
+                            @media(max-width: $mediawidth) {
+                                padding: mconverter(15) mconverter(10);
+                                border-bottom: mconverter(1) solid #E5E7EB;
+                                flex-wrap: wrap;
+                            }
+
+                            .title {
+                                width: converter(444);
+                                @media(max-width: $mediawidth) {
+                                    width: 100%;
+                                    border-bottom: mconverter(1) solid #d4d4d4;
+                                    padding-bottom: mconverter(15);
+                                    margin-bottom: mconverter(10);
+                                    order: 3;
+                                    margin-top: mconverter(10);
+                                }
+
+                                h2 {
+                                    color: #364153;
+                                    font-family: Inter;
+                                    font-size: converter(14);
+                                    font-style: normal;
+                                    font-weight: 600;
+                                    line-height: converter(20);
+                                    /* 142.857% */
+                                    margin-bottom: converter(10);
+
+                                    @media(max-width: $mediawidth) {
+                                        font-size: mconverter(14);
+                                        line-height: 120%;
+                                        margin-bottom: mconverter(10);
+                                    }
+
+                                }
+
+                                ul {
+                                    display: flex;
+                                    list-style-type: none;
+                                    padding: 0;
+                                    margin: 0;
+                                    gap: converter(10);
+
+                                    @media(max-width: $mediawidth) {
+                                        gap: mconverter(10);
+                                    }
+
+                                    li {
+                                        border-radius: converter(10.285);
+                                        background: #F8F8F8;
+                                        padding: converter(5) converter(20);
+                                        color: #00843B;
+                                        text-align: center;
+                                        font-family: Inter;
+                                        font-size: converter(14);
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        line-height: converter(25);
+
+                                        /* 178.571% */
+                                        @media(max-width: $mediawidth) {
+                                            border-radius: mconverter(10.285);
+                                            padding: mconverter(5) mconverter(8);
+                                            font-size: mconverter(12);
+                                            line-height: mconverter(25);
+                                        }
+
+                                    }
+                                }
+                            }
+
+                            .info {
+                                
+                                @media(max-width: $mediawidth) {
+                                    border-right: mconverter(1) solid #B5B5B5;
+                                    order: 4;
+                                    width: 33.3333333333333%;
+
+                                    &:nth-child(4) {
+                                        border-right: 0;
+                                    }
+                                }
+
+                                p {
+                                    color: #364153;
+                                    font-family: Inter;
+                                    font-size: converter(12);
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: converter(20);
+                                    /* 166.667% */
+                                    margin-bottom: converter(10);
+
+                                    @media(max-width: $mediawidth) {
+                                        font-size: mconverter(10);
+                                        line-height: mconverter(20);
+                                        margin-bottom: mconverter(0);
+                                        text-align: center;
+                                    }
+
+                                }
+
+                                h6 {
+                                    color: #364153;
+                                    font-family: Inter;
+                                    font-size: converter(14);
+                                    font-style: normal;
+                                    font-weight: 600;
+                                    line-height: converter(20);
+                                    /* 142.857% */
+                                    margin-bottom: 0;
+
+                                    @media(max-width: $mediawidth) {
+                                        font-size: mconverter(12);
+                                        line-height: mconverter(20);
+                                        text-align: center;
+                                    }
+
+                                }
+                            }
+
+                            .status {
+                                @media(max-width: $mediawidth) {
+                                    order: 1;
+                                }
+
+                                p {
+                                    color: #364153;
+                                    font-family: Inter;
+                                    font-size: converter(12);
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: converter(20);
+                                    margin-bottom: converter(10);
+
+                                    @media(max-width: $mediawidth) {
+                                        display: none;
+                                    }
+
+                                }
+
+                                span {
+                                    border-radius: converter(6);
+                                    padding: converter(5) converter(20);
+                                    font-family: Inter;
+                                    font-size: converter(12);
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: converter(20);
+
+                                    @media(max-width: $mediawidth) {
+                                        border-radius: mconverter(6);
+                                        padding: mconverter(5) mconverter(20);
+                                        font-size: mconverter(12);
+                                        line-height: mconverter(20);
+                                    }
+
+                                    &.live {
+                                        color: var(--Secondry-color, #00A148);
+                                        background: #E4FFD6;
+
+                                        @media(max-width: $mediawidth) {}
+
+                                    }
+
+                                    &.ongoing {
+                                        background: #EAF0FF;
+                                        color: #105BFB;
+
+                                        @media(max-width: $mediawidth) {}
+
+
+                                    }
+
+                                    &.previous {
+                                        background: #F4E6FF;
+                                        color: #9C3AED;
+
+                                        @media(max-width: $mediawidth) {}
+
+                                    }
+                                }
+                            }
+
+                            >a {
+                               @include justify-center();
+                                gap: converter(10);
+                                border-radius: converter(10);
+                                border: converter(1) solid var(--Secondry-color, #00A148);
+                                color: var(--Secondry-color, #00A148);
+                                font-family: Inter;
+                                font-size: converter(14);
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: normal;
+                                text-decoration: none;
+                                width: converter(122);
+                                height: converter(40);
+
+                                @media(max-width: $mediawidth) {
+                                    width: 100%;
+                                    padding: 0;
+                                    height: mconverter(40);
+                                    border-radius: 10px;
+                                    font-size: mconverter(14);
+                                    order: 5;
+                                    margin-top: mconverter(10);
+                                }
+
+                            }
+
+                            button {
+                                border-radius: converter(10);
+                                border: converter(1) solid #00A148;
+                                background-color: transparent;
+                                padding: converter(9) converter(10);
+
+                                @media(max-width: $mediawidth) {
+                                    order: 2;
+                                    border: mconverter(1) solid #00A148;
+                                    border-radius: mconverter(10);
+                                    padding: mconverter(9) mconverter(10);
+                                }
+
+                                svg {
+                                    width: converter(18);
+                                    height: converter(20);
+
+                                    @media(max-width: $mediawidth) {
+                                        width: mconverter(16);
+                                        height: mconverter(18);
+                                    }
+
+                                }
+                            }
+                        }
+
+                        .nojob-state{ 
+                            text-align:center; 
+                            padding: converter(45) converter(0) converter(40);
+                            width: converter(500);
+                            display: flex;
+                            flex-direction: column;
+                            margin: auto;
+                            align-items: center;
+                            justify-content: center; 
+
+                            @media(max-width: $mediawidth) {
+                                margin-top: mconverter(10);
+                                padding: mconverter(45) mconverter(30) mconverter(40);
+                                width: 100%;
+                                border-radius: mconverter(15);
+                                border: mconverter(1) solid #E8E8E8;
+                                background: #FFF;
+                            }
+
+                            .job-illustration { 
+                                width: converter(297);
+                                height: converter(198);
+                                margin-bottom: converter(0);
+                                @media(max-width: $mediawidth) {
+                                    width: mconverter(297);
+                                    height: mconverter(198);
+                                }
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            h3{
+                                color: #272727;
+                                font-family: Manrope;
+                                font-size: converter(24);
+                                font-weight: 600; 
+                                @media(max-width: $mediawidth) {
+                                    font-size: mconverter(16);
+                                }
+                            }
+
+                            p {
+                                color: #272727;
+                                font-family: Inter;
+                                font-size: converter(16);
+                                margin-bottom: converter(15);
+                                @media(max-width: $mediawidth) {
+                                    font-size: mconverter(14);
+                                    margin-bottom: mconverter(15);
+                                }
+                            }
+
+                            .nojobbtn {
+                                width: converter(155);
+                                height: converter(35);
+                                padding: converter(5) converter(15);
+                                border-radius: converter(30);
+                                font-size: converter(14);
+                                gap: converter(8);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                line-height: normal;
+                                background: #00A148;
+                                border: none;
+                                color: #FFF;
+                                font-family: Inter;
+                                @media(max-width: $mediawidth) {
+                                    width: mconverter(140);
+                                    height: mconverter(35);
+                                    padding: mconverter(5) mconverter(15);
+                                    border-radius: mconverter(30);
+                                    font-size: mconverter(14);
+                                    gap: mconverter(5);
+                                }
+
+                                svg {
+                                    width: converter(14);
+                                    height: converter(14);
+                                    @media(max-width: $mediawidth) {
+                                        width: mconverter(12);
+                                        height: mconverter(12);
+                                    }
+                                } 
+                            }
+                        }
+                    }
+
+                    .paginationC {
+                        margin-top: converter(20);
+
+                        @media(max-width: $mediawidth) {
+                            margin-top: mconverter(20);
+
+                        }
+
+                        ul {
+                            @include justify-center();
+                            gap: converter(5);
+                            list-style-type: none;
+
+                            @media(max-width: $mediawidth) {
+                                gap: mconverter(10);
+                            }
+
+                            li {
+                                a {
+                                    @include justify-center();
+                                    width: converter(32);
+                                    height: converter(32);
+                                    border-radius: converter(32);
+                                    border: converter(1) solid #F1F1F1;
+                                    background: #FFF;
+                                    color: #333;
+                                    font-family: "Inter";
+                                    font-size: converter(13);
+                                    font-style: normal;
+                                    font-weight: 600;
+                                    line-height: normal;
+                                    text-decoration: none;
+
+                                    @media(max-width: $mediawidth) {
+                                        width: mconverter(32);
+                                        height: mconverter(32);
+                                        border-radius: mconverter(32);
+                                        border: mconverter(1) solid #F1F1F1;
+                                        font-size: mconverter(13);
+                                    }
+
+                                    svg {
+                                        width: converter(4.94);
+                                        height: converter(8);
+
+                                        @media(max-width: $mediawidth) {
+                                            width: mconverter(4.94);
+                                            height: mconverter(8);
+                                        }
+
+                                    }
+
+                                    &.active {
+                                        background: var(--Secondry-color, #00A148);
+                                        color: #fff;
+
+                                        @media(max-width: $mediawidth) {}
+
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,873 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+.companyProfile .container-fluid {
+  width: 73.9583333333vw;
+  margin: auto;
+  margin-top: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid {
+    width: 100%;
+    margin-top: 5.1282051282vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob {
+  margin-top: 1.0416666667vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob {
+    margin-top: 3.8461538462vw;
+    gap: 2.5641025641vw;
+    display: block;
+    width: 100%;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo {
+  width: 17.7083333333vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutInfo {
+    width: 90.5128205128vw;
+    margin: auto;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails {
+  width: 17.7083333333vw;
+  height: 10.78125vw;
+  align-self: stretch;
+  border-radius: 0.78125vw;
+  border: 0.0520833333vw solid #E8E8E8;
+  background: #FFF;
+  box-shadow: 0 0.2083333333vw 0.2083333333vw 0 rgba(0, 0, 0, 0.05);
+  padding: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails {
+    width: 90.5128205128vw;
+    height: 53.5897435897vw;
+    padding: 5.1282051282vw 3.8461538462vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #E0E0E0;
+    box-shadow: 0 0.5128205128vw 1.0256410256vw 0 rgba(0, 0, 0, 0.15);
+    margin: auto;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails .images {
+  width: 3.6458333333vw;
+  height: 3.6458333333vw;
+  aspect-ratio: 1/1;
+  border-radius: 3.6458333333vw;
+  margin: auto;
+  margin-bottom: 0.5208333333vw;
+  overflow: hidden;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails .images {
+    width: 20.5128205128vw;
+    height: 20.5128205128vw;
+    aspect-ratio: 1/1;
+    border-radius: 20.5128205128vw;
+    margin-bottom: 1.9230769231vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails .images img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails .text h5 {
+  color: #101828;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin-bottom: 0.4166666667vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails .text h5 {
+    font-size: 4.6153846154vw;
+    line-height: 110%;
+    margin-bottom: 0.8974358974vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails .text > span {
+  color: #6A7282;
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.48546875vw;
+  margin-bottom: 0.2604166667vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails .text > span {
+    font-size: 3.0769230769vw;
+    line-height: 3.8461538462vw;
+    margin-bottom: 0.941025641vw;
+    gap: 1.2820512821vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails .text > span svg {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails .text > span svg {
+    width: 3.5897435897vw;
+    height: 3.5897435897vw;
+    aspect-ratio: 1/1;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails .text p {
+  display: flex;
+  width: 5.2083333333vw;
+  padding: 0.2604166667vw 0.5208333333vw;
+  justify-content: center;
+  align-items: center;
+  gap: 0.1941666667vw;
+  border-radius: 930830.3125vw;
+  background: #F0FDF4;
+  color: #008236;
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.5208333333vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.48546875vw;
+  padding: 0.2604166667vw 0.5208333333vw;
+  margin: auto;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails .text p {
+    width: 25.1282051282vw;
+    padding: 1.2820512821vw 3.8461538462vw;
+    gap: 1.2820512821vw;
+    border-radius: 17.4358974359vw;
+    font-size: 2.2830769231vw;
+    line-height: 3.2469230769vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails .text p span {
+  width: 0.19296875vw;
+  height: 0.1954166667vw;
+  flex-shrink: 0;
+  border-radius: 930830.3125vw;
+  background: var(--Secondry-color, #00A148);
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutInfo .companyDetails .text p span {
+    width: 1.2176923077vw;
+    height: 1.2176923077vw;
+    flex-shrink: 0;
+    border-radius: 7781905.128205128vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo .companyContact {
+  width: 17.7083333333vw;
+  height: auto;
+  align-self: stretch;
+  border-radius: 0.78125vw;
+  border: 0.0520833333vw solid #E8E8E8;
+  background: #FFF;
+  box-shadow: 0 0.2083333333vw 0.2083333333vw 0 rgba(0, 0, 0, 0.05);
+  padding: 1.0416666667vw 0.78125vw;
+  margin-top: 0.78125vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutInfo .companyContact {
+    width: 90.5128205128vw;
+    height: auto;
+    padding: 5.1282051282vw 3.8461538462vw;
+    gap: 2.5641025641vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #E0E0E0;
+    box-shadow: 0 0.5128205128vw 1.0256410256vw 0 rgba(0, 0, 0, 0.15);
+    margin: auto;
+    margin-top: 3.8461538462vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo .companyContact .contactDtailes {
+  width: 16.1458333333vw;
+  display: flex;
+  height: auto;
+  padding: 0.5208333333vw 5vw 0.5208333333vw 0.78125vw;
+  border-radius: 0.2604166667vw;
+  background: #F5F5F5;
+  padding: 0.5208333333vw 0.78125vw;
+  margin-bottom: 0.5208333333vw;
+  gap: 0.5208333333vw;
+  word-break: break-all;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutInfo .companyContact .contactDtailes {
+    width: 82.8205128205vw;
+    height: auto;
+    padding: 2.5641025641vw 3.8461538462vw 2.5641025641vw 3.8461538462vw;
+    flex-shrink: 0;
+    border-radius: 1.2820512821vw;
+    margin-bottom: 2.5641025641vw;
+    gap: 2.5641025641vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo .companyContact .contactDtailes .icon svg {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutInfo .companyContact .contactDtailes .icon svg {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo .companyContact .contactDtailes .text {
+  line-height: 0;
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo .companyContact .contactDtailes .text span {
+  color: #555;
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutInfo .companyContact .contactDtailes .text span {
+    font-size: 3.0769230769vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutInfo .companyContact .contactDtailes .text p {
+  color: #101828;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.9375vw;
+  margin-bottom: 0;
+  margin-top: 0vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutInfo .companyContact .contactDtailes .text p {
+    font-size: 3.5897435897vw;
+    margin-top: 1.2820512821vw;
+    line-height: 4.6153846154vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany {
+  width: 55.2083333333vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany {
+    width: 90.5128205128vw;
+    margin: auto;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc {
+  width: 55.2083333333vw;
+  height: auto;
+  border-radius: 0.78125vw;
+  border: 0.0520833333vw solid #E8E8E8;
+  background: #FFF;
+  box-shadow: 0 0.2083333333vw 0.2083333333vw 0 rgba(0, 0, 0, 0.05);
+  padding: 0.78125vw 1.5625vw 1.25vw 1.5625vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc {
+    padding: 5.1282051282vw 3.8461538462vw 5.1282051282vw 3.8461538462vw;
+    gap: 3.8461538462vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #E0E0E0;
+    box-shadow: 0 0.5128205128vw 1.0256410256vw 0 rgba(0, 0, 0, 0.15);
+    width: 90.5128205128vw;
+    margin-top: 3.8461538462vw;
+    height: auto;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc h4 {
+  color: #0A0A0A;
+  font-family: Inter;
+  font-size: 1.0416666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.944375vw;
+  display: flex;
+  gap: 0.5208333333vw;
+  align-items: center;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc h4 {
+    font-size: 4.1025641026vw;
+    line-height: 125%;
+    gap: 2.5641025641vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc h4 svg {
+  width: 1.25vw;
+  height: 1.25vw;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc h4 svg {
+    width: 6.1538461538vw;
+    height: 6.1538461538vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc hr {
+  width: calc(100% + 3.125vw);
+  margin-left: -1.5625vw;
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc p {
+  color: #364153;
+  font-family: Inter;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.3020833333vw;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc p {
+    font-size: 3.0769230769vw;
+    line-height: 5.1282051282vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc h5 {
+  color: #101828;
+  font-family: Inter;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.6666145833vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc h5 {
+    font-size: 4.1025641026vw;
+    line-height: 125%;
+    margin-top: 3.8461538462vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5208333333vw;
+  flex-wrap: wrap;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc ul {
+    gap: 1.2820512821vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc ul li {
+  display: flex;
+  height: 1.1979166667vw;
+  padding: 0.2604166667vw 0.5208333333vw;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3515625vw;
+  background: #F8F8F8;
+  color: #00843B;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.9114583333vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .companyDesc ul li {
+    height: 4.8702564103vw;
+    padding: 0.6956410256vw 2.4351282051vw 0.9276923077vw 2.4351282051vw;
+    border-radius: 1.5653846154vw;
+    font-size: 3.0769230769vw;
+    line-height: 3.2469230769vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob {
+  width: 55.2083333333vw;
+  gap: 1.0416666667vw;
+  border-radius: 0.78125vw;
+  border: 0.0520833333vw solid #E8E8E8;
+  background: #FFF;
+  box-shadow: 0 0.2083333333vw 0.2083333333vw 0 rgba(0, 0, 0, 0.05);
+  padding: 0.78125vw 1.5625vw 1.25vw 1.5625vw;
+  margin-top: 0.78125vw;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob {
+    padding: 5.1282051282vw 3.8461538462vw 5.1282051282vw 3.8461538462vw;
+    gap: 2.8205128205vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #E0E0E0;
+    box-shadow: 0 0.5128205128vw 1.0256410256vw 0 rgba(0, 0, 0, 0.15);
+    margin-top: 3.8461538462vw;
+    margin-bottom: 3.8461538462vw;
+    width: 90.5128205128vw;
+    height: auto;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .titleTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .titleTop h4 {
+  color: #0A0A0A;
+  font-family: Inter;
+  font-size: 1.0416666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.944375vw;
+  display: flex;
+  gap: 0.5208333333vw;
+  align-items: center;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .titleTop h4 {
+    font-size: 4.1025641026vw;
+    line-height: 125%;
+    width: 38.4615384615vw;
+    gap: 2.5641025641vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .titleTop h4 svg {
+  width: 1.25vw;
+  height: 1.25vw;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .titleTop h4 svg {
+    width: 6.1538461538vw;
+    height: 6.1538461538vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .titleTop a {
+  color: var(--Secondry-color, #00A148);
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .titleTop a {
+    font-size: 3.5897435897vw;
+    line-height: 120%;
+    gap: 1.2820512821vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .titleTop a svg {
+  width: 0.4166666667vw;
+  height: 0.5729166667vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .titleTop a svg {
+    width: 2.0512820513vw;
+    height: 2.8205128205vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob hr {
+  width: calc(100% + 3.125vw);
+  margin-left: -1.5625vw;
+  margin-top: 0;
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper {
+  max-height: 18.2291666667vw;
+  overflow-y: auto;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper {
+    max-height: 197.4358974359vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5625vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content {
+    padding: 12.8205128205vw 6.6666666667vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content .images {
+  width: 8.8541666667vw;
+  height: 7.1354166667vw;
+  aspect-ratio: 103/83;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content .images {
+    width: 30.7692307692vw;
+    height: 24.8717948718vw;
+    aspect-ratio: 120/97;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content .images img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content .text {
+  width: 20.3125vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content .text {
+    width: 73.0769230769vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content .text h4 {
+  color: var(--Heading-text, #181818);
+  text-align: center;
+  font-family: Manrope;
+  font-size: 1.25vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  margin-top: 0.2604166667vw;
+  margin-bottom: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content .text h4 {
+    margin-top: 1.2820512821vw;
+    margin-bottom: 1.2820512821vw;
+    font-size: 4.1025641026vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content .text p {
+  color: var(--text-color, #575757);
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 0;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content .text p {
+    font-size: 3.5897435897vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content .text .postJob {
+  margin-top: 0.78125vw;
+  display: flex;
+  padding: 0.5208333333vw 1.0416666667vw;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2604166667vw;
+  border-radius: 2.8645833333vw;
+  background: var(--Secondry-color, #00A148);
+  color: #FFF;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content .text .postJob svg {
+  width: 0.5729166667vw;
+  height: 0.5729166667vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content .text .postJob {
+    padding: 2.5641025641vw 5.1282051282vw;
+    gap: 1.2820512821vw;
+    border-radius: 14.1025641026vw;
+    font-size: 3.5897435897vw;
+    margin-top: 3.8461538462vw;
+  }
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper .content .text .postJob svg {
+    width: 2.8205128205vw;
+    height: 2.8205128205vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a {
+  text-decoration: none;
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.0520833333vw solid #E5E7EB;
+  flex-wrap: wrap;
+  padding: 0.2604166667vw;
+  padding-bottom: 1.0416666667vw;
+  margin-top: 1.0416666667vw;
+  transition: 0.2s;
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single:first-child {
+  margin-top: 0;
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single:hover {
+  background-color: #ebebeb;
+  padding: 0.2604166667vw;
+  padding-bottom: 1.0416666667vw;
+  border-radius: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single:hover {
+    padding: 3.8461538462vw 2.5641025641vw;
+    border-radius: 2.5641025641vw;
+  }
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single {
+    padding: 3.8461538462vw 2.5641025641vw;
+    border-bottom: 0.2564102564vw solid #E5E7EB;
+    flex-wrap: wrap;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #E8E8E8;
+    background: #FFF;
+    box-shadow: 0 0.5128205128vw 1.0256410256vw 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.5641025641vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .title {
+  width: 23.125vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .title {
+    width: 100%;
+    border-bottom: 0.2564102564vw solid #d4d4d4;
+    padding-bottom: 3.8461538462vw;
+    margin-bottom: 2.5641025641vw;
+    order: 3;
+    margin-top: 2.5641025641vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .title h2 {
+  color: #364153;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.0416666667vw;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .title h2 {
+    font-size: 3.5897435897vw;
+    line-height: 120%;
+    margin-bottom: 2.5641025641vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .title ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5208333333vw;
+  white-space: nowrap;
+  flex-wrap: wrap;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .title ul {
+    gap: 2.5641025641vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .title ul li {
+  border-radius: 0.5356770833vw;
+  background: #F8F8F8;
+  padding: 0.2604166667vw 1.0416666667vw;
+  color: #00843B;
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.3020833333vw;
+  /* 178.571% */
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .title ul li {
+    border-radius: 2.6371794872vw;
+    padding: 1.2820512821vw 2.0512820513vw;
+    font-size: 3.0769230769vw;
+    line-height: 6.4102564103vw;
+  }
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .info {
+    border-right: 0.2564102564vw solid #B5B5B5;
+    order: 4;
+    width: 33.3333333333%;
+  }
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .info:nth-child(4) {
+    border-right: 0;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .info p {
+  color: #364153;
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.0416666667vw;
+  /* 166.667% */
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .info p {
+    font-size: 2.5641025641vw;
+    line-height: 5.1282051282vw;
+    margin-bottom: 0vw;
+    text-align: center;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .info h6 {
+  color: #364153;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.0416666667vw;
+  /* 142.857% */
+  margin-bottom: 0;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .info h6 {
+    font-size: 3.0769230769vw;
+    line-height: 5.1282051282vw;
+    text-align: center;
+  }
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .status {
+    order: 1;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .status p {
+  color: #364153;
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.0416666667vw;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .status p {
+    display: none;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .status span {
+  border-radius: 0.3125vw;
+  padding: 0.2604166667vw 1.0416666667vw;
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .status span {
+    border-radius: 1.5384615385vw;
+    padding: 1.2820512821vw 5.1282051282vw;
+    font-size: 3.0769230769vw;
+    line-height: 5.1282051282vw;
+    position: relative;
+    margin-left: 2.5641025641vw;
+  }
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .status span::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -2.5641025641vw;
+    transform: translate(0, -50%);
+    width: 1.2820512821vw;
+    height: 1.2820512821vw;
+    border-radius: 25.641025641vw;
+    aspect-ratio: 1/1;
+    background-color: #00a148;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .status span.live {
+  color: var(--Secondry-color, #00A148);
+  background: #E4FFD6;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .status span.live {
+    background-color: initial;
+    padding: 0;
+    font-weight: 500;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .status span.ongoing {
+  background: #EAF0FF;
+  color: #105BFB;
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single .status span.previous {
+  background: #F4E6FF;
+  color: #9C3AED;
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single > a {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5208333333vw;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid var(--Secondry-color, #00A148);
+  color: var(--Secondry-color, #00A148);
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+  width: 6.3541666667vw;
+  height: 2.0833333333vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single > a {
+    width: 100%;
+    padding: 0;
+    height: 10.2564102564vw;
+    border-radius: 10px;
+    font-size: 3.5897435897vw;
+    order: 5;
+    margin-top: 2.5641025641vw;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single button {
+  border: none;
+  background-color: transparent;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single button {
+    order: 2;
+  }
+}
+.companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single button svg {
+  width: 0.9375vw;
+  height: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  .companyProfile .container-fluid .freelanceJob .aboutCompany .recentJob .tabviewwrapper a .single button svg {
+    width: 4.6153846154vw;
+    height: 5.1282051282vw;
+  }
+}/*# sourceMappingURL=view-company-profile.css.map */

@@ -1,0 +1,3381 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+
+// 1920
+@function converter($size) {
+    @return calc($size / 19.20) * 1vw;
+}
+
+// 1280px - 1599px
+@function dconverter($size) {
+    @return calc($size / 16) * 1vw;
+}
+
+// 990px
+@function mconverter($size) {
+    @return calc($size / 3.90) * 1vw;
+}
+
+$max-width: 900px;
+$min-desktop: 1280px;
+$max-desktop: 1600px;
+
+@mixin center { 
+    display: flex; 
+    vertical-align: middle;
+    align-items: center;
+}
+
+@mixin justify-center {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+$interfont: 'Inter';
+$manropefont: 'Manrope';
+$contentcolor: #575757; 
+$casualblack: #181818;
+$greencolor: #00A148;
+
+
+* {
+    body {
+        .company-user-page {
+            padding: converter(130) converter(0) converter(50);
+            background-color: rgba(247, 255, 252, 1);
+            position: relative;
+            width: 100%;
+            @media (max-width: $max-width) {
+                padding: mconverter(75) mconverter(20) mconverter(110);
+            }
+            .bg-img1 {
+                width: converter(292);
+                height: converter(413);
+                position: fixed;
+                right: 0;
+                top: 0;
+                z-index: 0;
+                @media (max-width: $max-width) {
+                    width: mconverter(180);
+                    height: mconverter(220);
+                }
+            }
+
+            .bg-img2 {
+                width: converter(292);
+                height: converter(550);
+                position: fixed;
+                left: -2%;
+                top: 25%;
+                z-index: 0;
+                @media (max-width: $max-width) {
+                    width: mconverter(230);
+                    height: mconverter(415);
+                    top: 15%;
+                }
+            }
+
+            .bg-img3 {
+                width: converter(469);
+                height: converter(352);
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                z-index: 0;
+                @media (max-width: $max-width) {
+                    display: none;
+                }
+            }
+
+            .edit-btn {
+                background: transparent;
+                border: none;
+                padding: 0;
+                svg {
+                    width: converter(16);
+                    height: converter(16);
+                    @media (max-width: $max-width) {
+                        width: mconverter(16);
+                        height: mconverter(16);
+                    }
+
+                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                        width: dconverter(16);
+                        height: dconverter(16); 
+                    }
+                }
+            }
+
+            .profile-inner-box {
+                display: flex;
+                align-items: flex-start;
+                gap: converter(20);
+                width: converter(1420);
+                margin: auto;
+                position: relative;
+                z-index: 99;
+
+                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                    width: dconverter(1420);
+                }
+
+                @media (max-width: $max-width) {
+                    gap: mconverter(20);
+                    width: 100%;
+                    flex-direction: column;
+                }
+                aside {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    position: sticky;
+                    top: converter(120);
+                    gap: converter(15);
+                    width: converter(340);
+
+                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                        width: dconverter(340);
+                    }
+
+                    @media (max-width: $max-width) {
+                        gap: mconverter(15);
+                        width: 100%; 
+                        position: relative;
+                    }
+
+                    .desk-none {
+                        @media (max-width: $max-width) {
+                            display: none;
+                        }
+                    }
+
+                    .side-card {
+                        background: #FFF;
+                        border-radius: converter(8);
+                        padding: converter(20) converter(15);
+                        border: converter(1) solid #E5E7EB;
+                        width: 100%;
+                        @media (max-width: $max-width) {
+                            width: 100%; 
+                            border-radius: mconverter(8);
+                            padding: mconverter(20) mconverter(15);
+                            border: mconverter(1) solid #E5E7EB;
+                        }
+                        .profile-head{
+                            display:flex;
+                            gap: converter(10);
+                            align-items:flex-start;
+                            position:relative;
+                            @media (max-width: $max-width) {
+                                gap: mconverter(10);
+                            }
+                            .avatar{
+                                overflow: hidden;
+                                min-width: converter(60);
+                                height: converter(60);
+                                border-radius: converter(100);
+                                border: converter(2) solid #C3C3C3;
+                                background: #E8E8E8;
+
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    min-width: dconverter(60);
+                                    height: dconverter(60);
+                                }
+
+                                @media (max-width: $max-width) {
+                                    min-width: mconverter(60);
+                                    height: mconverter(60);
+                                    border-radius: mconverter(100);
+                                    border: mconverter(2) solid #C3C3C3;
+                                }
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    object-position: top;
+                                }
+                            }
+
+                            .freenlan-info {
+                                width: 100%;
+
+                                h2{
+                                    color: #181818;
+                                    font-family: $manropefont;
+                                    font-size: converter(16);
+                                    font-weight: 600;
+                                    line-height: converter(20);
+                                    margin-bottom: converter(2);
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(16);
+                                        line-height: mconverter(20);
+                                    }
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        font-size: dconverter(16);
+                                        line-height: dconverter(20);
+                                    }
+                                }
+                                .role {
+                                    color: #575757;
+                                    font-family: $interfont;
+                                    font-weight: 400;
+                                    line-height: converter(16);
+                                    font-size: converter(14);
+                                    margin-bottom: converter(10);
+                                    @media (max-width: $max-width) {
+                                        line-height: mconverter(16);
+                                        font-size: mconverter(14);
+                                        margin-bottom: mconverter(8);
+                                    }
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        font-size: dconverter(16);
+                                        line-height: dconverter(20);
+                                    }
+                                }
+                                .company {
+                                    color: #00A148;
+                                    font-family: $interfont;
+                                    font-size: converter(14);
+                                    font-weight: 500;
+                                    line-height: converter(16);
+                                    margin-bottom: converter(8);
+                                    @media (max-width: $max-width) {
+                                        line-height: mconverter(16);
+                                        font-size: mconverter(14);
+                                        margin-bottom: mconverter(8);
+                                    }
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        font-size: dconverter(16);
+                                        line-height: dconverter(20);
+                                    }
+                                }
+                                .website-link {
+                                    margin-bottom: converter(4);
+                                    @media (max-width: $max-width) {
+                                        margin-bottom: mconverter(4);
+                                    }
+                                    a {
+                                        color: #00A148;
+                                        font-family: $interfont;
+                                        font-weight: 500;
+                                        font-size: converter(14);
+                                        line-height: converter(16);
+                                        display: flex;
+                                        align-items: center;
+                                        gap: converter(15);
+                                        @media (max-width: $max-width) {
+                                            line-height: mconverter(16);
+                                            font-size: mconverter(14);
+                                            gap: mconverter(15);
+                                        }
+                                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                            font-size: dconverter(14);
+                                            line-height: dconverter(20);
+                                        }
+                                        svg{
+                                            width: converter(14);
+                                            height: converter(14);
+                                            @media (max-width: $max-width) {
+                                                width: mconverter(14);
+                                                height: mconverter(14);
+                                            }
+                                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                                width: dconverter(14);
+                                                height: dconverter(14);
+                                            }
+                                        }
+                                    }
+                                }
+                                .duration {
+                                    color: #575757;
+                                    font-family: $interfont;
+                                    font-weight: 400;
+                                    font-size: converter(14);
+                                    line-height: converter(20);
+                                    margin-bottom: converter(5);
+                                    @media (max-width: $max-width) {
+                                        line-height: mconverter(16);
+                                        font-size: mconverter(14);
+                                        margin-bottom: mconverter(8);
+                                    }
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        font-size: dconverter(13);
+                                        line-height: dconverter(16);
+                                    }
+                                }
+                                .city {
+                                    color: #AFAFAF;
+                                    font-family: $interfont;
+                                    font-size: converter(14);
+                                    font-weight: 400;
+                                    line-height: converter(16);
+                                    @media (max-width: $max-width) {
+                                        line-height: mconverter(16);
+                                        font-size: mconverter(14);
+                                    }
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        font-size: dconverter(13);
+                                        line-height: dconverter(16);
+                                    }
+                                }
+                            }
+                        }
+                        .linebar {
+                            background: #F3F4F6;
+                            height: converter(1);
+                            margin: converter(15) auto;
+                            width: 95%;
+                            @media (max-width: $max-width) {
+                                height: mconverter(1);
+                                margin: mconverter(15) auto;
+                            }
+                        }
+
+                        .stats-row{
+                            display:flex;
+                            justify-content:space-between;
+                            .stat-label,  .stat-sub{
+                               color: #AFAFAF;
+                                font-family: $interfont;
+                                font-size: converter(12);
+                                font-weight: 400;
+                                line-height: converter(20);
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(12);
+                                    line-height: mconverter(20);
+                                }
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    font-size: dconverter(13);
+                                    line-height: dconverter(18);
+                                }
+                            }
+                            .stat-value {
+                                color: #181818;
+                                font-family: $interfont;
+                                font-size: converter(14);
+                                font-weight: 600;
+                                line-height: converter(15);
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(14);
+                                    line-height: mconverter(15);
+                                }
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    font-size: dconverter(14);
+                                    line-height: dconverter(20);  
+                                }
+                            }
+                            
+                        }
+
+                        .updated-line{
+                            display:flex;
+                            align-items:center;
+                            font-weight: 400;
+                            color: #9CA3AF;
+                            font-family: $interfont;
+                            font-size: converter(14);
+                            gap: converter(6);
+                            line-height: converter(16);
+                            margin-bottom: converter(16);
+
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(14);
+                                gap: mconverter(6);
+                                line-height: mconverter(16);
+                                margin-bottom: mconverter(16);
+                            }
+
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                font-size: dconverter(14);
+                                line-height: dconverter(16);  
+                            }
+
+                            .dot{
+                                width: converter(7);
+                                height: converter(7);
+                                display:inline-block;
+                                border-radius: converter(50);
+                                background: #22C55E;
+                                @media (max-width: $max-width) {
+                                    width: mconverter(7);
+                                    height: mconverter(7);
+                                    border-radius: converter(50);
+                                }
+                            }
+                        }
+                        
+                        .contact-line{
+                            display:flex;
+                            justify-content: space-between;
+                            font-weight: 400;
+                            line-height: converter(16);
+                            margin-top: converter(10);
+                            word-break: break-word;
+                            @media (max-width: $max-width) {
+                                line-height: mconverter(16);
+                                margin-top: mconverter(10);
+                            }
+
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                font-size: dconverter(16);
+                            }
+
+                            .sapdiv {
+                                display:flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                gap:converter(10);
+                                @media (max-width: $max-width) {
+                                    gap: mconverter(10);
+                                }
+                            }
+
+                            span {
+                                color: #374151;
+                                font-family: $interfont;
+                                font-size: converter(16);
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(14);
+                                }
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    font-size: dconverter(14);
+                                }
+                            }
+
+                            svg {
+                                width: converter(16);
+                                height: converter(16);
+                                @media (max-width: $max-width) {
+                                    width: mconverter(16);
+                                    height: mconverter(16);
+                                }
+                            }
+                            .edit-btn {
+                                background: transparent;
+                                border: none;
+                                padding: 0;
+                                svg {
+                                    width: converter(16);
+                                    height: converter(16);
+                                    @media (max-width: $max-width) {
+                                        width: mconverter(16);
+                                        height: mconverter(16);
+                                    }
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        width: dconverter(16);
+                                        height: dconverter(16); 
+                                    }
+                                }
+                            }
+                        }
+
+                        .score-card{
+                            display:flex;
+                            align-items:flex-start;
+                            gap: converter(15);
+
+                            @media (max-width: $max-width) {
+                                gap: mconverter(15);
+                            }
+
+                            .score-ring{
+                                min-width: converter(60);
+                                min-height: converter(60);
+                                border-radius: converter(100);
+                                border: converter(5) solid rgba(34, 197, 94, 1);
+                                font-size: converter(14);
+                                display:flex;
+                                align-items:center;
+                                justify-content:center;
+                                font-weight:700;
+                                color: #1C1C2E;
+                                font-family: $interfont;
+                                @media (max-width: $max-width) {
+                                }
+                            }
+
+                            h3{
+                                color: #1C1C2E;
+                                font-family: $manropefont;
+                                font-size: converter(16);
+                                font-weight: 600;
+                                margin-bottom: converter(5);
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(16);
+                                }
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    font-size: dconverter(16);
+                                    margin-bottom: dconverter(4);
+                                }
+                            }
+                            p { 
+                                color: #575757;
+                                font-family: $interfont;
+                                font-weight: 400;
+                                font-size: converter(14);
+                                line-height: converter(16);
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    font-size: dconverter(14);
+                                    line-height: dconverter(16);
+                                }
+                            }
+                        }
+
+                        .pending-title {
+                            color: #1C1C2E;
+                            font-family: $manropefont;
+                            font-size: converter(16);
+                            font-weight: 600;
+                            line-height: converter(20);
+                            margin-bottom: converter(10);
+                            @media (max-width: $max-width) {
+                                font-size: converter(16);
+                                line-height: converter(20);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                font-size: dconverter(16);
+                                line-height: dconverter(20);
+                                margin-bottom: dconverter(10);
+                            }
+                        }
+                        
+                        a {
+                            text-decoration: none;
+                            .pending-item{
+                                display: flex;
+                                margin-top: converter(8);
+                                padding: converter(7) converter(10);
+                                border-radius: converter(6);
+                                justify-content: space-between;
+                                background: #FFFAF5;
+                                align-items: center;
+                                align-self: stretch;
+
+                                .left {
+                                    color: #1C1C2E;
+                                    font-family: $interfont;
+                                    font-size: converter(16);
+                                    font-weight: 500;
+                                    gap: converter(5);
+                                    display: flex;
+                                    align-items: center;
+
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        font-size: dconverter(14);
+                                        line-height: dconverter(16);
+                                        gap: dconverter(5);
+                                    }
+                                    svg {
+                                        width: converter(16);
+                                        height: converter(16);
+                                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                            width: dconverter(16); 
+                                            height: dconverter(16);
+                                        }
+                                    }
+                                }
+
+                                .badge{
+                                    border-radius: converter(100);
+                                    display: flex;
+                                    padding: converter(2) converter(7);
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    background: #FFE9D1;
+                                    color: #C2410C;
+                                    font-family: $interfont;
+                                    font-size: converter(10);
+                                    font-weight: 700;
+                                    line-height: converter(15);
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        font-size: dconverter(12);
+                                        line-height: dconverter(16);
+                                    }
+                                }
+                            }
+                        }
+                      
+                    } 
+                }
+
+                .aside-right-box {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    align-self: stretch;
+                    position: relative;
+                    z-index: 99;
+                    width: converter(1060);
+                    gap: converter(15);
+                    
+                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                        width: dconverter(1060);
+                    }
+
+                    @media (max-width: $max-width) {
+                        width: 100%;
+                        gap: mconverter(15);
+                        margin-top: mconverter(15);
+                    }
+
+                    #companyoverview,
+                    #documents,
+                    #services,
+                    #teammember,
+                    #hiringpreferences,
+                    #livejobposting,
+                    #sociallinks,
+                    #languages {
+                        scroll-margin-top: converter(160);
+                    }
+                    
+                    .navtabs{
+                        width: 100%;
+                        border-radius: converter(8);
+                        border: converter(1) solid #E5E7EB;
+                        background: #FFF;
+                        display: flex;
+                        align-items: center;
+                        position: sticky;
+                        top: converter(120);
+                        z-index: 9;
+                        
+                        @media (max-width: $max-width) {
+                            border-radius: mconverter(8);
+                            border: mconverter(1) solid #E5E7EB;
+                            justify-content: flex-start;
+                            overflow-x: auto;
+                            overflow-y: hidden;
+                            white-space: nowrap;
+                            flex-wrap: nowrap;
+                            padding: 0 3.8461538462vw;
+                            -webkit-overflow-scrolling: touch;
+                            top: mconverter(0);
+                            position: relative; 
+                        }
+
+                        a {
+                            color:#AFAFAF;
+                            text-align: center;
+                            font-family: $interfont;
+                            font-weight: 400;
+                            text-decoration: none;
+                            font-size: converter(16);
+                            line-height: converter(18);
+                            margin: converter(0) converter(5);
+                            padding: converter(15) converter(8);
+
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                font-size: dconverter(16);
+                                line-height: dconverter(18);
+                            }
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(16);
+                                line-height: mconverter(18);
+                                margin: mconverter(0);
+                                padding: mconverter(10) mconverter(10);
+                            }
+                            &.active {
+                                color: #00A148;
+                                border-bottom: converter(2) solid #00A148;
+                                font-weight: 600;
+                                @media (max-width: $max-width) {
+                                    border-bottom: mconverter(3) solid #00A148;
+                                }
+                            }
+                        }
+                    }
+
+                    .profile-summary {
+                        padding: converter(15) converter(20);
+                        border-radius: converter(8);
+                        border: converter(1) solid #E5E7EB;
+                        background: #FFF;
+                        width: 100%;
+
+                        @media (max-width: $max-width) {
+                            padding: mconverter(15) mconverter(20);
+                            border-radius: mconverter(8);
+                            border: mconverter(1) solid #E5E7EB;
+                        }
+                        .empty-state{
+                            font-weight: 500;
+                            font-size: converter(14);
+                            padding-left: converter(10);
+                            margin: converter(10) converter(0);
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                font-size: dconverter(18);
+                            }
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(14);
+                                padding-left: mconverter(0);
+                                margin: mconverter(10) mconverter(0);
+                            }
+                        }
+                        .empty-text {
+                            font-weight: 500;
+                            font-size: converter(14);
+                            margin: converter(10) converter(0);
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(14);
+                                margin: mconverter(10) mconverter(0);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                font-size: dconverter(16);
+                                line-height: dconverter(18);
+                            }
+                        }
+
+                        .card-head{
+                            display:flex;
+                            align-items:center;
+                            justify-content:space-between;
+                            margin-bottom: converter(13);
+                            @media (max-width: $max-width) {
+                                margin-bottom: mconverter(13);
+                            }
+
+                            h3{
+                                color: #1C1C2E;
+                                font-family: $manropefont;
+                                font-size: converter(18);
+                                font-weight: 600;
+                                line-height: converter(30);
+                                margin-bottom: converter(0);
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(16);
+                                    line-height: mconverter(30);
+                                }
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    font-size: dconverter(18);
+                                    line-height: dconverter(30);
+                                }
+                            }
+                        }
+
+                        .summary-text{
+                            color: #575757;
+                            font-family: $interfont;
+                            font-weight: 400;
+                            line-height: converter(24);
+                            font-size: converter(16);
+                            margin-bottom: converter(15);
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                font-size: dconverter(16);  
+                                line-height: dconverter(23);
+                            }
+                            @media (max-width: $max-width) {
+                                line-height: mconverter(22);
+                                margin-bottom: mconverter(15);
+                                font-size: mconverter(14);
+                            }                    
+                        }
+
+                        .ai-btn {
+                            display: flex;
+                            padding: converter(7) converter(16);
+                            width: converter(158);
+                            gap: converter(6);
+                            border-radius: converter(20);
+                            border: converter(1) solid #D6FEDB;
+                            height: converter(35);
+                            font-size: converter(14);
+                            align-items: center;
+                            background: #F7FFF3; 
+                            color: #00A148;
+                            text-align: center;
+                            font-family: $interfont;
+                            font-weight: 600;
+                            @media (max-width: $max-width) {
+                                padding: mconverter(7) mconverter(16);
+                                width: mconverter(158);
+                                gap: mconverter(6);
+                                border-radius: mconverter(20);
+                                border: mconverter(1) solid #D6FEDB;
+                                height: mconverter(35);
+                                font-size: mconverter(14);
+                            }
+                            svg {
+                                width: converter(16);
+                                height: converter(16);
+                                @media (max-width: $max-width) {
+                                    width: mconverter(16);
+                                    height: mconverter(16);
+                                }
+                            }
+                        }
+
+                        .doc-comp {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: converter(10);
+                            align-items: center;
+                            @media (max-width: $max-width) {
+                                grid-template-columns: repeat(1, 1fr);
+                                gap: mconverter(5);
+                            }
+                        }
+
+                        .companydoc-row{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            align-self: stretch;
+                            border-radius: converter(6);
+                            border: converter(1) dashed #E5E7EB;
+                            padding: converter(10) converter(10);
+                            gap: converter(10);
+                            width: converter(333);
+
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                width: dconverter(333);
+                            }
+                            @media (max-width: $max-width) {
+                                border-radius: mconverter(6);
+                                border: mconverter(1) dashed #E5E7EB;
+                                padding: mconverter(10);
+                                gap: mconverter(10);
+                                width: 100%;
+                            }
+
+                            .info-row {
+                                display: flex;
+                                align-items: center;
+                                gap: converter(10);
+                                @media (max-width: $max-width) {
+                                    gap: mconverter(10);
+                                }
+
+                                .pdf-badge{
+                                    background:#FEE2E2;
+                                    color: #DC2626;
+                                    font-family: $interfont;
+                                    font-size: converter(8);
+                                    font-weight: 700;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    min-width: converter(26);
+                                    height: converter(26);
+                                    border-radius: converter(4);
+
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        min-width: dconverter(26);
+                                        height: dconverter(26);
+                                    }
+
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(8);
+                                        width: mconverter(26);
+                                        height: mconverter(26);
+                                        border-radius: mconverter(4);
+                                    }
+                                }
+                                .name {
+                                    font-size: converter(14);
+                                    max-width: converter(220);
+                                    color: #181818;
+                                    font-family: $interfont;
+                                    font-weight: 500;
+                                    word-break: break-word;
+                                    text-decoration-line: underline;
+                                    text-transform: uppercase;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        font-size: dconverter(14);
+                                        max-width: dconverter(220);
+                                    }
+                                    @media (max-width: $max-width) {
+                                        max-width: mconverter(196);
+                                        font-size: mconverter(12);
+                                    }
+                                }
+                            }
+
+                            .button-doc {
+                                display: flex;
+                                align-items: center;
+                                gap: converter(10);
+                                @media (max-width: $max-width) {
+                                    gap: mconverter(10);
+                                }
+                                .eye-btn {
+                                    background-color: transparent;
+                                    padding: 0;
+                                    margin: 0;
+                                    border: none;
+                                    svg {
+                                        width: converter(16);
+                                        height: converter(16);
+                                        @media (max-width: $max-width) {
+                                            width: mconverter(16);
+                                            height: mconverter(16);
+                                        }
+                                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                            width: dconverter(16);
+                                            height: dconverter(16);
+                                        }
+                                    }
+                                }
+                                .deleted-btn {
+                                    background-color: transparent;
+                                    padding: 0;
+                                    margin: 0;
+                                    border: none;
+                                    svg {
+                                        width: converter(16);
+                                        height: converter(16);
+                                        @media (max-width: $max-width) {
+                                            width: mconverter(16);
+                                            height: mconverter(16);
+                                        }
+                                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                            width: dconverter(16);
+                                            height: dconverter(16);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .replace-link{
+                            background: transparent;
+                            padding: 0;
+                            border: none;
+                            display:inline-block;
+                            font-family: $interfont;
+                            color: #00A148;
+                            font-size: converter(14);
+                            margin-top: converter(6);
+                            font-weight:300;
+                            cursor:pointer;
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(14);
+                                margin-top: mconverter(6);
+                            }
+                        }
+
+                        // .timeline-labels {
+                        //     position: relative;
+                        //     height: converter(16);
+                        //     margin-bottom: converter(10);
+
+                        //     color: #AFAFAF;
+                        //     font-family: $interfont;
+                        //     font-weight: 400;
+                        //     line-height: converter(16);
+                        //     font-size: converter(12);
+
+                        //     span {
+                        //         position: absolute;
+                        //         top: 0;
+                        //         transform: translateX(-50%);
+                        //         white-space: nowrap;
+
+                        //         &:first-child {
+                        //             transform: translateX(0);
+                        //         }
+
+                        //         &:last-child {
+                        //             transform: translateX(-100%);
+                        //         }
+                        //     }
+
+                        //     @media (max-width: $max-width) {
+                        //         height: mconverter(16);
+                        //         line-height: mconverter(16);
+                        //         font-size: mconverter(12);
+                        //         margin-bottom: mconverter(10);
+                        //     }
+                        // }
+
+                        // .timeline-bar {
+                        //     position: relative;
+                        //     height: converter(2);
+                        //     background: #22C55E;
+                        //     margin-bottom: converter(20);
+
+                        //     @media (max-width: $max-width) {
+                        //         height: mconverter(2);
+                        //         margin-bottom: mconverter(20);
+                        //     }
+
+                        //     .node {
+                        //         position: absolute;
+                        //         top: 50%;
+                        //         transform: translate(-50%, -50%);
+
+                        //         width: converter(9);
+                        //         height: converter(9);
+
+                        //         background: #22C55E;
+                        //         border-radius: converter(100);
+
+                        //         @media (max-width: $max-width) {
+                        //             width: mconverter(9);
+                        //             height: mconverter(9);
+                        //             border-radius: mconverter(100);
+                        //         }
+                        //     }
+                        // }
+
+                        // .exp-item{
+                        //     display:flex;
+                        //     gap:converter(10);
+                        //     padding: converter(14) 0;
+                        //     border-top: converter(1) solid #F3F4F6;
+                        //     @media (max-width: $max-width) {
+                        //         gap: mconverter(10);
+                        //         padding: mconverter(14) 0;
+                        //         border-top: mconverter(1) solid #F3F4F6;
+                        //     }
+                        //     &:first-of-type{border-top:none;}
+
+                        //     .exp-logo{
+                        //         min-width: converter(30);
+                        //         height: converter(30);
+                        //         border-radius: converter(6);
+                        //         background: #F3F4F6;
+                        //         display:flex;
+                        //         align-items:center;
+                        //         justify-content:center;
+                        //         @media (max-width: $max-width) {
+                        //             min-width: mconverter(30);
+                        //             height: mconverter(30);
+                        //             border-radius: mconverter(6);
+                        //         }
+                        //         svg {
+                        //             width: converter(15);
+                        //             height: converter(15);
+                        //             @media (max-width: $max-width) {
+                        //                 width: mconverter(15);
+                        //                 height: mconverter(15);
+                        //             }
+                        //         }
+                        //     }
+
+                        //     .role{
+                        //         color: #181818;
+                        //         font-family: $interfont;
+                        //         font-size: converter(16);
+                        //         font-weight: 700;
+                        //         line-height: converter(20);
+                        //         margin-bottom: converter(5);
+                        //         @media (max-width: $max-width) {
+                        //             font-size: mconverter(14);
+                        //             line-height: mconverter(18);
+                        //             margin-bottom: mconverter(5);
+                        //         }
+                        //     }
+                        //     .des {
+                        //         color: #575757;
+                        //         font-family: $interfont;
+                        //         font-size: converter(16);
+                        //         font-weight: 400;
+                        //         line-height: converter(22);
+                        //         margin-bottom: converter(5);
+                        //         @media (max-width: $max-width) {
+                        //             font-size: mconverter(14);
+                        //             line-height: mconverter(20);
+                        //             margin-bottom: mconverter(5);
+                        //         }
+                        //     }
+                        //     .note {
+                        //         color: #181818;
+                        //         font-family: $interfont;
+                        //         font-size: converter(16);
+                        //         font-weight: 400;
+                        //         line-height: converter(22);
+                        //         max-height: converter(50);
+                        //         overflow: hidden;
+                        //         transition: max-height 0.4s ease;
+                        //         @media (max-width: $max-width) {
+                        //             font-size: mconverter(14);
+                        //             line-height: mconverter(20);
+                        //             max-height: mconverter(80);
+                        //         }
+                        //         &.show {
+                        //             max-height: converter(1000);
+                        //             @media (max-width: $max-width) {
+                        //                 max-height: auto;
+                        //             }
+                        //         }
+                        //     }
+                        //     .see-more-btn {
+                        //         display: none;
+                        //         text-decoration: none;
+                        //         background: transparent;
+                        //         display: block;
+                        //         border: 0;
+                        //         padding: 0;
+                        //         margin: converter(12) 0 auto auto;
+                        //         color: #00A148;
+                        //         text-align: right;
+                        //         font-family: $interfont;
+                        //         font-size: converter(14);
+                        //         font-weight: 400;
+                        //         text-decoration-line: underline;
+                        //         @media (max-width: $max-width) {
+                        //             font-size: mconverter(14);
+                        //             margin: mconverter(5) 0 auto auto;
+                        //         }
+                        //     }
+                        // }
+                        
+                        .chip-row{
+                            display:flex;
+                            flex-wrap:wrap;
+                            gap:converter(10);
+                            @media (max-width: $max-width) {
+                                gap: mconverter(5);
+                            }
+                            .chip{
+                                font-size: converter(14);
+                                line-height: converter(20);
+                                padding: converter(4) converter(13);
+                                border-radius: converter(20);
+                                border: converter(1) solid #AFAFAF;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                align-self: stretch;
+                                color: #181818;
+                                font-family: $interfont;
+                                font-weight: 400;
+
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    font-size: dconverter(14);
+                                    line-height: dconverter(20);
+                                }
+                                @media (max-width: $max-width) {
+                                    line-height: normal;
+                                    font-size: mconverter(12);
+                                    padding: mconverter(4) mconverter(13);
+                                    border-radius: mconverter(20);
+                                    border: mconverter(1) solid #AFAFAF;
+                                }
+                            }
+                        }
+                        
+                        .edu-item{ 
+                            display:flex;
+                            align-items:flex-start;
+                            gap: converter(14);
+                            margin-bottom: converter(10);
+
+                            @media (max-width: $max-width) {
+                                gap: mconverter(14);
+                            }
+                            .edu-icon{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                border-radius: converter(6);
+                                background: #FDFDFD;
+                                width: converter(30);
+                                height: converter(30);
+                                @media (max-width: $max-width) {
+                                    border-radius: mconverter(6);
+                                    width: mconverter(30);
+                                    height: mconverter(30);
+                                }
+                                svg {
+                                    width: converter(18);
+                                    height: converter(18);
+                                    @media (max-width: $max-width) {
+                                        width: mconverter(18);
+                                        height: mconverter(18);
+                                    }
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        width: dconverter(18);
+                                        height: dconverter(18);
+                                    }
+                                }
+                            }
+
+                            h4{
+                                color: #1C1C2E;
+                                font-family: $interfont;
+                                display: flex;
+                                align-items: center;
+                                gap: converter(10);
+                                font-weight: 600;
+                                line-height: converter(24);
+                                font-size: converter(16);
+                                margin-bottom: converter(0);
+
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    line-height: dconverter(24);
+                                    font-size: dconverter(16);
+                                }
+                                @media (max-width: $max-width) {
+                                    gap: mconverter(10);
+                                    line-height: mconverter(20);
+                                    font-size: mconverter(14);
+                                }
+                            }
+                            .school{
+                                color: #6B7280;
+                                font-family: $interfont;
+                                font-weight: 400;
+                                line-height: converter(26);
+                                font-size: converter(16);
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    line-height: dconverter(26);
+                                    font-size: dconverter(16);
+                                }
+                                @media (max-width: $max-width) {
+                                    line-height: mconverter(20);
+                                    font-size: mconverter(14);
+                                }
+                            }
+                            .year{
+                                color: #9CA3AF;
+                                font-family: $interfont;
+                                font-size: converter(14);
+                                font-weight: 300;
+                                line-height: converter(20);
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    line-height: dconverter(26);
+                                    font-size: dconverter(16);
+                                }
+                                @media (max-width: $max-width) {
+                                    line-height: mconverter(16);
+                                    font-size: mconverter(12);
+                                }
+                            }
+
+                        }
+
+                        .pref-grid{
+                            display: grid;
+                            grid-auto-flow: column;
+                            @media (max-width: $max-width) {
+                                grid-auto-flow: row;
+                                gap: mconverter(15);
+                            }
+                            .label{
+                                color: #AFAFAF;
+                                font-family: $interfont;
+                                font-size: converter(14);
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: converter(16);
+                                margin-bottom: converter(3);
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    line-height: dconverter(26);
+                                    font-size: dconverter(14);
+                                }
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(12);
+                                    line-height: mconverter(16);
+                                    margin-bottom: mconverter(3);
+                                }
+                            }
+                            .value{
+                                color: #181818;
+                                font-family: $interfont;
+                                font-size: converter(16);
+                                font-weight: 500;
+                                line-height: converter(20);
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    line-height: dconverter(26);
+                                    font-size: dconverter(17);
+                                }
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(13);
+                                    line-height: mconverter(20);
+                                }
+                            }
+                        }
+                        
+                        .transaction-card{
+                            border: converter(1) solid #E5E7EB;
+                            border-radius: converter(10);
+                            @media (max-width: $max-width) {
+                                border: none;
+                                border-radius: mconverter(0);
+                            }
+                            .wallet-grid {
+                                display:grid;
+                                grid-template-columns: 2.5fr 1.2fr 1.7fr 1.5fr 1.5fr 1.2fr 0.5fr;
+                                align-items: center;
+                                @media (max-width: $max-width) {
+                                    display: flex!important; 
+                                    flex-wrap: wrap!important;
+                                }
+                            }
+
+                            .referral-header{
+                                overflow: hidden;
+                                background: #F9FAFB;
+                                padding: converter(14) converter(16);
+                                font-size: converter(12);
+                                border-top-left-radius: converter(10);
+                                border-top-right-radius: converter(10); 
+                                font-family: $interfont;
+                                font-weight: 600;
+                                color:#4A5565;
+                                border-bottom:converter(1) solid #E5E7EB;
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    font-size: dconverter(14);
+                                }
+                                @media (max-width: $max-width) {
+                                    display: none!important; 
+                                }    
+                            }
+                           
+
+                            .referral-table { 
+                                padding: converter(10) converter(16);
+                                border-bottom: converter(1) solid #E5E7EB;
+                                @media (max-width: $max-width) {
+                                    width: 100%;
+                                    padding: mconverter(15);
+                                    margin-top: mconverter(15);
+                                    border-radius: mconverter(10);
+                                    border: mconverter(1) solid #E5E7EB;
+                                    background: #FFF;
+                                    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.10);
+                                }
+                                        
+                                &:last-child {
+                                    border: none;
+                                }
+
+                                .job-name {
+                                    @media (max-width: $max-width) {
+                                        width: 80%;
+                                        order: 1;
+                                    }
+                                    h4 {
+                                        color: #181818;
+                                        font-family: $interfont;
+                                        font-weight: 600;
+                                        font-size: converter(14);
+                                        line-height: converter(20);
+
+                                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                            line-height: dconverter(22);
+                                            font-size: dconverter(14);
+                                        }
+                                        @media (max-width: $max-width) {
+                                            font-size: mconverter(14);
+                                            line-height: mconverter(20);
+                                            margin-bottom: mconverter(0);
+                                        }
+                                    }
+                                    .skillstags {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        gap: converter(6);
+                                        @media (max-width: $max-width) {
+                                            display: none;
+                                        }
+                                        .stag {
+                                            display: inline-flex;
+                                            align-items: center;
+                                            background: #F3F4F6;
+                                            color: #6B7280;
+                                            font-family: $interfont;
+                                            border-radius: converter(4);
+                                            padding: converter(2) converter(7);
+                                            font-size: converter(11);
+                                            font-weight: 400;
+                                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                                font-size: dconverter(12);
+                                            }
+                                            @media (max-width: $max-width) {
+                                                border-radius: mconverter(4);
+                                                padding: mconverter(2) mconverter(7);
+                                                font-size: mconverter(11);
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .full-time {
+                                    @media (max-width: $max-width) {
+                                        order: 6;
+                                        width: 85%;
+                                        border-top: mconverter(1) dashed #B5B5B5;
+                                        padding-top: mconverter(8);
+                                    }
+                                }
+
+                                .job-city-type{
+                                    @media (max-width: $max-width) {
+                                        width: 100%;
+                                        order: 3;
+                                        margin: mconverter(5) mconverter(0);
+                                    }
+                                }
+
+                                .job-exp {
+                                    display: flex;
+                                    align-items: center;
+                                    @media (max-width: $max-width) {
+                                        gap: mconverter(5);
+                                        margin-bottom: mconverter(8);
+                                    }
+                                    .calender-icon {
+                                        display: none;
+                                        @media (max-width: $max-width) {
+                                            display: block!important;
+                                            width: mconverter(13);
+                                            height: mconverter(13);
+                                        }
+                                    }
+                                    @media (max-width: $max-width) {
+                                        order: 4;
+                                        width: 50%;
+                                    }
+                                }
+
+                                .job-lpa {
+                                    @media (max-width: $max-width) {
+                                        text-align: right;
+                                        font-weight: 600!important;
+                                        order: 5;
+                                        width: 50%;
+                                        color: #00A148!important;
+                                        margin-bottom: mconverter(8);
+                                    }
+                                }
+
+                                .jop-apply {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: converter(5);
+                                     @media (max-width: $max-width) {
+                                        width: 15%;
+                                        order: 7;
+                                        gap: mconverter(5);
+                                        justify-content: flex-end;
+                                        border-top: mconverter(1) dashed #B5B5B5;
+                                        padding-top: mconverter(8);
+                                    }
+                                    .dot{
+                                        width: converter(7);
+                                        height: converter(7);
+                                        display:inline-block;
+                                        border-radius: converter(50);
+                                        background: #22C55E;
+                                        @media (max-width: $max-width) {
+                                            width: mconverter(7);
+                                            height: mconverter(7);
+                                            border-radius: mconverter(50);
+                                        }
+                                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                            width: dconverter(9);
+                                            height: dconverter(9);
+                                        }
+                                    }
+                                }
+                                        
+                                .deleted-box {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-end;
+                                    gap: converter(10);
+                                    @media (max-width: $max-width) {
+                                        gap: mconverter(10);
+                                        order: 2;
+                                        width: 20%;
+                                        text-align: right;
+                                    }
+
+                                    .edit-btn {
+                                        background: transparent;
+                                        border: none;
+                                        padding: 0;
+                                        svg {
+                                            width: converter(16);
+                                            height: converter(16);
+                                            @media (max-width: $max-width) {
+                                                width: mconverter(16);
+                                                height: mconverter(16);
+                                            }
+                                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                                width: dconverter(16);
+                                                height: dconverter(16); 
+                                            }
+                                        }
+                                    }
+
+                                    .deleted-btn {
+                                        background-color: transparent;
+                                        padding: 0;
+                                        margin: 0;
+                                        border: none;
+                                        svg {
+                                            width: converter(16);
+                                            height: converter(16);
+                                            @media (max-width: $max-width) {
+                                                width: mconverter(16);
+                                                height: mconverter(16);
+                                            }
+                                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                                width: dconverter(16);
+                                                height: dconverter(16); 
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .cell{
+                                    font-size: converter(13);
+                                    color: #374151;
+                                    font-family: $interfont;
+                                    font-weight: 400;
+
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        font-size: dconverter(14);
+                                    }
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(13);
+                                    }
+
+                                    a.download-btn {
+                                        border-radius: converter(4);
+                                        background: #226E65;
+                                        padding: converter(8) converter(15) converter(8) converter(10);
+                                        font-family: $interfont;
+                                        font-size: converter(12);
+                                        font-weight: 400;
+                                        color: #fff;
+                                        @media (max-width: $max-width) {
+                                            border-radius: mconverter(10);
+                                            padding: mconverter(12) mconverter(15);
+                                            font-size: mconverter(17);
+                                            display: table;
+                                            width: 100%;
+                                            text-align: center;
+                                        }
+                                        svg{
+                                            width: converter(18);
+                                            height: converter(18);
+                                            fill:#9ca3af;
+                                            @media (max-width: $max-width) {
+                                                width: mconverter(18);
+                                                height: mconverter(18);
+                                            }
+                                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                                width: dconverter(18);
+                                                height: dconverter(18);
+                                            }
+                                        }
+                                    }
+
+                                    .status {
+                                        padding: converter(3) converter(10);
+                                        border-radius: converter(10);
+                                        font-size: converter(14);
+                                        line-height: normal;
+                                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                            font-size: dconverter(14);
+                                        }
+                                        @media (max-width: $max-width) {
+                                            padding: mconverter(2) mconverter(10);
+                                            border-radius: mconverter(10);
+                                            font-size: mconverter(12);
+                                        }
+                                    }
+                                    .completed {
+                                        background: #F0FDF4;
+                                        color: #16A34A;    
+                                    }
+
+                                    .contract {
+                                        background: #FFFBEB;
+                                        color: #D97706;    
+                                    }
+                                }
+                            }   
+                        }
+
+                        .viewall-post {
+                            width: converter(140);
+                            float: right;
+                            margin-top: converter(5);
+                            @media (max-width: $max-width) {
+                                margin-top: mconverter(10);
+                                width: mconverter(140);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                width: dconverter(140);
+                            }
+                            a {
+                                color: #00A148;
+                                text-align: center;
+                                font-family: $interfont;
+                                font-style: normal;
+                                font-weight: 500;
+                                text-decoration: none;
+                                font-size: converter(13);
+                                line-height: converter(20);
+                                gap: converter(10);
+                                display: flex;
+                                align-items: center;
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    font-size: dconverter(13);
+                                }
+                                @media (max-width: $max-width) {
+                                    gap: mconverter(10);
+                                    font-size: mconverter(13);
+                                    line-height: mconverter(20);
+                                }
+                                svg {
+                                    width: converter(18);
+                                    height: converter(18);
+                                    @media (max-width: $max-width) {
+                                        width: mconverter(18);
+                                        height: mconverter(18);
+                                    }
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        width: dconverter(18);
+                                        height: dconverter(18);
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .social-box{
+                            display: flex;
+                            gap: converter(15);
+                            overflow: hidden;
+                            @media (max-width: $max-width) {
+                                gap: mconverter(5) mconverter(10);
+                                flex-wrap: wrap;
+                            }
+                            .social-item{
+                                width: converter(244);
+                                padding: converter(10) converter(15);
+                                border-radius: converter(10);
+                                height: converter(46);
+                                border: converter(1) solid #DFDFDF;
+                                box-shadow: 0 converter(1) converter(2.8) 0 rgba(0, 0, 0, 0.10);
+                                gap: converter(10);
+                                position:relative;
+                                display: flex;
+                                align-items: center;
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    width: dconverter(244);
+                                    height: dconverter(46);
+                                }
+                                @media (max-width: $max-width) {
+                                    width: mconverter(148);
+                                    height: mconverter(46);
+                                    padding: mconverter(8) mconverter(15);
+                                    gap: mconverter(5);
+                                    border-radius: mconverter(7);
+                                    border: mconverter(1) solid #DFDFDF;
+                                    box-shadow: 0 mconverter(1) mconverter(2.8) 0 rgba(0, 0, 0, 0.10);
+                                }
+                                svg {
+                                    width: converter(24);
+                                    height: converter(24);
+                                    @media (max-width: $max-width) {
+                                        width: mconverter(24);
+                                        height: mconverter(24);
+                                    }
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        width: dconverter(24);
+                                        height: dconverter(24);
+                                    }
+                                }
+                                span {
+                                    color: #575757;
+                                    font-family: $interfont;
+                                    font-weight: 400;
+                                    font-size: converter(16);
+                                    line-height: normal;
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        font-size: dconverter(16);
+                                    }
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(14);
+                                    }
+                                }
+                                
+
+                            }
+                        }
+
+                        .lang-grid{
+                            display: flex;
+                            gap: converter(15);
+                            @media (max-width: $max-width) {
+                                gap: mconverter(5) mconverter(10);
+                                flex-wrap: wrap;
+                            }
+                            .lang-card{
+                                width: converter(184);
+                                padding: converter(10) converter(15);
+                                border-radius: converter(7);
+                                border: converter(1) solid #AFAFAF;
+                                position:relative;
+
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    width: dconverter(184);
+                                }
+                                @media (max-width: $max-width) {
+                                    width: mconverter(145);
+                                    padding: mconverter(8) mconverter(15);
+                                    border-radius: mconverter(7);
+                                    border: mconverter(1) solid #AFAFAF;
+                                }
+                                .name{
+                                    color: #181818;
+                                    font-family: $interfont;
+                                    font-size: converter(14);
+                                    font-weight: 600;
+                                    line-height: converter(22);
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        font-size: dconverter(16);
+                                        line-height: dconverter(24);
+                                    }
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(13);
+                                        line-height: mconverter(24);
+                                    }
+                                }
+                                .level{
+                                    color: #AFAFAF;
+                                    font-family: $interfont;
+                                    font-weight: 400;
+                                    font-size: converter(12);
+                                    line-height: converter(19);
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(12);
+                                        line-height: mconverter(19);
+                                    }
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        font-size: dconverter(14);
+                                    }
+                                }
+
+                                .edit-btn{
+                                    position:absolute;
+                                    top: converter(5);
+                                    right:converter(12);
+                                    @media (max-width: $max-width) {
+                                        top: mconverter(5);
+                                        right:mconverter(12);
+                                    }
+                                    svg {
+                                        width: converter(13);
+                                        height: converter(13);
+                                        @media (max-width: $max-width) {
+                                            width: mconverter(13);
+                                            height: mconverter(13);
+                                        }
+                                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                            width: dconverter(16);
+                                            height: dconverter(16); 
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .bottom-sheet{
+            @media (max-width: $max-width) {
+                transform:translateY(100%);
+                transition:transform 0.35s ease-out;
+                &.show {
+                    transform: translateY(0%);
+                }
+            }
+        }
+        
+        .profile-card {
+             @media (max-width: $max-width) {
+                overflow-x: scroll;
+                align-items: flex-start; 
+                height: mconverter(400);
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                touch-action: pan-x;
+            }
+        }
+        .basic-details {  
+            @media (max-width: $max-width) {
+                height: mconverter(500);
+                overflow-x: scroll;
+                align-items: flex-start;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                touch-action: pan-x;
+            }
+        }
+        .modal-dialog{
+            max-width: converter(860);
+            @media (max-width: $max-width) {
+                width: 100% !important;
+                max-width: 100% !important;
+                bottom: 0;
+                margin: 0;
+                position: absolute;
+                min-height: auto;
+            }
+
+            .modal-content {
+                padding: converter(15) converter(28);
+                box-shadow: 0 converter(24) converter(60) 0 rgba(0, 0, 0, 0.35);
+                border-radius: converter(10);
+                @media (max-width: $max-width) {
+                    border-radius: mconverter(15) mconverter(15) mconverter(0) mconverter(0);
+                    padding: mconverter(15);
+                    box-shadow: 0 mconverter(-2) mconverter(4) 0 rgba(0, 0, 0, 0.35);
+                }
+                .modal-header {
+                    border-bottom: none;
+                    padding: 0;
+                    padding-bottom: converter(15);
+                    @media (max-width: $max-width) {
+                        padding-bottom: mconverter(15);
+                    }
+                    .modal-title {
+                        color: #1C1C2E;
+                        font-family: $manropefont;
+                        font-size: converter(24);
+                        font-weight: 700;
+                        line-height: converter(26);
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(16);
+                            line-height: mconverter(26);
+                        }
+                    }
+
+                    .btn-close {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background: #2D2D3A;
+                        opacity: 1;
+                        width: converter(30);
+                        height: converter(30);
+                        border-radius: converter(100);
+                        padding: 0;
+                        @media (max-width: $max-width) {
+                            width: mconverter(25);
+                            height: mconverter(25);
+                            border-radius: mconverter(100);
+                        }
+                        svg {
+                            width: converter(18);
+                            height: converter(18);
+                            @media (max-width: $max-width) {
+                                width: mconverter(15);
+                                height: mconverter(15);
+                            }
+                        }
+                        
+                    }
+                }
+                .modal-body {
+                    padding: 0;
+
+                    .upload-box{
+                        border-radius: converter(6);
+                        border: converter(2) dashed rgba(0, 161, 72, 0.25);
+                        padding: converter(15) converter(16);
+                        margin-bottom: converter(15);
+                        background: #FDFDFD;
+                        text-align:center; 
+                        overflow: hidden; 
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        @media (max-width: $max-width) {
+                            border-radius: mconverter(6);
+                            border: mconverter(2) dashed rgba(0, 161, 72, 0.25);
+                            padding: mconverter(15) mconverter(16);
+                            margin-bottom: mconverter(15);
+                        }
+
+                        .error-message {
+                            font-size: converter(12);
+                            color: #E53935;
+                            display: none;
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(12);
+                            }
+                        }
+
+                        .upload-avatar{
+                            border-radius: converter(100); 
+                            width: converter(60);
+                            height:  converter(60);
+                            border: converter(1) solid #C3C3C3;
+                            margin-bottom: converter(10);
+                            overflow: hidden;
+                            background: #E8E8E8;
+
+                            @media (max-width: $max-width) { 
+                                width: mconverter(60);
+                                height:  mconverter(60);
+                                border: mconverter(1) solid #C3C3C3;
+                                border-radius: mconverter(100); 
+                                margin-bottom: mconverter(10);
+                            }
+
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                width: dconverter(60);
+                                height: dconverter(60);
+                            }
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                         h6 {
+                            color: #181818;
+                            font-family: $manropefont;
+                            font-weight: 600;
+                            font-size: converter(16);
+                            line-height: converter(20);
+                            margin-bottom: converter(5);
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(16);
+                                line-height: mconverter(20);
+                                margin-bottom: mconverter(5);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                font-size: dconverter(16);
+                                line-height: dconverter(20);
+                            }
+                        }
+                        p {
+                            color: #575757;
+                            font-family: $interfont;
+                            font-weight: 400;
+                            width: converter(380);
+                            line-height: converter(18);
+                            font-size: converter(14);
+                            margin-bottom: converter(10);
+
+                            @media (max-width: $max-width) {
+                                width: mconverter(280);
+                                line-height: mconverter(18);
+                                font-size: mconverter(12);
+                                margin-bottom: mconverter(10);
+                            }
+
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                width: dconverter(380);
+                                font-size: dconverter(14);
+                                line-height: dconverter(18);
+                            }
+                        }
+
+                        .change-photo-btn{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin: auto;
+                            color: #00A148;
+                            font-family: $interfont;
+                            cursor: pointer;
+                            font-weight: 600;
+                            height: converter(33);
+                            width: converter(130);
+                            padding: converter(6) converter(10);
+                            gap: converter(7);
+                            border-radius: converter(4);
+                            border: converter(1) solid #00A148;
+                            font-size: converter(12);
+                            
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                width: dconverter(130);
+                                height: dconverter(33);
+                                font-size: dconverter(14);
+                                line-height: dconverter(18);
+                            }
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(12);
+                                height: mconverter(33);
+                                width: mconverter(110);
+                                padding: mconverter(6) mconverter(10);
+                                gap: mconverter(7);
+                                border-radius: mconverter(5);
+                            }
+
+                            svg {
+                                width: converter(12);
+                                height: converter(12);
+                                @media (max-width: $max-width) {
+                                    width: mconverter(12);
+                                    height: mconverter(12);
+                                }
+                            }
+                        }
+                    }
+
+                    .resume-upload{
+                        border-radius: converter(6);
+                        border: converter(2) dashed rgba(0, 161, 72, 0.25);
+                        padding: converter(15) converter(16);
+                        margin-bottom: converter(15);
+                        background: #FDFDFD;
+                        text-align:center; 
+                        overflow: hidden; 
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        @media (max-width: $max-width) {
+                            border-radius: mconverter(6);
+                            border: mconverter(2) dashed rgba(0, 161, 72, 0.25);
+                            padding: mconverter(15) mconverter(16);
+                            margin-bottom: mconverter(15);
+                        }
+
+                        .upload-img{
+                            border-radius: converter(100); 
+                            width: converter(60);
+                            height:  converter(60);
+                            border: converter(1) solid #C3C3C3;
+                            margin-bottom: converter(10);
+                            background: #E8E8E8;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            @media (max-width: $max-width) { 
+                                width: mconverter(60);
+                                height:  mconverter(60);
+                                border: mconverter(1) solid #C3C3C3;
+                                border-radius: mconverter(100); 
+                                margin-bottom: mconverter(10);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                width: dconverter(60);
+                                height: dconverter(60);
+                            }
+
+                            svg {
+                                width: converter(30);
+                                height: converter(30);
+                                @media (max-width: $max-width) { 
+                                    width: mconverter(30);
+                                    height: mconverter(30);
+                                }
+                            }
+                        }
+
+                        h6 {
+                            color: #181818;
+                            text-align: center;
+                            font-family: $manropefont;
+                            font-weight: 600;
+                            font-size: converter(16);
+                            line-height: converter(20);
+                            margin-bottom: converter(5);
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(16);
+                                line-height: mconverter(20);
+                                margin-bottom: mconverter(5);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                font-size: dconverter(18);
+                                line-height: dconverter(20);
+                            }
+                        }
+
+                        p {
+                            color: #575757;
+                            text-align: center;
+                            font-family: $interfont;
+                            font-weight: 400;
+                            width: converter(380);
+                            line-height: converter(18);
+                            font-size: converter(14);
+                            margin-bottom: converter(10);
+                            @media (max-width: $max-width) {
+                                width: mconverter(280);
+                                line-height: mconverter(18);
+                                font-size: mconverter(12);
+                                margin-bottom: mconverter(10);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                width: dconverter(380);
+                                font-size: dconverter(14);
+                                line-height: dconverter(18);
+                            }
+                        }
+
+                        .change-photo-btn{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin: auto;
+                            color: #00A148;
+                            font-family: $interfont;
+                            cursor: pointer;
+                            font-weight: 600;
+                            height: converter(33);
+                            width: converter(130);
+                            padding: converter(6) converter(10);
+                            gap: converter(7);
+                            border-radius: converter(4);
+                            border: converter(1) solid #00A148;
+                            font-size: converter(12);
+
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(12);
+                                height: mconverter(33);
+                                width: mconverter(110);
+                                padding: mconverter(6) mconverter(10);
+                                gap: mconverter(7);
+                                border-radius: mconverter(5);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                width: dconverter(130);
+                                height: dconverter(33);
+                                font-size: dconverter(14);
+                                line-height: dconverter(18);
+                            }
+
+                            svg {
+                                width: converter(12);
+                                height: converter(12);
+                                @media (max-width: $max-width) {
+                                    width: mconverter(12);
+                                    height: mconverter(12);
+                                }
+                            }
+                        }
+
+                        input[type="file"]{
+                            display:none;
+                        }
+
+                        .file-list {
+                            width: 100%;
+                            .file-item{
+                                background:#fff;
+                                border-radius: converter(10);
+                                border: converter(1) solid #D6D6D6;
+                                padding: converter(5);
+                                margin-top: converter(10);
+                                @media (max-width: $max-width) {
+                                    border-radius: mconverter(5);
+                                    border: mconverter(1) solid #D6D6D6;
+                                    padding: mconverter(5);
+                                    margin-top: mconverter(8);
+                                }
+
+                                .file-top{
+                                    display:flex;
+                                    align-items:center;
+                                    gap: converter(5);
+                                    margin-bottom: converter(5);
+                                    @media (max-width: $max-width) {
+                                        gap: mconverter(12);
+                                        margin-bottom: mconverter(10);
+                                    }
+                                    .file-icon{
+                                        width: converter(30);
+                                        height: converter(30);
+                                        border-radius:converter(8);
+                                        background:#eafaf1;
+                                        color: #00A148;
+                                        display:flex;
+                                        align-items:center;
+                                        justify-content:center;
+                                        flex-shrink:0;
+                                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                            width: dconverter(30);
+                                            height: dconverter(30);
+                                        }
+                                        @media (max-width: $max-width) {
+                                            width: mconverter(20);
+                                            height: mconverter(20);
+                                            border-radius: mconverter(3);
+                                        }
+                                        svg {
+                                            width: converter(15);
+                                            height: converter(15);
+                                            @media (max-width: $max-width) {
+                                                width: mconverter(13);
+                                                height: mconverter(13);
+                                            }
+                                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                                width: dconverter(15);
+                                                height: dconverter(15);
+                                            }
+                                        }
+                                    }
+                                    .file-info {
+                                        flex: 1;
+                                        min-width: 0;
+                                        .file-name {
+                                            font-size:  converter(12);
+                                            font-weight: 600;
+                                            color: #1a1a1a;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            text-align: left;
+                                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                                font-size:  dconverter(14);
+                                            }
+                                            @media (max-width: $max-width) {
+                                                font-size:  mconverter(10);
+                                            }
+                                        }
+                                        .file-size {
+                                            font-size: converter(10);
+                                            color: #ccc;
+                                            text-align: left;
+                                            @media (max-width: $max-width) {
+                                                font-size: mconverter(10);
+                                            }
+                                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                                font-size:  dconverter(12);
+                                            }
+                                        }
+                                    }
+                                    .file-remove {
+                                        background: #00a148;
+                                        border: none;
+                                        color: #fff;
+                                        height: converter(20);
+                                        display: flex;
+                                        width: converter(20);
+                                        border-radius: converter(50);
+                                        align-items: center;
+                                        justify-content: center;
+                                        padding: 0;
+                                        @media (max-width: $max-width) {
+                                            width: mconverter(20);
+                                            border-radius: mconverter(50);
+                                            height: mconverter(20);
+                                        }
+                                        svg {
+                                            width: converter(15);
+                                            height: converter(15);
+                                            @media (max-width: $max-width) {
+                                                width: mconverter(13);
+                                                height: mconverter(13);
+                                            }
+                                        }
+                                    } 
+                                }
+
+                                .progress-track {
+                                    width: 100%;
+                                    height: converter(5);
+                                    background: #eef0f2;
+                                    border-radius: converter(50);
+                                    overflow: hidden;
+                                    @media (max-width: $max-width) {
+                                        border-radius: mconverter(50);
+                                        height: mconverter(5);
+                                    }
+
+                                    .progress-fill{
+                                        height:100%;
+                                        width:0%;
+                                        background:linear-gradient(90deg, #00A148);
+                                        border-radius: converter(50);
+                                        transition: width .18s ease;
+                                        @media (max-width: $max-width) {
+                                            border-radius: mconverter(50);
+                                        }
+                                    }
+                                    
+                                }
+
+                                .progress-bottom{
+                                    display:flex;
+                                    justify-content:space-between;
+                                    margin-top: converter(2);
+                                    font-size: converter(10);
+                                    color: #000;
+                                    @media (max-width: $max-width) {
+                                        margin-top: mconverter(6);
+                                        font-size: mconverter(10);
+                                    }
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                         font-size: dconverter(12);
+                                    }
+                                    
+                                    .progress-status {
+                                        .status-done{
+                                            color: $greencolor;
+                                            font-weight:600;
+                                            display:flex;
+                                            align-items:center;
+                                            gap: converter(4);
+                                            
+                                            svg {
+                                                width: converter(13);
+                                                height: converter(13);
+                                                @media (max-width: $max-width) {
+                                                    width: mconverter(13);
+                                                    height: mconverter(13);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .progress-percent{
+                                        font-weight:600;
+                                        color: $greencolor;
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+
+                    #fileInput{ 
+                        display:none; 
+                    }
+
+                    .social-input {
+                        overflow: hidden;
+                        position: relative;
+                        margin-top: converter(10);
+                        @media (max-width: $max-width) {
+                            margin-top: mconverter(5);
+                        }
+                        .input-left {
+                            padding-left: converter(70);
+                                @media (max-width: $max-width) {
+                                padding-left: mconverter(60);
+                            }
+                        }
+
+                        .social-icon {
+                            left: 0;
+                            top: 0;
+                            position: absolute;
+                            z-index: 99;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background: #F5F5F5;
+                            height: converter(47);
+                            padding: converter(14);
+                            border: converter(1) solid #D6D6D6;
+                            border-radius: converter(10) converter(0) converter(0) converter(10);
+
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                height: dconverter(45);
+                            }
+                            @media (max-width: $max-width) {
+                                height: mconverter(47);
+                                padding: mconverter(14);
+                                border: mconverter(1) solid #D6D6D6;
+                                font-size: mconverter(14);
+                                border-radius: mconverter(10) mconverter(0) mconverter(0) mconverter(10);
+                            }
+
+                            svg {
+                                width: converter(20);
+                                height: converter(20);
+                                @media (max-width: $max-width) {
+                                    width: mconverter(16);
+                                    height: mconverter(16);
+                                }
+                            }
+                        }
+                    }
+
+                    .working-checkbox {
+                        display: flex;
+                        align-items: center;
+                        gap: converter(5);
+                        margin-bottom: converter(15);
+                        @media (max-width: $max-width) {
+                            margin-bottom: mconverter(15);
+                            gap: mconverter(5);
+                        }
+
+                        label {
+                            color: #6C757D;
+                            font-family: $interfont;
+                            font-size: converter(14);
+                            font-weight: 400;
+                            line-height: normal;
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(13);
+                            }
+                        }
+
+                        input {
+                            appearance: none;
+                            -webkit-appearance: none;
+                            width: converter(16);
+                            height: converter(16);
+                            margin: 0;
+                            border: converter(1) solid #d9dfe3;
+                            border-radius: converter(4);
+                            background: #fff;
+                            cursor: pointer;
+                            flex-shrink: 0;
+                            @media (max-width: $max-width) {
+                                border: mconverter(1) solid #d9dfe3;
+                                border-radius: mconverter(4);
+                                width: mconverter(16);
+                                height: mconverter(16);
+                            }
+                            &:checked {
+                                background: #00a148;
+                                border-color: #00a148;
+                                position: relative;
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    width: converter(5);
+                                    height: converter(10);
+                                    left: converter(5);
+                                    top: converter(1);
+                                    border: solid #fff;
+                                    border-width: 0 converter(2) converter(2) 0;
+                                    transform: rotate(45deg);
+                                    @media (max-width: $max-width) {
+                                        border-width: 0 mconverter(2) mconverter(2) 0;
+                                        width: mconverter(5);
+                                        height: mconverter(10);
+                                        left: mconverter(5);
+                                        top: mconverter(1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .input-row {
+                        margin-bottom: converter(15);
+                        @media (max-width: $max-width) {
+                            margin-bottom: mconverter(15);
+                        }
+                        label {
+                            color: #181818;
+                            font-family: $manropefont;
+                            font-size: converter(16);
+                            font-weight: 600;
+                            line-height: converter(20);
+                            margin-bottom: converter(8);
+
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(14);
+                                line-height: mconverter(20);
+                                margin-bottom: mconverter(8);
+                            }
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                font-size: dconverter(16);
+                                line-height: dconverter(20);
+                            }
+                            .req {
+                                color:#f00;
+                            }
+                        }
+
+                        .contact-row {
+                            display: flex;
+                            align-items: center;
+                            gap: converter(10);
+                            @media (max-width: $max-width) {
+                                gap: mconverter(5);
+                            }
+                            .input-wrap {
+                                flex: 1;
+                                overflow: hidden;
+                                position: relative;
+                                .input-left {
+                                    padding-left: converter(70);
+                                    @media (max-width: $max-width) {
+                                        padding-left: mconverter(60);
+                                    }
+                                }
+                                .prefix {
+                                    left: 0;
+                                    top: 0;
+                                    position: absolute;
+                                    z-index: 99;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    color: #181818;
+                                    background: #FDFDFD;
+                                    font-family: $interfont;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: normal;
+                                    height: converter(47);
+                                    padding: converter(14);
+                                    border: converter(1) solid #D6D6D6;
+                                    font-size: converter(14);
+                                    border-radius: converter(10) converter(0) converter(0) converter(10);
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        height: dconverter(44);
+                                    }
+                                    @media (max-width: $max-width) {
+                                        height: mconverter(47);
+                                        padding: mconverter(14);
+                                        border: mconverter(1) solid #D6D6D6;
+                                        font-size: mconverter(14);
+                                        border-radius: mconverter(10) mconverter(0) mconverter(0) mconverter(10);
+                                    }
+                                }
+                            }
+
+                            .verifybtn {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-weight: 500;
+                                color: #00A148;
+                                font-family: $interfont;
+                                background-color: transparent;
+                                border: converter(1) solid #00A148;
+                                border-radius: converter(8);
+                                width: converter(133);
+                                height: converter(45);
+                                font-size: converter(12);
+                                transition: all 0.15s ease;
+                                line-height: normal;
+
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    width: dconverter(133);
+                                    height: dconverter(45);
+                                    font-size: dconverter(14);
+                                }
+
+                                @media (max-width: $max-width) {
+                                    border: mconverter(1) solid #00A148;
+                                    border-radius: mconverter(8);
+                                    width: mconverter(90);
+                                    height: mconverter(45);
+                                    font-size: mconverter(12);
+                                }
+                                &:disabled {
+                                    border-color: #00a14882;
+                                    color: #00a14882;
+                                    cursor: not-allowed;
+                                }
+                            }
+                        }
+
+                        .profile-summary-input {
+                            height: converter(250);
+                            margin: 0;
+                            background: #F8F8F8;
+                            @media (max-width: $max-width) {
+                                height: mconverter(200);
+                            }
+                        }
+
+                        .profile-summary-input1 {
+                            height: converter(150);
+                            margin: 0;
+                            background: #F8F8F8;
+                            @media (max-width: $max-width) {
+                                height: mconverter(100);
+                            }
+                        }
+
+                        .profile-summary-input2 {
+                            height: converter(80);
+                            margin: 0;
+                            background: #F8F8F8;
+                            @media (max-width: $max-width) {
+                                height: mconverter(80);
+                            }
+                        }
+
+                        .date-field {
+                            position: relative;
+                            input[type="date"]::-webkit-calendar-picker-indicator {
+                                position: absolute;
+                                right: converter(15);
+                                cursor: pointer;
+                                opacity: 1;
+                                @media (max-width: $max-width) {
+                                    right: mconverter(10);
+                                }
+                            }
+                        }
+                            
+                        input, 
+                        select,
+                        textarea{
+                            display: flex;
+                            align-items: center;
+                            align-self: stretch;
+                            position:relative;
+                            width: 100%;
+                            padding: converter(12) converter(15);
+                            border-radius: converter(10);
+                            border: converter(1) solid #E5E7EB;
+                            font-size: converter(14);
+                            font-family: $interfont;
+                            color:#575757;
+
+                            &.error {
+                                border-color: #E53935;
+                            }
+
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                font-size: dconverter(16);
+                            }
+
+                            @media (max-width: $max-width) {
+                                padding: mconverter(12) mconverter(14);
+                                border-radius: mconverter(10);
+                                font-size: mconverter(14);
+                            }
+
+                            &::placeholder {
+                                color: rgba(199, 199, 199, 1);
+                                font-weight: 400;
+                            }
+
+                            &:focus,
+                            &:focus-visible {
+                                outline: none;
+                                box-shadow: none;
+                            }
+ 
+                        }
+
+                        input[type="date"]::-webkit-calendar-picker-indicator {
+                            position: absolute;
+                            right: converter(15);
+                            cursor: pointer;
+                            opacity: 1;
+                            @media (max-width: $max-width) {
+                                right: mconverter(10);
+                            }
+                        }
+
+                        .salary-fields {
+                            display: flex;
+                            align-items: center;
+                            gap: converter(12);
+                            @media (max-width: $max-width) {
+                                gap: mconverter(12);
+                            }
+                            .salary-input {
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                overflow: hidden;
+                                position: relative;
+
+                                .currency {
+                                    left: 0;
+                                    top: 0;
+                                    position: absolute;
+                                    z-index: 99;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    color: #181818;
+                                    background: #FDFDFD;
+                                    font-family: $interfont;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: normal;
+                                    height: converter(47);
+                                    padding: converter(14);
+                                    border: converter(1) solid #D6D6D6;
+                                    font-size: converter(14);
+                                    border-radius: converter(10) converter(0) converter(0) converter(10);
+
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        height: dconverter(45);
+                                    }
+                                    @media (max-width: $max-width) {
+                                        height: mconverter(47);
+                                        padding: mconverter(14);
+                                        border: mconverter(1) solid #D6D6D6;
+                                        font-size: mconverter(14);
+                                        border-radius: mconverter(10) mconverter(0) mconverter(0) mconverter(10);
+                                    }
+                                }
+
+                                input {
+                                    padding-left: converter(50);
+                                    @media (max-width: $max-width) {
+                                        padding-left: mconverter(45);
+                                    }
+                                }
+                            }
+
+                            .to-text, .year-text {
+                                font-size: converter(12);
+                                color: #AFAFAF;
+                                white-space: nowrap;
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(12);
+                                }
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    font-size: dconverter(12);
+                                }
+                            }
+                        }
+
+                        select {
+                            appearance: none; 
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            padding-right: converter(30);
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19' fill='none'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.0593 12.4333C9.91083 12.5817 9.7095 12.6651 9.49958 12.6651C9.28966 12.6651 9.08833 12.5817 8.93987 12.4333L4.46141 7.95485C4.3858 7.88182 4.32549 7.79447 4.284 7.69788C4.24251 7.6013 4.22067 7.49741 4.21976 7.3923C4.21884 7.28718 4.23887 7.18293 4.27868 7.08564C4.31849 6.98835 4.37727 6.89996 4.4516 6.82562C4.52593 6.75129 4.61432 6.69251 4.71162 6.6527C4.80891 6.6129 4.91316 6.59287 5.01827 6.59378C5.12339 6.59469 5.22727 6.61653 5.32386 6.65802C5.42044 6.69951 5.5078 6.75982 5.58083 6.83544L9.49958 10.7542L13.4183 6.83544C13.5676 6.69123 13.7676 6.61143 13.9752 6.61324C14.1828 6.61504 14.3813 6.6983 14.5281 6.84508C14.6749 6.99186 14.7581 7.19042 14.7599 7.39799C14.7618 7.60557 14.682 7.80554 14.5377 7.95485L10.0593 12.4333Z' fill='%23AAAAAA'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='19' height='19' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+                            background-repeat: no-repeat;
+                            background-position: right converter(10) center;
+                            background-size: converter(20);
+                            position: relative;
+                            z-index: 999;
+                            @media (max-width: $max-width) {
+                                background-position: right mconverter(10) center;
+                                background-size: mconverter(20);
+                            }
+                            &.active {
+                                background: #F9FAFB;
+                            }
+                        }
+
+                        .gender-group{
+                            display:flex;
+                            gap: converter(10);
+                            @media (max-width: $max-width) {
+                                gap: mconverter(10);
+                            }
+                            .gender-btn{
+                                display: flex;
+                                background: #FFF;
+                                justify-content: center;
+                                align-items: flex-start;
+                                cursor:pointer;
+                                color: #AFAFAF;
+                                font-family: $interfont;
+                                font-weight: 300;
+                                font-size: converter(14);
+                                border-radius: converter(50);
+                                padding: converter(8) converter(20);
+                                border: converter(1) solid #E5E7EB;
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(14);
+                                    border-radius: mconverter(50);
+                                    padding: mconverter(8) mconverter(20);
+                                    border: mconverter(1) solid #E5E7EB;
+                                }
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    font-size: dconverter(14);
+                                }
+                                &.active{
+                                    background:#F5F5F5;
+                                    color:#575757;
+                                    border-color:#868686;
+                                }
+                            }
+                        }
+
+                        .ac-input-wrap {
+                            position: relative;
+                            .ac-clear{
+                                position:absolute;
+                                right: converter(14);
+                                top: converter(15);
+                                cursor:pointer;
+                                color: #AFAFAF;
+                                @media (max-width: $max-width) {
+                                    right: mconverter(14);
+                                    top: mconverter(15);
+                                }
+                                svg {
+                                    width: converter(17);
+                                    height: converter(17);
+                                    @media (max-width: $max-width) {
+                                        width: mconverter(17);
+                                        height: mconverter(17);
+                                    }
+                                }
+                            }
+                        }
+
+                        .ac-list{
+                            list-style:none;
+                            margin:0;
+                            padding:0;
+                            margin-top: converter(5);
+                            border-radius: converter(10);
+                            height: converter(200);
+                            border: converter(1) solid #E5E7EB;
+                            overflow: hidden;
+                            overflow-y: scroll;
+
+                            @media (max-width: $max-width) {
+                                margin-top: mconverter(5);
+                                height: mconverter(150);
+                                border-radius: mconverter(10);
+                                border: mconverter(1) solid #E5E7EB;
+                            }
+
+                            li{
+                                font-size: converter(14);
+                                padding: converter(12) converter(15);
+                                font-family: $interfont;
+                                color:#575757;
+                                border-bottom: converter(1) solid #E5E7EB;
+
+                                @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                    font-size: dconverter(14);
+                                }
+
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(14);
+                                    padding: mconverter(12) mconverter(15);
+                                    border-bottom: mconverter(1) solid #E5E7EB;
+                                }
+                                &:last-child{
+                                    border-bottom:none;
+                                }
+                            }
+                        }
+
+                        .lang-add-row {
+                            display: grid; 
+                            grid-template-columns: 1fr converter(200) converter(48); 
+                            gap: converter(10);
+                            margin-bottom: converter(15);
+
+                            @media (max-width: $max-width) {
+                                grid-template-columns: 1fr mconverter(48);
+                                grid-template-areas:
+                                    "language language"
+                                    "level button";
+                                gap: mconverter(7);
+                                margin-bottom: mconverter(15);
+                            }
+
+                            #langSelect {
+                                @media (max-width: $max-width) {
+                                    grid-area: language;
+                                    width: 100%;
+                                }
+                            }
+
+                            #langLevel {
+                                @media (max-width: $max-width) {
+                                    grid-area: level;
+                                    width: 100%;
+                                }
+                            }
+
+                            .icon-square-btn{
+                                display: flex;
+                                padding: converter(16) converter(14);
+                                flex-direction: column;
+                                align-items: flex-start;
+                                cursor:pointer;
+                                display:flex;
+                                align-items:center;
+                                justify-content:center;
+                                border-radius: converter(7);
+                                border: none;
+                                background: #5CFFA5;
+                                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10), 0 1px 2px -1px rgba(0, 0, 0, 0.10);
+                                
+                                @media (max-width: $max-width) {
+                                    border-radius: mconverter(7);
+                                    padding: mconverter(16) mconverter(14);
+                                }
+
+                                svg {
+                                    width: converter(20);
+                                    height: converter(20);
+                                    @media (max-width: $max-width) {
+                                        width: mconverter(20);
+                                        height: mconverter(20);
+                                    }
+                                }
+                            }
+
+                        }
+
+                        .lang-list { 
+                            display:flex; 
+                            flex-direction:column; 
+                            gap: converter(10);
+                            width: 100%;
+                            @media (max-width: $max-width) {
+                                width: 100%;
+                                gap: mconverter(10);
+                            }
+                            .lang-row { 
+                                display:flex; 
+                                align-items:center; 
+                                justify-content:space-between; 
+                                padding: converter(0) converter(10);
+                                @media (max-width: $max-width) {
+                                    padding: mconverter(0) mconverter(10);
+                                }
+                                span {
+                                    color: #101828;
+                                    font-family: $interfont;
+                                    font-size: converter(14);
+                                    @media (max-width: $max-width) {
+                                        font-size: mconverter(14);
+                                    }
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        font-size: dconverter(14);
+                                    }
+                                    .lang-remove-btn {
+                                        background: none;
+                                        border: none;
+                                        color: #000;
+                                        cursor: pointer;
+                                        font-size: converter(10);
+                                        padding: converter(2) converter(6);
+                                        @media (max-width: $max-width) {
+                                            font-size: mconverter(10);
+                                            padding: mconverter(2) mconverter(6);
+                                        }
+                                    }
+                                }
+                                .level-chip { 
+                                    display: flex;
+                                    padding: converter(3) converter(8);
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: converter(6);
+                                    text-align: center;
+                                    font-family: $interfont;
+                                    font-size: converter(12);
+                                    @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                        font-size: dconverter(14);
+                                    }
+                                    @media (max-width: $max-width) {
+                                        padding: mconverter(3) mconverter(8);
+                                        border-radius: mconverter(6);
+                                        font-size: mconverter(10);
+                                    }
+                                }
+                                .level-basic {
+                                    background: #EFEFEF;
+                                    color: #565656;
+                                }
+                                .level-intermediate {
+                                    background: #F8F4B9;
+                                    color: #823F00;
+                                }
+                                .level-fluent {
+                                    background: #B9EAF8;
+                                    color: #002E82;
+                                }
+                                .level-native {
+                                    background: #B9F8CF;
+                                    color: #008236;
+                                }
+                            }
+                        }
+                    }
+
+                    .skills-tags, job-tags {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: converter(8);
+                        margin-top: converter(10);
+                        @media (max-width: $max-width) {
+                            gap: mconverter(5);
+                            margin-top: mconverter(10);
+                        }
+                        .skilltag {
+                            display: inline-flex;
+                            align-items: center;
+                            background: #00A148;
+                            color: #FFF;
+                            font-family: $interfont;
+                            font-size: converter(12);
+                            gap: converter(6);
+                            padding: converter(6) converter(12);
+                            border-radius: converter(100);
+                            font-weight: 500;
+                            line-height: normal;
+                            @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                                font-size: dconverter(14);
+                            }
+                            @media (max-width: $max-width) {
+                                font-size: mconverter(10);
+                                gap: mconverter(6);
+                                padding: mconverter(6) mconverter(12);
+                                border-radius: mconverter(100);
+                            }
+                            .tag-remove {
+                                padding: 0;
+                                border: 0;
+                                background: transparent;
+                                color: #fff;
+                                font-size: converter(10);
+                                line-height: normal;
+                                cursor: pointer;
+                                @media (max-width: $max-width) {
+                                    font-size: mconverter(10);
+                                }
+                                svg {
+                                    width: converter(14);
+                                    height: converter(14);
+                                    @media (max-width: $max-width) {
+                                        width: mconverter(14);
+                                        height: mconverter(14);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // Profile Scroce Popup Css
+                    @media (max-width: $max-width) {
+                        .side-card {
+                            h3{
+                                color: #1C1C2E;
+                                font-family: $manropefont;
+                                font-size: mconverter(18);
+                                font-weight: 600;
+                            }
+                            p {  
+                                color: #575757;
+                                font-family: $interfont;
+                                font-weight: 400;
+                                font-size: mconverter(16);
+                                line-height: mconverter(20);
+                            }
+
+                            .pending-title {
+                                color: #1C1C2E;
+                                font-family: $manropefont;
+                                font-size: mconverter(16);
+                                font-weight: 600;
+                                line-height: mconverter(20);
+                            }
+
+                            a {
+                                text-decoration: none;
+                                .pending-item{
+                                    display: flex;
+                                    margin-top: mconverter(8);
+                                    padding: mconverter(7) mconverter(10);
+                                    border-radius: mconverter(6);
+                                    justify-content: space-between;
+                                    background: #FFFAF5;
+                                    align-items: center;
+                                    align-self: stretch;
+                                    .left{
+                                        color: #1C1C2E;
+                                        font-family: $interfont;
+                                        font-size: mconverter(14);
+                                        font-weight: 500;
+                                        gap: mconverter(5);
+                                        display: flex;
+                                        align-items: center;
+                                        svg {
+                                            width: mconverter(16);
+                                            height: mconverter(16);
+                                        }
+                                    }
+                                    .badge{
+                                        border-radius: mconverter(100);
+                                        display: flex;
+                                        padding: mconverter(2) mconverter(7);
+                                        flex-direction: column;
+                                        align-items: flex-start;
+                                        background: #FFE9D1;
+                                        color: #C2410C;
+                                        font-family: $interfont;
+                                        font-size: mconverter(10);
+                                        font-weight: 700;
+                                        line-height: mconverter(15);
+                                    }
+                                }
+                            }
+                        }                      
+
+                    }
+                }
+
+                .modal-footer {
+                    padding: converter(10) 0 0;
+                    @media (max-width: $max-width) {
+                        padding: mconverter(10) 0 0;
+                    }
+                    .btn-save{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        border: 0;
+                        color: #fff;
+                        font-family: $interfont;
+                        font-weight: 700;
+                        margin: 0;
+                        font-size: converter(14);
+                        border-radius: converter(100);
+                        padding: converter(11) converter(42);
+                        background: #00A148;
+                        box-shadow: 0 converter(2) converter(8) 0 rgba(0, 132, 59, 0.20);
+
+                        @media (max-width: $max-width) {
+                            width: 100%;
+                            font-size: mconverter(14);
+                            border-radius: converter(100);
+                            padding: mconverter(11) mconverter(42);
+                            box-shadow: 0 mconverter(2) mconverter(8) 0 rgba(0, 132, 59, 0.20);
+                        }
+
+                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                            font-size: dconverter(15);
+                        }
+                    }
+                    .ai-btn {
+                        display: flex;
+                        padding: converter(7) converter(16);
+                        width: converter(168);
+                        gap: converter(6);
+                        border-radius: converter(20);
+                        border: converter(1) solid #D6FEDB;
+                        height: converter(35);
+                        font-size: converter(14);
+                        align-items: center;
+                        background: #F7FFF3; 
+                        color: #00A148;
+                        text-align: center;
+                        font-family: $interfont;
+                        font-weight: 600;
+                        @media (max-width: $max-width) {
+                            padding: mconverter(7) mconverter(16);
+                            width: mconverter(158);
+                            gap: mconverter(6);
+                            border-radius: mconverter(20);
+                            border: mconverter(1) solid #D6FEDB;
+                            height: mconverter(35);
+                            font-size: mconverter(14);
+                        }
+                        @media (min-width: $min-desktop) and (max-width: $max-desktop) {
+                            font-size: dconverter(15);
+                        }
+                        svg {
+                            width: converter(16);
+                            height: converter(16);
+                            @media (max-width: $max-width) {
+                                width: mconverter(16);
+                                height: mconverter(16);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .photo-crop-overlay{
+            position:fixed;
+            inset:0;
+            background:rgba(15,23,42,0.45);
+            display:none;
+            align-items:center;
+            justify-content:center;
+            z-index:9999;
+            &.is-open { 
+                display:flex; 
+            }
+
+            .photo-crop-modal{
+                background:#fff;
+                width: converter(495);
+                height: converter(450);
+                border-radius: converter(20);
+                overflow:hidden;
+                padding: converter(15) converter(20) converter(20);
+
+                @media (max-width: $max-width) {
+                    width: 90%;
+                    height: mconverter(340);
+                    border-radius: mconverter(18);
+                    padding: mconverter(14) mconverter(18) mconverter(20);
+                }
+
+                .photo-crop-header{
+                    display:flex;
+                    align-items:flex-start;
+                    justify-content:space-between;
+                    border-bottom: converter(1) solid #AFAFAF;
+                    margin-bottom: converter(15);
+
+                    @media (max-width: $max-width) {
+                        border-bottom: mconverter(1) solid #AFAFAF;
+                        margin-bottom: mconverter(14);
+                    }
+
+                    .photo-crop-title{
+                        color: #000;
+                        font-family: $manropefont;
+                        font-size: converter(16);
+                        font-weight: 600;
+                        margin-bottom: converter(5);
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(15);
+                            margin-bottom: mconverter(2);
+                        }
+                    }
+                    
+                    .photo-crop-subtitle { 
+                        color: #575757;
+                        font-family: $interfont;
+                        font-size: converter(12);
+                        margin-bottom: converter(15);
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(12);
+                            margin-bottom: mconverter(12);
+                        }
+                    }
+
+                    .photo-crop-close{
+                        background: rgba(239, 241, 242, 1);
+                        border:none;
+                        font-size: converter(16);
+                        color: #000; cursor:pointer; 
+                        width: converter(30);
+                        height: converter(30);
+                        border-radius: converter(50);
+                        align-items: center;
+                        justify-content: center;
+                        @media (max-width: $max-width) {
+                            font-size: mconverter(12);
+                            width: mconverter(24);
+                            height: mconverter(24);
+                            border-radius: mconverter(50);
+                        }
+                    }
+                }
+            }
+
+            .photo-crop-body {
+                width: 100%;
+                height: converter(290);
+                @media (max-width: $max-width) {
+                    height: mconverter(191);
+                }
+                #cropImage {
+                    max-width: 100%;
+                    display: block;
+                }
+            }
+  
+            .photo-crop-footer { 
+                display:flex; 
+                padding-top: converter(15);
+                justify-content: center;
+                @media (max-width: $max-width) {
+                    gap: mconverter(10); 
+                    padding-top: mconverter(14); 
+                }
+
+                .photo-crop-save-btn{
+                    display: flex;
+                    width: converter(356);
+                    height: converter(40);
+                    justify-content: center;
+                    align-items: center;
+                    color: #FFF;
+                    font-family: $manropefont;
+                    font-size: converter(16);
+                    font-weight: 600;
+                    background-color: #00A148;
+                    border: none;
+                    border-radius: converter(50);
+
+                    @media (max-width: $max-width) {
+                        width: mconverter(333);
+                        height: mconverter(37);
+                        border-radius: mconverter(50);
+                        font-size: mconverter(16);
+                    }
+
+                    &:disabled { 
+                        opacity:0.5; 
+                        cursor:not-allowed;  
+                    }
+                }
+            }
+        }
+
+    // Profile Score Popup CSS '
+
+        .profile-score {
+            display: none;
+            @media (max-width: $max-width) {
+                display: block;
+                border: none;
+                width: 100%;
+                padding: mconverter(2);
+                margin-top: mconverter(15);
+                border-radius: mconverter(50);
+                background: linear-gradient(
+                    90deg,
+                    #42f4b3,
+                    #5cf673,
+                    #88f96f,
+                    #16f921,
+                    #22c55e,
+                    #42f4d3
+                );
+                background-size: 300% 100%;
+                animation: borderMove 3s linear infinite;
+                box-shadow: 0 0 8px rgba(66, 133, 244, 0.25);
+                @keyframes borderMove {
+                    from {
+                        background-position: 0% 50%;
+                    }
+
+                    to {
+                        background-position: 300% 50%;
+                    }
+                }
+            }
+            p {
+                display: none;
+                @media (max-width: $max-width) {
+                    display: block;
+                    width: 100%;
+                    display: flex;
+                    position: relative;
+                    z-index: 1;
+                    align-items: center;
+                    justify-content: center;
+                    gap: mconverter(5);
+                    padding: mconverter(8) mconverter(15);
+                    border-radius: mconverter(50);
+                    background: #fff;
+                    color: #575757;
+                    font-family: $interfont;
+                    font-size: mconverter(14);
+                    margin-bottom: mconverter(0);
+                    font-weight: 400;
+                    line-height: normal;
+                    strong {
+                        color: #181818;
+                        font-size: mconverter(16);
+                        font-weight: 700;
+                    }
+                }
+            }
+            
+        }
+    }
+}

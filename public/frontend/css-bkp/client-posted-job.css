@@ -1,0 +1,2595 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+.clientPosted ::-webkit-scrollbar {
+  width: 0.3125vw;
+}
+.clientPosted ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.2604166667vw grey;
+  border-radius: 0.5208333333vw;
+}
+.clientPosted ::-webkit-scrollbar-thumb {
+  background: rgb(138, 138, 138);
+  border-radius: 0.5208333333vw;
+}
+.clientPosted .container-fluid {
+  width: 73.9583333333vw;
+  margin: auto;
+  margin-top: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid {
+    width: 100%;
+    margin-top: 5.1282051282vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob {
+  margin-top: 1.0416666667vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob {
+    margin-top: 3.8461538462vw;
+    gap: 2.5641025641vw;
+    display: block;
+    width: 100%;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription {
+  width: 48.9583333333vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription {
+    width: 100%;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo {
+  width: 48.9583333333vw;
+  height: auto;
+  border-radius: 0.4166666667vw;
+  border: 0.0520833333vw solid #DADADA;
+  background: #FFF;
+  box-shadow: 0 0.2083333333vw 0.2083333333vw 0 rgba(0, 0, 0, 0.1);
+  padding: 1.0416666667vw 1.0416666667vw 1.1979166667vw 1.8229166667vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo {
+    width: 90.5128205128vw;
+    height: auto;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #DADADA;
+    background: #FFF;
+    box-shadow: 0 0.5128205128vw 1.0256410256vw 0 rgba(0, 0, 0, 0.1);
+    padding: 3.8461538462vw;
+    display: block;
+    margin: auto;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text {
+  width: 35.4166666667vw;
+  position: relative;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text {
+    width: 100%;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text::after {
+  content: "";
+  position: absolute;
+  top: 25%;
+  left: -1.0416666667vw;
+  width: 0.1041666667vw;
+  height: 2.0833333333vw;
+  background: #00A148;
+  transform: translate(0, -50%);
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text::after {
+    display: none;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text > p {
+  display: flex;
+  padding: 0.2604166667vw 0.5208333333vw;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5208333333vw;
+  border-radius: 2.96875vw;
+  background: #EDFFEB;
+  color: var(--Secondry-color, #00A148);
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  width: -moz-max-content;
+  width: max-content;
+  margin-bottom: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text > p {
+    padding: 1.2820512821vw 2.5641025641vw;
+    gap: 2.5641025641vw;
+    border-radius: 14.6153846154vw;
+    font-size: 2.5641025641vw;
+    margin-bottom: 1.2820512821vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text h4 {
+  color: #0A0A0A;
+  font-family: Manrope;
+  font-size: 1.25vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  margin-bottom: 0.5208333333vw;
+  width: 22.3958333333vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text h4 {
+    font-size: 4.1025641026vw;
+    margin-bottom: 2.5641025641vw;
+    width: 100%;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text > span {
+  color: #6D6D6D;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.9375vw;
+  display: flex;
+  align-items: center;
+  gap: 0.2604166667vw;
+  margin-bottom: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text > span {
+    font-size: 3.0769230769vw;
+    margin-bottom: 1.2820512821vw;
+    margin-right: 1.2820512821vw;
+    gap: 1.2820512821vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text > span svg {
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text > span svg {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+    aspect-ratio: 1/1;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied {
+  display: flex;
+  gap: 2.5vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied {
+    gap: 5.1282051282vw;
+    justify-content: space-between;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .applied {
+  display: flex;
+  gap: 0.5208333333vw;
+  position: relative;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .applied {
+    gap: 1.2820512821vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .applied::after {
+  content: "";
+  position: absolute;
+  top: -0.4166666667vw;
+  right: -10%;
+  width: 0.0520833333vw;
+  height: 3.1770833333vw;
+  background-color: #D1D1D1;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .applied::after {
+    height: 10vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .applied .icon span {
+  display: flex;
+  width: 2.1354166667vw;
+  height: 2.1354166667vw;
+  padding: 0.46875vw 0.4166666667vw 0.4166666667vw 0.46875vw;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.7604166667vw;
+  background: #EDFFEB;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .applied .icon span {
+    display: flex;
+    width: 7.6923076923vw;
+    height: 7.6923076923vw;
+    padding: 1.9230769231vw 1.7948717949vw 1.6666666667vw 1.7948717949vw;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 9.9435897436vw;
+    background: #EDFFEB;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .applied .icon span svg {
+  width: 1.25vw;
+  height: 1.25vw;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .applied .icon span svg {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .applied .info p {
+  color: #6D6D6D;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.9375vw;
+  margin-bottom: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .applied .info p {
+    font-size: 3.0769230769vw;
+    line-height: 120%;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .applied .info span {
+  color: var(--Secondry-color, #00A148);
+  font-family: Inter;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.9375vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .applied .info span {
+    font-size: 3.5897435897vw;
+    line-height: 4.6153846154vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .viewed {
+  display: flex;
+  gap: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .viewed {
+    gap: 1.2820512821vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .viewed .icon span {
+  display: flex;
+  width: 2.1354166667vw;
+  height: 2.1354166667vw;
+  padding: 0.46875vw 0.4166666667vw 0.4166666667vw 0.46875vw;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.7604166667vw;
+  background: #E5F2FD;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .viewed .icon span {
+    display: flex;
+    width: 7.6923076923vw;
+    height: 7.6923076923vw;
+    padding: 1.9230769231vw 1.7948717949vw 1.6666666667vw 1.7948717949vw;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 9.9435897436vw;
+    background: #EDFFEB;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .viewed .icon span svg {
+  width: 1.25vw;
+  height: 1.25vw;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .viewed .icon span svg {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .viewed .info p {
+  color: #6D6D6D;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.9375vw;
+  margin-bottom: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .viewed .info p {
+    font-size: 3.0769230769vw;
+    line-height: 120%;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .viewed .info span {
+  color: var(--Secondry-color, #00A148);
+  font-family: Inter;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.9375vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .text .viewApplied .viewed .info span {
+    font-size: 3.5897435897vw;
+    line-height: 4.6153846154vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget {
+  position: relative;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget {
+    display: flex;
+    margin-top: 6.9230769231vw;
+    position: relative;
+    justify-content: space-between;
+  }
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget::before {
+    content: "";
+    position: absolute;
+    top: -3.8461538462vw;
+    left: 0;
+    width: 100%;
+    border-top: 0.2564102564vw dashed #D1D1D1;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -1.5625vw;
+  width: 0.0520833333vw;
+  height: 9.8958333333vw;
+  background: #D1D1D1;
+  transform: translate(0, -50%);
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget::after {
+    display: none;
+  }
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .details {
+    display: block;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .details span {
+  color: #6D6D6D;
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.9375vw;
+  display: block;
+  margin-bottom: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .details span {
+    font-size: 3.0769230769vw;
+    margin-bottom: 0;
+    line-height: 4.6153846154vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .details p {
+  color: var(--Secondry-color, #00A148);
+  text-align: center;
+  font-family: Manrope;
+  font-size: 1.25vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  margin-bottom: 0.4166666667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .details p {
+    font-size: 3.0769230769vw;
+    margin-bottom: 1.2820512821vw;
+    line-height: 125%;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .Applicants {
+  display: flex;
+  padding: 0.5208333333vw 2.0833333333vw;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5208333333vw;
+  align-self: stretch;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid var(--Dissabled-text, #AFAFAF);
+  color: var(--text-color, #575757);
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .Applicants {
+    display: flex;
+    padding: 2.0512820513vw 5.1282051282vw;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5641025641vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid var(--Dissabled-text, #AFAFAF);
+    color: var(--text-color, #575757);
+    font-family: Inter;
+    font-size: 3.0769230769vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .ongoing {
+  display: flex;
+  padding: 0.5208333333vw 0.78125vw;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5208333333vw;
+  align-self: stretch;
+  border-radius: 0.5208333333vw;
+  background: #E7D000;
+  color: var(--text-color, #575757);
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  border: 0;
+  box-shadow: initial;
+  box-shadow: initial;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .ongoing {
+    padding: 2.0512820513vw 5.1282051282vw;
+    gap: 2.5641025641vw;
+    border-radius: 2.5641025641vw;
+    font-size: 3.0769230769vw;
+    margin-left: auto;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .ongoing svg {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+  aspect-ratio: 1/1;
+  margin-left: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .ongoing svg {
+    display: none;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .jobClosed {
+  display: flex;
+  padding: 0.5208333333vw 0.78125vw;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5208333333vw;
+  align-self: stretch;
+  border-radius: 0.5208333333vw;
+  background: #E9E9E9;
+  color: var(--text-color, #575757);
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  border: 0;
+  box-shadow: initial;
+  box-shadow: initial;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .jobClosed {
+    padding: 2.0512820513vw 5.1282051282vw;
+    gap: 2.5641025641vw;
+    border-radius: 2.5641025641vw;
+    font-size: 3.0769230769vw;
+    margin-left: auto;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .jobClosed svg {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+  aspect-ratio: 1/1;
+  margin-left: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .budgetInfo .applyBudget .jobClosed svg {
+    display: none;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .showJObInfo {
+  width: 48.9583333333vw;
+  border-radius: 0.4166666667vw;
+  border: 0.0520833333vw solid #DADADA;
+  background: #FFF;
+  box-shadow: 0 0.2083333333vw 0.2083333333vw 0 rgba(0, 0, 0, 0.1);
+  margin-top: 0.8333333333vw;
+  margin-bottom: 0.78125vw;
+  padding: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .showJObInfo {
+    width: 90.5128205128vw;
+    padding: 5.1282051282vw 2.5641025641vw;
+    gap: 2.5641025641vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #E0E0E0;
+    box-shadow: 0 0.5128205128vw 1.0256410256vw 0 rgba(0, 0, 0, 0.15);
+    margin: auto;
+    margin-top: 4.1025641026vw;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .showJObInfo .textMore {
+  max-height: 20.3125vw;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  position: relative;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .showJObInfo .textMore {
+    max-height: 100vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .showJObInfo .textMore.active {
+  max-height: 156.25vw;
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .showJObInfo .textMore h5 {
+  color: #000;
+  font-family: Manrope;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .showJObInfo .textMore h5 {
+    font-size: 4.1025641026vw;
+    margin-bottom: 2.5641025641vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .showJObInfo .textMore p {
+  color: #364153;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .showJObInfo .textMore p {
+    font-size: 3.5897435897vw;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .showJObInfo a {
+  color: var(--Secondry-color, #00A148);
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 170%;
+  padding-top: 0.5208333333vw;
+  text-decoration: none;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .showJObInfo a {
+    font-size: 3.5897435897vw;
+    padding-top: 2.5641025641vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .showJObInfo a svg {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .showJObInfo a svg {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .SkillsRequired {
+  width: 48.9583333333vw;
+  padding: 1.0416666667vw 1.0416666667vw 0.9375vw 1.0416666667vw;
+  border-radius: 0.4166666667vw;
+  border: 0.0520833333vw solid #DADADA;
+  background: #FFF;
+  box-shadow: 0 0.2083333333vw 0.2083333333vw 0 rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .SkillsRequired {
+    width: 90.5128205128vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #E0E0E0;
+    background: #FFF;
+    box-shadow: 0 0.5128205128vw 1.0256410256vw 0 rgba(0, 0, 0, 0.15);
+    padding: 5.1282051282vw 2.5641025641vw;
+    margin: auto;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .SkillsRequired h5 {
+  color: #000;
+  font-family: Manrope;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .SkillsRequired h5 {
+    font-size: 4.1025641026vw;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .SkillsRequired ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5208333333vw;
+  flex-wrap: wrap;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .SkillsRequired ul {
+    gap: 2.5641025641vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .SkillsRequired ul li {
+  display: flex;
+  height: 1.1979166667vw;
+  padding: 0.2604166667vw 0.5208333333vw;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3515625vw;
+  background: #F8F8F8;
+  color: #00843B;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.9114583333vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .SkillsRequired ul li {
+    height: 5.8974358974vw;
+    padding: 1.2820512821vw 2.5641025641vw;
+    border-radius: 1.7307692308vw;
+    font-size: 3.5897435897vw;
+    line-height: 4.4871794872vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .certificates {
+  width: 48.9583333333vw;
+  padding: 1.0416666667vw 1.0416666667vw 0.9375vw 1.0416666667vw;
+  border-radius: 0.4166666667vw;
+  border: 0.0520833333vw solid #DADADA;
+  background: #FFF;
+  box-shadow: 0 0.2083333333vw 0.2083333333vw 0 rgba(0, 0, 0, 0.1);
+  margin-top: 0.78125vw;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .certificates {
+    width: 90.5128205128vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #E0E0E0;
+    box-shadow: 0 0.5128205128vw 1.0256410256vw 0 rgba(0, 0, 0, 0.15);
+    padding: 5.1282051282vw 2.5641025641vw;
+    margin: auto;
+    margin-top: 3.8461538462vw;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .certificates h5 {
+  color: #000;
+  font-family: Manrope;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .certificates h5 {
+    font-size: 4.1025641026vw;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.3076923077vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo .detail {
+  display: flex;
+  width: 14.9479166667vw;
+  padding: 0.5208333333vw;
+  align-items: flex-start;
+  gap: 0.46875vw;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid #C3C3C3;
+  background: #FFF;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo .detail {
+    width: 41.5384615385vw;
+    padding: 2.5641025641vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #C3C3C3;
+    display: block;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo .detail .images svg {
+  width: 1.5625vw;
+  height: 1.5625vw;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo .detail .images svg {
+    width: 7.6923076923vw;
+    height: 7.6923076923vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo .detail .text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo .detail .text {
+    gap: 1.2820512821vw;
+    justify-content: initial;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo .detail .text .info p {
+  color: var(--Heading-text, #181818);
+  font-family: Inter;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 170%;
+  margin-bottom: 0;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo .detail .text .info p {
+    font-size: 3.5897435897vw;
+    width: 28.9743589744vw;
+    line-height: 6.4102564103vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo .detail .text .info span {
+  color: var(--text-color, #575757);
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 170%;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo .detail .text .info span {
+    font-size: 2.5641025641vw;
+    line-height: 3.3333333333vw;
+    display: block;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo .detail .text .button .download {
+  width: 1.25vw;
+  height: 1.25vw;
+  aspect-ratio: 1/1;
+  box-shadow: initial;
+  border: 0;
+  background-color: initial;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo .detail .text .button .download {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+    aspect-ratio: 1/1;
+  }
+  .clientPosted .container-fluid .freelanceJob .employeDescription .certificates .crtinfo .detail .text .button .download svg {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+    aspect-ratio: 1/1;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .aboutClient {
+  width: 23.9583333333vw;
+  position: sticky;
+  top: 1.0416666667vw;
+  height: calc(100vh - 4.6875vw);
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .aboutClient {
+    height: 100%;
+    position: initial;
+    top: 0;
+    width: 100%;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs {
+  width: 23.9583333333vw;
+  padding: 1.0416666667vw;
+  border-radius: 0.4166666667vw;
+  border: 0.0520833333vw solid #DADADA;
+  background: #FFF;
+  box-shadow: 0 0.2083333333vw 0.2083333333vw 0 rgba(0, 0, 0, 0.1);
+  padding: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs {
+    width: 90.5128205128vw;
+    padding: 5.1282051282vw 2.5641025641vw;
+    gap: 3.8461538462vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #E0E0E0;
+    box-shadow: 0 0.5128205128vw 1.0256410256vw 0 rgba(0, 0, 0, 0.15);
+    margin: auto;
+    margin-top: 3.8461538462vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs .title {
+    padding-bottom: 3.8461538462vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .title p {
+  color: var(--Heading-text, #181818);
+  font-family: Manrope;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin-bottom: 0;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs .title p {
+    font-size: 4.1025641026vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .title .seeAll {
+  color: var(--Secondry-color, #00A148);
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+  box-shadow: initial;
+  border: 0;
+  background-color: initial;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs .title .seeAll {
+    font-size: 3.5897435897vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob {
+  max-height: 17.03125vw;
+  overflow-y: auto;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob {
+    max-height: 83.8461538462vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs {
+  display: flex;
+  height: 3.90625vw;
+  padding-bottom: 0.78125vw;
+  align-items: flex-start;
+  align-self: stretch;
+  border-bottom: 0.0520833333vw solid #D9D9D9;
+  gap: 1.0416666667vw;
+  margin-top: 0.78125vw;
+  paddin-bottom: 0.78125vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs {
+    display: flex;
+    height: 19.2307692308vw;
+    padding-bottom: 2.5641025641vw;
+    border-bottom: 0.2564102564vw solid #D9D9D9;
+    gap: 5.1282051282vw;
+    margin-top: 2.5641025641vw;
+    paddin-bottom: 2.5641025641vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .images {
+  width: 3.125vw;
+  height: 3.125vw;
+  border-radius: 15.625vw;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .images {
+    width: 15.3846153846vw;
+    height: 15.3846153846vw;
+    border-radius: 76.9230769231vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .images img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 18.1276041667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text {
+    width: 67.5076923077vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text .info {
+  width: 13.9583333333vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text .info {
+    width: 50vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text .info h5 {
+  color: var(--Heading-text, #181818);
+  font-family: Manrope;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin-bottom: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text .info h5 {
+    font-size: 4.1025641026vw;
+    margin-bottom: 1.2820512821vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text .info p {
+  color: var(--text-color, #575757);
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 0vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text .info p {
+    font-size: 3.0769230769vw;
+    line-height: 120%;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text .info span {
+  color: #6A7282;
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.6758854167vw;
+  display: flex;
+  align-items: center;
+  gap: 0.2604166667vw;
+  margin-top: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text .info span {
+    font-size: 3.0769230769vw;
+    margin-top: 1.2820512821vw;
+    gap: 1.2820512821vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text .info span svg {
+  width: 0.6770833333vw;
+  height: 0.6770833333vw;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text .info span svg {
+    width: 3.3333333333vw;
+    height: 3.3333333333vw;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text .redirect .redirectLink {
+  display: flex;
+  height: 1.1458333333vw;
+  padding: 0.2604166667vw 0.3125vw;
+  align-items: center;
+  gap: 0.5208333333vw;
+  border-radius: 2.6041666667vw;
+  border: 0.0520833333vw solid var(--Secondry-color, #00A148);
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text .redirect .redirectLink {
+    height: 5.641025641vw;
+    padding: 1.2820512821vw 1.5384615385vw;
+    gap: 2.5641025641vw;
+    border-radius: 12.8205128205vw;
+    border: 0.2564102564vw solid var(--Secondry-color, #00A148);
+  }
+}
+.clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text .redirect .redirectLink svg {
+  width: 0.52109375vw;
+  height: 0.6234375vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .SimilarJobs .findJob .moreJobs .text .redirect .redirectLink svg {
+    width: 2.5653846154vw;
+    height: 3.0692307692vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .jobStatus {
+  height: 11.40625vw;
+  align-self: stretch;
+  border-radius: 0.4166666667vw;
+  border: 0.0520833333vw solid #DADADA;
+  background: #FFF;
+  box-shadow: 0 0.2083333333vw 0.2083333333vw 0 rgba(0, 0, 0, 0.1);
+  padding: 1.0416666667vw;
+  margin-top: 0.78125vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .jobStatus {
+    width: 90.5128205128vw;
+    height: 51.0256410256vw;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 2.0512820513vw;
+    border: 0.2564102564vw solid #DADADA;
+    background: #FFF;
+    box-shadow: 0 1.0256410256vw 1.0256410256vw 0 rgba(0, 0, 0, 0.1);
+    padding: 3.8461538462vw 2.5641025641vw;
+    margin: auto;
+    margin-top: 3.8461538462vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .jobStatus h5 {
+  color: #000;
+  font-family: Manrope;
+  font-size: 0.9375vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  margin-bottom: 0.859375vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .jobStatus h5 {
+    font-size: 4.1025641026vw;
+    line-height: 125%;
+    margin-bottom: 2.9487179487vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .jobStatus .infoStatus .status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.clientPosted .container-fluid .freelanceJob .jobStatus .infoStatus .status p {
+  color: var(--text-color, #575757);
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .jobStatus .infoStatus .status p {
+    font-size: 3.5897435897vw;
+    line-height: 120%;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .jobStatus .infoStatus .status p:last-child {
+  display: flex;
+  padding: 0.2083333333vw 0.5208333333vw;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5208333333vw;
+  border-radius: 2.96875vw;
+  background: #EDFFEB;
+  color: var(--Secondry-color, #00A148);
+  font-family: Inter;
+  font-size: 0.5208333333vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .jobStatus .infoStatus .status p:last-child {
+    padding: 1.0256410256vw 2.5641025641vw;
+    gap: 2.5641025641vw;
+    border-radius: 14.6153846154vw;
+    font-size: 2.5641025641vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .jobStatus .infoStatus .postOn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.clientPosted .container-fluid .freelanceJob .jobStatus .infoStatus .postOn p {
+  color: var(--text-color, #575757);
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .jobStatus .infoStatus .postOn p {
+    font-size: 3.5897435897vw;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .jobStatus .infoStatus .postOn p:last-child {
+  font-weight: 500;
+}
+.clientPosted .container-fluid .freelanceJob .jobStatus .infoStatus .duration {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.clientPosted .container-fluid .freelanceJob .jobStatus .infoStatus .duration p {
+  color: var(--text-color, #575757);
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .jobStatus .infoStatus .duration p {
+    font-size: 3.5897435897vw;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .jobStatus .infoStatus .duration p:last-child {
+  font-weight: 500;
+}
+.clientPosted .container-fluid .freelanceJob .jobStatus .DeleteJob {
+  display: flex;
+  width: 21.875vw;
+  padding: 0.5208333333vw 7.1354166667vw;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5208333333vw;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid #FE343D;
+  background: #FFF;
+  color: #FE343D;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .jobStatus .DeleteJob {
+    width: 85.3846153846vw;
+    padding: 2.5641025641vw 25.641025641vw;
+    gap: 2.5641025641vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #FE343D;
+    font-size: 3.5897435897vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .jobStatus .DeleteJob svg {
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .jobStatus .DeleteJob svg {
+    width: 5.1282051282vw;
+    height: 5.1282051282vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .needHelp {
+  width: 23.9583333333vw;
+  height: 8.5416666667vw;
+  border-radius: 0.4166666667vw;
+  border: 0.0520833333vw solid #E7E7E7;
+  background: #EFF7F2;
+  box-shadow: 0 0.2083333333vw 0.2083333333vw 0 rgba(0, 0, 0, 0.1);
+  padding: 1.0416666667vw;
+  margin-top: 0.78125vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .needHelp {
+    width: 90.5128205128vw;
+    height: 38.2051282051vw;
+    border-radius: 2.0512820513vw;
+    border: 0.2564102564vw solid #E7E7E7;
+    box-shadow: 0 1.0256410256vw 1.0256410256vw 0 rgba(0, 0, 0, 0.1);
+    padding: 3.8461538462vw 2.5641025641vw;
+    margin: auto;
+    margin-top: 3.8461538462vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .needHelp h4 {
+  color: #000;
+  font-family: Manrope;
+  font-size: 0.9375vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .needHelp h4 {
+    font-size: 4.6153846154vw;
+    line-height: 110%;
+    margin-bottom: 2.5641025641vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .needHelp p {
+  color: var(--text-color, #575757);
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .needHelp p {
+    font-size: 3.5897435897vw;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .needHelp .ContactSupport {
+  display: flex;
+  width: 21.875vw;
+  padding: 0.5208333333vw 7.1354166667vw;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5208333333vw;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid var(--Secondry-color, #00A148);
+  background: #FFF;
+  color: var(--Secondry-color, #00A148);
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .needHelp .ContactSupport {
+    width: 85.3846153846vw;
+    padding: 2.5641025641vw 21.7948717949vw;
+    gap: 2.5641025641vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid var(--Secondry-color, #00A148);
+    color: var(--Secondry-color, #00A148);
+    font-size: 3.5897435897vw;
+  }
+}
+.clientPosted .container-fluid .freelanceJob .needHelp .ContactSupport svg {
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  .clientPosted .container-fluid .freelanceJob .needHelp .ContactSupport svg {
+    width: 5.1282051282vw;
+    height: 5.1282051282vw;
+  }
+}
+
+#Applicants .modal-dialog {
+  max-width: 55.8333333333vw;
+  border-radius: 0.78125vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog {
+    max-width: 100%;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body {
+  border-radius: 0.78125vw;
+  padding: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body {
+    border-radius: 3.8461538462vw;
+    padding: 6.4102564103vw 3.8461538462vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .btn-close {
+  position: absolute;
+  top: 1.0416666667vw;
+  right: 1.0416666667vw;
+  font-size: 0.625vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .btn-close {
+    top: 6.4102564103vw;
+    right: 3.8461538462vw;
+    font-size: 3.0769230769vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantTitle {
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantTitle {
+    margin-bottom: 2.5641025641vw;
+    width: 53.3333333333vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantTitle p {
+  color: #000;
+  font-family: Manrope;
+  font-size: 1.25vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantTitle p {
+    font-size: 4.1025641026vw;
+    line-height: 125%;
+    margin-bottom: 1.2820512821vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantTitle span {
+  color: #505050;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantTitle span {
+    font-size: 3.0769230769vw;
+    line-height: 120%;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .searchSkill {
+  display: flex;
+  width: 53.75vw;
+  padding: 0.5208333333vw 0.78125vw;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 9.4791666667vw;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid #CCC;
+  background: #FFF;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .searchSkill {
+    width: 82.8205128205vw;
+    padding: 2.5641025641vw 3.8461538462vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #CCC;
+    margin: auto;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .searchSkill .form-group {
+  position: relative;
+}
+#Applicants .modal-dialog .modal-content .modal-body .searchSkill .form-group .form-control {
+  display: flex;
+  width: 30.1041666667vw;
+  padding: 0.5208333333vw 1.0416666667vw;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 0.3645833333vw;
+  border: 0.0520833333vw solid #E2E2E2;
+  color: #ABABAB;
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .searchSkill .form-group .form-control {
+    width: 75.1282051282vw;
+    padding: 2.5641025641vw 5.1282051282vw;
+    flex-shrink: 0;
+    border-radius: 1.7948717949vw;
+    border: 0.2564102564vw solid #E2E2E2;
+    font-size: 3.0769230769vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .searchSkill .form-group svg {
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 50%;
+  right: 1.0416666667vw;
+  transform: translate(0, -50%);
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .searchSkill .form-group svg {
+    width: 5.1282051282vw;
+    height: 5.1282051282vw;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+  }
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .searchSkill .detail {
+    display: none;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .searchSkill .detail h4 {
+  color: #000;
+  font-family: Manrope;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin-bottom: 0.2604166667vw;
+}
+#Applicants .modal-dialog .modal-content .modal-body .searchSkill .detail p {
+  width: 12.6041666667vw;
+  display: flex;
+  align-items: center;
+  gap: 1.875vw;
+  margin-bottom: 0;
+}
+#Applicants .modal-dialog .modal-content .modal-body .searchSkill .detail p span {
+  color: #707070;
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails {
+  max-height: 27.6041666667vw;
+  overflow-y: auto;
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails::-webkit-scrollbar {
+  width: 0.3125vw;
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.2604166667vw grey;
+  border-radius: 0.5208333333vw;
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails::-webkit-scrollbar-thumb {
+  background: rgb(138, 138, 138);
+  border-radius: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails {
+    max-height: 135.8974358974vw;
+    margin-top: 3.8461538462vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single {
+  display: flex;
+  padding: 0.78125vw 1.0416666667vw;
+  justify-content: space-between;
+  align-self: stretch;
+  border-radius: 0.4166666667vw;
+  border: 0.0520833333vw solid #E5E7EB;
+  background: #FFF;
+  box-shadow: 0 0.0520833333vw 0.2083333333vw 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single {
+    height: 61.0256410256vw;
+    align-self: stretch;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #E8E8E8;
+    background: #FFF;
+    box-shadow: 0 1.0256410256vw 1.0256410256vw 0 rgba(0, 0, 0, 0.1);
+    padding: 2.5641025641vw 2.5641025641vw;
+    align-items: initial;
+    position: relative;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .images {
+  width: 3.6458333333vw;
+  height: 3.6458333333vw;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  border-radius: 5vw;
+  border-radius: 10.4166666667vw;
+  overflow: hidden;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .images {
+    width: 15.3846153846vw;
+    height: 15.3846153846vw;
+    border-radius: 24.6153846154vw;
+    border-radius: 51.2820512821vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .images img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .info p {
+  color: #364153;
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.0416666667vw;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .info p {
+    font-size: 3.0769230769vw;
+    line-height: 5.1282051282vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .info h6 {
+  color: #364153;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .info h6 {
+    font-size: 3.0769230769vw;
+    line-height: 5.1282051282vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .info:nth-child(2) {
+  width: 4.53125vw;
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .info:nth-child(3) {
+  width: 6.3541666667vw;
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .info:nth-child(4) {
+  width: 4.21875vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .info:nth-child(2) p {
+    display: none;
+  }
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .info:nth-child(2) h6 {
+    position: absolute;
+    left: 20.5128205128vw;
+    top: 2.5641025641vw;
+  }
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .info:nth-child(3) p {
+    display: none;
+  }
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .info:nth-child(3) h6 {
+    position: absolute;
+    left: 20.5128205128vw;
+    top: 7.6923076923vw;
+    font-weight: 400;
+  }
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .info:nth-child(4) p {
+    display: none;
+  }
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .info:nth-child(4) h6 {
+    position: absolute;
+    left: 20.5128205128vw;
+    top: 12.8205128205vw;
+    font-weight: 400;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .skill {
+  width: 15.1041666667vw;
+  overflow-x: auto;
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .skill::-webkit-scrollbar {
+  width: 0;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .skill {
+    position: absolute;
+    top: 21.0256410256vw;
+    border-top: 0.2564102564vw solid #D4D4D4;
+    padding-top: 2.5641025641vw;
+    width: calc(100% - 5.1282051282vw);
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .skill p {
+  color: #364153;
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.0416666667vw;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .skill p {
+    font-size: 3.0769230769vw;
+    line-height: 120%;
+    margin-bottom: 1.5384615385vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .skill ul {
+  display: flex;
+  align-items: center;
+  gap: 0.2604166667vw;
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .skill ul {
+    gap: 2.5641025641vw;
+    flex-wrap: wrap;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .skill ul li {
+  display: flex;
+  padding: 0.2604166667vw 1.0416666667vw;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5356770833vw;
+  background: #F8F8F8;
+  color: #00843B;
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.3020833333vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .skill ul li {
+    height: 5.8974358974vw;
+    padding: 1.2820512821vw 2.5641025641vw;
+    border-radius: 1.7307692308vw;
+    font-size: 3.5897435897vw;
+    line-height: 4.4871794872vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .buttons {
+  display: flex;
+  flex-direction: column;
+  width: 11.71875vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .buttons {
+    position: absolute;
+    bottom: 2.0512820513vw;
+    flex-direction: row;
+    width: calc(100% - 5.1282051282vw);
+    margin: auto;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .buttons .row {
+  margin: -0.1302083333vw;
+  justify-content: center;
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .buttons .row > div {
+  padding: 0.1302083333vw;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .buttons .row > div {
+    padding: 0.3846153846vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .buttons .ViewProfile {
+  display: flex;
+  padding: 0.4166666667vw 0.625vw;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5208333333vw;
+  flex: 1 0 0;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid var(--Dissabled-text, #AFAFAF);
+  color: var(--text-color, #575757);
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  white-space: nowrap;
+  text-decoration: none;
+  width: 100%;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .buttons .ViewProfile {
+    padding: 2.0512820513vw 3.0769230769vw;
+    gap: 2.5641025641vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid var(--Dissabled-text, #AFAFAF);
+    font-size: 3.0769230769vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .buttons .SendMessage {
+  display: flex;
+  padding: 0.4166666667vw 0.625vw;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5208333333vw;
+  flex: 1 0 0;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid var(--Dissabled-text, #AFAFAF);
+  color: var(--text-color, #575757);
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  white-space: nowrap;
+  text-decoration: none;
+  width: 100%;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .buttons .SendMessage {
+    padding: 2.0512820513vw 3.0769230769vw;
+    gap: 2.5641025641vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid var(--Dissabled-text, #AFAFAF);
+    font-size: 3.0769230769vw;
+  }
+}
+#Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .buttons .ViewProposal {
+  display: flex;
+  padding: 0.5208333333vw 1.5625vw;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5208333333vw;
+  align-self: stretch;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid var(--Secondry-color, #00A148);
+  background: var(--Secondry-color, #00A148);
+  color: #FFF;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+  width: 100%;
+}
+@media (max-width: 990px) {
+  #Applicants .modal-dialog .modal-content .modal-body .applicantsDetails .single .buttons .ViewProposal {
+    padding: 2.5641025641vw 7.6923076923vw;
+    gap: 2.5641025641vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid var(--Secondry-color, #00A148);
+    font-size: 3.5897435897vw;
+  }
+}
+
+#proposalModal .modal-dialog {
+  max-width: 36.40625vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog {
+    max-width: 100%;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body {
+  padding: 1.3020833333vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body {
+    padding: 6.4102564103vw 3.8461538462vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .heading {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  border-bottom: 0.0520833333vw solid #afafaf;
+  padding-bottom: 1.0416666667vw;
+  margin-bottom: 1.0416666667vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .heading {
+    vertical-align: initial;
+    align-items: initial;
+    border-bottom: 0.2564102564vw solid #afafaf;
+    padding-bottom: 3.8461538462vw;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .heading .icon {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2.96875vw;
+  background: #e6ffeb;
+  width: 2.6041666667vw;
+  height: 2.6041666667vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .heading .icon {
+    width: 7.6923076923vw;
+    height: 7.6923076923vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .heading .icon svg {
+  width: 1.25vw;
+  height: 1.25vw;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .heading .icon svg {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .heading .text {
+  width: 23.4375vw;
+  padding-left: 0.625vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .heading .text {
+    padding-left: 2.5641025641vw;
+    width: 71.7948717949vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .heading .text h1 {
+  color: #000;
+  /* h4 */
+  font-family: Manrope;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  /* converter(20) */
+  margin-bottom: 0.2083333333vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .heading .text h1 {
+    font-size: 4.1025641026vw;
+    margin-bottom: 1.2820512821vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .heading .text p {
+  color: #000;
+  /* pragraph 14 */
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 16.converter(8) */
+  margin-bottom: 0;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .heading .text p {
+    font-size: 3.0769230769vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .heading button {
+  width: 1.25vw;
+  height: 1.25vw;
+  aspect-ratio: 1/1;
+  padding: 0;
+  outline: none !important;
+  border: none !important;
+  margin-left: auto;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .heading button {
+    width: 6.1538461538vw;
+    height: 6.1538461538vw;
+    aspect-ratio: 1/1;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .freelancercard {
+  padding: 0.625vw 1.0416666667vw;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid #d6d6d6;
+  background: #fff;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .freelancercard {
+    padding: 2.5641025641vw 5.1282051282vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #d6d6d6;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .freelancercard .image {
+  width: 3.125vw;
+  height: 3.125vw;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .freelancercard .image {
+    width: 15.3846153846vw;
+    height: 15.3846153846vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .freelancercard .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#proposalModal .modal-dialog .modal-content .modal-body .freelancercard .text {
+  padding-left: 1.0416666667vw;
+  width: calc(100% - 8.4895833333vw - 3.125vw);
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .freelancercard .text {
+    padding-left: 5.1282051282vw;
+    width: calc(100% - 31.5384615385vw - 15.3846153846vw);
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .freelancercard .text h2 {
+  color: #000;
+  /* h4 */
+  font-family: Manrope;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  /* converter(20) */
+  margin-bottom: 0.2083333333vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .freelancercard .text h2 {
+    font-size: 4.1025641026vw;
+    line-height: 125%;
+    /* mconverter(20) */
+    margin-bottom: 1.0256410256vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .freelancercard .text h6 {
+  color: var(--text-color, #575757);
+  /* Paragraph 12 */
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 14.converter(4) */
+  margin-bottom: 0.2083333333vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .freelancercard .text h6 {
+    font-size: 3.0769230769vw;
+    line-height: 120%;
+    /* 14.mconverter(4) */
+    margin-bottom: 1.0256410256vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .freelancercard .text p svg {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .freelancercard .text p svg {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .freelancercard .text p {
+  color: #888;
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 14.converter(4) */
+  margin: 0;
+  display: flex;
+  gap: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .freelancercard .text p {
+    font-size: 3.0769230769vw;
+    gap: 1.2820512821vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .freelancercard .amount {
+  margin-left: auto;
+  width: 8.4895833333vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .freelancercard .amount {
+    width: 31.5384615385vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .freelancercard .amount h6 {
+  color: var(--text-color, #575757);
+  text-align: right;
+  /* Paragraph 12 */
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 14.converter(4) */
+  margin-bottom: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .freelancercard .amount h6 {
+    font-size: 3.0769230769vw;
+    line-height: 120%;
+    /* 14.mconverter(4) */
+    margin-bottom: 1.2820512821vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .freelancercard .amount h5 {
+  color: var(--Secondry-color, #00a148);
+  text-align: right;
+  /* H3 Mobile */
+  font-family: Manrope;
+  font-size: 0.9375vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  /* 19.converter(8) */
+  margin-bottom: 0;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .freelancercard .amount h5 {
+    font-size: 4.6153846154vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .projectdescripition {
+  padding-top: 0.78125vw;
+  margin-top: 0.78125vw;
+  border-top: 0.0520833333vw solid #afafaf;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .projectdescripition {
+    padding-top: 3.8461538462vw;
+    margin-top: 3.8461538462vw;
+    border-top: 0.2564102564vw solid #afafaf;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .projectdescripition h4 {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+}
+#proposalModal .modal-dialog .modal-content .modal-body .projectdescripition h4 span:first-child {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  width: 2.0833333333vw;
+  height: 2.0833333333vw;
+  border-radius: 3.0729166667vw;
+  background: #fadeff;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .projectdescripition h4 span:first-child {
+    width: 7.6923076923vw;
+    height: 7.6923076923vw;
+    border-radius: 15.1282051282vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .projectdescripition h4 span:first-child svg {
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .projectdescripition h4 span:first-child svg {
+    width: 3.8461538462vw;
+    height: 3.8461538462vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .projectdescripition h4 span:last-child {
+  color: #000;
+  font-family: Manrope;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  /* 17.converter(5) */
+  padding-left: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .projectdescripition h4 span:last-child {
+    font-size: 3.5897435897vw;
+    line-height: 125%;
+    /* 17.mconverter(5) */
+    padding-left: 2.5641025641vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .projectdescripition .descripition {
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid #d6d6d6;
+  background: #f8f8f8;
+  padding: 0.5208333333vw 0.78125vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .projectdescripition .descripition {
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #d6d6d6;
+    padding: 2.5641025641vw 3.8461538462vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .projectdescripition .descripition p {
+  color: var(--text-color, #575757);
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 16.converter(8) */
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .projectdescripition .descripition p {
+    font-size: 3.5897435897vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .attachment {
+  padding-top: 0.78125vw;
+  margin-top: 0.78125vw;
+  border-top: 0.0520833333vw solid #afafaf;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .attachment {
+    padding-top: 3.8461538462vw;
+    margin-top: 3.8461538462vw;
+    border-top: 0.2564102564vw solid #afafaf;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .attachment h4 {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+}
+#proposalModal .modal-dialog .modal-content .modal-body .attachment h4 span:first-child {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  width: 2.0833333333vw;
+  height: 2.0833333333vw;
+  border-radius: 3.0729166667vw;
+  background: #dee7ff;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .attachment h4 span:first-child {
+    width: 7.6923076923vw;
+    height: 7.6923076923vw;
+    border-radius: 15.1282051282vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .attachment h4 span:first-child svg {
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .attachment h4 span:first-child svg {
+    width: 3.8461538462vw;
+    height: 3.8461538462vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .attachment h4 span:last-child {
+  color: #000;
+  font-family: Manrope;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  /* 17.converter(5) */
+  padding-left: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .attachment h4 span:last-child {
+    font-size: 3.5897435897vw;
+    line-height: 125%;
+    /* 17.mconverter(5) */
+    padding-left: 2.5641025641vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .uploadedfile {
+  margin: 0.5208333333vw 0;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .uploadedfile {
+    margin: 3.8461538462vw 0;
+  }
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .row {
+    margin: -0.7692307692vw;
+  }
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .row .col-4 {
+    width: 50%;
+    padding: 0.7692307692vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single {
+  display: flex;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid #c3c3c3;
+  background: #fff;
+  padding: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single {
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #c3c3c3;
+    padding: 2.5641025641vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single .icon {
+  width: 1.5625vw;
+  height: 1.5625vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single .icon {
+    width: 5.1282051282vw;
+    height: 5.1282051282vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single .icon svg,
+#proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single .icon img {
+  width: 100%;
+}
+#proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single .text {
+  width: calc(100% - 3.125vw);
+  padding-left: 0.46875vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single .text {
+    width: calc(100% - 10.2564102564vw);
+    padding-left: 2.3076923077vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single .text h2 {
+  color: var(--Heading-text, #181818);
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  /* 23.converter(8) */
+  margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single .text h2 {
+    font-size: 3.0769230769vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single .text p {
+  color: var(--text-color, #575757);
+  font-family: Inter;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 170%;
+  /* 20.converter(4) */
+  margin-bottom: 0;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single .text p {
+    font-size: 2.5641025641vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single a {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+  aspect-ratio: 1/1;
+  margin-left: auto;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.15625vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single a {
+    width: 16px;
+    height: 16px;
+    aspect-ratio: 1/1;
+    margin-top: 0.7692307692vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .uploadedfile .single a svg {
+  width: 100%;
+}
+#proposalModal .modal-dialog .modal-content .modal-body .modalfooter {
+  border-top: 0.0520833333vw solid #afafaf;
+  padding-top: 1.0416666667vw;
+  margin-top: 1.0416666667vw;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  gap: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .modalfooter {
+    border-top: 0.2564102564vw solid #afafaf;
+    padding-top: 5.1282051282vw;
+    margin-top: 5.1282051282vw;
+    gap: 2.5641025641vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .modalfooter a {
+  text-decoration: none;
+}
+#proposalModal .modal-dialog .modal-content .modal-body .modalfooter a:first-child {
+  margin-left: auto;
+  width: 8.125vw;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.8229166667vw;
+  border: 0.0520833333vw solid #5a5a5a;
+  height: 2.34375vw;
+  color: #5a5a5a;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .modalfooter a:first-child {
+    width: 40vw;
+    border-radius: 8.9743589744vw;
+    border: 0.2564102564vw solid #5a5a5a;
+    height: 11.5384615385vw;
+    font-size: 3.5897435897vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .modalfooter a:last-child {
+  width: 14.0625vw;
+  height: 2.34375vw;
+  border-radius: 2.8645833333vw;
+  background: var(--Secondry-color, #00a148);
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .modalfooter a:last-child {
+    width: 50.5128205128vw;
+    height: 11.5384615385vw;
+    border-radius: 14.1025641026vw;
+    margin-right: auto;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .modalfooter a:last-child span {
+  color: #fff;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .modalfooter a:last-child span {
+    font-size: 3.5897435897vw;
+  }
+}
+#proposalModal .modal-dialog .modal-content .modal-body .modalfooter a:last-child svg {
+  height: 0.4166666667vw;
+  width: 0.5729166667vw;
+  margin-left: 0.2604166667vw;
+}
+@media (max-width: 990px) {
+  #proposalModal .modal-dialog .modal-content .modal-body .modalfooter a:last-child svg {
+    height: 2.0512820513vw;
+    width: 2.8205128205vw;
+    margin-left: 1.2820512821vw;
+  }
+}
+
+/* Mobile bottom-sheet (toast-like slide up) */
+@media (max-width: 990px) {
+  #proposalModal {
+    padding: 0 !important;
+  }
+  #proposalModal .modal-dialog,
+  #proposalModal.fade .modal-dialog {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+    min-height: auto;
+    align-items: flex-end;
+  }
+  #proposalModal.show .modal-dialog {
+    transform: translateY(0);
+  }
+  #proposalModal .modal-content {
+    border-radius: 4.1025641026vw 4.1025641026vw 0 0;
+    max-height: 90dvh;
+    overflow: hidden;
+    border: none;
+  }
+  #proposalModal .modal-body {
+    max-height: 90dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+#successModal .modal-dialog {
+  max-width: 24.2708333333vw;
+}
+@media (max-width: 990px) {
+  #successModal .modal-dialog {
+    max-width: 100%;
+  }
+}
+#successModal .modal-dialog .modal-content .modal-body {
+  padding: 1.0416666667vw 3.8541666667vw;
+  padding-top: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #successModal .modal-dialog .modal-content .modal-body {
+    padding: 5.1282051282vw 8.7179487179vw;
+    padding-top: 2.5641025641vw;
+  }
+}
+#successModal .modal-dialog .modal-content .modal-body .successmodal button {
+  margin-left: auto;
+  border: none !important;
+  outline: none !important;
+  display: block;
+  margin-right: -2.6041666667vw;
+}
+@media (max-width: 990px) {
+  #successModal .modal-dialog .modal-content .modal-body .successmodal button {
+    margin-right: -5.1282051282vw;
+  }
+}
+#successModal .modal-dialog .modal-content .modal-body .successmodal button svg {
+  width: 1.5625vw;
+  height: 1.5625vw;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 990px) {
+  #successModal .modal-dialog .modal-content .modal-body .successmodal button svg {
+    width: 7.6923076923vw;
+    height: 7.6923076923vw;
+  }
+}
+#successModal .modal-dialog .modal-content .modal-body .successmodal img {
+  width: 7.65625vw;
+  height: 5.3645833333vw;
+  aspect-ratio: 147/103;
+  display: block;
+  margin: auto;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 990px) {
+  #successModal .modal-dialog .modal-content .modal-body .successmodal img {
+    width: 37.6923076923vw;
+    height: 26.4102564103vw;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+#successModal .modal-dialog .modal-content .modal-body .successmodal h4 {
+  color: #000;
+  text-align: center;
+  /* h3 */
+  font-family: Manrope;
+  font-size: 1.25vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  /* 26.converter(4) */
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 990px) {
+  #successModal .modal-dialog .modal-content .modal-body .successmodal h4 {
+    font-size: 4.1025641026vw;
+    line-height: 110%;
+    /* 26.mconverter(4) */
+    margin-bottom: 2.5641025641vw;
+  }
+}
+#successModal .modal-dialog .modal-content .modal-body .successmodal h4 span {
+  color: var(--Secondry-color, #00a148);
+}
+#successModal .modal-dialog .modal-content .modal-body .successmodal p {
+  color: #595959;
+  text-align: center;
+  /* pragraph 14 */
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 16.converter(8) */
+}
+@media (max-width: 990px) {
+  #successModal .modal-dialog .modal-content .modal-body .successmodal p {
+    font-size: 3.5897435897vw;
+  }
+}/*# sourceMappingURL=client-posted-job.css.map */

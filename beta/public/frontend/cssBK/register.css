@@ -1,0 +1,2181 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap");
+* body .register-page {
+  padding: 2.6041666667vw 0vw;
+  background-color: rgb(247, 255, 252);
+  position: relative;
+}
+@media (max-width: 900px) {
+  * body .register-page {
+    padding: 12.8205128205vw 0vw;
+  }
+}
+* body .register-page .bg-img1 {
+  width: 15.2083333333vw;
+  height: 21.5104166667vw;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+@media (max-width: 900px) {
+  * body .register-page .bg-img1 {
+    width: 46.1538461538vw;
+    height: 56.4102564103vw;
+  }
+}
+* body .register-page .bg-img2 {
+  width: 15.2083333333vw;
+  height: 28.6458333333vw;
+  position: fixed;
+  left: -2%;
+  top: 25%;
+  z-index: 0;
+}
+@media (max-width: 900px) {
+  * body .register-page .bg-img2 {
+    width: 58.9743589744vw;
+    height: 106.4102564103vw;
+    top: 15%;
+  }
+}
+* body .register-page .bg-img3 {
+  width: 24.4270833333vw;
+  height: 18.3333333333vw;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+@media (max-width: 900px) {
+  * body .register-page .bg-img3 {
+    display: none;
+  }
+}
+* body .register-page .profile-header {
+  text-align: center;
+  position: relative;
+  z-index: 9;
+}
+* body .register-page .profile-header .letget {
+  width: 8.3333333333vw;
+  height: 1.5625vw;
+  display: flex;
+  align-items: center;
+  gap: 0.2604166667vw;
+  background: #00A148;
+  color: #FFF;
+  justify-content: center;
+  font-family: "Inter";
+  font-size: 0.625vw;
+  padding: 0.2604166667vw 0.5208333333vw;
+  border-radius: 2.6041666667vw;
+  font-weight: 500;
+  margin: 0 auto;
+  line-height: normal;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-header .letget {
+    width: 41.0256410256vw;
+    height: 7.6923076923vw;
+    gap: 1.2820512821vw;
+    font-size: 3.0769230769vw;
+    padding: 1.2820512821vw 2.5641025641vw;
+    border-radius: 12.8205128205vw;
+  }
+}
+* body .register-page .profile-header .letget img {
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-header .letget img {
+    width: 5.1282051282vw;
+    height: 5.1282051282vw;
+  }
+}
+* body .register-page .profile-header h1 {
+  color: #1F2937;
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25vw;
+  font-weight: 700;
+  margin: 0.5208333333vw 0vw 0.2604166667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-header h1 {
+    font-size: 6.1538461538vw;
+    margin: 2.5641025641vw 0vw 1.2820512821vw;
+  }
+}
+* body .register-page .profile-header h1 span {
+  color: #00A148;
+}
+* body .register-page .profile-header p {
+  color: #000;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 0.8333333333vw;
+  font-weight: 400;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-header p {
+    font-size: 3.5897435897vw;
+  }
+}
+* body .register-page .progress-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: flex-start;
+  position: relative;
+  z-index: 999;
+  margin: 1.0416666667vw auto;
+}
+* body .register-page .progress-steps .step-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.2604166667vw;
+  width: 3.125vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .progress-steps .step-item {
+    gap: 1.2820512821vw;
+    width: 15.3846153846vw;
+  }
+}
+* body .register-page .progress-steps .step-item .circle {
+  width: 2.0833333333vw;
+  height: 2.0833333333vw;
+  border-radius: 5.2083333333vw;
+  border: 0.0520833333vw solid #AFAFAF;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 900px) {
+  * body .register-page .progress-steps .step-item .circle {
+    width: 10.2564102564vw;
+    height: 10.2564102564vw;
+    border-radius: 25.641025641vw;
+    border: 0.2564102564vw solid #AFAFAF;
+  }
+}
+* body .register-page .progress-steps .step-item .circle svg {
+  width: 1.25vw;
+  height: 1.25vw;
+  color: #AFAFAF;
+}
+@media (max-width: 900px) {
+  * body .register-page .progress-steps .step-item .circle svg {
+    width: 6.1538461538vw;
+    height: 6.1538461538vw;
+  }
+}
+* body .register-page .progress-steps .step-item p {
+  color: #181818;
+  font-family: "Inter";
+  font-size: 0.625vw;
+  margin-bottom: 0vw;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+}
+@media (max-width: 900px) {
+  * body .register-page .progress-steps .step-item p {
+    font-size: 3.0769230769vw;
+  }
+}
+* body .register-page .progress-steps .step-item.active .circle {
+  border-color: #00A148;
+}
+* body .register-page .progress-steps .step-item.active .circle svg {
+  color: #00A148;
+}
+* body .register-page .progress-steps .step-item.completed .circle {
+  background-color: #00A148;
+  border-color: #00A148;
+}
+* body .register-page .progress-steps .step-item.completed .circle svg {
+  filter: brightness(100);
+}
+* body .register-page .progress-steps .line {
+  width: 7.4479166667vw;
+  height: 0.09375vw;
+  background: #AFAFAF;
+  border-radius: 0.2604166667vw;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1.0416666667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .progress-steps .line {
+    width: 25.641025641vw;
+    height: 0.4615384615vw;
+    border-radius: 1.2820512821vw;
+    margin-top: 5.1282051282vw;
+  }
+}
+* body .register-page .progress-steps .line.completed {
+  background: #00A148;
+}
+* body .register-page .progress-steps .line.completed::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #00A148;
+  transition: width 0.3s ease;
+}
+* body .register-page .job-post-title {
+  text-align: center;
+}
+* body .register-page .job-post-title h2 {
+  color: #181818;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.3541666667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .job-post-title h2 {
+    font-size: 4.6153846154vw;
+    line-height: 5.641025641vw;
+  }
+}
+* body .register-page .job-post-title p {
+  color: #575757;
+  font-family: "Inter";
+  font-size: 0.8333333333vw;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 1.8229166667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .job-post-title p {
+    font-size: 3.5897435897vw;
+    width: 64.1025641026vw;
+    line-height: 5.1282051282vw;
+    margin: 0 auto 8.9743589744vw;
+  }
+}
+* body .register-page .step-panel {
+  position: relative;
+  z-index: 999;
+}
+* body .register-page .profile-infom {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.0416666667vw;
+  border: 0.0520833333vw solid #E9E9E9;
+  background: #FFF;
+  box-shadow: 0 0.2083333333vw 0.5208333333vw 0 rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+  padding: 1.5625vw 1.3020833333vw;
+  z-index: 9;
+  width: min(100%, 48.9583333333vw);
+  max-width: 48.9583333333vw;
+  margin-top: 1.0416666667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom {
+    border-radius: 3.8461538462vw;
+    padding: 6.4102564103vw 3.8461538462vw;
+    width: 100%;
+    max-width: 100%;
+    z-index: 1;
+  }
+}
+* body .register-page .profile-infom .profile-top {
+  width: 6.4583333333vw;
+  height: 16.3541666667vw;
+  transform: rotate(-0.911deg);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .profile-top {
+    display: none;
+  }
+}
+* body .register-page .profile-infom .pro-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4166666667vw;
+  margin-bottom: 1.0416666667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .pro-header {
+    gap: 2.0512820513vw;
+    margin-bottom: 5.1282051282vw;
+  }
+}
+* body .register-page .profile-infom .pro-header .pro-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3645833333vw;
+  background: #00A148;
+  width: 1.4583333333vw;
+  height: 1.4583333333vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .pro-header .pro-icon {
+    width: 7.1794871795vw;
+    border-radius: 1.7948717949vw;
+    height: 7.1794871795vw;
+  }
+}
+* body .register-page .profile-infom .pro-header .pro-icon svg {
+  width: 0.7291666667vw;
+  height: 0.7291666667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .pro-header .pro-icon svg {
+    width: 3.5897435897vw;
+    height: 3.5897435897vw;
+  }
+}
+* body .register-page .profile-infom .pro-header h2 {
+  color: #1E293B;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 0.9375vw;
+  margin-bottom: 0vw;
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .pro-header h2 {
+    font-size: 4.6153846154vw;
+    font-weight: 600;
+  }
+}
+* body .register-page .profile-infom .pro-header-extra h2 {
+  color: #212529;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25vw;
+  font-weight: 700;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .pro-header-extra h2 {
+    font-size: 4.6153846154vw;
+    font-weight: 500;
+    margin-bottom: 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .pro-header-extra p {
+  color: #575757;
+  font-family: "Inter";
+  font-size: 0.7291666667vw;
+  font-weight: 400;
+  line-height: 1.0416666667vw;
+  margin-bottom: 1.0416666667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .pro-header-extra p {
+    font-size: 3.0769230769vw;
+    line-height: 5.1282051282vw;
+    margin-bottom: 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .tip-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 9;
+  gap: 0.5208333333vw;
+  margin-bottom: 1.0416666667vw;
+  border-radius: 0.5208333333vw;
+  padding: 0.5208333333vw;
+  border: 0.0520833333vw solid #D6FFD3;
+  background: #EAFFE7;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .tip-header {
+    gap: 1.2820512821vw;
+    margin-bottom: 5.1282051282vw;
+    border-radius: 2.5641025641vw;
+    padding: 2.5641025641vw;
+    border: 0.2564102564vw solid #D6FFD3;
+  }
+}
+* body .register-page .profile-infom .tip-header svg {
+  width: 1.3020833333vw;
+  height: 1.3020833333vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .tip-header svg {
+    width: 6.4102564103vw;
+    height: 6.4102564103vw;
+  }
+}
+* body .register-page .profile-infom .tip-header h2 {
+  color: #000;
+  font-family: "Inter";
+  font-size: 0.625vw;
+  margin-bottom: 0vw;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .tip-header h2 {
+    font-size: 3.0769230769vw;
+    font-weight: 400;
+  }
+}
+* body .register-page .profile-infom .tip-header1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 9;
+  gap: 0.5208333333vw;
+  margin-bottom: 1.0416666667vw;
+  border-radius: 0.5208333333vw;
+  padding: 0.5208333333vw;
+  border: 0.0520833333vw solid #DCFCE7;
+  background: #F0FDF4;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .tip-header1 {
+    gap: 2.5641025641vw;
+    margin-bottom: 3.8461538462vw;
+    border-radius: 2.5641025641vw;
+    padding: 2.5641025641vw;
+    border: 0.2564102564vw solid #D6FFD3;
+  }
+}
+* body .register-page .profile-infom .tip-header1 svg {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .tip-header1 svg {
+    min-width: 4.1025641026vw;
+    min-height: 4.1025641026vw;
+  }
+}
+* body .register-page .profile-infom .tip-header1 h2 {
+  color: #00A148;
+  font-family: "Inter";
+  font-size: 0.7291666667vw;
+  margin-bottom: 0vw;
+  font-weight: 300;
+  line-height: normal;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .tip-header1 h2 {
+    font-size: 3.0769230769vw;
+    font-weight: 400;
+  }
+}
+* body .register-page .profile-infom .hiddenOTP {
+  display: none;
+}
+* body .register-page .profile-infom .opportunity-box {
+  gap: 1.3020833333vw;
+  display: flex;
+  margin-top: 0.1041666667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .opportunity-box {
+    margin-top: 0.5128205128vw;
+    gap: 6.4102564103vw;
+  }
+}
+* body .register-page .profile-infom .radio-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4166666667vw;
+  color: #202124;
+  cursor: pointer;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .radio-option {
+    gap: 2.0512820513vw;
+    margin-bottom: 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .radio-option input[type=radio] {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+  margin: 0;
+  border: 0.1041666667vw solid #00A148;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  accent-color: #00A148;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .radio-option input[type=radio] {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+    border: 0.5128205128vw solid #00A148;
+  }
+}
+* body .register-page .profile-infom .radio-option span {
+  color: #6C757D;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.7291666667vw;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .radio-option span {
+    font-size: 3.0769230769vw;
+  }
+}
+* body .register-page .profile-infom .company-div {
+  padding: 0 0 0.2604166667vw 1.3020833333vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .company-div {
+    padding: 0 0 1.2820512821vw 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .company-div p {
+  color: #575757;
+  font-family: "Inter";
+  font-size: 0.625vw;
+  font-weight: 400;
+  line-height: normal;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .company-div p {
+    font-size: 3.0769230769vw;
+    margin-bottom: 1.2820512821vw;
+  }
+}
+* body .register-page .profile-infom .working-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.4166666667vw;
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .working-checkbox {
+    line-height: normal;
+    gap: 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .working-checkbox label {
+  color: #6C757D;
+  font-size: 0.7291666667vw;
+  margin-bottom: 0vw;
+  line-height: 1.0416666667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .working-checkbox label {
+    font-size: 3.3333333333vw;
+    line-height: 5.1282051282vw;
+  }
+}
+* body .register-page .profile-infom .working-checkbox input {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+  margin: 0;
+  border: 0.0520833333vw solid #d9dfe3;
+  border-radius: 0.2083333333vw;
+  background: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .working-checkbox input {
+    border: 0.2564102564vw solid #d9dfe3;
+    border-radius: 1.0256410256vw;
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+  }
+}
+* body .register-page .profile-infom .working-checkbox input:checked {
+  background: #00a148;
+  border-color: #00a148;
+  position: relative;
+}
+* body .register-page .profile-infom .working-checkbox input:checked::after {
+  content: "";
+  position: absolute;
+  width: 0.2604166667vw;
+  height: 0.5208333333vw;
+  left: 0.2604166667vw;
+  top: 0.0520833333vw;
+  border: solid #fff;
+  border-width: 0 0.1041666667vw 0.1041666667vw 0;
+  transform: rotate(45deg);
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .working-checkbox input:checked::after {
+    border-width: 0 0.5128205128vw 0.5128205128vw 0;
+    width: 1.2820512821vw;
+    height: 2.5641025641vw;
+    left: 1.2820512821vw;
+    top: 0.2564102564vw;
+  }
+}
+* body .register-page .profile-infom label {
+  color: #575757;
+  font-family: "Inter";
+  font-size: 0.8333333333vw;
+  font-weight: 400;
+  line-height: 0.7291666667vw;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom label {
+    font-size: 3.5897435897vw;
+    line-height: 5.1282051282vw;
+    margin-bottom: 2.0512820513vw;
+  }
+}
+* body .register-page .profile-infom label .req {
+  color: #f00;
+}
+* body .register-page .profile-infom label span {
+  color: #6C757D;
+  font-size: 0.625vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom label span {
+    font-size: 3.0769230769vw;
+  }
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .extra-space {
+    margin-top: 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .input-row {
+  margin-bottom: 0.78125vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row {
+    margin-bottom: 3.8461538462vw;
+  }
+}
+* body .register-page .profile-infom .input-row .profile-summary-input {
+  height: 6.25vw;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .profile-summary-input {
+    height: 30.7692307692vw;
+  }
+}
+* body .register-page .profile-infom .input-row .profile-summary-input1 {
+  height: 13.0208333333vw;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .profile-summary-input1 {
+    height: 30.7692307692vw;
+  }
+}
+* body .register-page .profile-infom .input-row .verifybtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  color: #00A148;
+  font-family: "Inter";
+  background-color: transparent;
+  border: 0.0520833333vw solid #00A148;
+  border-radius: 0.4166666667vw;
+  width: 6.9270833333vw;
+  height: 2.34375vw;
+  font-size: 0.625vw;
+  transition: all 0.15s ease;
+  line-height: normal;
+  z-index: 99;
+}
+* body .register-page .profile-infom .input-row .verifybtn:disabled {
+  border-color: rgba(0, 161, 72, 0.5098039216);
+  color: rgba(0, 161, 72, 0.5098039216);
+  cursor: not-allowed;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .verifybtn {
+    border: 0.2564102564vw solid #00A148;
+    border-radius: 2.0512820513vw;
+    width: 23.0769230769vw;
+    height: 11.5384615385vw;
+    font-size: 3.0769230769vw;
+  }
+}
+* body .register-page .profile-infom .input-row .contact-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5208333333vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .contact-row {
+    gap: 1.2820512821vw;
+  }
+}
+* body .register-page .profile-infom .input-row .contact-row .input-wrap {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+* body .register-page .profile-infom .input-row .contact-row .input-wrap .input-left {
+  padding-left: 3.6458333333vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .contact-row .input-wrap .input-left {
+    padding-left: 15.3846153846vw;
+  }
+}
+* body .register-page .profile-infom .input-row .contact-row .input-wrap .prefix {
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #181818;
+  background: #FDFDFD;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  height: 2.4479166667vw;
+  padding: 0.7291666667vw;
+  border: 0.0520833333vw solid #D6D6D6;
+  font-size: 0.7291666667vw;
+  border-radius: 0.5208333333vw 0vw 0vw 0.5208333333vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .contact-row .input-wrap .prefix {
+    height: 12.0512820513vw;
+    padding: 3.5897435897vw;
+    border: 0.2564102564vw solid #D6D6D6;
+    font-size: 3.5897435897vw;
+    border-radius: 2.5641025641vw 0vw 0vw 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload {
+  border-radius: 0.3125vw;
+  border: 0.1041666667vw dashed rgba(0, 161, 72, 0.25);
+  padding: 0.8333333333vw;
+  margin-bottom: 0.78125vw;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload {
+    border-radius: 1.5384615385vw;
+    border: 0.5128205128vw dashed rgba(0, 161, 72, 0.25);
+    padding: 3.8461538462vw 4.1025641026vw;
+    margin-bottom: 3.8461538462vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .change-photo-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  color: #00A148;
+  font-family: "Inter";
+  cursor: pointer;
+  font-weight: 600;
+  height: 1.5625vw;
+  width: 5.7291666667vw;
+  padding: 0.3125vw 0.5208333333vw;
+  gap: 0.2604166667vw;
+  border-radius: 0.2083333333vw;
+  border: 0.0520833333vw solid #00A148;
+  font-size: 0.625vw;
+  line-height: normal;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .change-photo-btn {
+    font-size: 3.0769230769vw;
+    height: 7.6923076923vw;
+    width: 28.2051282051vw;
+    padding: 1.5384615385vw 2.5641025641vw;
+    gap: 1.2820512821vw;
+    border-radius: 1.2820512821vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .change-photo-btn svg {
+  width: 0.625vw;
+  height: 0.625vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .change-photo-btn svg {
+    width: 3.0769230769vw;
+    height: 3.0769230769vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .hint {
+  color: #AFAFAF;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 0.625vw;
+  margin-top: 0.3125vw;
+  font-weight: 400;
+  line-height: normal;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .hint {
+    font-size: 2.5641025641vw;
+    margin-top: 1.5384615385vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload input[type=file] {
+  display: none;
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list {
+  width: 100%;
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item {
+  background: #fff;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid #D6D6D6;
+  padding: 0.2604166667vw;
+  margin-top: 0.5208333333vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .file-list .file-item {
+    border-radius: 1.2820512821vw;
+    border: 0.2564102564vw solid #D6D6D6;
+    padding: 1.2820512821vw;
+    margin-top: 2.0512820513vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top {
+  display: flex;
+  align-items: center;
+  gap: 0.2604166667vw;
+  margin-bottom: 0.2604166667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top {
+    gap: 3.0769230769vw;
+    margin-bottom: 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top .file-icon {
+  width: 1.5625vw;
+  height: 1.5625vw;
+  border-radius: 0.4166666667vw;
+  background: #eafaf1;
+  color: #00A148;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top .file-icon {
+    width: 5.1282051282vw;
+    height: 5.1282051282vw;
+    border-radius: 0.7692307692vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top .file-icon svg {
+  width: 0.78125vw;
+  height: 0.78125vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top .file-icon svg {
+    width: 3.3333333333vw;
+    height: 3.3333333333vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top .file-info {
+  flex: 1;
+  min-width: 0;
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top .file-info .file-name {
+  font-size: 0.625vw;
+  font-weight: 600;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top .file-info .file-name {
+    font-size: 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top .file-info .file-size {
+  font-size: 0.5208333333vw;
+  color: #ccc;
+  text-align: left;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top .file-info .file-size {
+    font-size: 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top .file-remove {
+  background: #00a148;
+  border: none;
+  color: #fff;
+  height: 1.0416666667vw;
+  display: flex;
+  width: 1.0416666667vw;
+  border-radius: 2.6041666667vw;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top .file-remove {
+    width: 5.1282051282vw;
+    border-radius: 12.8205128205vw;
+    height: 5.1282051282vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top .file-remove svg {
+  width: 0.78125vw;
+  height: 0.78125vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .file-top .file-remove svg {
+    width: 3.3333333333vw;
+    height: 3.3333333333vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .progress-track {
+  width: 100%;
+  height: 0.2604166667vw;
+  background: #eef0f2;
+  border-radius: 2.6041666667vw;
+  overflow: hidden;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .progress-track {
+    border-radius: 12.8205128205vw;
+    height: 1.2820512821vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .progress-track .progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00A148);
+  border-radius: 2.6041666667vw;
+  transition: width 0.18s ease;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .progress-track .progress-fill {
+    border-radius: 12.8205128205vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .progress-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.1041666667vw;
+  font-size: 0.5208333333vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .progress-bottom {
+    margin-top: 1.5384615385vw;
+    font-size: 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .progress-bottom {
+  color: #000;
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .progress-bottom .progress-status .status-done {
+  color: #00A148;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.2083333333vw;
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .progress-bottom .progress-status .status-done svg {
+  width: 0.6770833333vw;
+  height: 0.6770833333vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .progress-bottom .progress-status .status-done svg {
+    width: 3.3333333333vw;
+    height: 3.3333333333vw;
+  }
+}
+* body .register-page .profile-infom .input-row .resume-upload .file-list .file-item .progress-bottom .progress-percent {
+  font-weight: 600;
+  color: #00A148;
+}
+* body .register-page .profile-infom .input-row #fileInput {
+  display: none;
+}
+* body .register-page .profile-infom .input-row .skills-tags, * body .register-page .profile-infom .input-row job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4166666667vw;
+  margin-top: 0.5208333333vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .skills-tags, * body .register-page .profile-infom .input-row job-tags {
+    gap: 1.2820512821vw;
+    margin-top: 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .input-row .skills-tags .skilltag, * body .register-page .profile-infom .input-row job-tags .skilltag {
+  display: inline-flex;
+  align-items: center;
+  background: #00A148;
+  color: #FFF;
+  font-family: "Inter";
+  font-size: 0.625vw;
+  gap: 0.3125vw;
+  padding: 0.3125vw 0.625vw;
+  border-radius: 5.2083333333vw;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .skills-tags .skilltag, * body .register-page .profile-infom .input-row job-tags .skilltag {
+    font-size: 2.5641025641vw;
+    gap: 1.5384615385vw;
+    padding: 1.5384615385vw 3.0769230769vw;
+    border-radius: 25.641025641vw;
+  }
+}
+* body .register-page .profile-infom .input-row .skills-tags .skilltag .tag-remove, * body .register-page .profile-infom .input-row job-tags .skilltag .tag-remove {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 0.5208333333vw;
+  line-height: normal;
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .skills-tags .skilltag .tag-remove, * body .register-page .profile-infom .input-row job-tags .skilltag .tag-remove {
+    font-size: 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .input-row .skills-tags .skilltag .tag-remove svg, * body .register-page .profile-infom .input-row job-tags .skilltag .tag-remove svg {
+  width: 0.7291666667vw;
+  height: 0.7291666667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .skills-tags .skilltag .tag-remove svg, * body .register-page .profile-infom .input-row job-tags .skilltag .tag-remove svg {
+    width: 3.5897435897vw;
+    height: 3.5897435897vw;
+  }
+}
+* body .register-page .profile-infom .input-row .salary-fields {
+  display: flex;
+  align-items: center;
+  gap: 0.625vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .salary-fields {
+    gap: 3.0769230769vw;
+    flex-direction: column;
+  }
+}
+* body .register-page .profile-infom .input-row .salary-fields .salary-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+* body .register-page .profile-infom .input-row .salary-fields .salary-input .currency {
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #181818;
+  background: #FDFDFD;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  height: 2.4479166667vw;
+  padding: 0.7291666667vw;
+  border: 0.0520833333vw solid #D6D6D6;
+  font-size: 0.7291666667vw;
+  border-radius: 0.5208333333vw 0vw 0vw 0.5208333333vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .salary-fields .salary-input .currency {
+    height: 12.0512820513vw;
+    padding: 3.5897435897vw;
+    border: 0.2564102564vw solid #D6D6D6;
+    font-size: 3.5897435897vw;
+    border-radius: 2.5641025641vw 0vw 0vw 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .input-row .salary-fields .salary-input input {
+  padding-left: 2.6041666667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .salary-fields .salary-input input {
+    padding-left: 11.5384615385vw;
+  }
+}
+* body .register-page .profile-infom .input-row .salary-fields .to-text, * body .register-page .profile-infom .input-row .salary-fields .year-text {
+  font-size: 0.625vw;
+  color: #AFAFAF;
+  white-space: nowrap;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .salary-fields .to-text, * body .register-page .profile-infom .input-row .salary-fields .year-text {
+    font-size: 3.0769230769vw;
+  }
+}
+* body .register-page .profile-infom .input-row .error-msg {
+  font-size: 0.625vw;
+  margin-top: 0.1041666667vw;
+  color: #f00;
+  float: right;
+  font-weight: 400;
+  font-family: "Inter";
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .error-msg {
+    font-size: 3.0769230769vw;
+  }
+}
+* body .register-page .profile-infom .input-row input,
+* body .register-page .profile-infom .input-row select,
+* body .register-page .profile-infom .input-row textarea {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  position: relative;
+  width: 100%;
+  padding: 0.625vw 0.78125vw;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid #E5E7EB;
+  font-size: 0.7291666667vw;
+  font-family: "Inter";
+  color: #575757;
+}
+* body .register-page .profile-infom .input-row input.error,
+* body .register-page .profile-infom .input-row select.error,
+* body .register-page .profile-infom .input-row textarea.error {
+  border-color: #E53935;
+  box-shadow: 0 -0.15625vw 0.2083333333vw 0 rgba(255, 90, 90, 0.25) inset, 0 0.15625vw 0.2083333333vw 0 rgba(255, 141, 141, 0.25) inset;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row input,
+  * body .register-page .profile-infom .input-row select,
+  * body .register-page .profile-infom .input-row textarea {
+    padding: 3.0769230769vw 3.5897435897vw;
+    border-radius: 2.5641025641vw;
+    font-size: 3.5897435897vw;
+  }
+}
+* body .register-page .profile-infom .input-row input::-moz-placeholder, * body .register-page .profile-infom .input-row select::-moz-placeholder, * body .register-page .profile-infom .input-row textarea::-moz-placeholder {
+  color: rgb(199, 199, 199);
+  font-weight: 400;
+}
+* body .register-page .profile-infom .input-row input::placeholder,
+* body .register-page .profile-infom .input-row select::placeholder,
+* body .register-page .profile-infom .input-row textarea::placeholder {
+  color: rgb(199, 199, 199);
+  font-weight: 400;
+}
+* body .register-page .profile-infom .input-row input:focus, * body .register-page .profile-infom .input-row input:focus-visible,
+* body .register-page .profile-infom .input-row select:focus,
+* body .register-page .profile-infom .input-row select:focus-visible,
+* body .register-page .profile-infom .input-row textarea:focus,
+* body .register-page .profile-infom .input-row textarea:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+* body .register-page .profile-infom .input-row select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 1.5625vw;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19' fill='none'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.0593 12.4333C9.91083 12.5817 9.7095 12.6651 9.49958 12.6651C9.28966 12.6651 9.08833 12.5817 8.93987 12.4333L4.46141 7.95485C4.3858 7.88182 4.32549 7.79447 4.284 7.69788C4.24251 7.6013 4.22067 7.49741 4.21976 7.3923C4.21884 7.28718 4.23887 7.18293 4.27868 7.08564C4.31849 6.98835 4.37727 6.89996 4.4516 6.82562C4.52593 6.75129 4.61432 6.69251 4.71162 6.6527C4.80891 6.6129 4.91316 6.59287 5.01827 6.59378C5.12339 6.59469 5.22727 6.61653 5.32386 6.65802C5.42044 6.69951 5.5078 6.75982 5.58083 6.83544L9.49958 10.7542L13.4183 6.83544C13.5676 6.69123 13.7676 6.61143 13.9752 6.61324C14.1828 6.61504 14.3813 6.6983 14.5281 6.84508C14.6749 6.99186 14.7581 7.19042 14.7599 7.39799C14.7618 7.60557 14.682 7.80554 14.5377 7.95485L10.0593 12.4333Z' fill='%23AAAAAA'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='19' height='19' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5208333333vw center;
+  background-size: 1.0416666667vw;
+  position: relative;
+  z-index: 999;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row select {
+    background-position: right 2.5641025641vw center;
+    background-size: 5.1282051282vw;
+  }
+}
+* body .register-page .profile-infom .input-row select.active {
+  background: #F9FAFB;
+}
+* body .register-page .profile-infom .input-row .ac-input-wrap {
+  position: relative;
+}
+* body .register-page .profile-infom .input-row .ac-input-wrap .ac-clear {
+  position: absolute;
+  right: 0.7291666667vw;
+  top: 0.5208333333vw;
+  cursor: pointer;
+  color: #AFAFAF;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .ac-input-wrap .ac-clear {
+    right: 3.5897435897vw;
+    top: 2.5641025641vw;
+  }
+}
+* body .register-page .profile-infom .input-row .ac-input-wrap .ac-clear svg {
+  width: 0.8854166667vw;
+  height: 0.8854166667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .ac-input-wrap .ac-clear svg {
+    width: 4.358974359vw;
+    height: 4.358974359vw;
+  }
+}
+* body .register-page .profile-infom .input-row .ac-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 0.2604166667vw;
+  border-radius: 0.5208333333vw;
+  height: 10.4166666667vw;
+  border: 0.0520833333vw solid #E5E7EB;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .ac-list {
+    margin-top: 1.2820512821vw;
+    height: 38.4615384615vw;
+    border-radius: 2.5641025641vw;
+    border: 0.2564102564vw solid #E5E7EB;
+  }
+}
+* body .register-page .profile-infom .input-row .ac-list li {
+  font-size: 0.7291666667vw;
+  padding: 0.625vw 0.78125vw;
+  font-family: "Inter";
+  color: #575757;
+  border-bottom: 0.0520833333vw solid #E5E7EB;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .input-row .ac-list li {
+    font-size: 3.5897435897vw;
+    padding: 3.0769230769vw 3.8461538462vw;
+    border-bottom: 0.2564102564vw solid #E5E7EB;
+  }
+}
+* body .register-page .profile-infom .input-row .ac-list li:last-child {
+  border-bottom: none;
+}
+* body .register-page .profile-infom .bottom-footer {
+  padding: 1.3020833333vw 0 0;
+  border-top: 0.0520833333vw solid #AFAFAF;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .bottom-footer {
+    padding: 2.5641025641vw 0 0;
+  }
+}
+* body .register-page .profile-infom .bottom-footer .btn-save {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  border: 0;
+  font-family: "Inter";
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+  background: #00A148;
+  gap: 0.2604166667vw;
+  border-radius: 0.46875vw;
+  width: 6.9270833333vw;
+  height: 1.9791666667vw;
+  font-size: 0.7291666667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .bottom-footer .btn-save {
+    gap: 1.2820512821vw;
+    font-size: 3.5897435897vw;
+    border-radius: 2.0512820513vw;
+    width: 34.1025641026vw;
+    height: 9.7435897436vw;
+  }
+}
+* body .register-page .profile-infom .bottom-footer .btn-save {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  border: 0;
+  font-family: "Inter";
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+  background: #00A148;
+  gap: 0.2604166667vw;
+  border-radius: 0.46875vw;
+  width: 6.9270833333vw;
+  height: 1.9791666667vw;
+  font-size: 0.7291666667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .profile-infom .bottom-footer .btn-save {
+    gap: 1.2820512821vw;
+    font-size: 3.5897435897vw;
+    border-radius: 2.0512820513vw;
+    width: 34.1025641026vw;
+    height: 9.7435897436vw;
+  }
+}
+* body .register-page .footer-btn {
+  padding: 1.3020833333vw 0 0;
+  margin: auto;
+  display: table;
+}
+@media (max-width: 900px) {
+  * body .register-page .footer-btn {
+    padding: 2.5641025641vw 0 0;
+  }
+}
+* body .register-page .footer-btn .btn-save, * body .register-page .footer-btn .post-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 999;
+  border: 0;
+  font-family: "Inter";
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+  background: #00A148;
+  gap: 0.2604166667vw;
+  border-radius: 0.46875vw;
+  width: 6.9270833333vw;
+  height: 1.9791666667vw;
+  font-size: 0.7291666667vw;
+}
+@media (max-width: 900px) {
+  * body .register-page .footer-btn .btn-save, * body .register-page .footer-btn .post-btn {
+    gap: 1.2820512821vw;
+    font-size: 3.5897435897vw;
+    border-radius: 2.0512820513vw;
+    width: 34.1025641026vw;
+    height: 9.7435897436vw;
+  }
+}
+* body .register-page .footer-btn .post-btn {
+  float: right;
+}
+* body .modal-dialog {
+  max-width: 36.1458333333vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog {
+    max-width: 100%;
+  }
+}
+* body .modal-dialog .modal-content1 {
+  padding: 1.5625vw 2.0833333333vw !important;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content1 {
+    padding: 3.8461538462vw !important;
+  }
+}
+* body .modal-dialog .modal-content {
+  padding: 0.78125vw 1.4583333333vw;
+  box-shadow: 0 1.25vw 3.125vw 0 rgba(0, 0, 0, 0.1);
+  border-radius: 1.0416666667vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content {
+    border-radius: 3.8461538462vw;
+    padding: 3.8461538462vw;
+    box-shadow: 0 -0.5128205128vw 1.0256410256vw 0 rgba(0, 0, 0, 0.1);
+  }
+}
+* body .modal-dialog .modal-content .modal-header {
+  border-bottom: none;
+  padding: 0;
+  padding-bottom: 0.78125vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-header {
+    padding-bottom: 3.8461538462vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-header .modal-title {
+  color: #1C1C2E;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25vw;
+  font-weight: 700;
+  line-height: 1.3541666667vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-header .modal-title {
+    font-size: 4.1025641026vw;
+    line-height: 6.6666666667vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-header .btn-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2D2D3A;
+  opacity: 1;
+  width: 1.5625vw;
+  height: 1.5625vw;
+  border-radius: 5.2083333333vw;
+  padding: 0;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-header .btn-close {
+    width: 6.4102564103vw;
+    height: 6.4102564103vw;
+    border-radius: 25.641025641vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-header .btn-close svg {
+  width: 0.9375vw;
+  height: 0.9375vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-header .btn-close svg {
+    width: 3.8461538462vw;
+    height: 3.8461538462vw;
+  }
+}
+* body .modal-dialog .modal-content .header-close1 {
+  border-bottom: none;
+  padding: 0;
+  padding-bottom: 0vw;
+  right: 1.875vw;
+  position: absolute;
+  z-index: 999;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .header-close1 {
+    padding-bottom: 0vw;
+    right: 3.0769230769vw;
+  }
+}
+* body .modal-dialog .modal-content .header-close1 .btn-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2D2D3A;
+  opacity: 1;
+  width: 1.5625vw;
+  height: 1.5625vw;
+  border-radius: 5.2083333333vw;
+  padding: 0;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .header-close1 .btn-close {
+    width: 6.4102564103vw;
+    height: 6.4102564103vw;
+    border-radius: 25.641025641vw;
+  }
+}
+* body .modal-dialog .modal-content .header-close1 .btn-close svg {
+  width: 0.9375vw;
+  height: 0.9375vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .header-close1 .btn-close svg {
+    width: 3.8461538462vw;
+    height: 3.8461538462vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body {
+  padding: 0;
+}
+* body .modal-dialog .modal-content .modal-body .input-row label {
+  color: #181818;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8333333333vw;
+  font-weight: 600;
+  line-height: 1.0416666667vw;
+  margin-bottom: 0.4166666667vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .input-row label {
+    font-size: 3.5897435897vw;
+    line-height: 5.1282051282vw;
+    margin-bottom: 2.0512820513vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .input-row textarea {
+  background: #F8F8F8;
+  font-family: "Inter";
+  color: #575757;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  position: relative;
+  width: 100%;
+  padding: 0.625vw 0.78125vw;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid #E5E7EB;
+  font-size: 0.7291666667vw;
+  height: 13.0208333333vw;
+  margin-bottom: 1.0416666667vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .input-row textarea {
+    height: 51.2820512821vw;
+    padding: 3.0769230769vw 3.5897435897vw;
+    border-radius: 2.5641025641vw;
+    font-size: 3.5897435897vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .input-row textarea::-moz-placeholder {
+  color: rgb(199, 199, 199);
+  font-weight: 400;
+}
+* body .modal-dialog .modal-content .modal-body .input-row textarea::placeholder {
+  color: rgb(199, 199, 199);
+  font-weight: 400;
+}
+* body .modal-dialog .modal-content .modal-body .input-row textarea:focus, * body .modal-dialog .modal-content .modal-body .input-row textarea:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+* body .modal-dialog .modal-content .modal-body .letget {
+  width: 9.6875vw;
+  height: 1.6666666667vw;
+  display: flex;
+  align-items: center;
+  gap: 0.2604166667vw;
+  background: #00A148;
+  color: #FFF;
+  justify-content: center;
+  font-family: "Inter";
+  font-size: 0.625vw;
+  padding: 0.2604166667vw 0.5208333333vw;
+  border-radius: 2.6041666667vw;
+  font-weight: 500;
+  margin: 0 auto;
+  line-height: normal;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .letget {
+    width: 46.1538461538vw;
+    height: 7.6923076923vw;
+    gap: 1.2820512821vw;
+    font-size: 3.0769230769vw;
+    padding: 1.2820512821vw 2.5641025641vw;
+    border-radius: 12.8205128205vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .letget img {
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .letget img {
+    width: 5.1282051282vw;
+    height: 5.1282051282vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body h1 {
+  color: #1F2937;
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25vw;
+  font-weight: 700;
+  margin: 0.5208333333vw 0vw 0.2604166667vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body h1 {
+    font-size: 4.1025641026vw;
+    margin: 2.5641025641vw 0vw 1.2820512821vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body h1 span {
+  color: #00A148;
+}
+* body .modal-dialog .modal-content .modal-body p {
+  color: #575757;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 0.8333333333vw;
+  font-weight: 400;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body p {
+    font-size: 3.5897435897vw;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.0416666667vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row {
+    flex-direction: column;
+    gap: 3.8461538462vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card {
+  width: 15.46875vw;
+  height: auto;
+  padding: 1.0416666667vw 0.5208333333vw;
+  border-radius: 0.78125vw;
+  border: 0.0520833333vw solid #E3E3E3;
+  box-shadow: 0 0.0520833333vw 0.8333333333vw 0 rgba(0, 0, 0, 0.1);
+  background: #FFF;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card {
+    width: 100%;
+    padding: 3.8461538462vw 2.5641025641vw;
+    border-radius: 3.8461538462vw;
+    border: 0.2564102564vw solid #E3E3E3;
+    box-shadow: 0 0.2564102564vw 4.1025641026vw 0 rgba(0, 0, 0, 0.1);
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .icon-circle {
+  display: flex;
+  width: 5.2083333333vw;
+  height: 5.2083333333vw;
+  padding: 0.5208333333vw;
+  border-radius: 5.2083333333vw;
+  margin: 0 auto 0.5208333333vw;
+  background: #ECFFF4;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .icon-circle {
+    width: 15.3846153846vw;
+    height: 15.3846153846vw;
+    padding: 2.5641025641vw;
+    border-radius: 25.641025641vw;
+    margin: 0 auto 2.5641025641vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .icon-circle svg {
+  width: 2.9166666667vw;
+  height: 2.9166666667vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .icon-circle svg {
+    width: 7.6923076923vw;
+    height: 7.6923076923vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card h2 {
+  color: #181818;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 0.8333333333vw;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card h2 {
+    font-size: 4.1025641026vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .desc {
+  color: #575757;
+  text-align: center;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 0.7291666667vw;
+  line-height: 1.0416666667vw;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .desc {
+    width: 51.2820512821vw;
+    margin: auto;
+    font-size: 3.5897435897vw;
+    line-height: 5.1282051282vw;
+    margin-bottom: 2.5641025641vw;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25vw;
+  text-align: left;
+  display: inline-block;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .feature-list {
+    margin: 0 0 6.1538461538vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .feature-list li {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  line-height: normal;
+  color: #575757;
+  font-family: "Inter";
+  gap: 0.5208333333vw;
+  font-size: 0.7291666667vw;
+  margin-bottom: 0.5208333333vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .feature-list li {
+    gap: 2.5641025641vw;
+    font-size: 3.5897435897vw;
+    margin-bottom: 2.5641025641vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .feature-list li:last-child {
+  margin-bottom: 0;
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .feature-list li .check {
+  display: flex;
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+  padding: 0.15625vw;
+  border-radius: 3.90625vw;
+  background: #EEFFDF;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .feature-list li .check {
+    width: 5.1282051282vw;
+    height: 5.1282051282vw;
+    padding: 0.7692307692vw;
+    border-radius: 19.2307692308vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .feature-list li .check svg {
+  width: 0.7291666667vw;
+  height: 0.7291666667vw;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .feature-list li .check svg {
+    width: 3.5897435897vw;
+    height: 3.5897435897vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload {
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .change-photo-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  color: #fff;
+  background: #00A148;
+  font-family: "Inter";
+  cursor: pointer;
+  font-weight: 600;
+  height: 1.6666666667vw;
+  width: 13.4375vw;
+  padding: 0.3125vw 0.5208333333vw;
+  gap: 0.2604166667vw;
+  border-radius: 0.2083333333vw;
+  border: 0.0520833333vw solid #00A148;
+  font-size: 0.625vw;
+  line-height: normal;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .change-photo-btn {
+    font-size: 3.0769230769vw;
+    height: 7.6923076923vw;
+    width: 95%;
+    padding: 1.5384615385vw 2.5641025641vw;
+    gap: 1.2820512821vw;
+    border-radius: 1.2820512821vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .change-photo-btn svg {
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .change-photo-btn svg {
+    width: 5.1282051282vw;
+    height: 5.1282051282vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .hint {
+  color: #575757;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 0.7291666667vw;
+  margin-top: 0.3125vw;
+  font-weight: 400;
+  line-height: normal;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .hint {
+    font-size: 3.0769230769vw;
+    margin-top: 1.5384615385vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload input[type=file] {
+  display: none;
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list {
+  width: 100%;
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item {
+  background: #fff;
+  border-radius: 0.5208333333vw;
+  border: 0.0520833333vw solid #D6D6D6;
+  padding: 0.2604166667vw;
+  margin-top: 0.5208333333vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item {
+    border-radius: 1.2820512821vw;
+    border: 0.2564102564vw solid #D6D6D6;
+    padding: 1.2820512821vw;
+    margin-top: 2.0512820513vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top {
+  display: flex;
+  align-items: center;
+  gap: 0.2604166667vw;
+  margin-bottom: 0.2604166667vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top {
+    gap: 3.0769230769vw;
+    margin-bottom: 2.5641025641vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top .file-icon {
+  width: 1.5625vw;
+  height: 1.5625vw;
+  border-radius: 0.4166666667vw;
+  background: #eafaf1;
+  color: #00A148;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top .file-icon {
+    width: 5.1282051282vw;
+    height: 5.1282051282vw;
+    border-radius: 0.7692307692vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top .file-icon svg {
+  width: 0.78125vw;
+  height: 0.78125vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top .file-icon svg {
+    width: 3.3333333333vw;
+    height: 3.3333333333vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top .file-info {
+  flex: 1;
+  min-width: 0;
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top .file-info .file-name {
+  font-size: 0.625vw;
+  font-weight: 600;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top .file-info .file-name {
+    font-size: 2.5641025641vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top .file-info .file-size {
+  font-size: 0.5208333333vw;
+  color: #ccc;
+  text-align: left;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top .file-info .file-size {
+    font-size: 2.5641025641vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top .file-remove {
+  background: #00a148;
+  border: none;
+  color: #fff;
+  height: 1.0416666667vw;
+  display: flex;
+  width: 1.0416666667vw;
+  border-radius: 2.6041666667vw;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top .file-remove {
+    width: 5.1282051282vw;
+    border-radius: 12.8205128205vw;
+    height: 5.1282051282vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top .file-remove svg {
+  width: 0.78125vw;
+  height: 0.78125vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .file-top .file-remove svg {
+    width: 3.3333333333vw;
+    height: 3.3333333333vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .progress-track {
+  width: 100%;
+  height: 0.2604166667vw;
+  background: #eef0f2;
+  border-radius: 2.6041666667vw;
+  overflow: hidden;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .progress-track {
+    border-radius: 12.8205128205vw;
+    height: 1.2820512821vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .progress-track .progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00A148);
+  border-radius: 2.6041666667vw;
+  transition: width 0.18s ease;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .progress-track .progress-fill {
+    border-radius: 12.8205128205vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .progress-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.1041666667vw;
+  font-size: 0.5208333333vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .progress-bottom {
+    margin-top: 1.5384615385vw;
+    font-size: 2.5641025641vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .progress-bottom {
+  color: #000;
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .progress-bottom .progress-status .status-done {
+  color: #00A148;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.2083333333vw;
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .progress-bottom .progress-status .status-done svg {
+  width: 0.6770833333vw;
+  height: 0.6770833333vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .progress-bottom .progress-status .status-done svg {
+    width: 3.3333333333vw;
+    height: 3.3333333333vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .resume-upload .file-list .file-item .progress-bottom .progress-percent {
+  font-weight: 600;
+  color: #00A148;
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .btn-green {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  color: #fff;
+  background: #00A148;
+  font-family: "Inter";
+  cursor: pointer;
+  font-weight: 600;
+  height: 1.6666666667vw;
+  width: 13.4375vw;
+  padding: 0.3125vw 0.5208333333vw;
+  gap: 0.2604166667vw;
+  border-radius: 0.2083333333vw;
+  border: 0.0520833333vw solid #00A148;
+  font-size: 0.625vw;
+  line-height: normal;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .btn-green {
+    font-size: 3.0769230769vw;
+    height: 7.6923076923vw;
+    width: 95%;
+    padding: 1.5384615385vw 2.5641025641vw;
+    gap: 1.2820512821vw;
+    border-radius: 1.2820512821vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-body .job-row .job-card .btn-green svg {
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-body .job-row .job-card .btn-green svg {
+    width: 5.1282051282vw;
+    height: 5.1282051282vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-footer {
+  padding: 0.5208333333vw 0 0;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-footer {
+    padding: 2.5641025641vw 0 0;
+  }
+}
+* body .modal-dialog .modal-content .modal-footer .ai-btn {
+  display: flex;
+  padding: 0.3645833333vw 0.8333333333vw;
+  width: 7.7604166667vw;
+  gap: 0.3125vw;
+  border-radius: 1.0416666667vw;
+  border: 0.0520833333vw solid #D6FEDB;
+  height: 2.2395833333vw;
+  font-size: 0.7291666667vw;
+  align-items: center;
+  background: #F7FFF3;
+  color: #00A148;
+  text-align: center;
+  font-family: "Inter";
+  font-weight: 600;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-footer .ai-btn {
+    padding: 1.7948717949vw 4.1025641026vw;
+    width: 38.4615384615vw;
+    gap: 1.5384615385vw;
+    border-radius: 5.1282051282vw;
+    border: 0.2564102564vw solid #D6FEDB;
+    height: 8.9743589744vw;
+    font-size: 3.5897435897vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-footer .ai-btn svg {
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-footer .ai-btn svg {
+    width: 4.1025641026vw;
+    height: 4.1025641026vw;
+  }
+}
+* body .modal-dialog .modal-content .modal-footer1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  gap: 0.8333333333vw;
+  height: 3.125vw;
+  padding-left: 0.78125vw;
+  border-radius: 0.2604166667vw;
+  border: 0.0520833333vw solid #F0FFEE;
+  background: #FBFFFD;
+  margin-top: 0.5208333333vw;
+}
+@media (max-width: 900px) {
+  * body .modal-dialog .modal-content .modal-footer1 {
+    display: none;
+  }
+}
+* body .modal-dialog .modal-content .modal-footer1 .footer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.2604166667vw;
+}
+* body .modal-dialog .modal-content .modal-footer1 .footer-left svg {
+  width: 1.25vw;
+  height: 1.25vw;
+  aspect-ratio: 1/1;
+}
+* body .modal-dialog .modal-content .modal-footer1 .footer-left h2 {
+  color: #181818;
+  font-family: "Inter";
+  font-size: 0.8333333333vw;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 0.1041666667vw;
+}
+* body .modal-dialog .modal-content .modal-footer1 .footer-left p {
+  color: #575757;
+  font-family: "Inter";
+  font-size: 0.7291666667vw;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 0vw;
+}
+* body .modal-dialog .modal-content .modal-footer1 .link-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -0.8854166667vw;
+  right: -0.3125vw;
+  z-index: 6;
+  background: #F5FFF4;
+  width: 3.125vw;
+  height: 3.125vw;
+  border-radius: 5.2083333333vw;
+}
+* body .modal-dialog .modal-content .modal-footer1 .link-icon svg {
+  width: 1.71875vw;
+  height: 1.71875vw;
+  transform: rotate(20deg);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}/*# sourceMappingURL=register.css.map */

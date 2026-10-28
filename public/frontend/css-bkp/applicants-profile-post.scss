@@ -1,0 +1,1100 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+@function converter($size) {
+    @return calc($size / 19.20) * 1vw;
+}
+
+@function mconverter($size) {
+    @return calc($size / 3.90) * 1vw;
+}
+
+@mixin center {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+@mixin justify-center {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.applicantProfilePost {
+    .container-fluid {
+        width: converter(1420);
+        margin: auto;
+        margin-top: converter(20);
+
+        @media (max-width:990px) {
+            width: 100%;
+            margin-top: mconverter(20);
+        }
+
+        .backBUtton {
+            .backToPage {
+                display: flex;
+                padding: converter(10) converter(20);
+                align-items: center;
+                gap: converter(10);
+                border-radius: converter(10);
+                border: converter(1) solid #D8D8D8;
+                background: #FFF;
+                color: #414141;
+                font-family: Manrope;
+                font-size: converter(16);
+                font-style: normal;
+                font-weight: 600;
+                line-height: 125%;
+                width: max-content;
+                text-decoration: none;
+
+                @media (max-width:990px) {
+                    color: #414141;
+                    font-family: Inter;
+                    font-size: mconverter(12);
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 110%;
+                    border: initial;
+                    border-radius: initial;
+                    padding: initial;
+                    background-color: initial;
+                }
+
+                svg {
+                    width: converter(24);
+                    height: converter(24);
+                    aspect-ratio: 1/1;
+
+                    @media (max-width:990px) {
+                        width: mconverter(16);
+                        height: mconverter(16);
+                        aspect-ratio: 1/1;
+                    }
+                }
+            }
+        }
+
+        .freelanceJob {
+            margin-top: converter(20);
+            display: flex;
+            justify-content: space-between;
+            gap: converter(20);
+
+            @media (max-width:990px) {
+                margin-top: mconverter(15);
+                gap: mconverter(10);
+                display: block;
+                width: 100%;
+            }
+
+            .aboutInfo {
+                width: converter(340);
+                position: sticky;
+                top: converter(20);
+                height: calc(100vh - converter(90));
+
+                @media (max-width:990px) {
+                    width: mconverter(353);
+                    margin: auto;
+                    position: initial;
+                    height: 100%;
+                }
+
+                .companyDetails {
+                    width: converter(340);
+                    height: converter(207);
+                    align-self: stretch;
+                    border-radius: converter(15);
+                    border: converter(1) solid #E8E8E8;
+                    background: #FFF;
+                    box-shadow: 0 converter(4) converter(4) 0 rgba(0, 0, 0, 0.05);
+                    padding: converter(20);
+
+                    @media (max-width:990px) {
+                        width: mconverter(353);
+                        height: mconverter(209);
+                        padding: mconverter(20) mconverter(15);
+                        border-radius: mconverter(10);
+                        border: mconverter(1) solid #E0E0E0;
+                        box-shadow: 0 mconverter(2) mconverter(4) 0 rgba(0, 0, 0, 0.15);
+                        margin: auto;
+                    }
+
+                    .images {
+                        width: converter(70);
+                        height: converter(70);
+                        aspect-ratio: 1/1;
+                        border-radius: converter(70);
+                        margin: auto;
+                        margin-bottom: converter(10);
+                        position: relative;
+
+                        @media (max-width:990px) {
+                            width: mconverter(80);
+                            height: mconverter(80);
+                            aspect-ratio: 1/1;
+                            border-radius: mconverter(80);
+                            margin-bottom: mconverter(7.5);
+
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: converter(70);
+
+                            @media (max-width:990px) {
+                                border-radius: mconverter(70);
+                            }
+                        }
+
+                        span {
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            background-color: #fff;
+                            border-radius: converter(100);
+                            width: converter(16);
+                            height: converter(16);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            @media (max-width:990px) {
+                                border-radius: mconverter(100);
+                                width: mconverter(16);
+                                height: mconverter(16);
+                            }
+
+                            svg {
+                                width: converter(19.683);
+                                flex: 1 0 0;
+
+                                @media (max-width:990px) {
+                                    width: mconverter(19.683);
+                                }
+                            }
+                        }
+                    }
+
+                    .text {
+                        h5 {
+                            color: #101828;
+                            text-align: center;
+                            font-family: Manrope;
+                            font-size: converter(16);
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: 125%;
+                            margin-bottom: converter(8);
+
+                            @media (max-width:990px) {
+                                font-size: mconverter(18);
+                                line-height: 110%;
+                                margin-bottom: mconverter(3.5);
+                            }
+                        }
+
+                        &>span {
+                            color: #4A5565;
+                            text-align: center;
+                            font-family: Inter;
+                            font-size: converter(14);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 120%;
+                            margin-bottom: converter(5);
+                            display: flex;
+                            align-items: center;
+                            gap: converter(5);
+                            justify-content: center;
+
+                            @media (max-width:990px) {
+                                font-size: mconverter(12);
+                                line-height: mconverter(15);
+                                margin-bottom: mconverter(3.67);
+                                gap: mconverter(5);
+                            }
+
+                            svg {
+                                width: converter(16);
+                                height: converter(16);
+                                flex-shrink: 0;
+                                aspect-ratio: 1/1;
+
+                                @media (max-width:990px) {
+                                    width: mconverter(14);
+                                    height: mconverter(14);
+                                    aspect-ratio: 1/1;
+                                }
+                            }
+
+
+                        }
+
+                        &>span:last-of-type {
+                            color: #6A7282;
+                            text-align: center;
+                            font-family: Inter;
+                            font-size: converter(10);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: converter(9.321);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: converter(5);
+
+                            @media (max-width:990px) {
+                                font-size: mconverter(12);
+                                line-height: mconverter(15);
+                                gap: converter(5);
+                            }
+
+                            svg {
+                                width: converter(12);
+                                height: converter(12);
+                                flex-shrink: 0;
+                                aspect-ratio: 1/1;
+
+                                @media (max-width:990px) {
+                                    width: mconverter(14);
+                                    height: mconverter(14);
+                                    aspect-ratio: 1/1;
+                                }
+                            }
+                        }
+
+                        p {
+                            display: flex;
+                            width: converter(100);
+                            padding: converter(5) converter(10);
+                            justify-content: center;
+                            align-items: center;
+                            gap: converter(3.728);
+                            border-radius: converter(17871942);
+                            background: #F0FDF4;
+                            color: #008236;
+                            text-align: center;
+                            font-family: Inter;
+                            font-size: converter(10);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: converter(0);
+                            padding: converter(5) converter(10);
+                            margin: auto;
+
+                            @media (max-width:990px) {
+                                width: mconverter(98);
+                                padding: mconverter(5) mconverter(15);
+                                gap: mconverter(5);
+                                border-radius: mconverter(68);
+                                font-size: mconverter(8.904);
+                                line-height: mconverter(12.663);
+                            }
+
+                            span {
+                                width: converter(3.705);
+                                height: converter(3.752);
+                                flex-shrink: 0;
+                                border-radius: converter(17871942);
+                                background: var(--Secondry-color, #00A148);
+
+                                @media (max-width:990px) {
+                                    width: mconverter(4.749);
+                                    height: mconverter(4.749);
+                                    flex-shrink: 0;
+                                    border-radius: mconverter(30349430);
+                                }
+                            }
+
+                        }
+
+                        a {
+                            display: flex;
+                            width: converter(100);
+                            padding: converter(5) converter(10);
+                            justify-content: center;
+                            align-items: center;
+                            gap: converter(3.728);
+                            border-radius: converter(17871942);
+                            background: #F0FDF4;
+                            color: #008236;
+                            text-align: center;
+                            font-family: Inter;
+                            font-size: converter(10);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: converter(0);
+                            padding: converter(5) converter(10);
+                            margin: auto;
+                            text-decoration: none;
+
+                            @media (max-width:990px) {
+                                width: mconverter(98);
+                                padding: mconverter(5) mconverter(15);
+                                gap: mconverter(5);
+                                border-radius: mconverter(68);
+                                font-size: mconverter(8.904);
+                                line-height: mconverter(12.663);
+                            }
+
+                            svg {
+                                width: converter(16);
+                                height: converter(16);
+
+                                @media (max-width:990px) {
+                                    width: mconverter(16);
+                                    height: mconverter(16);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .companyContact {
+                    width: converter(340);
+                    // height: converter(219);
+                    height: auto;
+                    align-self: stretch;
+                    border-radius: converter(15);
+                    border: converter(1) solid #E8E8E8;
+                    background: #FFF;
+                    box-shadow: 0 converter(4) converter(4) 0 rgba(0, 0, 0, 0.05);
+                    padding: converter(20) converter(15);
+                    margin-top: converter(15);
+
+                    @media (max-width:990px) {
+                        width: mconverter(353);
+                        // height: mconverter(219);
+                        padding: mconverter(20) mconverter(15);
+                        gap: mconverter(10);
+                        border-radius: mconverter(10);
+                        border: mconverter(1) solid #E0E0E0;
+                        box-shadow: 0 mconverter(2) mconverter(4) 0 rgba(0, 0, 0, 0.15);
+                        margin: auto;
+                        margin-top: mconverter(15);
+                    }
+
+                    .contactDtailes {
+                        width: converter(310);
+                        display: flex;
+                        // height: converter(53);
+                        height: auto;
+                        padding: converter(10) converter(96) converter(10) converter(15);
+                        border-radius: converter(5);
+                        background: #F5F5F5;
+                        padding: converter(10) converter(15);
+                        margin-bottom: converter(10);
+                        gap: converter(10);
+
+                        @media (max-width:990px) {
+                            width: mconverter(323);
+                            // height: mconverter(53);
+                            padding: mconverter(10) mconverter(109) mconverter(10) mconverter(15);
+                            flex-shrink: 0;
+                            border-radius: mconverter(5);
+                            margin-bottom: mconverter(10);
+                            gap: mconverter(10);
+                        }
+
+                        .icon {
+                            svg {
+                                width: converter(16);
+                                height: converter(16);
+                                aspect-ratio: 1/1;
+
+                                @media (max-width:990px) {
+                                    width: mconverter(16);
+                                    height: mconverter(16);
+                                }
+                            }
+                        }
+
+                        .text {
+                            line-height: 0;
+
+                            span {
+                                color: #555;
+                                font-family: Inter;
+                                font-size: converter(12);
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 120%;
+
+                                // margin-bottom: converter(5);
+                                @media (max-width:990px) {
+                                    font-size: mconverter(12);
+                                }
+                            }
+
+                            p {
+                                color: #101828;
+                                font-family: Inter;
+                                font-size: converter(14);
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: converter(18);
+                                margin-bottom: 0;
+                                margin-top: converter(0);
+                                width: converter(255);
+                                // white-space: nowrap;
+                                // overflow: hidden;
+                                // text-overflow: ellipsis;
+                                word-break: break-all;
+
+                                @media (max-width:990px) {
+                                    font-size: mconverter(14);
+                                    margin-top: mconverter(0);
+                                    line-height: mconverter(18);
+                                     width: mconverter(255);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .languages {
+                    display: flex;
+                    padding: converter(20) converter(15);
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    gap: converter(15);
+                    align-self: stretch;
+                    border-radius: converter(15);
+                    border: converter(1) solid #E8E8E8;
+                    background: #FFF;
+                    box-shadow: 0 converter(4) converter(4) 0 rgba(0, 0, 0, 0.05);
+                    padding: converter(20) converter(15);
+                    margin-top: converter(15);
+
+                    @media (max-width:990px) {
+                        display: flex;
+                        width: mconverter(353);
+                        padding: mconverter(15);
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: mconverter(15);
+                        border-radius: mconverter(10);
+                        border: mconverter(1) solid #E0E0E0;
+                        background: #FFF;
+                        box-shadow: 0 mconverter(2) mconverter(4) 0 rgba(0, 0, 0, 0.15);
+                        margin-top: mconverter(15);
+                    }
+
+                    .title {
+
+                        h5 {
+                            color: #101828;
+                            font-family: Inter;
+                            font-size: converter(14);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: converter(9.321);
+                            margin-bottom: 0;
+                            display: flex;
+                            align-items: center;
+                            gap: converter(5);
+
+                            @media (max-width:990px) {
+                                font-size: mconverter(16);
+                                line-height: 125%;
+                                gap: mconverter(5);
+                            }
+
+                            svg {
+                                width: converter(16);
+                                height: converter(16);
+                                aspect-ratio: 1/1;
+                                margin-right: converter(5);
+
+                                @media (max-width:990px) {
+                                    width: mconverter(16);
+                                    height: mconverter(16);
+                                    aspect-ratio: 1/1;
+                                    margin-right: mconverter(5);
+                                }
+                            }
+                        }
+                    }
+
+                    .allLang {
+                        width: 100%;
+
+                        .eng {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: converter(10);
+
+                            @media (max-width:990px) {
+                                margin-bottom: mconverter(10);
+                            }
+
+                            p {
+                                color: #101828;
+                                font-family: Inter;
+                                font-size: converter(14);
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: converter(11.185);
+                                margin-bottom: 0;
+
+                                @media (max-width:990px) {
+                                    font-size: mconverter(14);
+                                    line-height: mconverter(21);
+                                }
+                            }
+
+                            span {
+                                display: flex;
+                                padding: converter(3) converter(10);
+                                justify-content: center;
+                                align-items: center;
+                                border-radius: converter(5);
+                                background: #DCFCE7;
+                                color: #016630;
+                                text-align: center;
+                                font-family: Inter;
+                                font-size: converter(12);
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: converter(15);
+
+                                @media (max-width:990px) {
+                                    padding: mconverter(3) mconverter(10);
+                                    border-radius: mconverter(5);
+                                    font-size: mconverter(12);
+                                    line-height: mconverter(15);
+                                }
+                            }
+
+                            &:nth-child(2) {
+                                span {
+                                    background: #E2EBFF;
+                                    color: var(--Primary-color, #105BFB);
+
+                                }
+                            }
+
+                            &:nth-child(3) {
+                                span {
+                                    background: #FEF9C2;
+                                    color: #894B00;
+                                }
+
+
+                            }
+
+                            &:last-child {
+                                span {
+                                    background: #DCFCE7;
+                                    color: #016630;
+                                }
+
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            .aboutCompany {
+                width: converter(1060);
+
+                @media (max-width:990px) {
+                    width: mconverter(353);
+                    margin: auto;
+                }
+
+                .companyDesc {
+                    width: converter(1060);
+                    min-height: converter(387);
+                    border-radius: converter(15);
+                    border: converter(1) solid #E8E8E8;
+                    background: #FFF;
+                    box-shadow: 0 converter(4) converter(4) 0 rgba(0, 0, 0, 0.05);
+                    padding: converter(15) converter(30) converter(24) converter(30);
+
+
+                    @media (max-width:990px) {
+                        padding: mconverter(20) mconverter(15) mconverter(20) mconverter(15);
+                        gap: mconverter(15);
+                        border-radius: mconverter(10);
+                        border: mconverter(1) solid #E0E0E0;
+                        box-shadow: 0 mconverter(2) mconverter(4) 0 rgba(0, 0, 0, 0.15);
+                        width: mconverter(353);
+                        margin-top: mconverter(15);
+                        min-height: auto;
+
+                    }
+
+                    h4 {
+                        color: #0A0A0A;
+                        font-family: Inter;
+                        font-size: converter(20);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: converter(37.332);
+                        display: flex;
+                        align-items: center;
+                        gap: converter(5);
+
+                        @media (max-width:990px) {
+                            font-size: mconverter(16);
+                            line-height: 125%;
+                            gap: mconverter(5);
+                        }
+
+                        svg {
+                            width: converter(24);
+                            height: converter(24);
+                            aspect-ratio: 1/1;
+
+                            @media (max-width:990px) {
+                                width: mconverter(24);
+                                height: mconverter(24);
+                            }
+                        }
+                    }
+
+                    hr {
+                        width: calc(100% + converter(60));
+                        margin-left: converter(-30);
+                    }
+
+                    p {
+                        color: #364153;
+                        font-family: Inter;
+                        font-size: converter(16);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: converter(25);
+                        margin-bottom: converter(15);
+                        word-break: break-all;
+
+                        @media (max-width:990px) {
+                            font-size: mconverter(12);
+                            line-height: mconverter(20);
+                        }
+                    }
+
+                    h5 {
+                        color: #101828;
+                        font-family: Inter;
+                        font-size: converter(16);
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: converter(31.999);
+
+                        @media (max-width:990px) {
+                            font-size: mconverter(16);
+                            line-height: 125%;
+                            margin-top: mconverter(15);
+                        }
+                    }
+
+                    ul {
+                        padding: 0;
+                        margin: 0;
+                        display: flex;
+                        align-items: center;
+                        gap: converter(10);
+                        flex-wrap: wrap;
+
+                        @media (max-width:990px) {
+                            gap: mconverter(5);
+                        }
+
+                        li {
+                            display: flex;
+                            height: converter(23);
+                            padding: converter(5) converter(10);
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: converter(6.75);
+                            background: #F8F8F8;
+                            color: #00843B;
+                            text-align: center;
+                            font-family: Manrope;
+                            font-size: converter(14);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: converter(17.5);
+
+                            @media (max-width:990px) {
+                                height: mconverter(18.994);
+                                padding: mconverter(2.713) mconverter(9.497) mconverter(3.618) mconverter(9.497);
+                                border-radius: mconverter(6.105);
+                                font-size: mconverter(12);
+                                line-height: mconverter(12.663);
+                            }
+                        }
+                    }
+                }
+
+                .expDetails {
+                    width: converter(1060);
+                    padding-bottom: converter(23);
+                    gap: converter(20);
+                    border-radius: converter(15);
+                    border: converter(1) solid #E8E8E8;
+                    background: #FFF;
+                    box-shadow: 0 converter(4) converter(4) 0 rgba(0, 0, 0, 0.05);
+                    padding: converter(15) converter(30);
+                    margin-top: converter(15);
+                    margin-bottom: converter(15);
+
+
+                    @media (max-width:990px) {
+                        width: mconverter(353);
+                        padding: mconverter(15);
+                        gap: mconverter(15);
+                        border-radius: mconverter(10);
+                        border: mconverter(1) solid #E0E0E0;
+                        box-shadow: 0 mconverter(2) mconverter(4) 0 rgba(0, 0, 0, 0.15);
+                        margin-top: mconverter(15);
+                        margin-bottom: mconverter(15);
+                    }
+
+                    .title {
+                        h5 {
+                            color: #0A0A0A;
+                            font-family: Inter;
+                            font-size: converter(20);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: converter(37.332);
+                            margin-bottom: converter(15);
+                            display: flex;
+                            align-items: center;
+                            gap: converter(5);
+
+                            @media (max-width:990px) {
+                                font-size: mconverter(16);
+                                line-height: 125%;
+                                gap: mconverter(5);
+                            }
+
+                            svg {
+                                width: converter(24);
+                                height: converter(24);
+                                aspect-ratio: 1/1;
+                                margin-right: converter(10.67);
+
+                                @media (max-width:990px) {
+                                    width: mconverter(24);
+                                    height: mconverter(24);
+                                    aspect-ratio: 1/1;
+                                    margin-right: mconverter(10.67);
+                                }
+                            }
+                        }
+                    }
+
+                    hr {
+                        width: calc(100% + converter(60));
+                        margin-left: converter(-30);
+
+                        @media (max-width:990px) {
+                            width: 100%;
+                        }
+                    }
+
+                    .showExp {
+                        max-height: converter(475);
+                        overflow: auto;
+
+                        @media (max-width:990px) {
+                            max-height: mconverter(475);
+                            overflow: auto;
+                        }
+
+                          .content {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            padding: converter(30);
+
+                            @media (max-width:990px) {
+                                padding: mconverter(50) mconverter(26);
+                            }
+
+                            .images {
+                                width: converter(170);
+                                height: converter(137);
+                                aspect-ratio: 103/83;
+
+                                @media (max-width:990px) {
+                                    width: mconverter(120);
+                                    height: mconverter(97);
+                                    aspect-ratio: 120/97;
+                                }
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            .text {
+                                width: converter(390);
+
+                                @media (max-width:990px) {
+                                    width: mconverter(285);
+                                }
+
+                                h4 {
+                                    color: var(--Heading-text, #181818);
+                                    text-align: center;
+                                    font-family: Manrope;
+                                    font-size: converter(24);
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    line-height: 110%;
+                                    margin-top: converter(5);
+                                    margin-bottom: converter(5);
+
+                                    @media (max-width:990px) {
+                                        margin-top: mconverter(5);
+                                        margin-bottom: mconverter(5);
+                                        font-size: mconverter(16);
+                                    }
+                                }
+
+                                p {
+                                    color: var(--text-color, #575757);
+                                    text-align: center;
+                                    font-family: Inter;
+                                    font-size: converter(14);
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: 120%;
+                                    margin-bottom: 0;
+
+                                    @media (max-width:990px) {
+                                        font-size: mconverter(14);
+                                    }
+                                }
+
+                                .postJob {
+                                    margin-top: converter(15);
+                                    display: flex;
+                                    padding: converter(10) converter(20);
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: converter(5);
+                                    border-radius: converter(55);
+                                    background: var(--Secondry-color, #00A148);
+                                    color: #FFF;
+                                    font-family: Inter;
+                                    font-size: converter(14);
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    line-height: normal;
+
+                                    svg {
+                                        width: converter(11);
+                                        height: converter(11);
+                                    }
+
+                                    @media (max-width:990px) {
+                                        padding: mconverter(10) mconverter(20);
+                                        gap: mconverter(5);
+                                        border-radius: mconverter(55);
+                                        font-size: mconverter(14);
+                                        margin-top: mconverter(15);
+
+                                        svg {
+                                            width: mconverter(11);
+                                            height: mconverter(11);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .details {
+                            margin-bottom: converter(20);
+                            display: flex;
+                            gap: converter(9.46);
+
+                            @media (max-width:990px) {
+                                margin-bottom: mconverter(15);
+                                gap: mconverter(11);
+                            }
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+
+                            .icon {
+                                display: flex;
+                                width: converter(36);
+                                height: converter(36);
+                                justify-content: center;
+                                align-items: center;
+                                flex-shrink: 0;
+                                border-radius: converter(17871942);
+                                background: #EFFFF3;
+
+                                @media (max-width:990px) {
+                                    width: mconverter(30);
+                                    height: mconverter(30);
+                                    border-radius: mconverter(30349430);
+                                }
+
+                                svg {
+                                    width: converter(24);
+                                    height: converter(24);
+                                    flex-shrink: 0;
+
+                                    @media (max-width:990px) {
+                                        width: mconverter(15.828);
+                                        height: mconverter(15.828);
+                                        flex-shrink: 0;
+                                    }
+                                }
+                            }
+
+                            .titleDetail {
+                                display: flex;
+                                align-items: center;
+                                margin-bottom: converter(10);
+
+                                @media (max-width:990px) {
+                                    margin-bottom: mconverter(5.43);
+                                    position: relative;
+                                }
+
+                                .text {
+
+                                    h5 {
+                                        color: #101828;
+                                        font-family: Manrope;
+                                        font-size: converter(16);
+                                        font-style: normal;
+                                        font-weight: 600;
+                                        line-height: 125%;
+                                        margin-bottom: converter(8);
+
+                                        @media (max-width:990px) {
+                                            font-size: mconverter(14);
+                                            line-height: mconverter(15.828);
+                                            margin-bottom: mconverter(5.43);
+                                        }
+                                    }
+
+                                    p {
+                                        display: flex;
+                                        align-items: center;
+                                        margin-bottom: 0;
+                                        gap: converter(15);
+                                        color: #6A7282;
+                                        font-family: Inter;
+                                        font-size: converter(12);
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        line-height: converter(9.321);
+
+                                        @media (max-width:990px) {
+                                            font-size: mconverter(12);
+                                            line-height: mconverter(15.828);
+                                            width: mconverter(245);
+                                            justify-content: space-between;
+                                        }
+
+                                        span {
+                                            display: flex;
+                                            align-items: center;
+                                            gap: converter(5);
+
+                                            @media (max-width:990px) {
+                                                gap: mconverter(5);
+                                            }
+
+                                            svg {
+                                                width: converter(14);
+                                                height: converter(14);
+                                                aspect-ratio: 1/1;
+
+                                                @media (max-width:990px) {
+                                                    width: mconverter(14);
+                                                    height: mconverter(13);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .duration {
+                                    margin-left: auto;
+
+                                    @media (max-width:990px) {
+                                        position: absolute;
+                                        right: 0;
+                                        top: 0;
+                                    }
+
+                                    p {
+                                        display: flex;
+                                        padding: converter(5) converter(10);
+                                        justify-content: center;
+                                        align-items: center;
+                                        align-self: stretch;
+                                        border-radius: converter(4);
+                                        border: converter(1) solid #B9F8CF;
+                                        background: #F0FDF4;
+                                        color: #008236;
+                                        text-align: center;
+                                        font-family: Inter;
+                                        font-size: converter(14);
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        line-height: converter(16);
+
+                                        @media (max-width:990px) {
+                                            height: mconverter(18);
+                                            padding: mconverter(3) mconverter(10);
+                                            border-radius: mconverter(6.105);
+                                            border: mconverter(0.904) solid #B9F8CF;
+                                            font-size: mconverter(10);
+                                            line-height: mconverter(12.663);
+                                        }
+                                    }
+                                }
+
+                            }
+
+                            .expDesc {
+                                p {
+                                    color: #4A5565;
+                                    font-family: Inter;
+                                    font-size: converter(16);
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: converter(25);
+                                    word-break: break-all;
+
+                                    @media (max-width:990px) {
+                                        font-size: mconverter(10.256);
+                                        line-height: mconverter(18.008);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

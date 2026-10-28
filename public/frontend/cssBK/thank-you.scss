@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+$mediawidth: 990px;
+
+@function converter($size) {
+    @return calc($size / 19.20) * 1vw;
+}
+
+@function mconverter($size) {
+    @return calc($size / 3.90) * 1vw;
+}
+
+@mixin center {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+@mixin justify-center {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+ .thank-you-page {
+    margin: 0;
+    background: linear-gradient(180deg, #ffffff 50%, transparent 50%), linear-gradient(-135deg, #E0EEDC  50%, transparent 50%), linear-gradient(45deg, #012F1E 50%, transparent 50%), linear-gradient(-45deg, #E0EEDC  50%, #012F1E   50%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+    @media(max-width: $mediawidth) {
+        height: 50vh;
+    }
+
+    .banner-leftimg {
+        position: absolute;
+        top: 0;
+        right: converter(0);
+        width: converter(118);
+        height: converter(460);
+        transform: rotate(180deg);
+        @media(max-width: $mediawidth) {
+            
+        }
+    }
+
+
+    .cicrule-box1,
+    .cicrule-box2{
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.10);
+        @media(max-width: $mediawidth) {
+        }
+    }
+    .cicrule-box1 {
+        width: converter(257);
+        height: converter(257);
+        bottom: converter(-61);
+        left: converter(-61);
+        @media(max-width: $mediawidth) {
+        }
+    }
+
+    .cicrule-box2 {
+        width: converter(237);
+        height: converter(237);
+        bottom: converter(-99);
+        left: converter(-99);
+        @media(max-width: $mediawidth) {
+        }
+    }
+
+    .container-fluid {
+        max-width: converter(1420);
+        @media(max-width: $mediawidth) {
+            max-width: 100%;
+        }
+    }
+
+    .thank-you {
+        background-color: white;
+        padding: converter(40);
+        border-radius: converter(10);
+        max-width: converter(500);
+        width: 100%;
+        box-shadow: 0 0 converter(20) rgba(0, 0, 0, 0.05);
+        margin: 0 auto;
+        @media(max-width: $mediawidth) {
+            padding: mconverter(20);
+            border-radius: mconverter(10);
+            max-width: 100%;
+            box-shadow: 0 0 mconverter(20) rgba(0, 0, 0, 0.05);
+        }
+
+        .badge {
+            width: converter(80);
+            height: converter(80);
+            border-radius: 50%;
+            margin: auto;
+            background: #00A148;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: converter(30);
+            position: relative;
+            z-index: 1;
+            @media(max-width: $mediawidth) {
+                width: mconverter(50);
+                height: mconverter(50);
+                margin-bottom: mconverter(20);
+            }
+            svg {
+                width: converter(50);
+                height: converter(50);
+                @media(max-width: $mediawidth) {
+                    width: mconverter(30);
+                    height: mconverter(30);
+                }
+            }
+        }
+
+        h1 {
+            background: linear-gradient(90deg, #00A148, #D1E9D5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: converter(50);
+            font-family: Manrope;
+            font-weight: 900;
+            @media(max-width: $mediawidth) {
+                font-size: mconverter(30);
+            }
+        }
+
+        p {
+            margin: 0 auto;
+            color: #575757;
+            text-align: center;
+            font-family: Inter;
+            width: 100%;
+            font-style: normal;
+            font-weight: 400;
+            line-height: converter(22);
+            font-size: converter(16);
+            @media(max-width: $mediawidth) {
+                width: 100%;
+                line-height: mconverter(22);
+                font-size: mconverter(14);
+            }
+        }
+
+        .connect-box {
+            display: flex;
+            align-items: center;
+            gap: converter(30);
+            margin-top: converter(30);
+            @media(max-width: $mediawidth) {
+                gap: mconverter(15);
+                margin-top: mconverter(20);
+                flex-direction: column;
+            }
+            .hight-equel {
+                height: converter(120);
+                width: converter(400);
+                border-radius: converter(10);
+                border: converter(1) solid #E7E7E7;
+                background: #FFF;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 converter(6) converter(10) 0 rgba(0, 0, 0, 0.10);
+                @media(max-width: $mediawidth) {
+                    height: mconverter(100);
+                    width: 100%;
+                    border-radius: mconverter(10);
+                    border: mconverter(1) solid #E7E7E7;
+                    box-shadow: 0 mconverter(6) mconverter(10) 0 rgba(0, 0, 0, 0.10);
+                }
+
+                h5 {
+                    color: #181818;
+                    font-family: Manrope;
+                    font-size: converter(20);
+                    font-weight: 600;
+                    line-height: normal;
+                    @media(max-width: $mediawidth) {
+                        font-size: mconverter(20);
+                    }
+                }
+                
+                .social-icons {
+                    display: flex;
+                    gap: converter(10);
+                    @media(max-width: $mediawidth) {
+                        gap: mconverter(10);
+                    }
+                    a {
+                        display: flex;
+                        width: converter(35);
+                        height: converter(35);
+                        border-radius: 50%;
+                        align-items: center;
+                        justify-content: center;
+                        text-decoration: none;
+                        transition: transform 0.2s ease;
+                        @media(max-width: $mediawidth) {
+                            width: mconverter(35);
+                            height: mconverter(35);
+                        }
+                        svg {
+                            width: converter(20);
+                            height: converter(20);
+                            fill: white;
+                            @media(max-width: $mediawidth) {
+                                width: mconverter(20);
+                                height: mconverter(20);
+                            }
+                        }
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                    .facebook { background-color: #1877f2; }
+                    .youtube { background-color: #ff0000; }
+                    .instagram {  background: linear-gradient( 45deg, #feda75, #fa7e1e, #d62976, #962fbf); }
+                }
+
+                .thank-you-btn {
+                    background: #00A148;
+                    color: #fff;
+                    font-family: Inter;
+                    font-size: converter(16);
+                    font-weight: 500;
+                    cursor: pointer;
+                    border-radius: converter(50);
+                    padding: converter(6) converter(25);
+                    text-decoration: none;
+                    @media(max-width: $mediawidth) {
+                        font-size: mconverter(14);
+                        border-radius: mconverter(50);
+                        padding: mconverter(6) mconverter(25);
+                    }
+                }
+            }
+        }
+        
+        
+        
+    }
+
+}

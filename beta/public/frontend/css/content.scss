@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+$mediawidth: 990px;
+
+@function converter($size) {
+    @return calc($size / 19.20) * 1vw;
+}
+
+@function mconverter($size) {
+    @return calc($size / 3.90) * 1vw;
+}
+
+@mixin center {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+@mixin justify-center {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+
+    background: #F7FFFC;
+}
+
+.contentbackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    img {
+        position: absolute;
+
+        &:first-child {
+
+            top: 0;
+            right: 0;
+            width: converter(292);
+            height: converter(413);
+
+            @media(max-width: $mediawidth) {
+                top: mconverter(51);
+            width: mconverter(292);
+            height: mconverter(413);
+            }
+
+        }
+
+        &:nth-child(2) {
+            top: 0;
+            left: 0;
+            width: converter(176);
+            height: converter(653);
+
+            @media(max-width: $mediawidth) {
+
+                width: mconverter(176);
+                height: mconverter(653);
+                // transform: scale(0.5);
+                // transform-origin: center right;
+            }
+
+        }
+
+        &:last-child {
+            bottom: 0;
+            right: 0;
+            width: converter(377);
+            height: converter(391);
+            @media(max-width: $mediawidth) {
+                width: mconverter(377);
+                height: mconverter(391);
+                transform: scale(0.5);
+                transform-origin: bottom right;
+            }
+        }
+    }
+}
+
+.contentpage {
+    padding: converter(130) 0 converter(50);
+    position: relative;
+    z-index: 1;
+
+    @media(max-width: $mediawidth) {
+        padding: mconverter(75) 0 mconverter(30);
+    }
+
+    .container-fluid {
+        max-width: converter(1420);
+
+        @media(max-width: $mediawidth) {
+            max-width: 100%;
+        }
+
+        h6 {
+            color: var(--Secondry-color, #00A148);
+
+            /* Paragraph 12 */
+            font-family: Inter;
+            font-size: converter(12);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%;
+            margin-bottom: converter(10);
+
+            @media(max-width: $mediawidth) {
+                font-size: mconverter(12);
+                margin-bottom: mconverter(10);
+            }
+
+        }
+
+        h2 {
+            color: var(--Heading-text, #181818);
+
+            /* h3 */
+            font-family: Manrope;
+            font-size: converter(24);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 110%;
+            margin-top: converter(30);
+
+            @media(max-width: $mediawidth) {
+                font-size: mconverter(16);
+                margin-top: converter(20);
+            }
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+
+            span {
+                color: var(--Secondry-color, #00A148);
+
+                /* h4 */
+                font-family: Manrope;
+                font-size: converter(16);
+                font-style: normal;
+                font-weight: 600;
+                line-height: 125%;
+                margin-right: converter(16);
+
+                @media(max-width: $mediawidth) {
+                    font-size: mconverter(12);
+                    margin-right: mconverter(10);
+                }
+
+            }
+        }
+
+        p {
+            color: var(--text-color, #575757);
+
+            /* Paragraph text size */
+            font-family: Inter;
+            font-size: converter(16);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%;
+
+            @media(max-width: $mediawidth) {
+                font-size: mconverter(14);
+            }
+
+        }
+    }
+}

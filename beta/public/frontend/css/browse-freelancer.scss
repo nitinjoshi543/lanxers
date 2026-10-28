@@ -1,0 +1,1567 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+$mediawidth: 990px;
+
+@function converter($size) {
+    @return calc($size / 19.20) * 1vw;
+}
+
+@function mconverter($size) {
+    @return calc($size / 3.90) * 1vw;
+}
+
+@mixin center {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+@mixin justify-center {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    &.filterOpened {
+        height: 100dvh;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 9;
+            backdrop-filter: blur(0.5128205128vw);
+        }
+
+        @media (max-width:990px) {
+            header {
+                position: fixed;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.filterShowDetails {
+    display: none;
+
+    @media (max-width:990px) {
+        display: flex;
+        width: mconverter(60);
+        height: mconverter(60);
+        padding: mconverter(15);
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1/1;
+        border-radius: mconverter(50);
+        background: var(--Secondry-color, #00A148);
+        box-shadow: 0 mconverter(4) mconverter(4) 0 rgba(0, 0, 0, 0.25);
+        border: 0;
+        position: fixed;
+        bottom: mconverter(20);
+        right: mconverter(20);
+        z-index: 999;
+    }
+}
+
+.filterHideDetails {
+    display: none;
+
+    @media (max-width:990px) {
+        display: flex;
+        width: mconverter(60);
+        height: mconverter(60);
+        padding: mconverter(15);
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1/1;
+        border-radius: mconverter(50);
+        background: var(--Secondry-color, #00A148);
+        box-shadow: 0 mconverter(4) mconverter(4) 0 rgba(0, 0, 0, 0.25);
+        border: 0;
+        position: absolute;
+        bottom: mconverter(20);
+        right: mconverter(20);
+        z-index: 999;
+    }
+}
+
+#Applyfilterbutton {
+    display: none;
+    width: converter(300);
+    padding: converter(10) converter(30);
+    justify-content: center;
+    align-items: center;
+    gap: converter(5);
+    border-radius: converter(57);
+    background: var(--Secondry-color, #00A148);
+    max-width: 100%;
+    border: none;
+    margin: auto;
+
+    @media (max-width:990px) {
+        width: mconverter(300);
+        padding: mconverter(10) mconverter(30);
+        gap: mconverter(5);
+        border-radius: mconverter(57);
+    }
+
+    svg {
+        width: converter(18);
+        height: converter(18);
+        flex-shrink: 0;
+        aspect-ratio: 1/1;
+        margin-right: converter(5);
+
+        @media (max-width:990px) {
+            width: mconverter(18);
+            height: mconverter(18);
+            margin-right: mconverter(5);
+        }
+    }
+
+    span {
+        color: #FFF;
+        font-family: Inter;
+        font-size: converter(12);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+
+        @media (max-width:990px) {
+            font-size: mconverter(12);
+        }
+    }
+}
+
+// browse-freelancer Start
+
+.browseFreelance {
+
+    ::-webkit-scrollbar {
+        width: converter(6);
+    }
+
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 converter(5) grey;
+        border-radius: converter(10);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgb(138, 138, 138);
+        border-radius: converter(10);
+    }
+
+    .container-fluid {
+        width: converter(1420);
+        margin: auto;
+        margin-top: converter(20);
+
+        @media (max-width:990px) {
+            width: 100%;
+            margin-top: mconverter(20);
+        }
+
+        .pageTitle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .text {
+                p {
+                    color: #000;
+                    font-family: Manrope;
+                    font-size: converter(24);
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 110%;
+                    margin-bottom: converter(10);
+
+                    @media (max-width:990px) {
+                        font-size: mconverter(24);
+                        margin-bottom: mconverter(10);
+                    }
+                }
+
+                span {
+                    color: #505050;
+                    text-align: center;
+                    font-family: Inter;
+                    font-size: converter(14);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 120%;
+
+                    @media (max-width:990px) {
+                        font-size: mconverter(14);
+                    }
+                }
+            }
+
+            .rightText {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                @media (max-width:990px) {
+                    display: none;
+                }
+
+                .images {
+                    width: converter(69);
+                    height: converter(53);
+                    aspect-ratio: 69/53;
+                    margin-right: converter(15);
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                p {
+                    color: #505050;
+                    font-family: Inter;
+                    font-size: converter(14);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 120%;
+                    margin-bottom: 0;
+                }
+
+                .postJob {
+                    display: flex;
+                    padding: converter(10) converter(20);
+                    justify-content: center;
+                    align-items: center;
+                    gap: converter(5);
+                    border-radius: converter(55);
+                    margin-left: converter(30);
+                    background: var(--Secondry-color, #00A148);
+                    border: 0;
+                    box-shadow: 0;
+                    color: #FFF;
+                    font-family: Inter;
+                    font-size: converter(14);
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    text-decoration: none;
+
+                    svg {
+                        width: converter(20);
+                        height: converter(11);
+                    }
+                }
+            }
+        }
+
+        .searchTopSkill {
+            width: converter(1420);
+            height: converter(60);
+            border-radius: converter(10);
+            border: converter(1) solid #CCC;
+            background: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: converter(10) converter(15);
+            margin-top: converter(20);
+            position: sticky;
+            top: converter(90);
+
+            @media (max-width:990px) {
+                width: 100%;
+                height: auto;
+                border-radius: initial;
+                border: initial;
+                background: #FFF;
+                padding: 0;
+                margin-top: mconverter(12);
+                top: mconverter(55);
+            }
+
+            .form-group {
+                position: relative;
+                width: converter(578);
+
+                @media (max-width:990px) {
+                    width: 100%;
+                }
+
+                .form-control {
+                    display: flex;
+                    width: converter(578);
+                    padding: converter(10) converter(20);
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-shrink: 0;
+                    border-radius: converter(7);
+                    border: converter(1) solid #E2E2E2;
+                    color: #ABABAB;
+                    font-family: Inter;
+                    font-size: converter(12);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 120%;
+                    box-shadow: initial;
+
+                    @media (max-width:990px) {
+                        width: 100%;
+                        padding: mconverter(10) mconverter(20);
+                        border-radius: mconverter(7);
+                        border: mconverter(1) solid #E2E2E2;
+                        font-size: mconverter(12);
+                    }
+                }
+
+                svg {
+                    width: converter(20);
+                    height: converter(20);
+                    flex-shrink: 0;
+                    aspect-ratio: 1/1;
+                    position: absolute;
+                    top: 50%;
+                    right: converter(20);
+                    transform: translate(0, -50%);
+
+                    @media (max-width:990px) {
+                        width: mconverter(20);
+                        height: mconverter(20);
+                        right: mconverter(20);
+                    }
+                }
+
+            }
+
+            .topSearches {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                @media (max-width:990px) {
+                    display: none;
+                }
+
+                p {
+                    color: #505050;
+                    text-align: center;
+                    font-family: Inter;
+                    font-size: converter(14);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 120%;
+                    margin-bottom: 0;
+                    margin-right: converter(10);
+                }
+
+                ul {
+                    padding: 0;
+                    display: flex;
+                    gap: converter(5);
+                    margin: 0;
+
+                    li {
+                        display: flex;
+                        padding: converter(8) converter(25);
+                        justify-content: center;
+                        align-items: center;
+                        gap: converter(10);
+                        border-radius: converter(36);
+                        border: converter(1) solid #DADADA;
+                        color: #505050;
+                        text-align: center;
+                        font-family: Inter;
+                        font-size: converter(12);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 120%;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+
+        .freelanceJob {
+            margin-top: converter(20);
+            display: flex;
+            // justify-content: space-between;
+            gap: converter(20);
+            width: converter(1420);
+
+            @media (max-width:990px) {
+                margin-top: mconverter(15);
+                gap: mconverter(10);
+                width: 100%;
+            }
+
+            .filterDetails {
+                width: converter(340);
+                height: calc(100vh - converter(245));
+                border-radius: converter(10);
+                border: converter(1) solid #D5D5D5;
+                background: #FFF;
+                box-shadow: 0 converter(4) converter(10) 0 rgba(0, 0, 0, 0.10);
+                position: sticky;
+                top: converter(165);
+                padding: converter(20);
+                overflow-y: auto;
+
+
+                @media (max-width:990px) {
+                    width: mconverter(393);
+                    height: 80dvh;
+                    overflow-y: auto;
+                    border-radius: mconverter(15) mconverter(15) 0 0;
+                    border: mconverter(1) solid #D5D5D5;
+                    background: #FFF;
+                    box-shadow: 0 mconverter(4) mconverter(10) 0 rgba(0, 0, 0, 0.10);
+                    padding: mconverter(20);
+                    bottom: mconverter(-1000);
+                    top: initial;
+                    position: fixed;
+                    left: 0;
+                    transition: bottom .4s ease;
+                    z-index: 9999;
+
+                    &.active {
+                        bottom: 0;
+                    }
+                }
+
+                .allFilter {
+                    border-bottom: converter(1) solid #D4D4D4;
+                    padding-bottom: converter(10);
+
+                    @media (max-width:990px) {
+                        border-bottom: mconverter(1) solid #D4D4D4;
+                        padding-bottom: mconverter(10);
+                    }
+
+                    .text {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        p {
+                            color: #383838;
+                            font-family: Inter;
+                            font-size: converter(14);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 120%;
+                            display: flex;
+                            align-items: center;
+                            gap: converter(8);
+                            margin-bottom: 0;
+
+                            @media (max-width:990px) {
+                                font-size: mconverter(14);
+                            }
+
+                            span {
+                                display: flex;
+                                width: converter(24);
+                                height: converter(24);
+                                padding: converter(3);
+                                justify-content: center;
+                                align-items: center;
+                                aspect-ratio: 1/1;
+                                border-radius: converter(4);
+                                background: #EEFFE5;
+
+                                @media (max-width:990px) {
+                                    width: mconverter(24);
+                                    height: mconverter(24);
+                                    padding: mconverter(3);
+                                    border-radius: mconverter(4);
+                                }
+
+                                svg {
+                                    width: converter(18);
+                                    height: converter(18);
+                                    flex-shrink: 0;
+                                    aspect-ratio: 1/1;
+
+                                    @media (max-width:990px) {
+                                        width: mconverter(18);
+                                        height: mconverter(18);
+                                    }
+                                }
+                            }
+                        }
+
+                        .resetAll {
+                            background-color: initial;
+                            padding: 0;
+                            border: 0;
+                            box-shadow: initial;
+                            color: var(--Secondry-color, #00A148);
+                            font-family: Inter;
+                            font-size: converter(12);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 120%;
+                            display: flex;
+                            align-items: center;
+                            gap: converter(5);
+
+                            @media (max-width:990px) {
+                                font-size: mconverter(12);
+                            }
+
+                            svg {
+                                width: converter(16);
+                                height: converter(16);
+                                aspect-ratio: 1/1;
+
+                                @media (max-width:990px) {
+                                    width: mconverter(16);
+                                    height: mconverter(16);
+                                    aspect-ratio: 1/1;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .accordion {
+                    margin-top: converter(10);
+
+                    @media (max-width:990px) {
+                        margin-top: mconverter(10);
+                    }
+
+                    .accordion-item {
+                        border: 0;
+                        border-bottom: converter(1);
+                        border-bottom: converter(1) solid #D4D4D4;
+                        padding-bottom: converter(10);
+
+                        @media (max-width:990px) {
+                            border-bottom: mconverter(1);
+                            border-bottom: mconverter(1) solid #D4D4D4;
+                            padding-bottom: mconverter(10);
+                        }
+
+
+                        &:first-child {
+                            margin-top: converter(10);
+
+                            @media (max-width:990px) {
+                                margin-top: mconverter(10);
+                            }
+
+                            .accordion-header {
+                                .accordion-button {
+                                    color: #383838;
+                                    font-family: Inter;
+                                    font-size: converter(14);
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: 120%;
+                                    background-color: initial;
+                                    box-shadow: initial;
+                                    border: 0;
+                                    padding: 0;
+
+                                    @media (max-width:990px) {
+                                        font-size: mconverter(14);
+                                    }
+
+                                    span {
+                                        display: flex;
+                                        width: converter(24);
+                                        height: converter(24);
+                                        padding: converter(4);
+                                        justify-content: center;
+                                        align-items: center;
+                                        aspect-ratio: 1/1;
+                                        border-radius: converter(42);
+                                        background: #EEFFE5;
+                                        margin-right: converter(5);
+
+                                        @media (max-width:990px) {
+                                            width: mconverter(24);
+                                            height: mconverter(24);
+                                            padding: mconverter(4);
+                                            border-radius: mconverter(42);
+                                            margin-right: mconverter(5);
+                                        }
+
+                                        svg {
+                                            width: converter(16);
+                                            height: converter(16);
+                                            flex-shrink: 0;
+                                            aspect-ratio: 1/1;
+
+                                            @media (max-width:990px) {
+                                                width: mconverter(16);
+                                                height: mconverter(16);
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+
+                            .accordion-collapse {
+                                .accordion-body {
+                                    padding: 0;
+                                    margin-top: converter(15);
+
+                                    @media (max-width:990px) {
+                                        margin-top: mconverter(15);
+                                    }
+
+                                    .skill-filter {
+
+                                        .search-box {
+                                            position: relative;
+                                            margin-bottom: converter(20);
+
+                                            @media (max-width:990px) {
+                                                margin-bottom: mconverter(20);
+                                            }
+
+                                            svg {
+                                                width: converter(16);
+                                                height: converter(16);
+                                                flex-shrink: 0;
+                                                aspect-ratio: 1/1;
+                                                position: absolute;
+                                                left: converter(20);
+                                                top: 50%;
+                                                transform: translateY(-50%);
+
+                                                @media (max-width:990px) {
+                                                    width: mconverter(16);
+                                                    height: mconverter(16);
+                                                    left: mconverter(20);
+                                                }
+                                            }
+
+                                            input {
+                                                display: flex;
+                                                width: converter(300);
+                                                padding: converter(10) converter(15) converter(10) converter(40);
+                                                align-items: flex-start;
+                                                gap: converter(10);
+                                                border-radius: converter(64);
+                                                border: converter(1) solid #C9C9C9;
+                                                outline: none;
+                                                color: #000;
+                                                font-family: Inter;
+                                                font-size: converter(12);
+                                                font-style: normal;
+                                                font-weight: 400;
+                                                line-height: 120%;
+
+                                                @media (max-width:990px) {
+                                                    width: mconverter(353);
+                                                    padding: mconverter(10) mconverter(15) mconverter(10) mconverter(40);
+                                                    gap: mconverter(10);
+                                                    border-radius: mconverter(64);
+                                                    border: mconverter(1) solid #C9C9C9;
+                                                    font-size: mconverter(12);
+                                                }
+
+                                                &::placeholder {
+                                                    color: #717171;
+                                                }
+
+                                                &:focus {
+                                                    border-color: #0BA84A;
+                                                }
+                                            }
+                                        }
+
+                                        .skill-list {
+                                            max-height: converter(474);
+                                            overflow-y: auto;
+
+                                            @media (max-width:990px) {
+                                                max-height: mconverter(414);
+                                            }
+
+                                            .skill-item {
+                                                display: flex;
+                                                align-items: center;
+                                                gap: converter(10);
+                                                cursor: pointer;
+                                                margin-bottom: converter(10);
+
+                                                @media (max-width:990px) {
+                                                    gap: mconverter(10);
+                                                    margin-bottom: mconverter(10);
+                                                }
+
+                                                input {
+                                                    display: none;
+
+                                                    &:checked+.checkmark {
+                                                        background: #0BA84A;
+                                                        border-color: #0BA84A;
+
+                                                        &::after {
+                                                            opacity: 1;
+                                                        }
+                                                    }
+                                                }
+
+                                                .checkmark {
+                                                    width: converter(16);
+                                                    height: converter(16);
+                                                    border-radius: converter(3);
+                                                    border: converter(1) solid #C9C9C9;
+                                                    position: relative;
+                                                    flex-shrink: 0;
+                                                    transition: .3s;
+
+                                                    @media (max-width:990px) {
+                                                        width: mconverter(16);
+                                                        height: mconverter(16);
+                                                        border-radius: mconverter(3);
+                                                        border: mconverter(1) solid #C9C9C9;
+                                                    }
+
+                                                    &::after {
+                                                        content: "";
+                                                        position: absolute;
+                                                        width: converter(5);
+                                                        height: converter(10);
+                                                        border: solid #fff;
+                                                        border-width: 0 converter(2) converter(2) 0;
+                                                        transform: rotate(45deg);
+                                                        left: converter(5);
+                                                        top: converter(1.5);
+                                                        opacity: 0;
+
+                                                        @media (max-width:990px) {
+                                                            width: mconverter(5);
+                                                            height: mconverter(10);
+                                                            border-width: 0 mconverter(2) mconverter(2) 0;
+                                                            left: mconverter(5);
+                                                            top: mconverter(1.5);
+                                                        }
+                                                    }
+                                                }
+
+                                                .skill-name {
+                                                    color: #1D1D1D;
+                                                    font-family: Inter;
+                                                    font-size: converter(12);
+                                                    font-style: normal;
+                                                    font-weight: 400;
+                                                    line-height: 120%;
+
+                                                    @media (max-width:990px) {
+                                                        font-size: mconverter(12);
+                                                    }
+                                                }
+
+                                                .count {
+                                                    display: flex;
+                                                    padding: converter(3) converter(7);
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    gap: converter(10);
+                                                    border-radius: converter(21);
+                                                    background: #E7FFED;
+                                                    color: var(--Secondry-color, #00A148);
+                                                    font-family: Inter;
+                                                    font-size: converter(12);
+                                                    font-style: normal;
+                                                    font-weight: 400;
+                                                    line-height: 120%;
+                                                    margin-left: auto;
+
+                                                    @media (max-width:990px) {
+                                                        padding: mconverter(3) mconverter(7);
+                                                        gap: mconverter(10);
+                                                        border-radius: mconverter(21);
+                                                        font-size: mconverter(12);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &:last-child {
+                            margin-top: converter(10);
+                            border: 0;
+
+                            @media (max-width:990px) {
+                                margin-top: mconverter(10);
+                            }
+
+                            .accordion-header {
+                                .accordion-button {
+                                    color: #383838;
+                                    font-family: Inter;
+                                    font-size: converter(14);
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: 120%;
+                                    background-color: initial;
+                                    box-shadow: initial;
+                                    border: 0;
+                                    padding: 0;
+
+                                    @media (max-width:990px) {
+                                        font-size: mconverter(14);
+                                    }
+
+                                    span {
+                                        display: flex;
+                                        width: converter(24);
+                                        height: converter(24);
+                                        padding: converter(4);
+                                        justify-content: center;
+                                        align-items: center;
+                                        aspect-ratio: 1/1;
+                                        border-radius: converter(42);
+                                        background: #EEFFE5;
+                                        margin-right: converter(5);
+
+                                        @media (max-width:990px) {
+                                            width: mconverter(24);
+                                            height: mconverter(24);
+                                            padding: mconverter(4);
+                                            border-radius: mconverter(42);
+                                            margin-right: mconverter(5);
+                                        }
+
+                                        svg {
+                                            width: converter(16);
+                                            height: converter(16);
+                                            flex-shrink: 0;
+                                            aspect-ratio: 1/1;
+
+                                            @media (max-width:990px) {
+                                                width: mconverter(16);
+                                                height: mconverter(16);
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+
+                            .accordion-collapse {
+                                .accordion-body {
+                                    padding: 0;
+                                    margin-top: converter(15);
+
+                                    @media (max-width:990px) {
+                                        margin-top: mconverter(15);
+                                    }
+
+                                    .skill-filter {
+
+                                        .search-box {
+                                            position: relative;
+                                            margin-bottom: converter(20);
+
+                                            @media (max-width:990px) {
+                                                margin-bottom: mconverter(20);
+                                            }
+
+                                            svg {
+                                                width: converter(16);
+                                                height: converter(16);
+                                                flex-shrink: 0;
+                                                aspect-ratio: 1/1;
+                                                position: absolute;
+                                                left: converter(20);
+                                                top: 50%;
+                                                transform: translateY(-50%);
+
+                                                @media (max-width:990px) {
+                                                    width: mconverter(16);
+                                                    height: mconverter(16);
+                                                    left: mconverter(20);
+                                                }
+                                            }
+
+                                            input {
+                                                display: flex;
+                                                width: converter(300);
+                                                padding: converter(10) converter(15) converter(10) converter(40);
+                                                align-items: flex-start;
+                                                gap: converter(10);
+                                                border-radius: converter(64);
+                                                border: converter(1) solid #C9C9C9;
+                                                outline: none;
+                                                color: #000;
+                                                font-family: Inter;
+                                                font-size: converter(12);
+                                                font-style: normal;
+                                                font-weight: 400;
+                                                line-height: 120%;
+
+                                                @media (max-width:990px) {
+                                                    width: mconverter(300);
+                                                    padding: mconverter(10) mconverter(15) mconverter(10) mconverter(40);
+                                                    gap: mconverter(10);
+                                                    border-radius: mconverter(64);
+                                                    border: mconverter(1) solid #C9C9C9;
+                                                    font-size: mconverter(12);
+                                                }
+
+                                                &::placeholder {
+                                                    color: #717171;
+                                                }
+
+                                                &:focus {
+                                                    border-color: #0BA84A;
+                                                }
+                                            }
+                                        }
+
+                                        .skill-list {
+                                            max-height: converter(474);
+                                            overflow-y: auto;
+
+                                            @media (max-width:990px) {
+                                                max-height: mconverter(475);
+                                            }
+
+
+                                            .language-item {
+                                                display: flex;
+                                                align-items: center;
+                                                gap: converter(10);
+                                                cursor: pointer;
+                                                margin-bottom: converter(10);
+
+                                                @media (max-width:990px) {
+                                                    gap: mconverter(10);
+                                                    margin-bottom: mconverter(10);
+                                                }
+
+                                                input {
+                                                    display: none;
+
+                                                    &:checked+.checkmark {
+                                                        background: #0BA84A;
+                                                        border-color: #0BA84A;
+
+                                                        &::after {
+                                                            opacity: 1;
+                                                        }
+                                                    }
+                                                }
+
+                                                .checkmark {
+                                                    width: converter(16);
+                                                    height: converter(16);
+                                                    border-radius: converter(3);
+                                                    border: converter(1) solid #C9C9C9;
+                                                    position: relative;
+                                                    flex-shrink: 0;
+                                                    transition: .3s;
+
+                                                    @media (max-width:990px) {
+                                                        width: mconverter(16);
+                                                        height: mconverter(16);
+                                                        border-radius: mconverter(3);
+                                                        border: mconverter(1) solid #C9C9C9;
+                                                    }
+
+                                                    &::after {
+                                                        content: "";
+                                                        position: absolute;
+                                                        width: converter(5);
+                                                        height: converter(10);
+                                                        border: solid #fff;
+                                                        border-width: 0 converter(2) converter(2) 0;
+                                                        transform: rotate(45deg);
+                                                        left: converter(5);
+                                                        top: converter(1.5);
+                                                        opacity: 0;
+
+                                                        @media (max-width:990px) {
+                                                            width: mconverter(5);
+                                                            height: mconverter(10);
+                                                            border-width: 0 mconverter(2) mconverter(2) 0;
+                                                            left: mconverter(5);
+                                                            top: mconverter(1.5);
+                                                        }
+                                                    }
+                                                }
+
+                                                .language {
+                                                    color: #1D1D1D;
+                                                    font-family: Inter;
+                                                    font-size: converter(12);
+                                                    font-style: normal;
+                                                    font-weight: 400;
+                                                    line-height: 120%;
+
+                                                    @media (max-width:990px) {
+                                                        font-size: mconverter(12);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .jobsug {
+                width: converter(1060);
+
+                @media (max-width:990px) {
+                    width: 100%;
+                }
+
+                .jobDesc {
+                    width: converter(1060);
+                    border-radius: converter(12.75);
+                    border: converter(1) solid #E8E8E8;
+                    background: #FFF;
+                    box-shadow: 0 converter(1) converter(3) 0 rgba(0, 0, 0, 0.10), 0 converter(1) converter(2) converter(-1) rgba(0, 0, 0, 0.10);
+                    padding: converter(20) converter(21);
+                    margin-bottom: converter(15);
+
+                    @media (max-width:990px) {
+                        width: mconverter(353);
+                        height: mconverter(370);
+                        align-self: stretch;
+                        border-radius: mconverter(10);
+                        border: mconverter(1) solid #E8E8E8;
+                        background: #FFF;
+                        box-shadow: 0 mconverter(4) mconverter(4) 0 rgba(0, 0, 0, 0.10);
+                        padding: mconverter(0) mconverter(0);
+                        padding-bottom: mconverter(0);
+                        margin-bottom: mconverter(20);
+                    }
+
+                    .content {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        padding: converter(100);
+
+                        @media (max-width:990px) {
+                            padding: mconverter(50) mconverter(26);
+                        }
+
+                        .images {
+                            width: converter(215);
+                            height: converter(137);
+                            aspect-ratio: 215/137;
+
+                            @media (max-width:990px) {
+                                width: mconverter(215);
+                                height: mconverter(137);
+                            }
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .text {
+                            width: converter(390);
+
+                            @media (max-width:990px) {
+                                width: mconverter(286);
+                            }
+
+                            h4 {
+                                color: var(--Heading-text, #181818);
+                                text-align: center;
+                                font-family: Manrope;
+                                font-size: converter(24);
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: 110%;
+                                margin-top: converter(5);
+                                margin-bottom: converter(5);
+
+                                @media (max-width:990px) {
+                                    margin-top: mconverter(5);
+                                    margin-bottom: mconverter(5);
+                                    font-size: mconverter(24);
+                                }
+                            }
+
+                            p {
+                                color: var(--text-color, #575757);
+                                text-align: center;
+                                font-family: Inter;
+                                font-size: converter(14);
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 120%;
+                                margin-bottom: 0;
+
+                                @media (max-width:990px) {
+                                    font-size: mconverter(14);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .showDetailsJob {
+                    display: flex;
+                    gap: converter(17);
+                    width: converter(1060);
+                    height: converter(209);
+                    border-radius: converter(10);
+                    border: converter(1) solid #D5D5D5;
+                    background: #FFF;
+                    box-shadow: 0 converter(4) converter(10) 0 rgba(0, 0, 0, 0.10);
+                    padding: converter(15);
+                    padding-left: converter(20);
+                    margin-bottom: converter(15);
+
+                    @media (max-width:990px) {
+                        gap: mconverter(10);
+                        width: 100%;
+                        height: mconverter(251);
+                        border-radius: mconverter(10);
+                        border: mconverter(1) solid #D5D5D5;
+                        box-shadow: 0 mconverter(4) mconverter(10) 0 rgba(0, 0, 0, 0.10);
+                        padding: mconverter(15);
+                        margin-bottom: mconverter(15);
+                        position: relative;
+                    }
+
+                    .images {
+                        width: converter(160);
+                        height: converter(160);
+                        border-radius: converter(15);
+                        overflow: hidden;
+
+                        @media (max-width:990px) {
+                            width: mconverter(101);
+                            height: mconverter(101);
+                            border-radius: mconverter(7);
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .text {
+                        width: converter(848);
+
+                        @media (max-width:990px) {
+                            width: mconverter(217);
+                        }
+
+                        .jobInfo {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            .title {
+                                line-height: 0;
+
+                                p {
+                                    color: #000;
+                                    text-align: center;
+                                    font-family: Manrope;
+                                    font-size: converter(24);
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    line-height: 110%;
+                                    margin-bottom: converter(5);
+
+                                    @media (max-width:990px) {
+                                        font-size: mconverter(14);
+                                    }
+                                }
+
+                                span {
+                                    color: #888;
+                                    text-align: center;
+                                    font-family: Inter;
+                                    font-size: converter(14);
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: 120%;
+
+                                    @media (max-width:990px) {
+                                        font-size: mconverter(12);
+                                    }
+                                }
+                            }
+
+                            .buttons {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                gap: converter(10);
+
+                                @media (max-width:990px) {
+                                    margin-right: mconverter(-5);
+                                    margin-top: mconverter(-25);
+                                }
+
+                                .ViewProfile {
+                                    display: flex;
+                                    padding: converter(8) converter(15);
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: converter(5);
+                                    border-radius: converter(5);
+                                    background: var(--Secondry-color, #00A148);
+                                    color: #FFF;
+                                    font-family: Inter;
+                                    font-size: converter(14);
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    line-height: normal;
+                                    text-decoration: none;
+
+                                    @media (max-width:990px) {
+                                        position: absolute;
+                                        bottom: mconverter(10);
+                                        display: flex;
+                                        padding: mconverter(7) mconverter(20);
+                                        justify-content: center;
+                                        align-items: center;
+                                        gap: mconverter(5);
+                                        align-self: stretch;
+                                        border-radius: mconverter(5);
+                                        background: var(--Secondry-color, #00A148);
+                                        color: #FFF;
+                                        font-family: Inter;
+                                        font-size: mconverter(14);
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        line-height: normal;
+                                        width: mconverter(323);
+                                        left: 50%;
+                                        transform: translate(-50%, 0);
+                                    }
+
+                                    svg {
+                                        width: converter(16);
+                                        height: converter(16);
+                                        aspect-ratio: 1/1;
+                                        margin-left: converter(5);
+
+                                        @media (max-width:990px) {
+                                            width: mconverter(16);
+                                            height: mconverter(16);
+                                            aspect-ratio: 1/1;
+                                        }
+                                    }
+                                }
+
+                                .favIcon {
+                                    display: flex;
+                                    width: converter(29);
+                                    height: converter(29);
+                                    padding: converter(5);
+                                    justify-content: center;
+                                    align-items: center;
+                                    aspect-ratio: 1/1;
+                                    border-radius: converter(59.208);
+                                    border: converter(1.208) solid #E6E6E6;
+                                    background: #FFF;
+                                    box-shadow: 0 converter(1.208) converter(3.021) 0 rgba(0, 0, 0, 0.10);
+                                    text-decoration: none;
+
+                                    @media (max-width:990px) {
+                                        width: mconverter(24);
+                                        height: mconverter(24);
+                                        padding: mconverter(4);
+                                        border-radius: mconverter(49);
+                                        border: mconverter(1) solid #E6E6E6;
+                                        box-shadow: 0 mconverter(1) mconverter(2.5) 0 rgba(0, 0, 0, 0.10);
+                                    }
+
+                                    svg {
+                                        width: converter(19);
+                                        height: converter(19);
+                                        flex-shrink: 0;
+                                        aspect-ratio: 1/1;
+
+                                        @media (max-width:990px) {
+                                            width: mconverter(16);
+                                            height: mconverter(16);
+                                            flex-shrink: 0;
+                                            aspect-ratio: 1/1;
+                                        }
+
+                                        path {
+                                            transition: .3s ease;
+                                        }
+
+                                    }
+
+                                    &.active {
+                                        svg {
+                                            path {
+                                                fill: #FF3B30;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+
+                        .aboutUser {
+                            display: flex;
+                            align-items: center;
+                            gap: converter(35);
+                            margin-top: converter(5);
+
+                            @media (max-width:990px) {
+                                gap: mconverter(11);
+                                margin-top: mconverter(5);
+                                position: relative;
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    top: mconverter(4);
+                                    left: mconverter(60);
+                                    width: mconverter(1);
+                                    height: mconverter(15);
+                                    border-radius: mconverter(9);
+                                    background: #C9C9C9;
+
+                                }
+                            }
+
+                            p {
+                                color: #888;
+                                text-align: center;
+                                font-family: Inter;
+                                font-size: converter(14);
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 120%;
+                                margin-bottom: 0;
+                                display: flex;
+                                align-items: center;
+                                gap: converter(5);
+
+                                @media (max-width:990px) {
+                                    font-size: mconverter(12);
+                                    text-align: start;
+                                    gap: converter(5);
+                                }
+
+                                svg {
+                                    width: converter(20);
+                                    height: converter(20);
+                                    aspect-ratio: 1/1;
+                                    margin-right: converter(5);
+
+                                    @media (max-width:990px) {
+                                        width: mconverter(20);
+                                        height: mconverter(20);
+                                        aspect-ratio: 1/1;
+                                        margin-right: mconverter(5);
+                                    }
+                                }
+
+                                &:last-child {
+                                    svg {
+                                        margin-right: converter(0);
+                                        margin-left: converter(5);
+
+                                        @media (max-width:990px) {
+                                            margin-right: mconverter(0);
+                                            margin-left: mconverter(5);
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+
+                        .userDesc {
+                            margin-top: converter(3.5);
+
+                            @media (max-width:990px) {
+                                display: none;
+                            }
+
+                            p {
+                                color: #888;
+                                font-family: Inter;
+                                font-size: converter(14);
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 120%;
+                                margin-bottom: converter(10);
+                                word-break: break-all;
+                            }
+                        }
+
+                        .skillList {
+                            ul {
+                                display: flex;
+                                align-items: center;
+                                gap: converter(5);
+                                padding: 0;
+                                margin: 0;
+
+                                @media (max-width:990px) {
+                                    flex-wrap: wrap;
+                                    gap: mconverter(5);
+                                    position: absolute;
+                                    left: mconverter(15);
+                                    bottom: mconverter(60);
+                                    width: calc(100% - mconverter(30));
+
+                                    &::after {
+                                        content: '';
+                                        position: absolute;
+                                        width: 100%;
+                                        height: mconverter(1);
+                                        background: #E8E8E8;
+                                        bottom: mconverter(-10);
+                                        left: mconverter(-7);
+                                    }
+
+                                    &::before {
+                                        content: '';
+                                        position: absolute;
+                                        width: 100%;
+                                        height: mconverter(1);
+                                        background: #E8E8E8;
+                                        top: mconverter(-10);
+                                        left: mconverter(-7);
+                                    }
+                                }
+
+                                li {
+                                    display: flex;
+                                    padding: converter(8) converter(25);
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: converter(10);
+                                    border-radius: converter(36);
+                                    border: converter(1) solid #DADADA;
+                                    color: #505050;
+                                    text-align: center;
+                                    font-family: Inter;
+                                    font-size: converter(12);
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: 120%;
+
+                                    @media (max-width:990px) {
+                                        padding: mconverter(5) mconverter(15);
+                                        gap: mconverter(10);
+                                        border-radius: mconverter(36);
+                                        border: mconverter(1) solid #DADADA;
+                                        font-size: mconverter(10);
+                                        display: -webkit-box;
+
+                                        &:nth-child(n + 6) {
+                                            display: none;
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.paginationC {
+    margin-top: converter(20);
+
+    @media(max-width: $mediawidth) {
+        margin-top: mconverter(20);
+
+    }
+
+    ul {
+        @include justify-center();
+        gap: converter(5);
+        list-style-type: none;
+
+        @media(max-width: $mediawidth) {
+            gap: mconverter(10);
+        }
+
+        li {
+            a {
+                @include justify-center();
+                width: converter(32);
+                height: converter(32);
+                border-radius: converter(32);
+                border: converter(1) solid #F1F1F1;
+                background: #FFF;
+                color: #333;
+                font-family: "Inter";
+                font-size: converter(13);
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                text-decoration: none;
+
+                @media(max-width: $mediawidth) {
+                    width: mconverter(32);
+                    height: mconverter(32);
+                    border-radius: mconverter(32);
+                    border: mconverter(1) solid #F1F1F1;
+                    font-size: mconverter(13);
+                }
+
+                svg {
+                    width: converter(4.94);
+                    height: converter(8);
+
+                    @media(max-width: $mediawidth) {
+                        width: mconverter(4.94);
+                        height: mconverter(8);
+                    }
+
+                }
+
+                &.active {
+                    background: var(--Secondry-color, #00A148);
+                    color: #fff;
+
+                    @media(max-width: $mediawidth) {}
+
+                }
+
+            }
+        }
+    }
+}
+
+// browse-freelancer End

@@ -1,0 +1,44 @@
+# Laravel dependencies
+/vendor/
+/node_modules/
+/.env
+/.env.*
+!/.env.example
+
+/public/build
+/public/hot
+/storage/*.key
+
+# Beta application
+/beta/vendor/
+/beta/node_modules/
+/beta/.env
+/beta/.env.*
+!/beta/.env.example
+
+/beta/public/build
+/beta/public/hot
+/beta/storage/*.key
+
+# Backups
+/Backup/
+
+# Python virtual environments
+/beta/lanxers-ai/venv/
+**/__pycache__/
+
+*.py[cod]
+
+/lanxers-ai/
+/beta/Backup/
+
+# Large generated files
+*.zip
+*.mp4
+*.so
+
+# Python virtual environments
+**/venv/
+**/.venv/
+**/__pycache__/
+*.py[cod]

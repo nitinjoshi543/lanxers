@@ -1,0 +1,1380 @@
+@extends('employer.layouts.main')
+
+@section('main-section')
+
+<link rel="stylesheet" href="{{ asset('frontend/css/client-posted-job.css') }}?v={{ filemtime(public_path('frontend/css/client-posted-job.css')) }}" />
+<link rel="stylesheet" href="{{ asset('frontend/css/popups.css') }}?v={{ filemtime(public_path('frontend/css/popups.css')) }}" />
+
+<!-- New Job Post -->
+@php
+  $shortlistedCount = $shortlistedApplicants->count();
+  $descFull = $job->description ?? '';
+  $descPreviewLen = 300;
+  $descNeedsMore = mb_strlen($descFull) > $descPreviewLen;
+  $descPreview = $descNeedsMore ? mb_substr($descFull, 0, $descPreviewLen) : $descFull;
+  $descMore = $descNeedsMore ? mb_substr($descFull, $descPreviewLen) : '';
+@endphp
+ <section class="new-job-post">
+    <section class="job-heading">
+        <div class="heading-copy">
+          <a class="back-link" href="{{ route('employer.my.jobs') }}">
+            <svg class="icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m10 6-6 6 6 6" /><path d="M4 12h16" />
+            </svg>
+            Back to My Jobs
+          </a>
+          <div class="title-row">
+            <h1>{{ $job->title }}</h1>
+            <span class="active-pill"><i></i>{{ ucfirst($job->status) }}</span>
+          </div>
+          <p>Posted {{ \Carbon\Carbon::parse($job->created_at)->diffForHumans() }}</p>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <div class="left-column">
+          <section class="stats-panel">
+            <div class="stat-item">
+              <div class="round-icon green">
+                <svg class="icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6S2 12 2 12Z" /><circle cx="12" cy="12" r="2.5" />
+                </svg>
+              </div>
+              <div>
+                <strong>{{ $job->views }}</strong>
+                <p>Freelancers Viewed</p>
+                <small>People who viewed this job</small>
+              </div>
+            </div>
+            <div class="stat-item">
+              <div class="round-icon blue">
+                <svg class="icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 2h9l4 4v16H6z" /><path d="M14 2v5h5M9 12h7M9 16h7" />
+                </svg>
+              </div>
+              <div>
+                <strong>{{ $job->total_proposals }}</strong>
+                <p>Total Applications</p>
+                <small>Proposals received</small>
+              </div>
+            </div>
+            <div class="stat-item">
+              <div class="round-icon purple">
+                <svg class="icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="9" cy="8" r="4" /><path d="M2 21a7 7 0 0 1 14 0M16 4a4 4 0 0 1 0 8M18 14a6 6 0 0 1 4 6" />
+                </svg>
+              </div>
+              <div>
+                <strong>{{ $shortlistedCount }}</strong>
+                <p>Shortlisted</p>
+                <small>Selected candidates</small>
+              </div>
+            </div>
+          </section>
+
+          <section class="details-panel">
+            <div class="tabs" role="tablist">
+              <button type="button" role="tab" aria-selected="true" class="active" data-tab="job">Job Details</button>
+              <button type="button" role="tab" aria-selected="false" data-tab="applications">Applications ({{ $job->total_proposals }})</button>
+              <button type="button" role="tab" aria-selected="false" data-tab="shortlisted">Shortlisted ({{ $shortlistedCount }})</button>
+            </div>
+
+            <div id="panel-job-details" class="tab-panel" data-panel="job">
+              <div class="description-card">
+                <div class="section-intro">
+                  <div class="round-icon green">
+                    <svg class="icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M6 2h9l4 4v16H6z" /><path d="M14 2v5h5M9 12h7M9 16h7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 id="tab-title">Job Description</h2>
+                    <div id="tab-job-details">
+                      <p>
+                        <span id="desc-preview">{{ $descPreview }}</span>@if($descNeedsMore)<span id="desc-more" style="display:none">{{ $descMore }}</span>@endif
+                      </p>
+                      @if($descNeedsMore)
+                      <button type="button" class="show-more-btn" id="show-more-btn" aria-expanded="false">
+                        <em id="show-more-label">Show more</em>
+                        <span>⌄</span>
+                      </button>
+                      @endif
+                    </div>
+                  </div>
+                </div>
+                <div class="job-info" id="job-info-row">
+                  <div class="info-item">
+                    <div class="mini-icon">
+                      <svg class="icon" viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="3" y="7" width="18" height="13" rx="2" /><path d="M8 7V4h8v3M3 12h18" />
+                      </svg>
+                    </div>
+                    <div>
+                      <small>Employment Type</small>
+                      <strong>Full-Time</strong>
+                    </div>
+                  </div>
+                  <div class="info-item">
+                    <div class="mini-icon">
+                      <svg class="icon" viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 21V11h4v10M10 21V5h4v16M16 21V8h4v13" /><path d="m4 7 5-4 4 2 7-4" />
+                      </svg>
+                    </div>
+                    <div>
+                      <small>Experience</small>
+                      <strong>0 – 3 Years</strong>
+                    </div>
+                  </div>
+                  <div class="info-item">
+                    <div class="mini-icon">
+                      <svg class="icon" viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" />
+                      </svg>
+                    </div>
+                    <div>
+                      <small>Location</small>
+                      <strong>Remote</strong>
+                    </div>
+                  </div>
+                  <div class="info-item">
+                    <div class="mini-icon">
+                      <svg class="icon" viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 21V4h11v17M16 9h4v12M9 8h3M9 12h3M9 16h3M3 21h19" />
+                      </svg>
+                    </div>
+                    <div>
+                      <small>Industry</small>
+                      <strong>Education / E-Learning</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="skills-card" id="skills-card-row">
+                <div class="round-icon green">
+                  <svg class="icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z" />
+                  </svg>
+                </div>
+                <div>
+                  <h2>Skills Required</h2>
+                  <div class="skill-list">
+                    @foreach(explode(',', $job->skills ?? '') as $skill)
+                      @if(trim($skill) !== '')
+                        <span>{{ trim($skill) }}</span>
+                      @endif
+                    @endforeach
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="panel-applications" class="tab-panel description-card" data-panel="applications" hidden>
+              <h2 style="margin: 0 0 12px; font-size: 16px;">Applications ({{ $job->total_proposals }})</h2>
+              @forelse($proposals as $proposal)
+              <div class="applicant" style="margin-bottom: 8px;">
+                <img src="{{ $proposal->profile_photo ?: 'https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg' }}"
+                  alt="{{ $proposal->name }}"
+                  onerror="this.onerror=null;this.src='https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg'" />
+                <div class="applicant-copy">
+                  <strong>
+                    {{ $proposal->name }}
+                    <span class="verified">
+                      <svg class="icon" viewBox="0 0 24 24" width="8" height="8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>
+                    </span>
+                  </strong>
+                  <p>{{ $proposal->job_title }}</p>
+                  <small>
+                    <svg class="icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" />
+                    </svg>
+                    {{ $proposal->state_name }}, {{ $proposal->country_name }}
+                  </small>
+                </div>
+                <div class="applicant-side" style="gap: 6px; align-items: flex-end;">
+                  <a href="{{ route('employer.talent.profile', [
+                      'id' => \Vinkla\Hashids\Facades\Hashids::encode($proposal->user_id),
+                      'proposal' => \Vinkla\Hashids\Facades\Hashids::encode($proposal->proposal_id)
+                    ]) }}" style="color: #00a65f; font-size: 11px; font-weight: 600; text-decoration: none;">View Profile</a>
+                  <a href="{{ route('employer.proposal.download-cv', $proposal->proposal_id) }}" style="color: #344050; font-size: 10px; text-decoration: none;">Download CV</a>
+                </div>
+              </div>
+              @empty
+              <p style="color: #737e88; font-size: 12px; margin: 0;">No applications yet.</p>
+              @endforelse
+            </div>
+
+            <div id="panel-shortlisted" class="tab-panel description-card" data-panel="shortlisted" hidden>
+              <h2 style="margin: 0 0 12px; font-size: 16px;">Shortlisted ({{ $shortlistedCount }})</h2>
+              @forelse($shortlistedApplicants as $proposal)
+              <div class="applicant" style="margin-bottom: 8px;">
+                <img src="{{ $proposal->profile_photo ?: 'https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg' }}"
+                  alt="{{ $proposal->name }}"
+                  onerror="this.onerror=null;this.src='https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg'" />
+                <div class="applicant-copy">
+                  <strong>
+                    {{ $proposal->name }}
+                    <span class="verified">
+                      <svg class="icon" viewBox="0 0 24 24" width="8" height="8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>
+                    </span>
+                  </strong>
+                  <p>{{ $proposal->job_title }}</p>
+                  <small>
+                    <svg class="icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" />
+                    </svg>
+                    {{ $proposal->state_name }}, {{ $proposal->country_name }}
+                  </small>
+                </div>
+                <div class="applicant-side" style="gap: 6px; align-items: flex-end;">
+                  <a href="{{ route('employer.talent.profile', [
+                      'id' => \Vinkla\Hashids\Facades\Hashids::encode($proposal->user_id),
+                      'proposal' => \Vinkla\Hashids\Facades\Hashids::encode($proposal->proposal_id)
+                    ]) }}" style="color: #00a65f; font-size: 11px; font-weight: 600; text-decoration: none;">View Profile</a>
+                  <a href="{{ route('employer.proposal.download-cv', $proposal->proposal_id) }}" style="color: #344050; font-size: 10px; text-decoration: none;">Download CV</a>
+                </div>
+              </div>
+              @empty
+              <p style="color: #737e88; font-size: 12px; margin: 0;">No shortlisted candidates yet.</p>
+              @endforelse
+            </div>
+
+          </section>
+        </div>
+
+        <aside>
+          <section class="job-summary">
+            <div class="budget-row">
+              <div>
+                <span class="summary-icon">
+                  <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 6h15v14H3z" /><path d="M3 7V4h13v2M14 11h8v6h-8a3 3 0 0 1 0-6Z" /><circle cx="17" cy="14" r=".8" fill="currentColor" />
+                  </svg>
+                </span>
+                <b>Budget</b>
+              </div>
+              <strong>
+                @if($job->budget_type === 'not_disclosed')
+                  Not Disclosed
+                @else
+                  ₹ {{ $job->budget_max }}
+                @endif
+              </strong>
+            </div>
+            <div class="summary-line">
+              <b>Job Status</b>
+              <span class="open-pill"><i></i>{{ ucfirst($job->status) }}</span>
+            </div>
+            <div class="summary-line">
+              <span>
+                <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="16" rx="2" /><path d="M8 3v4M16 3v4M3 10h18M8 14h2M14 14h2M8 17h2" />
+                </svg>
+                Posted On
+              </span>
+              <b>{{ \Carbon\Carbon::parse($job->created_at)->format('d M Y') }}</b>
+            </div>
+            <div class="summary-actions">
+              <button type="button" class="EditBtn">
+                <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m4 20 4.2-1 10.4-10.4-3.2-3.2L5 15.8 4 20Z" /><path d="m13.8 7 3.2 3.2" />
+                </svg>
+                Edit Job
+              </button>
+              @if($job->status === 'open')
+              <button type="button" class="DeleteJob" data-id="{{ $job->id }}">
+                <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 7h16M9 7V4h6v3M7 7l1 14h8l1-14M10 11v6M14 11v6" />
+                </svg>
+                Delete Job
+              </button>
+              @endif
+            </div>
+          </section>
+
+          <section class="applicants-panel">
+            <div class="panel-title">
+              <h2>Applicants ({{ $job->total_proposals }})</h2>
+            </div>
+
+            @forelse($proposals->take(3) as $proposal)
+            <div class="applicant">
+              <img src="{{ $proposal->profile_photo ?: 'https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg' }}"
+                alt="{{ $proposal->name }}, {{ $proposal->job_title }}"
+                onerror="this.onerror=null;this.src='https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg'" />
+              <div class="applicant-copy">
+                <strong>
+                  {{ $proposal->name }}
+                  <span class="verified">
+                    <svg class="icon" viewBox="0 0 24 24" width="8" height="8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="m5 12 4 4L19 6" />
+                    </svg>
+                  </span>
+                </strong>
+                <p>{{ $proposal->job_title }}</p>
+                <small>
+                  <svg class="icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" />
+                  </svg>
+                  {{ $proposal->state_name }}, {{ $proposal->country_name }}
+                </small>
+              </div>
+              <div class="applicant-side">
+                <small>{{ \Carbon\Carbon::parse($proposal->created_at ?? $job->created_at)->diffForHumans() }}</small>
+              </div>
+            </div>
+            @empty
+            <p style="padding: 12px 8px; color: #737e88; font-size: 12px; margin: 0;">No applicants yet.</p>
+            @endforelse
+          </section>
+        </aside>
+      </div>
+      </section>
+</section>
+
+<!-- New Job Post -->
+
+<section class="clientPosted ">
+    <div class="container-fluid">
+        <div class="freelanceJob">
+            <div class="employeDescription">
+                <div class="budgetInfo">
+                    <div class="text">
+                        <p>Posted {{ \Carbon\Carbon::parse($job->created_at)->diffForHumans() }}</p>
+                        <h4>{{ $job->title }}</h4>
+
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <g clip-path="url(#clip0_2431_9680)">
+                                    <path
+                                        d="M9.17258 17.5H8.00425C5.01675 17.5 3.52341 17.5 2.59508 16.5542C1.66675 15.6083 1.66675 14.0858 1.66675 11.0417C1.66675 7.99751 1.66675 6.47501 2.59508 5.52918C3.52341 4.58334 5.01675 4.58334 8.00425 4.58334H11.1734C14.1609 4.58334 15.6551 4.58334 16.5834 5.52918C17.2976 6.25668 17.4617 7.32584 17.5001 9.16668"
+                                        stroke="#838383" stroke-width="1.5" stroke-linecap="round" />
+                                    <path
+                                        d="M13.3335 4.58334L13.2502 4.32501C12.8377 3.04167 12.6318 2.40001 12.141 2.03334C11.6493 1.66667 10.9977 1.66667 9.69183 1.66667H9.47266C8.1685 1.66667 7.516 1.66667 7.02516 2.03334C6.5335 2.40001 6.32766 3.04167 5.91516 4.32501L5.8335 4.58334M14.2593 11.0458C14.4135 10.9042 14.4902 10.8333 14.5835 10.8333C14.6768 10.8333 14.7535 10.9042 14.9077 11.0458L15.5018 11.5933C15.5735 11.6592 15.6093 11.6925 15.6535 11.7083C15.6985 11.725 15.7468 11.7233 15.8452 11.7192L16.6468 11.6875C16.8535 11.6792 16.9568 11.6758 17.0277 11.735C17.0985 11.7942 17.1127 11.8967 17.1402 12.1017L17.2502 12.9233C17.2635 13.0183 17.2693 13.065 17.2927 13.1067C17.316 13.1467 17.3535 13.1758 17.4285 13.235L18.0752 13.7433C18.2352 13.87 18.3152 13.9325 18.331 14.0225C18.3468 14.1125 18.2927 14.1992 18.186 14.3725L17.7477 15.0783C17.6977 15.1592 17.6727 15.2 17.6643 15.245C17.656 15.29 17.666 15.3375 17.686 15.4308L17.8602 16.2458C17.9018 16.4458 17.9235 16.5458 17.8777 16.6258C17.8318 16.7058 17.7343 16.7375 17.5402 16.8008L16.7685 17.0517C16.6768 17.0817 16.6302 17.0967 16.5943 17.1267C16.5585 17.1575 16.536 17.2008 16.4918 17.2867L16.1152 18.0125C16.0193 18.1983 15.971 18.2908 15.8835 18.3225C15.796 18.3542 15.7002 18.3142 15.5068 18.2342L14.7668 17.9275C14.676 17.89 14.631 17.8708 14.5835 17.8708C14.536 17.8708 14.491 17.89 14.4002 17.9275L13.6602 18.2342C13.4668 18.3142 13.371 18.3542 13.2835 18.3225C13.196 18.2908 13.1477 18.1975 13.0518 18.0125L12.6752 17.2867C12.6302 17.2008 12.6085 17.1575 12.5727 17.1275C12.5368 17.0975 12.4902 17.0817 12.3985 17.0525L11.6268 16.8008C11.4327 16.7375 11.3352 16.7058 11.2893 16.6258C11.2435 16.5458 11.2643 16.4467 11.3068 16.2458L11.4818 15.4308C11.501 15.3375 11.511 15.2908 11.5027 15.2458C11.4856 15.1856 11.4573 15.129 11.4193 15.0792L10.9818 14.3725C10.8735 14.1992 10.8202 14.1125 10.836 14.0225C10.8518 13.9325 10.9318 13.87 11.0918 13.7442L11.7385 13.2358C11.8135 13.1758 11.851 13.1467 11.8743 13.1058C11.8977 13.065 11.9035 13.0183 11.916 12.9225L12.0268 12.1017C12.0543 11.8975 12.0685 11.7942 12.1393 11.735C12.2102 11.6758 12.3135 11.6792 12.5202 11.6875L13.3227 11.7192C13.4202 11.7233 13.4685 11.725 13.5135 11.7083C13.5577 11.6917 13.5935 11.6592 13.6652 11.5933L14.2593 11.0458Z"
+                                        stroke="#838383" stroke-width="1.5" />
+                                </g>
+
+                                <defs>
+                                    <clipPath id="clip0_2431_9680">
+                                        <rect width="20" height="20" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            {{ $job->category_name }}</span>
+                        <!-- <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <path
+                                    d="M10.0001 9.58334C9.44755 9.58334 8.91764 9.36384 8.52694 8.97314C8.13624 8.58244 7.91675 8.05254 7.91675 7.5C7.91675 6.94747 8.13624 6.41757 8.52694 6.02687C8.91764 5.63617 9.44755 5.41667 10.0001 5.41667C10.5526 5.41667 11.0825 5.63617 11.4732 6.02687C11.8639 6.41757 12.0834 6.94747 12.0834 7.5C12.0834 7.77359 12.0295 8.0445 11.9248 8.29726C11.8201 8.55002 11.6667 8.77969 11.4732 8.97314C11.2798 9.1666 11.0501 9.32006 10.7973 9.42475C10.5446 9.52945 10.2737 9.58334 10.0001 9.58334ZM10.0001 1.66667C8.45299 1.66667 6.96925 2.28125 5.87529 3.37522C4.78133 4.46918 4.16675 5.95291 4.16675 7.5C4.16675 11.875 10.0001 18.3333 10.0001 18.3333C10.0001 18.3333 15.8334 11.875 15.8334 7.5C15.8334 5.95291 15.2188 4.46918 14.1249 3.37522C13.0309 2.28125 11.5472 1.66667 10.0001 1.66667Z"
+                                    fill="#838383" />
+                            </svg>
+                            India , New Delhi</span> -->
+                        <hr>
+
+                        <div class="viewApplied">
+                            <div class="applied">
+                                <div class="icon">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none">
+                                            <path
+                                                d="M12 9C12.7956 9 13.5587 9.31607 14.1213 9.87868C14.6839 10.4413 15 11.2044 15 12C15 12.7956 14.6839 13.5587 14.1213 14.1213C13.5587 14.6839 12.7956 15 12 15C11.2044 15 10.4413 14.6839 9.87868 14.1213C9.31607 13.5587 9 12.7956 9 12C9 11.2044 9.31607 10.4413 9.87868 9.87868C10.4413 9.31607 11.2044 9 12 9ZM12 4.5C17 4.5 21.27 7.61 23 12C21.27 16.39 17 19.5 12 19.5C7 19.5 2.73 16.39 1 12C2.73 7.61 7 4.5 12 4.5ZM3.18 12C3.98825 13.6503 5.24331 15.0407 6.80248 16.0133C8.36165 16.9858 10.1624 17.5013 12 17.5013C13.8376 17.5013 15.6383 16.9858 17.1975 16.0133C18.7567 15.0407 20.0117 13.6503 20.82 12C20.0117 10.3497 18.7567 8.95925 17.1975 7.98675C15.6383 7.01424 13.8376 6.49868 12 6.49868C10.1624 6.49868 8.36165 7.01424 6.80248 7.98675C5.24331 8.95925 3.98825 10.3497 3.18 12Z"
+                                                fill="#00A148" />
+                                        </svg>
+                                    </span>
+                                </div>
+
+                                <div class="info">
+                                    <p>Freelancers Viewed</p>
+                                    <span>{{ $job->views }}</span>
+                                </div>
+                            </div>
+
+                            <div class="viewed">
+                                <div class="icon">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
+                                            fill="none">
+                                            <path
+                                                d="M20.8438 11.4991H15.0938C14.9031 11.4991 14.7203 11.5749 14.5855 11.7096C14.4507 11.8444 14.375 12.0273 14.375 12.2179C14.375 13.8034 13.0856 15.0929 11.5 15.0929C9.91444 15.0929 8.625 13.8034 8.625 12.2179C8.625 12.0273 8.54927 11.8444 8.41448 11.7096C8.27969 11.5749 8.09687 11.4991 7.90625 11.4991H2.15625C1.96563 11.4991 1.78281 11.5749 1.64802 11.7096C1.51323 11.8444 1.4375 12.0273 1.4375 12.2179V17.9679C1.4375 19.9488 3.04894 21.5616 5.03125 21.5616H17.9688C19.9511 21.5616 21.5625 19.9488 21.5625 17.9679V12.2179C21.5625 12.0273 21.4868 11.8444 21.352 11.7096C21.2172 11.5749 21.0344 11.4991 20.8438 11.4991ZM20.125 17.9679C20.125 19.1567 19.1576 20.1241 17.9688 20.1241H5.03125C3.84244 20.1241 2.875 19.1567 2.875 17.9679V12.9366H7.24787C7.41908 13.9409 7.93969 14.8523 8.71776 15.5099C9.49583 16.1675 10.4813 16.5289 11.5 16.5304C12.5187 16.5289 13.5042 16.1675 14.2822 15.5099C15.0603 14.8523 15.5809 13.9409 15.7521 12.9366H20.125V17.9679ZM8.11613 5.53925C7.98138 5.40447 7.90568 5.22168 7.90568 5.0311C7.90568 4.84051 7.98138 4.65773 8.11613 4.52294L10.9911 1.64794C11.1259 1.5132 11.3087 1.4375 11.4993 1.4375C11.6899 1.4375 11.8727 1.5132 12.0074 1.64794L14.8824 4.52294C15.0172 4.6579 15.0928 4.84087 15.0927 5.0316C15.0926 5.22234 15.0167 5.4052 14.8817 5.53997C14.7468 5.67474 14.5638 5.75038 14.3731 5.75025C14.1823 5.75011 13.9995 5.67421 13.8647 5.53925L12.2173 3.89188V5.03182C12.2173 5.22244 12.1416 5.40526 12.0068 5.54005C11.872 5.67484 11.6892 5.75057 11.4986 5.75057C11.3079 5.75057 11.1251 5.67484 10.9903 5.54005C10.8555 5.40526 10.7798 5.22244 10.7798 5.03182V3.89188L9.13244 5.53925C8.99765 5.674 8.81487 5.74969 8.62428 5.74969C8.43369 5.74969 8.25091 5.674 8.11613 5.53925ZM12.2188 7.90538C12.2188 8.096 12.143 8.27882 12.0082 8.41361C11.8734 8.5484 11.6906 8.62413 11.5 8.62413C11.3094 8.62413 11.1266 8.5484 10.9918 8.41361C10.857 8.27882 10.7812 8.096 10.7812 7.90538C10.7812 7.71475 10.857 7.53194 10.9918 7.39714C11.1266 7.26235 11.3094 7.18663 11.5 7.18663C11.6906 7.18663 11.8734 7.26235 12.0082 7.39714C12.143 7.53194 12.2188 7.71475 12.2188 7.90538ZM12.2188 10.7804C12.2188 10.971 12.143 11.1538 12.0082 11.2886C11.8734 11.4234 11.6906 11.4991 11.5 11.4991C11.3094 11.4991 11.1266 11.4234 10.9918 11.2886C10.857 11.1538 10.7812 10.971 10.7812 10.7804C10.7812 10.5898 10.857 10.4069 10.9918 10.2721C11.1266 10.1374 11.3094 10.0616 11.5 10.0616C11.6906 10.0616 11.8734 10.1374 12.0082 10.2721C12.143 10.4069 12.2188 10.5898 12.2188 10.7804Z"
+                                                fill="#027DFB" />
+                                        </svg>
+                                    </span>
+                                </div>
+
+                                <div class="info">
+                                    <p>Freelancers Proposals</p>
+                                    <span>{{ $job->total_proposals }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="applyBudget">
+                        <div class="details">
+                            <span>Budget</span>
+                            <p>
+                                @if($job->budget_type === 'not_disclosed')
+                                    Not Disclosed
+                                @else
+                                    ₹ {{ $job->budget_max }}
+                                @endif
+                            </p>
+                            
+                        </div>
+
+                        <hr>
+
+                        <div class="btn-app">
+                            <button type="button" class="Applicants" data-bs-toggle="modal" data-bs-target="#Applicants">Applicants </button>
+                            <button type="button" class="Applicants" data-bs-toggle="modal" data-bs-target="#ShortlistedApplicants">
+                                Shortlisted Applicants
+                                ({{ $shortlistedApplicants->count() }})
+                            </button>
+                        </div>
+
+                        <button type="button" class="ongoing d-none">On Going Job
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path
+                                    d="M8.00065 14.6673C11.6827 14.6673 14.6673 11.6827 14.6673 8.00065C14.6673 4.31865 11.6827 1.33398 8.00065 1.33398C4.31865 1.33398 1.33398 4.31865 1.33398 8.00065C1.33398 11.6827 4.31865 14.6673 8.00065 14.6673ZM8.00065 8.00065V4.00065C8.52607 3.99986 9.04646 4.10294 9.53191 4.30396C10.0174 4.50498 10.4583 4.79997 10.8293 5.17198L8.00065 8.00065Z"
+                                    fill="#575757" />
+                            </svg>
+                        </button>
+
+                        <button type="button" class="jobClosed d-none">
+                            Job Closed
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <g clip-path="url(#clip0_2637_20326)">
+                                    <path
+                                        d="M4.38789 11.7769L10.8051 2.60976C10.8419 2.55392 10.8895 2.50602 10.9451 2.4689C11.0007 2.43178 11.0632 2.40619 11.1289 2.39364C11.1945 2.3811 11.2621 2.38186 11.3274 2.39587C11.3928 2.40988 11.4547 2.43686 11.5095 2.47522C11.5643 2.51358 11.6108 2.56253 11.6463 2.61919C11.6818 2.67584 11.7056 2.73904 11.7163 2.80505C11.7269 2.87106 11.7242 2.93854 11.7084 3.00349C11.6925 3.06844 11.6637 3.12955 11.6238 3.1832L4.90977 12.7738C4.87138 12.8288 4.82234 12.8754 4.76556 12.9111C4.70879 12.9467 4.64542 12.9705 4.57925 12.9812C4.51307 12.9918 4.44543 12.989 4.38035 12.973C4.31526 12.957 4.25407 12.928 4.20039 12.8879L0.600393 10.1879C0.494306 10.1083 0.424172 9.98987 0.405418 9.85859C0.386664 9.72732 0.420828 9.59397 0.500393 9.48788C0.579958 9.3818 0.698407 9.31166 0.829682 9.29291C0.960957 9.27416 1.09431 9.30832 1.20039 9.38788L4.38789 11.7769ZM11.5004 7.00038C11.3678 7.00038 11.2406 6.94771 11.1468 6.85394C11.0531 6.76017 11.0004 6.63299 11.0004 6.50038C11.0004 6.36778 11.0531 6.2406 11.1468 6.14683C11.2406 6.05306 11.3678 6.00038 11.5004 6.00038H14.5004C14.633 6.00038 14.7602 6.05306 14.8539 6.14683C14.9477 6.2406 15.0004 6.36778 15.0004 6.50038C15.0004 6.63299 14.9477 6.76017 14.8539 6.85394C14.7602 6.94771 14.633 7.00038 14.5004 7.00038H11.5004ZM9.50039 10.0004C9.36778 10.0004 9.24061 9.94771 9.14684 9.85394C9.05307 9.76017 9.00039 9.63299 9.00039 9.50038C9.00039 9.36778 9.05307 9.2406 9.14684 9.14683C9.24061 9.05306 9.36778 9.00038 9.50039 9.00038H14.5004C14.633 9.00038 14.7602 9.05306 14.8539 9.14683C14.9477 9.2406 15.0004 9.36778 15.0004 9.50038C15.0004 9.63299 14.9477 9.76017 14.8539 9.85394C14.7602 9.94771 14.633 10.0004 14.5004 10.0004H9.50039ZM7.50039 13.0004C7.36778 13.0004 7.24061 12.9477 7.14684 12.8539C7.05307 12.7602 7.00039 12.633 7.00039 12.5004C7.00039 12.3678 7.05307 12.2406 7.14684 12.1468C7.24061 12.0531 7.36778 12.0004 7.50039 12.0004H14.5004C14.633 12.0004 14.7602 12.0531 14.8539 12.1468C14.9477 12.2406 15.0004 12.3678 15.0004 12.5004C15.0004 12.633 14.9477 12.7602 14.8539 12.8539C14.7602 12.9477 14.633 13.0004 14.5004 13.0004H7.50039Z"
+                                        fill="#575757" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2637_20326">
+                                        <rect width="16" height="16" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="showJObInfo">
+                    <div class="textMore">
+                        <h5>Job Description</h5>
+                        <p>{{ $job->description }}</p>
+                    </div>
+
+                    <a href="#" class="showMore d-none">
+                        Show More
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.47124 10.4713C8.34622 10.5963 8.17668 10.6665 7.9999 10.6665C7.82313 10.6665 7.65359 10.5963 7.52857 10.4713L3.75724 6.69999C3.69356 6.6385 3.64277 6.56493 3.60784 6.4836C3.5729 6.40226 3.55451 6.31478 3.55374 6.22626C3.55297 6.13774 3.56983 6.04996 3.60336 5.96803C3.63688 5.88609 3.68638 5.81166 3.74897 5.74906C3.81157 5.68647 3.886 5.63697 3.96793 5.60345C4.04986 5.56993 4.13765 5.55306 4.22617 5.55383C4.31469 5.5546 4.40217 5.57299 4.48351 5.60793C4.56484 5.64287 4.63841 5.69365 4.6999 5.75733L7.9999 9.05733L11.2999 5.75733C11.4256 5.63589 11.594 5.56869 11.7688 5.57021C11.9436 5.57173 12.1108 5.64184 12.2344 5.76545C12.3581 5.88905 12.4282 6.05626 12.4297 6.23106C12.4312 6.40586 12.364 6.57426 12.2426 6.69999L8.47124 10.4713Z"
+                                fill="#00A148" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="SkillsRequired">
+                    <h5>Skills Required</h5>
+                    <ul>
+                        @foreach(explode(',', $job->skills) as $skill)
+                        <li>{{ trim($skill) }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+
+                <!-- <div class="certificates">
+                    <h5>Attachments ({{ $job->attachment_count }})</h5>
+                    <div class="crtinfo">
+                        @foreach($attachments as $index => $attachment)
+                        <div class="detail">
+                            <div class="images">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_2051_1516)">
+                                        <path
+                                            d="M22.9688 0H7.03125C3.148 0 0 3.148 0 7.03125V22.9688C0 26.852 3.148 30 7.03125 30H22.9688C26.852 30 30 26.852 30 22.9688V7.03125C30 3.148 26.852 0 22.9688 0Z"
+                                            fill="#F4F2ED" />
+                                        <mask id="mask0_2051_1516" style="mask-type:luminance" maskUnits="userSpaceOnUse"
+                                            x="7" y="3" width="16" height="24">
+                                            <path d="M7.14844 3.28125H22.7766V26.7188H7.14844V3.28125Z" fill="white" />
+                                        </mask>
+                                        <g mask="url(#mask0_2051_1516)">
+                                            <path
+                                                d="M11.0562 26.7187C13.2125 26.7187 14.9624 24.9688 14.9624 22.8125V18.9062H11.0562C8.89998 18.9062 7.1499 20.6563 7.1499 22.8125C7.1499 24.9688 8.89998 26.7187 11.0562 26.7187Z"
+                                                fill="#0ACF83" />
+                                            <path
+                                                d="M7.1499 15C7.1499 12.8438 8.89998 11.0938 11.0562 11.0938H14.9624V18.9062H11.0562C8.89998 18.9062 7.1499 17.1563 7.1499 15Z"
+                                                fill="#A259FF" />
+                                            <path
+                                                d="M7.15015 7.18746C7.15015 5.03121 8.90022 3.28125 11.0565 3.28125H14.9627V11.0938H11.0565C8.90022 11.0938 7.15015 9.34371 7.15015 7.18746Z"
+                                                fill="#F24E1E" />
+                                            <path
+                                                d="M14.9626 3.28125H18.8689C21.0251 3.28125 22.7752 5.03121 22.7752 7.18746C22.7752 9.34371 21.0251 11.0938 18.8689 11.0938H14.9626V3.28125Z"
+                                                fill="#FF7262" />
+                                            <path
+                                                d="M22.7752 15C22.7752 17.1563 21.0251 18.9062 18.8689 18.9062C16.7126 18.9062 14.9626 17.1563 14.9626 15C14.9626 12.8438 16.7126 11.0938 18.8689 11.0938C21.0251 11.0938 22.7752 12.8438 22.7752 15Z"
+                                                fill="#1ABCFE" />
+                                        </g>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_2051_1516">
+                                            <rect width="30" height="30" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="text">
+                                <div class="info">
+                                    <p>Attachment {{ $index + 1 }}</p>
+                                </div>
+                                <div class="button">
+                                    <a href="{{ asset('storage/' . $attachment->file_path) }}" target="_blank"
+                                        class="download" download>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none">
+                                            <path d="M6 21H18M12 3V17M7 12L12 17L17 12" stroke="#00A148"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="aboutClient">
+
+                <div class="SimilarJobs">
+                    <div class="title">
+                        <p>Applicants ({{ $job->total_proposals }})</p>
+                        <button type="button" class="seeAll" data-bs-toggle="modal" data-bs-target="#Applicants">See all</button>
+                    </div>
+
+                    <div class="findJob">
+                        @foreach($proposals->take(4) as $proposal)
+                        <div class="moreJobs">
+                            <div class="images">
+                                <img src="{{ $proposal->profile_photo ?: 'https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg' }}"
+                                    alt="{{ $proposal->name }}"
+                                    onerror="this.onerror=null;this.src='https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg'">
+                            </div>
+                            <div class="text">
+                                <div class="info">
+                                    <h5>{{ $proposal->name }}</h5>
+                                    <p>{{ $proposal->job_title }}</p>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                            fill="none">
+                                            <path
+                                                d="M10.8329 5.41523C10.8329 8.11977 7.83263 10.9364 6.82513 11.8064C6.73128 11.8769 6.61703 11.9151 6.49959 11.9151C6.38216 11.9151 6.26791 11.8769 6.17405 11.8064C5.16655 10.9364 2.16626 8.11977 2.16626 5.41523C2.16626 4.26596 2.62281 3.16376 3.43546 2.3511C4.24812 1.53844 5.35032 1.08189 6.49959 1.08189C7.64886 1.08189 8.75106 1.53844 9.56372 2.3511C10.3764 3.16376 10.8329 4.26596 10.8329 5.41523Z"
+                                                stroke="#6A7282" stroke-width="0.684692" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M6.49951 7.04144C7.39697 7.04144 8.12451 6.31391 8.12451 5.41644C8.12451 4.51898 7.39697 3.79144 6.49951 3.79144C5.60205 3.79144 4.87451 4.51898 4.87451 5.41644C4.87451 6.31391 5.60205 7.04144 6.49951 7.04144Z"
+                                                stroke="#6A7282" stroke-width="0.684692" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        {{ $proposal->state_name }}, {{ $proposal->country_name }}
+                                    </span>
+                                </div>
+                                <div class="redirect">
+                                    <a href="{{ route(
+                                                    'employer.talent.profile',
+                                                    [
+                                                        'id' => \Vinkla\Hashids\Facades\Hashids::encode($proposal->user_id),
+                                                        'proposal' => \Vinkla\Hashids\Facades\Hashids::encode($proposal->proposal_id)
+                                                    ]
+                                                ) }}"
+                                        class="redirectLink">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9"
+                                            fill="none">
+                                            <path
+                                                d="M8.62827 6.83517L8.61059 0.022196L1.79762 0.00451825C1.72664 -0.00509211 1.65442 0.00066027 1.58585 0.0213864C1.51729 0.0421126 1.45398 0.0773287 1.40021 0.12465C1.34644 0.171971 1.30346 0.230293 1.27419 0.295667C1.24492 0.361042 1.23003 0.431942 1.23054 0.503569C1.23106 0.575196 1.24695 0.645876 1.27715 0.710826C1.30736 0.775776 1.35116 0.833478 1.4056 0.880026C1.46004 0.926574 1.52385 0.960882 1.59271 0.980626C1.66156 1.00037 1.73385 1.00509 1.80469 0.994468L6.91 1.01568L0.146522 7.77916C0.0527537 7.87293 7.55178e-05 8.0001 7.55178e-05 8.13271C7.55178e-05 8.26532 0.0527537 8.3925 0.146522 8.48626C0.24029 8.58003 0.367468 8.63271 0.500076 8.63271C0.632684 8.63271 0.75986 8.58003 0.853629 8.48626L7.61711 1.72279L7.63832 6.8281C7.63879 6.96078 7.69195 7.08784 7.7861 7.18133C7.88025 7.27482 8.00768 7.32708 8.14036 7.32661C8.27305 7.32614 8.40011 7.27298 8.4936 7.17883C8.58709 7.08468 8.63934 6.95724 8.63887 6.82456L8.62827 6.83517Z"
+                                                fill="#00A148" />
+                                        </svg>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                
+                <div class="jobStatus">
+                    <h5>Job Status</h5>
+                    <div class="infoStatus">
+                        <div class="status">
+                            <p>Status</p>
+                            <p>{{ ucfirst($job->status) }}</p>
+                        </div>
+                        <div class="postOn">
+                            <p>Posted on</p>
+                            <p>{{ \Carbon\Carbon::parse($job->created_at)->format('d M Y') }}</p>
+                        </div>
+                        <div class="duration">
+                            <p>Posted Duration</p>
+                            <p>1 Months</p>
+                        </div>
+
+                        <div class="job-status-btn">
+                            <button type="button" class="EditBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <g clip-path="url(#clip0_5913_42291)">
+                                        <path d="M14.1156 4.54126C14.4681 4.18888 14.6662 3.71091 14.6662 3.2125C14.6663 2.71409 14.4683 2.23607 14.116 1.8836C13.7636 1.53112 13.2856 1.33307 12.7872 1.33301C12.2888 1.33295 11.8108 1.53088 11.4583 1.88326L2.56096 10.7826C2.40618 10.9369 2.29171 11.127 2.22763 11.3359L1.34696 14.2373C1.32973 14.2949 1.32843 14.3562 1.3432 14.4145C1.35796 14.4728 1.38824 14.5261 1.43083 14.5686C1.47341 14.6111 1.52671 14.6413 1.58507 14.656C1.64343 14.6707 1.70467 14.6693 1.7623 14.6519L4.6643 13.7719C4.87308 13.7084 5.06308 13.5947 5.21763 13.4406L14.1156 4.54126Z" stroke="#00A148" stroke-width="1.08333" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 3.33301L12.6667 5.99967" stroke="#00A148" stroke-width="1.08333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_5913_42291">
+                                        <rect width="16" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                Edit Job
+                            </button>
+
+                            @if($job->status === 'open')
+                            <button type="button" class="DeleteJob1" data-id="{{ $job->id }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path
+                                        d="M15.8333 6.66602V16.3327C15.8333 16.8631 15.6226 17.3718 15.2475 17.7469C14.8725 18.122 14.3638 18.3327 13.8333 18.3327H6.16667C5.63623 18.3327 5.12753 18.122 4.75245 17.7469C4.37738 17.3718 4.16667 16.8631 4.16667 16.3327V6.66602M13.3333 4.16602V2.66602C13.3333 2.11602 12.8833 1.66602 12.3333 1.66602H7.66667C7.11667 1.66602 6.66667 2.11602 6.66667 2.66602V4.16602M13.3333 4.16602H6.66667M13.3333 4.16602H17.5M6.66667 4.16602H2.5M10 9.16602V14.166M12.5 9.16602V14.166M7.5 9.16602V14.166"
+                                        stroke="#FE343D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                Delete Job
+                            </button>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
+                <div class="needHelp">
+                    <h4>Need help ?</h4>
+                    <p>Get help if you have any issue you are having please connect to our support staff !</p>
+
+                    <a href="{{ route('contact') }}" type="button" class="ContactSupport">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path
+                                d="M10 15.0003C9.56337 15.0004 9.14039 14.8482 8.80402 14.5698C8.46766 14.2914 8.239 13.9043 8.1575 13.4753C6.93141 13.0964 5.85168 12.3492 5.065 11.3353C4.47111 10.5706 4.06303 9.67825 3.87296 8.72879C3.68289 7.77934 3.71602 6.7987 3.96975 5.86424C4.22347 4.92978 4.69085 4.06706 5.33501 3.34411C5.97918 2.62117 6.7825 2.05778 7.68163 1.69839C8.58076 1.339 9.5511 1.19344 10.5161 1.27319C11.4811 1.35293 12.4144 1.65581 13.2423 2.15792C14.0703 2.66003 14.7702 3.34764 15.287 4.16652C15.8037 4.9854 16.1231 5.91315 16.22 6.87658C16.2537 7.22033 15.97 7.50033 15.625 7.50033C15.28 7.50033 15.0038 7.21908 14.9625 6.87658C14.8509 5.99262 14.5052 5.15453 13.9611 4.44902C13.4169 3.74351 12.6941 3.19621 11.8675 2.86376C11.0409 2.5313 10.1405 2.42577 9.25936 2.55808C8.37827 2.69039 7.54853 3.05573 6.85601 3.6163C6.16348 4.17687 5.63332 4.91231 5.32039 5.74652C5.00746 6.58073 4.92312 7.48341 5.0761 8.36115C5.22909 9.23889 5.61383 10.0598 6.19052 10.739C6.76722 11.4181 7.51491 11.9308 8.35625 12.2241C8.51531 11.9339 8.74833 11.691 9.03165 11.52C9.31497 11.349 9.63849 11.2561 9.96936 11.2506C10.3002 11.2451 10.6267 11.3273 10.9155 11.4888C11.2043 11.6503 11.4453 11.8853 11.6139 12.1701C11.7824 12.4548 11.8727 12.7791 11.8754 13.11C11.8781 13.4409 11.7932 13.7666 11.6293 14.0541C11.4653 14.3416 11.2283 14.5805 10.9421 14.7467C10.656 14.9129 10.3309 15.0004 10 15.0003ZM5 13.1253V13.0916C4.65821 12.7855 4.34523 12.4486 4.065 12.0853C3.85964 12.3933 3.75004 12.7552 3.75 13.1253V13.7503C3.75 16.2141 6.075 18.7503 10 18.7503C13.925 18.7503 16.25 16.2141 16.25 13.7503V13.1253C16.25 12.6281 16.0525 12.1511 15.7008 11.7995C15.3492 11.4479 14.8723 11.2503 14.375 11.2503H12.5C12.7738 11.6128 12.9688 12.0378 13.0625 12.5003H14.375C14.5408 12.5003 14.6997 12.5662 14.8169 12.6834C14.9342 12.8006 15 12.9596 15 13.1253V13.7503C15 15.5478 13.21 17.5003 10 17.5003C6.79 17.5003 5 15.5478 5 13.7503V13.1253ZM10 10.0003C9.28477 10.0003 8.59117 10.2456 8.035 10.6953C7.48849 10.3605 7.03727 9.89078 6.72467 9.33127C6.41208 8.77175 6.24862 8.14125 6.25 7.50033C6.25018 6.84656 6.42129 6.20419 6.74634 5.63694C7.07138 5.0697 7.53908 4.59729 8.10304 4.26657C8.667 3.93585 9.30763 3.75832 9.96137 3.75159C10.6151 3.74485 11.2593 3.90915 11.8299 4.22817C12.4006 4.5472 12.8779 5.00987 13.2146 5.5703C13.5512 6.13073 13.7355 6.76944 13.7492 7.42307C13.7628 8.07671 13.6054 8.72255 13.2924 9.29655C12.9794 9.87055 12.5218 10.3528 11.965 10.6953C11.4088 10.2456 10.7152 10.0003 10 10.0003ZM7.5 7.50033C7.5 8.16337 7.76339 8.79926 8.23223 9.2681C8.70107 9.73694 9.33696 10.0003 10 10.0003C10.663 10.0003 11.2989 9.73694 11.7678 9.2681C12.2366 8.79926 12.5 8.16337 12.5 7.50033C12.5 6.83729 12.2366 6.20141 11.7678 5.73257C11.2989 5.26372 10.663 5.00033 10 5.00033C9.33696 5.00033 8.70107 5.26372 8.23223 5.73257C7.76339 6.20141 7.5 6.83729 7.5 7.50033Z"
+                                fill="#00A148" />
+                        </svg>
+                        Contact Support
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal fade" id="Applicants" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="ApplicantsLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="applicantTitle">
+                            <p>Applicants ({{ $job->total_proposals }})</p>
+                            <span>Review and hire the best tallent for your project.</span>
+                        </div>
+
+                        <div class="searchSkill">
+                            <div class="form-group">
+                                <input type="text" id="applicantSearch" class="form-control"
+                                    placeholder="Search by Skill Name or Keyword....">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                    fill="none">
+                                    <path d="M7.91667 13.3333C6.40278 13.3333..." fill="#524949" />
+                                </svg>
+                            </div>
+                            <div class="detail">
+                                <h4>{{ $job->title }}</h4>
+                                <p><span>Posted on : {{ \Carbon\Carbon::parse($job->created_at)->diffForHumans() }}</span>
+                                    <span>{{ $job->total_proposals }} Applicants</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="applicantsDetails" id="applicantList">
+                            @foreach($proposals as $proposal)
+                            <div class="moreJobs applicant-item"
+                                data-search="{{ strtolower($proposal->name . ' ' . $proposal->job_title . ' ' . $proposal->skills->pluck('name')->implode(' ')) }}">
+                                <div class="single">
+                                    <div class="images">
+                                        <img src="{{ $proposal->profile_photo ?: 'https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg' }}"
+                                            alt="{{ $proposal->name }}"
+                                            onerror="this.onerror=null;this.src='https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg'">
+                                    </div>
+                                    <div class="info">
+                                        <p>Name</p>
+                                        <h6>{{ $proposal->name }}</h6>
+                                    </div>
+                                    <div class="info">
+                                        <p>Designation</p>
+                                        <h6>{{ $proposal->job_title }}</h6>
+                                    </div>
+                                    
+                                    <div class="info">
+                                        <p>Ats Score</p>
+                                        <h6>{{ $proposal->ats_score }}</h6>
+                                    </div>
+                                    
+                                    <!--<div class="skill">-->
+                                    <!--    <p>Skills</p>-->
+                                    <!--    <ul>-->
+                                    <!--        @foreach($proposal->skills->take(2) as $skill)-->
+                                    <!--        <li>{{ $skill->name }}</li>-->
+                                    <!--        @endforeach-->
+
+                                    <!--        @if($proposal->skills->count() > 2)-->
+                                    <!--         <li title="{{ $proposal->skills->skip(2)->pluck('name')->implode(', ') }}">-->
+                                    <!--            +{{ $proposal->skills->count() - 2 }}-->
+                                    <!--        </li>-->
+
+                                    <!--        <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="{{ $proposal->skills->skip(2)->pluck('name')->implode(', ') }}">-->
+                                    <!--            +{{ $proposal->skills->count() - 2 }}-->
+                                    <!--        </li>-->
+
+                                    <!--        @endif-->
+                                    <!--    </ul>-->
+                                    <!--</div>-->
+                                    
+                                    <div class="buttons">
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <a href="{{ route(
+                                                    'employer.talent.profile',
+                                                    [
+                                                        'id' => \Vinkla\Hashids\Facades\Hashids::encode($proposal->user_id),
+                                                        'proposal' => \Vinkla\Hashids\Facades\Hashids::encode($proposal->proposal_id)
+                                                    ]
+                                                ) }}"
+                                                class="ViewProfile">
+                                                    View Profile
+                                                </a>
+                                            </div>
+
+                                            <!--<div class="col-6">-->
+                                            <!--    <button class="SendMessage chatBtn" data-job-id="{{ $proposal->proposal_id }}">Send-->
+                                            <!--        Message</button>-->
+                                            <!--</div>-->
+                                            <div class="col-6">
+                                                <a href="{{ route('employer.proposal.download-cv', $proposal->proposal_id) }}"
+                                                   class="SendMessage">
+                                                    Download CV
+                                                </a>
+                                            </div>
+                                            <!--<div class="col-12">-->
+                                            <!--    <button type="button" class="ViewProposal viewProposalBtn" data-proposal-id="{{ $proposal->proposal_id }}">View Proposal</button>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Shortlisted Applicants Modal -->
+        <div class="modal fade" id="ShortlistedApplicants" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="ApplicantsLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="applicantTitle">
+                            <p>Applicants ({{ $job->total_proposals }})</p>
+                            <span>Review and hire the best tallent for your project.</span>
+                        </div>
+
+                        <div class="searchSkill">
+                            <div class="form-group">
+                                <input type="text" id="applicantSearch" class="form-control"
+                                    placeholder="Search by Skill Name or Keyword....">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                    fill="none">
+                                    <path d="M7.91667 13.3333C6.40278 13.3333..." fill="#524949" />
+                                </svg>
+                            </div>
+                            <div class="detail">
+                                <h4>{{ $job->title }}</h4>
+                                <p><span>Posted on : {{ \Carbon\Carbon::parse($job->created_at)->diffForHumans() }}</span>
+                                    <span>{{ $job->total_proposals }} Applicants</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="applicantsDetails" id="applicantList">
+                            @foreach($proposals as $proposal)
+                            <div class="moreJobs applicant-item"
+                                data-search="{{ strtolower($proposal->name . ' ' . $proposal->job_title . ' ' . $proposal->skills->pluck('name')->implode(' ')) }}">
+                                <div class="single">
+                                    <div class="images">
+                                        <img src="{{ $proposal->profile_photo ?: 'https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg' }}"
+                                            alt="{{ $proposal->name }}"
+                                            onerror="this.onerror=null;this.src='https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg'">
+                                    </div>
+                                    <div class="info">
+                                        <p>Name</p>
+                                        <h6>{{ $proposal->name }}</h6>
+                                    </div>
+                                    <div class="info">
+                                        <p>Designation</p>
+                                        <h6>{{ $proposal->job_title }}</h6>
+                                    </div>
+                                    
+                                    <div class="info">
+                                        <p>Ats Score</p>
+                                        <h6>{{ $proposal->ats_score }}</h6>
+                                    </div>
+                                    
+                                    <!--<div class="skill">-->
+                                    <!--    <p>Skills</p>-->
+                                    <!--    <ul>-->
+                                    <!--        @foreach($proposal->skills->take(2) as $skill)-->
+                                    <!--        <li>{{ $skill->name }}</li>-->
+                                    <!--        @endforeach-->
+
+                                    <!--        @if($proposal->skills->count() > 2)-->
+                                    <!--         <li title="{{ $proposal->skills->skip(2)->pluck('name')->implode(', ') }}">-->
+                                    <!--            +{{ $proposal->skills->count() - 2 }}-->
+                                    <!--        </li>-->
+
+                                    <!--        <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="{{ $proposal->skills->skip(2)->pluck('name')->implode(', ') }}">-->
+                                    <!--            +{{ $proposal->skills->count() - 2 }}-->
+                                    <!--        </li>-->
+
+                                    <!--        @endif-->
+                                    <!--    </ul>-->
+                                    <!--</div>-->
+                                    
+                                    <div class="buttons">
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <a href="{{ route(
+                                                    'employer.talent.profile',
+                                                    [
+                                                        'id' => \Vinkla\Hashids\Facades\Hashids::encode($proposal->user_id),
+                                                        'proposal' => \Vinkla\Hashids\Facades\Hashids::encode($proposal->proposal_id)
+                                                    ]
+                                                ) }}"
+                                                class="ViewProfile">
+                                                    View Profile
+                                                </a>
+                                            </div>
+
+                                            <!--<div class="col-6">-->
+                                            <!--    <button class="SendMessage chatBtn" data-job-id="{{ $proposal->proposal_id }}">Send-->
+                                            <!--        Message</button>-->
+                                            <!--</div>-->
+                                            <div class="col-6">
+                                                <a href="{{ route('employer.proposal.download-cv', $proposal->proposal_id) }}"
+                                                   class="SendMessage">
+                                                    Download CV
+                                                </a>
+                                            </div>
+                                            <!--<div class="col-12">-->
+                                            <!--    <button type="button" class="ViewProposal viewProposalBtn" data-proposal-id="{{ $proposal->proposal_id }}">View Proposal</button>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="proposalModal" tabindex="-1" aria-labelledby="proposalModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div id="pmLoading">Loading...</div>
+
+                        <div id="pmContent" style="display:none">
+                            <div class="heading">
+                                <div class="text">
+                                    <h1 id="proposalModalLabel">Proposal Detail</h1>
+                                    <p>Review the proposal submitted by Freelancer.</p>
+                                </div>
+                                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <rect width="24" height="24" rx="12" fill="#EFF1F2" />
+                                        <path d="M8.46387 15.5348L15.5359 8.46484M8.46387 8.46484L15.5359 15.5348" stroke="black" stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="freelancercard">
+                                <div class="image">
+                                    <img id="pmPhoto" src="https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg" alt=""
+                                        onerror="this.onerror=null;this.src='https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg'" />
+                                </div>
+                                <div class="text">
+                                    <h2 id="pmName">—</h2>
+                                    <h6 id="pmJobTitle">—</h6>
+                                    <p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path opacity="0.5" d="M12 8.66602C13.1047 8.66602 14 9.51935 14 10.5707C14 12.4753 12 13.9993 12 13.9993C12 13.9993 10 12.666 10 10.5707C10 9.51935 10.8953 8.66602 12 8.66602ZM12 11.3327C12.1768 11.3327 12.3464 11.2624 12.4714 11.1374C12.5964 11.0124 12.6667 10.8428 12.6667 10.666C12.6667 10.4892 12.5964 10.3196 12.4714 10.1946C12.3464 10.0696 12.1768 9.99935 12 9.99935C11.8232 9.99935 11.6536 10.0696 11.5286 10.1946C11.4036 10.3196 11.3333 10.4892 11.3333 10.666C11.3333 10.8428 11.4036 11.0124 11.5286 11.1374C11.6536 11.2624 11.8232 11.3327 12 11.3327Z" fill="#00A148" />
+                                            <path d="M6.66664 2.5C5.79797 2.5 5.11531 3.184 5.11531 4C5.11531 4.816 5.79731 5.5 6.66664 5.5C7.53597 5.5 8.21864 4.816 8.21864 4C8.21864 3.184 7.53597 2.5 6.66664 2.5ZM4.11531 4C4.11531 2.60667 5.26997 1.5 6.66797 1.5C8.06531 1.5 9.21997 2.60667 9.21997 4C9.21997 5.39333 8.06531 6.5 6.66797 6.5C5.27064 6.5 4.11331 5.39333 4.11331 4M4.97997 7.97733C4.85797 7.89933 4.76664 7.89467 4.72397 7.906C4.62797 7.93267 4.53264 7.96111 4.43797 7.99133L3.78197 8.20133C3.55724 8.27054 3.35172 8.39116 3.18172 8.55363C3.01173 8.7161 2.88194 8.91596 2.80264 9.13733C2.78489 9.1964 2.77349 9.25718 2.76864 9.31867L2.50797 11.7847L2.50664 11.7933C2.45664 12.1447 2.64397 12.4133 2.92864 12.48C3.64664 12.6467 4.85597 12.8333 6.66597 12.8333C6.79858 12.8333 6.92576 12.886 7.01953 12.9798C7.11329 13.0735 7.16597 13.2007 7.16597 13.3333C7.16597 13.4659 7.11329 13.5931 7.01953 13.6869C6.92576 13.7807 6.79858 13.8333 6.66597 13.8333C4.78731 13.8333 3.50131 13.6387 2.70264 13.4533C1.84331 13.254 1.40797 12.4467 1.51531 11.662L1.77397 9.21333C1.78597 9.09867 1.80731 8.95667 1.85797 8.81067C1.98799 8.44259 2.20197 8.10986 2.48293 7.83885C2.76389 7.56784 3.10412 7.366 3.47664 7.24933L4.13331 7.03867C4.24131 7.00444 4.34975 6.97222 4.45864 6.942C4.86597 6.83 5.25331 6.964 5.52264 7.138C5.76931 7.298 6.17197 7.49067 6.66597 7.49067C7.15931 7.49067 7.56197 7.29733 7.80864 7.13733C8.07731 6.964 8.46531 6.83 8.87264 6.942C8.98153 6.97222 9.08997 7.00444 9.19797 7.03867L9.85464 7.24933C9.91845 7.26829 9.97784 7.2998 10.0293 7.34201C10.0808 7.38422 10.1233 7.43629 10.1544 7.49516C10.1855 7.55402 10.2045 7.61851 10.2103 7.68482C10.2162 7.75114 10.2087 7.81795 10.1884 7.88134C10.168 7.94473 10.1353 8.00342 10.0919 8.05397C10.0486 8.10452 9.99566 8.14592 9.93613 8.17572C9.87661 8.20553 9.81173 8.22315 9.7453 8.22754C9.67888 8.23194 9.61224 8.22303 9.54931 8.20133L8.89331 7.99133C8.79834 7.96094 8.70276 7.93249 8.60664 7.906C8.56464 7.89467 8.47331 7.89933 8.35197 7.97733C8.00997 8.19867 7.41864 8.49067 6.66531 8.49067C5.91197 8.49067 5.32197 8.19867 4.97997 7.97733Z" fill="#00A148" />
+                                        </svg>
+                                        <span id="pmCountry">—</span>
+                                    </p>
+                                </div>
+                                <div class="amount">
+                                    <h6>Proposed Budget</h6>
+                                    <h5>₹ <span id="pmAmount">0</span></h5>
+                                </div>
+                            </div>
+
+                            <div class="projectdescripition">
+                                <h4>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <g clip-path="url(#clip0_2904_24687)">
+                                                <path d="M5.71125 16.1763C6.86875 16.2192 8.29167 16.25 10 16.25C13.0712 16.25 15.2187 16.1508 16.5633 16.0571C17.6258 15.9833 18.4546 15.19 18.5475 14.1292C18.65 12.9667 18.75 11.2021 18.75 8.75C18.75 6.29792 18.65 4.53292 18.5475 3.37083C18.4546 2.31 17.6258 1.51667 16.5633 1.44292C15.2187 1.34917 13.0717 1.25 10 1.25C6.92833 1.25 4.78125 1.34917 3.43667 1.44292C2.37417 1.51667 1.54542 2.31 1.4525 3.37083C1.35 4.53333 1.25 6.29792 1.25 8.75V18.1883C1.25 18.9 2.085 19.2842 2.62583 18.8208L5.71125 16.1763Z" stroke="#9E00BA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M13.0916 9.19667C13.0175 10.1517 12.5416 10.7142 11.6175 11.23C11.4175 11.3417 11.332 11.5879 11.455 11.7812C11.5695 11.9608 11.7258 12.1767 11.9083 12.3512C12.0654 12.5012 12.295 12.5321 12.5029 12.4679C13.98 12.0138 15.2837 10.9621 15.407 9.19708H15.4166V7.10167C15.4166 6.62417 15.4104 6.24958 15.402 5.96C15.387 5.43792 15.0108 5.04167 14.4891 5.02083C14.1995 5.00833 13.8216 5 13.3333 5C12.845 5 12.467 5.00875 12.1775 5.02042C11.6558 5.04208 11.2795 5.43792 11.2645 5.95958C11.2562 6.25167 11.25 6.63042 11.25 7.11375C11.2495 7.47629 11.2538 7.83882 11.2629 8.20125C11.2775 8.75542 11.6925 9.17125 12.2466 9.18542C12.5282 9.19214 12.8099 9.19589 13.0916 9.19667Z" stroke="#9E00BA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M6.42495 9.19667C6.35079 10.1517 5.87495 10.7142 4.95079 11.23C4.75079 11.3417 4.66537 11.5879 4.78829 11.7812C4.90287 11.9608 5.05912 12.1767 5.24162 12.3512C5.3987 12.5012 5.62829 12.5321 5.8362 12.4679C7.31329 12.0138 8.61704 10.9621 8.74037 9.19708H8.74995V7.10167C8.74995 6.62417 8.7437 6.24958 8.73537 5.96C8.72037 5.43792 8.34412 5.04167 7.82245 5.02083C7.53287 5.00833 7.15495 5 6.66662 5C6.17829 5 5.80037 5.00875 5.51079 5.02042C4.98912 5.04208 4.61287 5.43792 4.59787 5.95958C4.58954 6.25167 4.58329 6.63042 4.58329 7.11375C4.58281 7.47629 4.58712 7.83882 4.5962 8.20125C4.61079 8.75542 5.02579 9.17125 5.57995 9.18542C5.86157 9.19214 6.14326 9.19589 6.42495 9.19667Z" stroke="#9E00BA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_2904_24687">
+                                                    <rect width="20" height="20" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </span>
+                                    <span>Project Description</span>
+                                </h4>
+                                <div class="descripition">
+                                    <p id="pmLetter">—</p>
+                                </div>
+                            </div>
+
+                            <div class="attachment" id="pmAttachmentWrap">
+                                <h4>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="17" viewBox="0 0 15 17" fill="none">
+                                            <path d="M13.7178 7.16457L6.94137 13.941C5.63912 15.2433 3.52958 15.2433 2.22733 13.941C0.925074 12.6388 0.925074 10.5292 2.22733 9.22696L9.59302 1.86127C9.98373 1.47057 10.5136 1.25107 11.0662 1.25107C11.6187 1.25107 12.1486 1.47057 12.5393 1.86127C12.93 2.25197 13.1495 2.78187 13.1495 3.3344C13.1495 3.88694 12.93 4.41684 12.5393 4.80754L6.35212 10.9947C6.02803 11.3188 5.4977 11.3188 5.17361 10.9947C4.84952 10.6706 4.84952 10.1403 5.17361 9.81622L10.7715 4.21829L9.88765 3.33441L4.28972 8.93233C3.89902 9.32303 3.67953 9.85294 3.67953 10.4055C3.67953 10.958 3.89902 11.4879 4.28972 11.8786C4.68042 12.2693 5.21033 12.4888 5.76286 12.4888C6.3154 12.4888 6.8453 12.2693 7.236 11.8786L13.4232 5.69143C14.7254 4.38917 14.7254 2.27964 13.4232 0.977383C12.1209 -0.324873 10.0114 -0.324872 8.70914 0.977382L1.34345 8.34308C-0.447892 10.1344 -0.447892 13.0336 1.34345 14.8249C3.13478 16.6162 6.03392 16.6162 7.82526 14.8249L14.6017 8.04845L13.7178 7.16457Z" fill="#105BFB" />
+                                        </svg>
+                                    </span>
+                                    <span>Attachment (<span id="pmFileCount">0</span>)</span>
+                                </h4>
+                                <div class="uploadedfile">
+                                    <div class="row" id="pmFiles"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modalfooter" id="pmActions" style="display:none">
+                            <a href="#" id="pmReject">Reject</a>
+                            <a href="#" id="pmAccept">
+                                <span>Accept Proposal</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10" fill="none">
+                                    <path d="M7.75 0.749999L11.75 4.75L7.75 8.75M11.75 4.75H0.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="modalfooter" id="pmStatusNote" style="display:none">
+                            <span id="pmStatusText"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="successmodal">
+                            <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect width="24" height="24" rx="12" fill="#EFF1F2" />
+                                    <path d="M8.46387 15.5348L15.5359 8.46484M8.46387 8.46484L15.5359 15.5348" stroke="black" stroke-linecap="round" />
+                                </svg>
+                            </button>
+                            <img src="./assets/images/image 111.png" alt="">
+                            <h4 id="successModalLabel">Proposal sent <span>Successfully.</span></h4>
+                            <p>Your proposal has been sent successfully. The employer will review it and get back to you soon.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    const csrfToken = "{{ csrf_token() }}";
+
+    $(document).on('click', '.chatBtn', function() {
+
+        let button = $(this);
+        let proposal_id = button.data('job-id');
+
+        button.prop('disabled', true);
+        showLoder();
+
+        $.ajax({
+            url: "{{ route('chat.create') }}",
+            type: "POST",
+            data: {
+                _token: csrfToken,
+                proposal_id: proposal_id
+            },
+            success: function(response) {
+
+                button.prop('disabled', false);
+                hideLoder();
+
+                if (response.status) {
+                    window.location.href = response.redirect;
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function(xhr) {
+
+                button.prop('disabled', false);
+                hideLoder();
+
+                alert(xhr.responseJSON?.message ?? 'Something went wrong.');
+            }
+        });
+
+    });
+</script>
+<script>
+    const showMoreBtn = document.querySelector(".showMore");
+    const textMore = document.querySelector(".textMore");
+
+    showMoreBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        textMore.classList.toggle("active");
+
+        if (textMore.classList.contains("active")) {
+            this.innerHTML = `Show Less
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.52876 5.52876C7.65378 5.40374 7.82332 5.3335 8.0001 5.3335C8.17687 5.3335 8.34641 5.40374 8.47143 5.52876L12.2428 9.3001C12.3064 9.36158 12.3572 9.43516 12.3922 9.51649C12.4271 9.59782 12.4455 9.6853 12.4463 9.77382C12.447 9.86235 12.4302 9.95013 12.3966 10.0321C12.3631 10.114 12.3136 10.1884 12.251 10.251C12.1884 10.3136 12.114 10.3631 12.0321 10.3966C11.9501 10.4302 11.8623 10.447 11.7738 10.4463C11.6853 10.4455 11.5978 10.4271 11.5165 10.3922C11.4352 10.3572 11.3616 10.3064 11.3001 10.2428L8.0001 6.94276L4.7001 10.2428C4.57437 10.3642 4.40597 10.4314 4.23117 10.4299C4.05637 10.4284 3.88916 10.3582 3.76556 10.2346C3.64195 10.111 3.57184 9.94383 3.57032 9.76903C3.5688 9.59423 3.636 9.42583 3.75743 9.3001L7.52876 5.52876Z"
+                        fill="#00A148"/>
+                </svg>`;
+
+        } else {
+            this.innerHTML = `Show More
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.47124 10.4713C8.34622 10.5963 8.17668 10.6665 7.9999 10.6665C7.82313 10.6665 7.65359 10.5963 7.52857 10.4713L3.75724 6.69999C3.69356 6.6385 3.64277 6.56493 3.60784 6.4836C3.5729 6.40226 3.55451 6.31478 3.55374 6.22626C3.55297 6.13774 3.56983 6.04996 3.60336 5.96803C3.63688 5.88609 3.68638 5.81166 3.74897 5.74906C3.81157 5.68647 3.886 5.63697 3.96793 5.60345C4.04986 5.56993 4.13765 5.55306 4.22617 5.55383C4.31469 5.5546 4.40217 5.57299 4.48351 5.60793C4.56484 5.64287 4.63841 5.69365 4.6999 5.75733L7.9999 9.05733L11.2999 5.75733C11.4256 5.63589 11.594 5.56869 11.7688 5.57021C11.9436 5.57173 12.1108 5.64184 12.2344 5.76545C12.3581 5.88905 12.4282 6.05626 12.4297 6.23106C12.4312 6.40586 12.364 6.57426 12.2426 6.69999L8.47124 10.4713Z"
+                        fill="#00A148"/>
+                </svg>`;
+
+        }
+    });
+
+    $(document).on('click', '.DeleteJob', function() {
+        if (!confirm('Are you sure you want to delete this job?')) {
+            return;
+        }
+        let job_id = $(this).data('id');
+
+        $.ajax({
+            url: "{{ route('employer.job.delete') }}",
+            type: "POST",
+            data: {
+                _token: "{{ csrf_token() }}",
+                job_id: job_id
+            },
+            success: function(res) {
+                if (res.status) {
+                    alert(res.message);
+                    window.location.href = "{{ route('employer.my.jobs') }}"; // 👈 apna job page route
+                } else {
+                    alert(res.message);
+                }
+            }
+        });
+    });
+
+    const applicantSearch = document.getElementById('applicantSearch');
+
+    applicantSearch?.addEventListener('input', function() {
+        const term = this.value.toLowerCase().trim();
+        let visible = 0;
+
+        document.querySelectorAll('.applicant-item').forEach(item => {
+            const match = (item.dataset.search || '').includes(term);
+            item.style.display = match ? '' : 'none';
+            if (match) visible++;
+        });
+
+        document.getElementById('noApplicants').style.display = visible ? 'none' : 'block';
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const CSRF = "{{ csrf_token() }}";
+        const PROPOSAL_URL = "{{ route('employer.proposal.detail', ['proposal' => 999999]) }}";
+        const STATUS_URL = "{{ route('employer.proposal.status', ['proposal' => 999999]) }}";
+
+        let currentProposalId = null;
+
+        const $id = id => document.getElementById(id);
+
+        // 👇 modal instance ab click pe banega, load pe nahi
+        function getModal() {
+            const el = $id('proposalModal');
+            if (!el) {
+                console.error('proposalModal element nahi mila');
+                return null;
+            }
+            if (typeof bootstrap === 'undefined') {
+                console.error('bootstrap JS load nahi hui');
+                return null;
+            }
+            return bootstrap.Modal.getOrCreateInstance(el);
+        }
+
+        function renderActions(status) {
+            const actions = $id('pmActions');
+            const note = $id('pmStatusNote');
+            if (!actions || !note) return;
+
+            if (status === 'pending') {
+                actions.style.display = 'flex';
+                note.style.display = 'none';
+            } else {
+                actions.style.display = 'none';
+                note.style.display = 'flex';
+                $id('pmStatusText').textContent = status === 'accepted' ?
+                    'This proposal has already been accepted.' :
+                    'This proposal has already been rejected.';
+            }
+        }
+
+        function renderFiles(files) {
+            const wrap = $id('pmAttachmentWrap');
+            const list = $id('pmFiles');
+            const count = $id('pmFileCount');
+            if (!list) return;
+
+            list.innerHTML = '';
+
+            if (!files || !files.length) {
+                if (wrap) wrap.style.display = 'none';
+                return;
+            }
+            if (count) count.textContent = files.length;
+
+            const fileIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M22.9688 0H7.03125C3.148 0 0 3.148 0 7.03125V22.9688C0 26.852 3.148 30 7.03125 30H22.9688C26.852 30 30 26.852 30 22.9688V7.03125C30 3.148 26.852 0 22.9688 0Z" fill="#F4F2ED"/><path d="M15 8V20M15 8L11 12M15 8L19 12" stroke="#848484" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+            const dlIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 14H12M8 2V11.3333M4.66667 8L8 11.3333L11.3333 8" stroke="#00A148" stroke-linecap="round" stroke-linejoin="round"></path></svg>`;
+
+            files.forEach(f => {
+                const col = document.createElement('div');
+                col.className = 'col-4';
+                col.innerHTML = `
+            <div class="single">
+                <div class="icon">${fileIcon}</div>
+                <div class="text"><h2></h2><p></p></div>
+                <a class="download-file" title="download file" target="_blank" rel="noopener">${dlIcon}</a>
+            </div>`;
+                col.querySelector('h2').textContent = f.file_name;
+                col.querySelector('p').textContent = f.file_size ? formatFileSize(f.file_size) : '';
+                col.querySelector('a').href = f.file_path;
+                list.appendChild(col);
+            });
+
+            if (wrap) wrap.style.display = 'block';
+        }
+
+        function formatFileSize(bytes) {
+            if (!bytes) return '';
+            const kb = bytes / 1024;
+            return kb < 1024 ? Math.round(kb) + ' KB' : (kb / 1024).toFixed(1) + ' MB';
+        }
+
+        /* ---------- Modal open + detail load ---------- */
+        document.addEventListener('click', async e => {
+            const btn = e.target.closest('.viewProposalBtn');
+            if (!btn) return;
+
+            const id = btn.dataset.proposalId;
+            if (!id) {
+                console.error('data-proposal-id missing');
+                return;
+            }
+
+            currentProposalId = id;
+
+            const modal = getModal();
+            if (!modal) return;
+
+            $id('pmLoading').style.display = 'block';
+            $id('pmLoading').textContent = 'Loading...';
+            $id('pmContent').style.display = 'none';
+            $id('pmActions').style.display = 'none';
+            $id('pmStatusNote').style.display = 'none';
+            modal.show();
+
+            try {
+                const res = await fetch(PROPOSAL_URL.replace('999999', id), {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Accept': 'application/json'
+                    }
+                });
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+
+                const {
+                    proposal,
+                    files
+                } = await res.json();
+
+                $id('pmName').textContent = proposal.freelancer_name || '—';
+                $id('pmAmount').textContent = Number(proposal.bid_amount || 0).toLocaleString('en-IN');
+                $id('pmLetter').textContent = proposal.cover_letter || '—';
+
+                const jt = $id('pmJobTitle');
+                if (jt) jt.textContent = proposal.job_title || '—';
+                const ct = $id('pmCountry');
+                if (ct) ct.textContent = proposal.country_name || '—';
+                const ph = $id('pmPhoto');
+                if (ph) ph.src = proposal.profile_photo || 'https://idpdefault.s3.ap-south-1.amazonaws.com/6a5f2ca8a9aca.jpg';
+
+                renderFiles(files);
+                renderActions(proposal.status);
+
+                $id('pmLoading').style.display = 'none';
+                $id('pmContent').style.display = 'block';
+
+            } catch (err) {
+                console.error('Proposal load failed:', err);
+                $id('pmLoading').textContent = 'Kuch galat ho gaya. Dobara try karo.';
+            }
+        });
+
+        /* ---------- Accept / Reject ---------- */
+        async function submitProposalAction(action) {
+            if (!currentProposalId) return;
+
+            const label = action === 'accepted' ? 'accept' : 'reject';
+            if (!confirm(`Are you sure you want to ${label.toLowerCase()} this proposal?`)) return;
+
+            const accept = $id('pmAccept');
+            const reject = $id('pmReject');
+            accept.disabled = reject.disabled = true;
+
+            try {
+                const res = await fetch(STATUS_URL.replace('999999', currentProposalId), {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': CSRF,
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        action
+                    })
+                });
+
+                const data = await res.json();
+
+                if (!data.status) {
+                    alert(data.message || 'Action complete nahi hua.');
+
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                        return;
+                    }
+
+                    accept.disabled = reject.disabled = false;
+                    return;
+                }
+
+                alert(data.message);
+                location.reload();
+
+            } catch (err) {
+                console.error('Action failed:', err);
+                alert('Kuch galat ho gaya. Dobara try karo.');
+            } finally {
+                accept.disabled = reject.disabled = false;
+            }
+        }
+
+        $id('pmAccept')?.addEventListener('click', () => submitProposalAction('accepted'));
+        $id('pmReject')?.addEventListener('click', () => submitProposalAction('rejected'));
+
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        console.log(window.bootstrap);
+
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+            new bootstrap.Tooltip(el);
+        });
+
+    });
+</script>
+
+<script>
+(function () {
+  const tabButtons = document.querySelectorAll(".new-job-post .tabs button");
+  const panels = document.querySelectorAll(".new-job-post .tab-panel");
+  const newShowMoreBtn = document.getElementById("show-more-btn");
+  const descMoreEl = document.getElementById("desc-more");
+  const showMoreLabelEl = document.getElementById("show-more-label");
+
+  function activateTab(tabKey) {
+    tabButtons.forEach((item) => {
+      const isActive = item.dataset.tab === tabKey;
+      item.classList.toggle("active", isActive);
+      item.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+
+    panels.forEach((panel) => {
+      const match = panel.dataset.panel === tabKey;
+      panel.hidden = !match;
+      panel.style.display = match ? "" : "none";
+    });
+  }
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => activateTab(btn.dataset.tab));
+  });
+
+  newShowMoreBtn?.addEventListener("click", () => {
+    const expanded = newShowMoreBtn.getAttribute("aria-expanded") === "true";
+    const next = !expanded;
+
+    newShowMoreBtn.setAttribute("aria-expanded", String(next));
+    if (descMoreEl) {
+      descMoreEl.style.display = next ? "inline" : "none";
+    }
+    if (showMoreLabelEl) {
+      showMoreLabelEl.textContent = next ? "Show less" : "Show more";
+    }
+    newShowMoreBtn.querySelector("span")?.classList.toggle("expanded", next);
+  });
+
+  activateTab("job");
+})();
+</script>
+
+@endsection

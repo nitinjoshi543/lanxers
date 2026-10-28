@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+header {
+  background-color: rgb(255, 255, 255);
+}
+header .container-fluid {
+  max-width: 73.9583333333vw;
+}
+header .container-fluid .wrapper {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  padding: 1.0416666667vw 0;
+}
+header .container-fluid .wrapper .logo {
+  width: 25%;
+}
+header .container-fluid .wrapper .logo a {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  width: 5.4166666667vw;
+  height: 1.0416666667vw;
+}
+header .container-fluid .wrapper .logo a img {
+  width: 100%;
+  height: 100%;
+}
+header .container-fluid .wrapper .navigation {
+  width: 50%;
+}
+header .container-fluid .wrapper .navigation .navlink ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+header .container-fluid .wrapper .navigation .navlink ul li {
+  margin: 0 1.3020833333vw;
+}
+header .container-fluid .wrapper .navigation .navlink ul li a {
+  color: #000;
+  font-family: Inter;
+  font-size: 0.8333333333vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+}
+header .container-fluid .wrapper .navigation .navlink ul li a svg {
+  margin-left: 0.5208333333vw;
+}
+header .container-fluid .wrapper .authlink {
+  width: 25%;
+}
+header .container-fluid .wrapper .authlink ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  gap: 0.5208333333vw;
+  justify-content: right;
+}
+header .container-fluid .wrapper .authlink ul li:first-child a {
+  border: 0.0520833333vw solid #5A5A5A;
+  width: 5.5208333333vw;
+}
+header .container-fluid .wrapper .authlink ul li:last-child a {
+  width: 7.6041666667vw;
+  background: var(--Highlight, #5CFFA5);
+}
+header .container-fluid .wrapper .authlink ul li a {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.8229166667vw;
+  height: 1.9270833333vw;
+  color: #5A5A5A;
+  font-family: Inter;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+}
+header .container-fluid .wrapper .authlink ul li a svg {
+  margin-left: 0.2604166667vw;
+}
+footer {
+  background-color: #2C2C2C;
+  padding: 60px 0 134px 0;
+  background-image: url("../images/footer-overlay.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 1920px 163px;
+  position: relative;
+}
+footer .container-fluid {
+  max-width: 1420px;
+}
+footer .container-fluid .wrapper {
+  display: flex;
+}
+footer .container-fluid .wrapper .conpanyinfo {
+  width: 306px;
+}
+footer .container-fluid .wrapper .conpanyinfo a {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  width: 155px;
+  height: 30px;
+  aspect-ratio: 31/6;
+  margin-bottom: 24px;
+}
+footer .container-fluid .wrapper .conpanyinfo a img {
+  width: 100%;
+  height: 100%;
+}
+footer .container-fluid .wrapper .conpanyinfo p {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+footer .container-fluid .wrapper .conpanyinfo ul {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+footer .container-fluid .wrapper .conpanyinfo ul li a {
+  width: 35px;
+  height: 35px;
+  border: 0.0520833333vw solid #5CFFA5;
+  border-radius: 50%;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+footer .container-fluid .wrapper .conpanyinfo ul li a svg path {
+  fill: #5CFFA5;
+}
+footer .container-fluid .wrapper .quicklinks {
+  width: 305px;
+  margin-left: auto;
+}
+footer .container-fluid .wrapper .quicklinks h4 {
+  color: #FFF;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  margin-bottom: 32px;
+  background-image: url("../images/title-bottom.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  padding-bottom: 12px;
+  background-size: 40px 7px;
+}
+footer .container-fluid .wrapper .quicklinks ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+footer .container-fluid .wrapper .quicklinks ul li {
+  margin-bottom: 20px;
+}
+footer .container-fluid .wrapper .quicklinks ul li a {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-decoration: none;
+  background-image: url("../images/down-chevron.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 20px;
+  background-size: 13px 13px;
+}
+footer .container-fluid .wrapper .contactlink {
+  width: 305px;
+}
+footer .container-fluid .wrapper .contactlink h4 {
+  color: #FFF;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  margin-bottom: 32px;
+  background-image: url("../images/title-bottom.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  padding-bottom: 12px;
+  background-size: 40px 7px;
+}
+footer .container-fluid .wrapper .contactlink ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+footer .container-fluid .wrapper .contactlink ul li {
+  margin-bottom: 20px;
+}
+footer .container-fluid .wrapper .contactlink ul li a {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-decoration: none;
+}
+footer .container-fluid .wrapper .contactlink ul li a svg {
+  width: 25px;
+  height: 25px;
+  margin-right: 14px;
+  color: #5CFFA5;
+}
+footer .container-fluid .wrapper .copyright {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  width: 100%;
+}
+footer .container-fluid .wrapper .copyright p {
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-align: center;
+  margin: 0;
+}/*# sourceMappingURL=style.css.map */

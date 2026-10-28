@@ -1,0 +1,29 @@
+@extends('layouts.main')
+
+@section('main-section')
+
+<link rel="stylesheet" href="{{ asset('frontend/css/profile.css') }}" />
+
+<section class="profile-welcome">
+    <div class="container">
+        <h1>To start your Freelance Journey Please complete your
+            <br class="desktop-only"> profile first
+        </h1>
+
+
+
+        <div class="illustration-wrap">
+            <img src="{{ asset('frontend/images/freelance-profile.png') }}" alt="">
+        </div>
+
+        <div class="cta-wrap">
+            <a href="{{ route('jobseekers.profile.details') }}" class="profile-cta">Complete Profile
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M16.7002 1.93701C17.5468 1.64118 18.3602 2.45451 18.0643 3.30118L13.1268 17.4095C12.806 18.3245 11.531 18.3762 11.1377 17.4903L8.75516 12.1303L12.1085 8.77618C12.2189 8.6577 12.279 8.501 12.2761 8.33908C12.2733 8.17716 12.2077 8.02267 12.0932 7.90816C11.9787 7.79365 11.8242 7.72806 11.6623 7.7252C11.5003 7.72235 11.3436 7.78245 11.2252 7.89285L7.871 11.2462L2.511 8.86368C1.62516 8.46952 1.67766 7.19535 2.59183 6.87452L16.7002 1.93701Z" fill="white" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+@endsection
